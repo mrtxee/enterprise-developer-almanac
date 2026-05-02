@@ -192,7 +192,7 @@ public static void main(String args[]) {
 }
 ```
 ## потоки
-Для создания потока, класс должен наследоваться от `extends Thread` [[java-dev/core/Thread]]
+Для создания потока, класс должен наследоваться от `extends Thread` [[Thread]]
 У всех потоков есть приоритет, он задается в диапазоне 1— 10. Приоритет по-умолчанию 5. Для установки приоритета мтеод.
 ```Java
 class Loader extends Thread {

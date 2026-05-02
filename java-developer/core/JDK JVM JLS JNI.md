@@ -111,7 +111,7 @@ flowchart LR
 [[java.util.Collection]]
 [[java.util.stream]]
 [[java.util.concurrent]]
-[[java-dev/core/Thread]]
+[[Thread]]
 [[java.lang.reflect]]
 [[java.io.Serializable]]
 [[java.lang.Math]]
