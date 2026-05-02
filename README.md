@@ -12,22 +12,8 @@ aliases:
 ¦   ¦           
 ¦   L---ti
 ¦       L   myTI.md
-¦       
-+---java-dev
-¦   ¦   Singleton через Enum.md
-¦   ¦   
-¦   L---JMM
-¦           Cache Line.md
-¦           Happens-Before.md
-¦           JMM deeper.md
-¦           JMM GCs.md
-¦           JMM Reordering.md
-¦           Memory Barriers.md
-¦           memory leak.md
-¦           Performance Penalty.md
 ¦           
 +---java-developer
-¦   ¦   ndx-java-developer1.md
 ¦   ¦   Singleton через Enum.md
 ¦   ¦   
 ¦   +---core
@@ -110,8 +96,6 @@ aliases:
 ¦           SpringValidatorAdapter.md
 ¦           
 +---software-architect
-¦   ¦   ndx-software-architect1.md
-¦   ¦   
 ¦   +---ai
 ¦   ¦   ¦   ai.md
 ¦   ¦   ¦   DM.md
