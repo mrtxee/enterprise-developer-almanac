@@ -84,7 +84,7 @@ flowchart LR
 | ---------------------------------- | ------------------------------------------------------- |
 | **Data Warehouse**                 | ClickHouse, Amazon Redshift, Google BigQuery, Snowflake |
 | **[[ELT]]**                        | Apache Airflow, Talend, Fivetran, dbt                   |
-| **[[КИС\|BI]]** | Power BI, Tableau, Looker, Metabase                     |
+| **[[software-engineer/стандарты/КИС\|BI]]** | Power BI, Tableau, Looker, Metabase                     |
 | **Источники**                      | PostgreSQL, MySQL, Oracle, CSV, Kafka                   |
 
 ---
