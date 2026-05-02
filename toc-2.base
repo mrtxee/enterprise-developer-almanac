@@ -1,0 +1,15 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.folder != "activities"
+        - file.folder != "attachments"
+    groupBy:
+      property: file.folder
+      direction: ASC
+    sort:
+      - property: file.folder
+        direction: ASC
+      - property: file.name
+        direction: ASC
