@@ -1,5 +1,6 @@
 .trash
 .obsidian
 markdown & obsidian.md
-activities
-!activities/ti
+activities/**
+!activities/ti/
+!activities/ti/myTI.md
