@@ -20,8 +20,11 @@ aliases:
 ## 🔄 Как работает паттерн?
 
 ```mermaid
+---
+title: Репликация лога WAL, binlog
+---
 graph LR
-    A[Primary DB] -->|Репликация лога WAL, binlog| B[Read Replica 1]
+    A[Primary DB] --> B[Read Replica 1]
     A --> C[Read Replica 2]
     A --> D[Read Replica N]
 

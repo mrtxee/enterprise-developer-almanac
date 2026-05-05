@@ -1,6 +1,11 @@
 ---
 aliases:
   - репликация
+  - replication
+  - Master-Slave
+  - Multi-Master
+  - BDR
+  - Bi-directional Replication
 ---
 ## replication 
 
@@ -19,6 +24,9 @@ aliases:
 
 
 ```mermaid
+---
+title: Типы репликации
+---
 graph LR
     A[Типы репликации] --> B[Master-Slave]
     A --> C[Multi-Master]
@@ -59,6 +67,9 @@ graph LR
 
 **Архитектура**
 ```mermaid
+---
+title: Read-replica architecture
+---
 graph TD
     A[Client Write] --> B[Master Node]
     B --> C[Replication]
@@ -84,6 +95,9 @@ graph TD
 
 **Архитектура**
 ```mermaid
+---
+title: Multi-master architecture
+---
 graph TD
     A[Client Write] --> B[Master 1]
     A --> C[Master 2]
@@ -129,6 +143,9 @@ $$ LANGUAGE plpgsql;
 
 **Multi-Master с выделенными узлами для чтения**
 ```mermaid
+---
+title: Multi-Master с выделенными узлами для чтения
+---
 graph LR
     A[Master 1] --> B[Read Replica 1]
     A --> C[Read Replica 2]
@@ -136,8 +153,8 @@ graph LR
     D[Master 2] --> E[Read Replica 3]
     D --> F[Read Replica 4]
     
-    A --> G[Bi-directional Replication]
-    D --> G
+    A <--> G[Bi-directional Replication]
+    D <--> G
     
     H[Write Region US] --> A
     I[Write Region EU] --> D
@@ -149,6 +166,10 @@ graph LR
     style E fill:#3498db
     style F fill:#3498db
 ```
+
+**Bi-directional Replication (BDR) в контексте Multi-Master с выделенными узлами для чтения** — это механизм, который позволяет данным реплицироваться между несколькими узлами кластера в реальном времени, обеспечивая их синхронизацию и согласованность. При этом в такой архитектуре несколько узлов могут принимать операции чтения и записи, что повышает доступность и масштабируемость системы.
+
+
 
 ## multi-master vs master-slave репликация
 
