@@ -372,5 +372,271 @@ npm install @module-federation/nextjs
 
 ---
 
-✅ **Если вы работаете с фронтендом в корпоративной среде — Module Federation — ваш следующий шаг.**  
-Не бойтесь сложности — **это цена за свободу**.
+## 🎯 Почему нет CORS ошибок при Module Federation?
+
+### 📌 Краткий ответ
+
+> **Module Federation загружает удалённые модули через `<script>` теги, а не через [[XHR]]/Fetch.**  
+> **`<script src="...">` не подпадает под CORS ограничения браузера.**
+
+---
+
+## 🧩 Как работает загрузка модулей
+
+### ❌ CORS применяется к:
+
+| Ресурс | CORS? | Почему |
+|--------|-------|--------|
+| `fetch()` / `XMLHttpRequest` | ✅ Да | Запрос через JavaScript |
+| `WebSocket` | ✅ Да | Сетевое соединение |
+| `@font-face` | ✅ Да | Шрифты через CSS |
+| `<img>` + canvas | ✅ Да | Чтение пикселей |
+| **`<script src="...">`** | ❌ **Нет** | Исторически разрешено |
+| **`<link rel="stylesheet">`** | ❌ **Нет** | Исторически разрешено |
+
+---
+
+### ✅ Module Federation использует `<script>` теги
+
+```javascript
+// webpack runtime создаёт что-то вроде:
+const script = document.createElement('script');
+script.src = 'https://remote-app.com/remoteEntry.js';
+document.head.appendChild(script);
+
+// ✅ Это НЕ触发рует CORS проверку
+```
+
+---
+
+## 📊 Визуализация процесса
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  Host App (localhost:3000)                                  │
+│                                                             │
+│  1. Загружает remoteEntry.js через <script>                 │
+│     └─> https://remote-app.com/remoteEntry.js ✅ No CORS   │
+│                                                             │
+│  2. webpack runtime запрашивает модуль                      │
+│     └─> https://remote-app.com/vendors.js ✅ No CORS       │
+│                                                             │
+│  3. Код выполняется в контексте Host App                    │
+│     └─> API вызовы → ✅ CORS применяется!                   │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🔍 Детали реализации webpack
+
+### 1. **Загрузка remoteEntry.js**
+
+```javascript
+// Упрощённый код из webpack runtime
+function loadScript(url) {
+    return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = url;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+    });
+}
+
+// Вызов:
+loadScript('https://remote-app.com/remoteEntry.js');
+// ✅ Никаких CORS заголовков не требуется
+```
+
+### 2. **Почему `<script>` без CORS?**
+
+| Причина | Объяснение |
+|---------|------------|
+| **Историческая совместимость** | Веб всегда позволял загрузку скриптов с CDN |
+| **CDN работают так** | jQuery, React, analytics — всё через `<script>` |
+| **Изоляция выполнения** | Скрипт выполняется в вашем origin, не имеет доступа к другим origin |
+| **Риск XSS** | ⚠️ Это обратная сторона — если remote скомпрометирован, это XSS |
+
+---
+
+## ⚠️ Когда CORS ВСЁ-ТАКИ применяется
+
+### 1. **API вызовы из микрофронтенда**
+
+```javascript
+// remote-app.com/src/Component.js
+export function fetchData() {
+    return fetch('https://api.backend.com/data');
+    // ✅ CORS применяется! Нужны заголовки от api.backend.com
+}
+```
+
+### 2. **Загрузка ассетов через JavaScript**
+
+```javascript
+// ❌ CORS применяется
+const img = new Image();
+img.crossOrigin = 'anonymous';
+img.src = 'https://cdn.example.com/image.png';
+
+// ✅ CORS не применяется (прямой HTML)
+<img src="https://cdn.example.com/image.png" />
+```
+
+### 3. **Fetch для загрузки модулей (если кастомизировано)**
+
+```javascript
+// ❌ Если вы переопределили загрузчик:
+fetch('https://remote-app.com/remoteEntry.js')
+    .then(r => r.text());
+// ✅ CORS применяется! Нужны заголовки
+```
+
+---
+
+## 🔐 Безопасность: о чём нужно знать
+
+### Риски Module Federation
+
+| Риск | Описание | Митигация |
+|------|----------|-----------|
+| **XSS через remote** | Если remote скомпрометирован — выполняется в вашем origin | Доверяйте только контролируемым remote |
+| **Нет Subresource Integrity** | webpack не поддерживает SRI для Module Federation | Используйте HTTPS + доверяйте источнику |
+| **Утечка данных** | Remote код имеет доступ к вашему DOM, localStorage, cookie | Изолируйте через sandbox/iframe если нужно |
+| **Supply chain attack** | Зависимости remote могут быть скомпрометированы | Lock версии, используйте private registry |
+
+### Best Practices
+
+```javascript
+// ✅ Настройте trusted remotes в webpack.config.js
+new ModuleFederationPlugin({
+    remotes: {
+        remoteApp: 'remoteApp@https://trusted-domain.com/remoteEntry.js'
+    },
+    // ✅ Фиксируйте версии shared зависимостей
+    shared: {
+        react: { singleton: true, requiredVersion: '^18.0.0' },
+        'react-dom': { singleton: true, requiredVersion: '^18.0.0' }
+    }
+});
+
+// ✅ Используйте HTTPS для всех remote
+// ❌ Избегайте HTTP (риск MITM атаки)
+
+// ✅ Мониторьте remote на изменения
+// ✅ Имейте план отката если remote сломался
+```
+
+---
+
+## 🧪 Пример: когда CORS появится
+
+### Сценарий 1: Module Federation (без CORS)
+
+```javascript
+// host-app.com
+import { RemoteComponent } from 'remoteApp/Component';
+// ✅ Загружается через <script> — нет CORS
+```
+
+### Сценарий 2: API вызов из remote (CORS применяется)
+
+```javascript
+// remote-app.com/Component.js
+export function RemoteComponent() {
+    useEffect(() => {
+        fetch('https://api.host-app.com/data')
+            // ❌ CORS! api.host-app.com должен вернуть:
+            // Access-Control-Allow-Origin: https://remote-app.com
+    }, []);
+}
+```
+
+### Сценарий 3: Кастомная загрузка (CORS применяется)
+
+```javascript
+// ❌ Если вы сами загружаете модули через fetch:
+const module = await fetch('https://remote.com/module.js');
+// ❌ Нужны CORS заголовки от remote.com
+```
+
+---
+
+## 📋 Чек-лист для production
+
+```
+□ Все remote на HTTPS ✅
+□ Remote домены под вашим контролем ✅
+□ API вызовы имеют правильные CORS заголовки ✅
+□ Shared зависимости зафиксированы (singleton) ✅
+□ Есть мониторинг доступности remote ✅
+□ План отката при проблемах с remote ✅
+□ Content Security Policy настроен ✅
+□ Subresource Integrity (если возможно) ⚠️
+```
+
+---
+
+## 📌 Памятка
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  Module Federation → <script> теги → ❌ Нет CORS            │
+│                                                             │
+│  API вызовы → fetch/XHR → ✅ CORS применяется               │
+│                                                             │
+│  ⚠️ Безопасность: доверяйте только контролируемым remote   │
+│  ⚠️ Remote код выполняется в ВАШЕМ origin (XSS риск)       │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🚀 Итог
+
+| Вопрос | Ответ |
+|--------|-------|
+| **Почему нет CORS для модулей?** | Загрузка через `<script>` теги |
+| **Применяется ли CORS вообще?** | ✅ Да, для API вызовов из кода |
+| **Безопасно ли это?** | ⚠️ Только если доверяете remote |
+| **Можно ли загрузить любой remote?** | Технически да, но это XSS риск |
+| **Нужны ли CORS заголовки от remote?** | ❌ Нет для модулей, ✅ Да для API |
+
+---
+
+## 💡 Бонус: Настройка CORS для API
+
+Если ваши микрофронтенды делают API вызовы:
+
+```javascript
+// Node.js (Express)
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://host-app.com');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+});
+
+// Spring Boot
+@Configuration
+public class CorsConfig {
+    @Bean
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/api/**")
+                    .allowedOrigins("https://host-app.com", "https://remote-app.com");
+            }
+        };
+    }
+}
+```
+
+---
+
+Если хочешь — могу показать:
+
+- Как настроить **Content Security Policy** для Module Federation
+- Как изолировать remote через **iframe + postMessage**
+- Как мониторить **доступность remote apps**
