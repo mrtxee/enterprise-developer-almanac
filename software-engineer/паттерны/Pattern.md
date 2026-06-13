@@ -9,6 +9,7 @@ aliases:
 **Типы паттернов**
 * Паттерны структурирования кода
 	* [[gof]]
+* Паттерны распределения ответственности
 	* [[grasp|GRASP]]
 * Паттерны качества крупных приложений
 	* [[Enterprise patterns|Enterprise patterns]]
@@ -20,5 +21,5 @@ aliases:
 	* [[Enterprise Integration Patterns|Enterprise Integration Patterns]]
 	* [[microservice|Паттерны микросервисов]]
 	* Паттерны горизонтального масштабирования
-		* [[data scaling]]
+		* [[data-scaling]]
 

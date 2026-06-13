@@ -25,7 +25,7 @@
 	2. 🟢 Spring: Что такое ApplicationContext? Отличие от BeanFactory?
 	3. 🟢 Spring: Какие типы сделать инжект бина существуют? Когда какой использовать?
 	4. 🟢 Паттерны: В чём разница между Factory, Abstract Factory и Builder?
-	5. 🟢 Паттерны: Объясните Proxy vs Decorator. Примеры в Spring.\
+	5. 🟢 Паттерны: Объясните Proxy vs Decorator. Примеры в Spring.
 	6. Как спроектировать @RestController, который обрабатывает 1M запросов/сек? Какие подводные камни в @Async, @EventListener, @TransactionalEventListener?
 5. DBMS
 	1. RDBMS

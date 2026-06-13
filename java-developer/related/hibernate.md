@@ -1,3 +1,7 @@
+---
+aliases:
+  - hibernate
+---
 Hibernate -- имплементация апи [[Java Persistence API]]
 # JPA Entity Graph
 

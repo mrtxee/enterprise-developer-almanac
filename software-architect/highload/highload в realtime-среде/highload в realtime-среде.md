@@ -24,14 +24,14 @@ Rate Limiting и BulkHead
 	* [[Retry Policy]]
 	* [[Rate Limiting|Rate limiter]]
 	* Устойчивость микросервисов
-		* [[Saga]]
+		* [[saga]]
 			* компенсационные транзакции, undo's
 			* тайм-ауты и дедлайны
-		* [[2PC]] – 2-фазные коммиты
+		* [[two-phase-commit]] – 2-фазные коммиты
 * [[Event-Driven Architecture|EDA]] – событийно‑ориентированныая архитектура
 	* [[Event Storming]]
 	* [[CQRS]]
-	* [[Event sourcing]]
+	* [[Event Sourcing]]
 		* специализированные БД событий
 			* [[EventStoreDB]]
 			* Axon Server

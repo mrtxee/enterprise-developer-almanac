@@ -79,7 +79,7 @@ data
 * [[Event-Driven Architecture|EDA]] – событийно‑ориентированная архитектура
 	* [[Event Storming]]
 	* [[CQRS]]
-	* [[Event sourcing]]
+	* [[Event Sourcing]]
 		* специализированные БД событий
 			* [[EventStoreDB]]
 			* Axon Server

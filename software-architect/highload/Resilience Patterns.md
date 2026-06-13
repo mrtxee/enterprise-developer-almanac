@@ -57,8 +57,8 @@ aliases:
 3. **🧠Паттерны стабилизации состояния** 
 	1. [[cache patterns|Cache-aside]], [[cache patterns|Read-through]], [[cache patterns|Write-behind]]
 	2. [[State Machine]]
-	3. [[Saga]]
-	4. [[2PC]]
+	3. [[saga]]
+	4. [[two-phase-commit]]
 	5. [[Transactional outbox]]
 		1. Transaction log tailing
 		2. Polling publisher
