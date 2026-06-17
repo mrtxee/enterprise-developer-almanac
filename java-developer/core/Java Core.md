@@ -543,4 +543,4 @@ System.out.println(sum.apply(-722, -55));
 [[Generic]]
 [[record type]]
 [[Exception]]
-[[JDK JVM JLS JNI]]
+[[JDK JLS JNI]]

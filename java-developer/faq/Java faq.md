@@ -295,7 +295,7 @@ POJO (англ. Plain Old Java Object) — «старый добрый Java-об
 - Относится к **Core J2EE Patterns — Data Access Object**
 - Распространенный пример реализации паттерна DAO — **JpaRepository**
 # JMX, JSR, J2EE, JAR
-[[JDK JVM JLS JNI]]
+[[JDK JLS JNI]]
 # PID — Process ID
 Идентификатор процесса в JVM, который выполеняет программу
 # узнать текущее имя метода, класса, папки
