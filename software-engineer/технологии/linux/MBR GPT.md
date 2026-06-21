@@ -2,6 +2,8 @@
 aliases:
   - MBR
   - GPT
+  - GUID Partition Table
+  - Master Boot Record
 ---
 Разберу подробно различия между **MBR** (Master Boot Record) и **GPT** (GUID Partition Table) — двумя основными схемами разбиения дисков.
 
