@@ -24,7 +24,7 @@ Q2 -- "Enterprise-использование" --> Server_Q["Какая моде�
 
 Server_Q -- независимость от корпораций --> Debian["🌀 Debian"]
 
-Q2 -- Персональная<br>рабочая станция<br>с Linux experitnce --> Desktop_Q{"Модель<br>обновлений ОС"}
+Q2 -- Персональная<br>рабочая станция<br>с Linux experince --> Desktop_Q{"Модель<br>обновлений ОС"}
 
 Desktop_Q -- Rolling Release<br>свежее ПО --> Arch_Fam["Какой Arch-дистрибутив?"]
 
