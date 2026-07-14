@@ -1,6 +1,9 @@
 ---
 aliases:
   - Singleton
+  - Singleton-by-Enum
+  - Singleton при помощи Enum
+  - Double-Checked Locking
 ---
 ## Паттерны: Как работает Singleton в многопоточной среде? Enum-способ.
 

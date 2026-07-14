@@ -172,7 +172,7 @@ EDA часто сочетается с другими паттернами:
 | **NATS**             | Лёгкий брокер                  | Быстрый, для IoT и microservices                                                                      |
 | **Redis Streams**    | In-memory stream               | Очень быстро, но менее надёжен без persistence                                                        |
 
-> ✅ **[[Kafka]] — de facto стандарт** для enterprise EDA.
+> ✅ **[[software-engineer/технологии/kafka/Kafka]] — de facto стандарт** для enterprise EDA.
 
 ---
 

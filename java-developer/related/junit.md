@@ -1,9 +1,6 @@
-`import org.junit;`
-- Spring — фреймворков для создания веб-приложений
-- JUnit — фреймворк для тестирования
-> [!info] Туториал по JUnit 5  - Введение  
-> Три дня назад мной был опубликован перевод: JUnit — создание отчетов в формате HTML В комментарии к нему @LeshaRB задал вопрос: &quot;Это будет перевод всех статей цикла Junit5 или просто одна?  
-> [https://habr.com/ru/articles/590607/](https://habr.com/ru/articles/590607/)  
+>`import org.junit;`
+
+JUnit — фреймворк для тестирования
 # dependency
 ### pom.xml for Apache Maven
 [https://howtodoinjava.com/junit5/junit5-maven-dependency/](https://howtodoinjava.com/junit5/junit5-maven-dependency/)

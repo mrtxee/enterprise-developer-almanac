@@ -1,3 +1,13 @@
+---
+aliases:
+  - serde
+  - kafka
+  - Serializer
+  - Deserializer
+  - Serializer/Deserializer
+  - Kafka Streams
+  - Streams
+---
 **Key Serde** в Apache Kafka — это сокращение от **"Serializer/Deserializer" для ключа сообщения**.
 
 Он определяет, **как Kafka преобразует ключ сообщения**:

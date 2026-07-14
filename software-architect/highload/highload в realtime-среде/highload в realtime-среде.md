@@ -35,7 +35,7 @@ Rate Limiting и BulkHead
 		* специализированные БД событий
 			* [[EventStoreDB]]
 			* Axon Server
-			* Apache [[Kafka]]
+			* Apache [[software-engineer/технологии/kafka/Kafka]]
 		* паттерн [[Snapshotting]] чтобы кропать длину лога
 	* паттерны обеспечения консистентности событий между сервисом и ивент басом
 		* [[Transaction log tailing]]

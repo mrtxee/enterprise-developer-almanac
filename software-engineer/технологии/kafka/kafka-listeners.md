@@ -1,3 +1,10 @@
+---
+aliases:
+  - kafka-listeners
+  - kafka
+  - listeners
+  - ADVERTISED_LISTENERS
+---
 # LISTENERS и ADVERTISED_LISTENERS
 В Apache Kafka параметры **`listeners`** и **`advertised.listeners`** управляют тем, **как брокер принимает подключения** и **какие адреса он сообщает клиентам**. Это критически важные настройки для корректной работы в сетях, особенно в Docker, Kubernetes или гибридных средах.
 

@@ -407,7 +407,7 @@ ___
 [[Maven]]
 [[Docker]]
 [[Kubernetes]]
-[[Kafka]]
+[[software-engineer/технологии/kafka/Kafka]]
 [[JWT]]
 [[git]]
 [[SOAP]]

@@ -50,7 +50,7 @@ flowchart LR
 
 | Компонент            | Роль                                         |
 | -------------------- | -------------------------------------------- |
-| **Источники данных** | [[OLTP]], [[Kafka]], файлы, IoT-устройства   |
+| **Источники данных** | [[OLTP]], [[software-engineer/технологии/kafka/Kafka]], файлы, IoT-устройства   |
 | **Data Lake**        | S3, HDFS, Azure Blob — хранит "сырые" данные |
 | **Data Processing**  | Spark, Flink, Airflow — обрабатывает данные  |
 | **Data Warehouse**   | ClickHouse, Redshift — для аналитики         |
