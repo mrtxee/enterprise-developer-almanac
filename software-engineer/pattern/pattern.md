@@ -1,6 +1,8 @@
 ---
 aliases:
   - паттерн
+  - pattern
+  - patterns
 ---
 # Паттерн
 

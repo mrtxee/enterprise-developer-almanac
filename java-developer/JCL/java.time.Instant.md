@@ -9,6 +9,7 @@ aliases:
   - DateTime
 ---
 # DateTime java formats
+
 ## Сравнение типов дат в Java
 
 ### **1. `java.util.Date` (с Java 1.0)**
@@ -116,6 +117,7 @@ Instant instant = utilDate.toInstant();
 UTC — это основной стандарт времени, по которому мир регулирует часы и время. Это преемник GMT (Greenwich Mean Time), но более точный.
 
 **Ключевые характеристики:**
+
 - ⏰ **Базовый стандарт**: Основа для всех часовых поясов мира
 - 🌍 **Нулевой меридиан**: Отсчет от Гринвичского меридиана (0° долготы)
 - ⚡ **Высокая точность**: Регулируется атомными часами с коррекцией високосных секунд
@@ -124,6 +126,7 @@ UTC — это основной стандарт времени, по котор
 ### **Зачем использовать UTC?**
 
 #### **1. Единый стандарт для распределенных систем**
+
 ```java
 // Все серверы в разных часовых поясах используют один стандарт
 Instant server1Time = Instant.now(); // UTC
@@ -132,6 +135,7 @@ Instant server2Time = Instant.now(); // UTC
 ```
 
 #### **2. Избежание проблем с часовыми поясами**
+
 ```java
 // ПРОБЛЕМА: разное время в разных зонах
 LocalDateTime meetingTime = LocalDateTime.of(2023, 12, 25, 14, 0);
@@ -143,6 +147,7 @@ Instant meetingTimeUTC = Instant.parse("2023-12-25T14:00:00Z");
 ```
 
 #### **3. Корректное хранение в базах данных**
+
 ```java
 // Все timestamp'ы в БД хранятся в UTC
 @Entity
@@ -155,6 +160,7 @@ public class Event {
 ```
 
 #### **4. Логирование и аудит**
+
 ```java
 // Логи с временными метками в UTC всегда согласованы
 logger.info("Event occurred at: {}", Instant.now());
@@ -164,6 +170,7 @@ logger.info("Event occurred at: {}", Instant.now());
 ### **Практические примеры:**
 
 #### **✅ Правильный подход (UTC + конвертация)**
+
 ```java
 public class EventService {
     // Храним в UTC
@@ -181,6 +188,7 @@ public class EventService {
 ```
 
 #### **❌ Проблемный подход (только локальное время)**
+
 ```java
 public class ProblematicEventService {
     public void createEvent(String name) {

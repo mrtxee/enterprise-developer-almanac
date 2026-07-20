@@ -3,6 +3,7 @@ aliases:
   - ES
   - Index Lifecycle Management
   - ILM
+  - Elasticsearch
 ---
 # Elasticsearch
 

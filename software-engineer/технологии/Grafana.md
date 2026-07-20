@@ -61,7 +61,7 @@ E --> F[Дашборды, Алерты, Explore]
 - **[[TSDB]]**: InfluxDB, TimescaleDB, VictoriaMetrics.
 - **SQL‑БД**: MySQL, PostgreSQL, Microsoft SQL Server.
 - **Облака**: AWS CloudWatch, Google Cloud Monitoring, Azure Monitor.
-- **Логи**: Elasticsearch, OpenSearch.
+- **Логи**: Elasticsearch, [[OpenSearch]].
 - **API**: JSON, REST, GraphQL (через плагин Simple JSON).
 
 ### Типичные сценарии использования

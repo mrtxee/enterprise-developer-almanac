@@ -82,19 +82,19 @@ Red Hat тестирует здесь новые технологии (Wayland, 
 
 ## 📊 Сводная таблица
 
-| Дистрибутив | База | Релиз | Пакетный менеджер | Сложность | Целевая аудитория |
-|-------------|------|-------|-------------------|-----------|-------------------|
-| **Arch Linux** | Независимый | Rolling | pacman | ⭐⭐⭐⭐⭐ | Опытные пользователи |
-| **EndeavourOS** | Arch | Rolling | pacman | ⭐⭐⭐ | Любители Arch |
-| **CachyOS** | Arch | Rolling | pacman | ⭐⭐⭐ | Геймеры, энтузиасты |
-| **Manjaro** | Arch | Rolling (задерж.) | pacman + Pamac | ⭐⭐ | Средние пользователи |
-| **Fedora** | Независимый | Fixed (6 мес) | dnf/rpm | ⭐⭐⭐ | Разработчики, инновации |
-| **CentOS** | RHEL | Fixed (10 лет) | dnf/rpm | ⭐⭐⭐⭐ | Enterprise, серверы |
-| **Rocky Linux** | RHEL | Fixed (10 лет) | dnf/rpm | ⭐⭐⭐⭐ | Enterprise, серверы |
-| **OpenMandriva** | Независимый | Fixed | dnf/rpm | ⭐⭐⭐ | Энтузиасты RPM |
-| **Debian** | Независимый | Fixed (2-3 года) | apt/dpkg | ⭐⭐⭐⭐ | Стабильность, серверы |
-| **Endless OS** | Debian | Fixed (LTS) | flatpak + apt | ⭐ | Новички, образование |
-| **Knoppix** | Debian | Live CD | apt/dpkg | ⭐⭐ | Спасение, демо |
+| Дистрибутив      | База        | Релиз             | Пакетный менеджер | Сложность | Целевая аудитория       |
+| ---------------- | ----------- | ----------------- | ----------------- | --------- | ----------------------- |
+| **Arch Linux**   | Независимый | Rolling           | pacman            | ⭐⭐⭐⭐⭐     | Опытные пользователи    |
+| **EndeavourOS**  | Arch        | Rolling           | pacman            | ⭐⭐⭐       | Любители Arch           |
+| **CachyOS**      | Arch        | Rolling           | pacman            | ⭐⭐⭐       | Геймеры, энтузиасты     |
+| **Manjaro**      | Arch        | Rolling (задерж.) | pacman + Pamac    | ⭐⭐        | Средние пользователи    |
+| **Fedora**       | Независимый | Fixed (6 мес)     | dnf/rpm           | ⭐⭐⭐       | Разработчики, инновации |
+| **CentOS**       | RHEL        | Fixed (10 лет)    | dnf/rpm           | ⭐⭐⭐⭐      | Enterprise, серверы     |
+| **Rocky Linux**  | RHEL        | Fixed (10 лет)    | dnf/rpm           | ⭐⭐⭐⭐      | Enterprise, серверы     |
+| **OpenMandriva** | Независимый | Fixed             | dnf/rpm           | ⭐⭐⭐       | Энтузиасты RPM          |
+| **Debian**       | Независимый | Fixed (2-3 года)  | apt/dpkg          | ⭐⭐⭐⭐      | Стабильность, серверы   |
+| **Endless OS**   | Debian      | Fixed (LTS)       | flatpak + apt     | ⭐         | Новички, образование    |
+| **Knoppix**      | Debian      | Live CD           | apt/dpkg          | ⭐⭐        | Спасение, демо          |
 
 ---
 

@@ -969,5 +969,5 @@ mindmap
       Interpreter
 ```
 ## история
-Книга **«Design [[Pattern]]s: Elements of Reusable Object-Oriented Software»** (1994), написанная «Бандой четырёх» (**GoF — Gamma, Helm, Johnson, Vlissides**), — это **фундаментальная работа**, определившая 23 классических паттерна проектирования. #👨 #📘 
+Книга **«Design [[pattern]]s: Elements of Reusable Object-Oriented Software»** (1994), написанная «Бандой четырёх» (**GoF — Gamma, Helm, Johnson, Vlissides**), — это **фундаментальная работа**, определившая 23 классических паттерна проектирования. #👨 #📘 
 

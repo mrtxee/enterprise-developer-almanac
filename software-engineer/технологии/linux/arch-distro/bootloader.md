@@ -25,7 +25,7 @@ sudo plymouth-set-default-theme -l
 sudo plymouth-set-default-theme bgrt
 
 ```
-# с UKI на GRUB
+# с [[boot-chains]] на GRUB
 
 ```bash
 sudo pacman -S grub efibootmgr os-prober
