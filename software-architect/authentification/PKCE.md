@@ -1,10 +1,12 @@
 ---
 aliases:
-  - Proof Key for Code Exchange
   - PKCE
   - PKCE flow
+  - Proof Key for Code Exchange
 ---
-Отлично!  
+
+Отлично!
+
 **PKCE (Proof Key for Code Exchange)** — это **расширение OAuth 2.0**, которое делает **Authorization Code Flow безопасным для SPA(Single‑Page Application) и мобильных приложений**.
 
 ---
@@ -86,7 +88,7 @@ sequenceDiagram
 
 ## ✅ Финальный вывод
 
-> ✅ **PKCE — это стандарт безопасности для OAuth 2.0 в SPA и мобильных приложениях.**  
+> ✅ **PKCE — это стандарт безопасности для OAuth 2.0 в SPA и мобильных приложениях.**
 > ✅ Он решает проблему: **как защитить `authorization_code` без `client_secret`?**
 
 > 💬 _“PKCE is the security layer that makes OAuth safe for frontend apps.”_
@@ -97,11 +99,12 @@ sequenceDiagram
 
 - [RFC 7636 — PKCE](https://datatracker.ietf.org/doc/html/rfc7636)
 - [OAuth 2.0 PKCE Guide](https://oauth.net/2/pkce/)
-- YouTube: *“PKCE Explained”* — TechWorld with Nana
+- YouTube: _“PKCE Explained”_ — TechWorld with Nana
 
 ---
 
-✅ **Теперь вы знаете:**  
+✅ **Теперь вы знаете:**
+
 Как работает PKCE, зачем он нужен и как реализовать.
 
 📌 Сохраните эту таблицу — она станет вашей **картой безопасности для SPA**.

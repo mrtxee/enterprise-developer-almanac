@@ -1,4 +1,4 @@
-# CAP-теорема
+## CAP-теорема
 
 В любой распределенной информационной системе возможно обеспечить не более 2 из 3 следующих свойств
 
@@ -8,17 +8,20 @@
 
 Примеры баз данных
 
-consistency +  availability:
+consistency + availability:
+
 * [[PostgreSQL]]
 * Oracle
 * MS SQL
 
 consistency + partition tolerance
+
 * [[MongoDB]]
 * [[Redis]]
 * HBase
 
 availability + partition tolerance
+
 * Cassandra
 * CouchDB
 * DynamoDB
@@ -67,10 +70,9 @@ graph TD
     classDef examples fill:#f9f9f9,stroke:#ddd,stroke-width:1px
 ```
 
-
 ___
 
-## Архитектура обеспечения CP в MongoDB
+### Архитектура обеспечения CP в MongoDB
 
 ```mermaid
 graph LR
@@ -90,9 +92,9 @@ graph LR
     D --> D4[Sharding]
 ```
 
-## 1. **[[Replica Set|Replica Sets]] - основа CP**
+### 1. **[[Replica Set|Replica Sets]] - основа CP**
 
-### Архитектура [[Replica Set]]
+#### Архитектура [[Replica Set]]
 ```mermaid
 graph TD
     A[Client Applications] --> B[Primary Node]
@@ -114,7 +116,7 @@ graph TD
     style F fill:#3498db
 ```
 
-### Конфигурация Replica Set
+#### Конфигурация Replica Set
 ```javascript
 // Инициализация replica set
 rs.initiate({
@@ -133,9 +135,9 @@ rs.initiate({
 })
 ```
 
-## 2. **Write Concern - гарантии записи**
+### 2. **Write Concern - гарантии записи**
 
-### Уровни Write Concern
+#### Уровни Write Concern
 ```javascript
 // 1. Минимальная гарантия (только primary)
 db.orders.insert({
@@ -162,7 +164,7 @@ db.audit.insert({
 }, { writeConcern: { w: 3, j: true } })
 ```
 
-### Как работает Write Concern
+#### Как работает Write Concern
 ```mermaid
 sequenceDiagram
     participant C as Client
@@ -180,9 +182,9 @@ sequenceDiagram
     P->>C: Write acknowledged (majority достигнуто)
 ```
 
-## 3. **Read Concern - гарантии чтения**
+### 3. **Read Concern - гарантии чтения**
 
-### Уровни Read Concern
+#### Уровни Read Concern
 ```javascript
 // 1. Local (по умолчанию) - последние данные primary
 db.products.find().readConcern("local")
@@ -200,7 +202,7 @@ db.orders.find({ status: "pending" })
   .readConcern("snapshot")
 ```
 
-### Комбинация для сильной согласованности
+#### Комбинация для сильной согласованности
 ```javascript
 // Гарантия "read-your-writes"
 db.users.insert(
@@ -214,9 +216,9 @@ db.users.find({ _id: "user123" })
   .readPref("primary")  // Только с primary
 ```
 
-## 4. **Election Protocol - обеспечение Partition Tolerance**
+### 4. **Election Protocol - обеспечение Partition Tolerance**
 
-### Процесс выборов при сетевом разделении
+#### Процесс выборов при сетевом разделении
 ```mermaid
 sequenceDiagram
     participant C as Client
@@ -237,7 +239,7 @@ sequenceDiagram
     S1->>C: Accept writes
 ```
 
-### Критерии выбора Primary
+#### Критерии выбора Primary
 ```javascript
 // Проверка статуса replica set
 rs.status().members.forEach(member => {
@@ -249,9 +251,9 @@ rs.status().members.forEach(member => {
 });
 ```
 
-## 5. **Механизмы обеспечения Consistency**
+### 5. **Механизмы обеспечения Consistency**
 
-### Oplog (Operation Log)
+#### Oplog (Operation Log)
 ```javascript
 // Каждая операция записывается в oplog
 {
@@ -265,7 +267,7 @@ rs.status().members.forEach(member => {
 }
 ```
 
-### Read Preference + Read Concern комбинации
+#### Read Preference + Read Concern комбинации
 ```javascript
 // Сценарий 1: Сильная согласованность
 db.products.find()
@@ -283,9 +285,9 @@ db.products.find()
   .readConcern("local")
 ```
 
-## 6. **Transactions - распределенные транзакции**
+### 6. **Transactions - распределенные транзакции**
 
-### Multi-Document ACID Transactions
+#### Multi-Document ACID Transactions
 ```javascript
 const session = db.getMongo().startSession();
 session.startTransaction({
@@ -326,9 +328,9 @@ try {
 }
 ```
 
-## 7. **Partition Tolerance в шардированном кластере**
+### 7. **Partition Tolerance в шардированном кластере**
 
-### Архитектура шардинга
+#### Архитектура шардинга
 ```mermaid
 graph TD
     A[Client] --> B[Mongos Router]
@@ -349,7 +351,7 @@ graph TD
     style C fill:#f39c12
 ```
 
-### Настройки для CP в шардированном кластере
+#### Настройки для CP в шардированном кластере
 ```javascript
 // Баллансировка шардов с учетом согласованности
 sh.startBalancer();
@@ -363,9 +365,9 @@ db.adminCommand({
 });
 ```
 
-## 8. **Heartbeat и обнаружение сетевых разделений**
+### 8. **Heartbeat и обнаружение сетевых разделений**
 
-### Механизм heartbeat
+#### Механизм heartbeat
 ```javascript
 // Настройки heartbeat в конфигурации
 rs.conf().settings = {
@@ -376,7 +378,7 @@ rs.conf().settings = {
 }
 ```
 
-### Мониторинг состояния сети
+#### Мониторинг состояния сети
 ```javascript
 // Проверка статуса репликации
 db.serverStatus().repl.heartbeatIntervalMs
@@ -390,9 +392,9 @@ rs.status().members[0].lastHeartbeatRecv
 // ISODate("2023-01-01T10:00:01Z")
 ```
 
-## 9. **Практические сценарии настройки CP**
+### 9. **Практические сценарии настройки CP**
 
-### Сценарий 1: Финансовая система
+#### Сценарий 1: Финансовая система
 ```yaml
 # mongod.conf
 replication:
@@ -408,7 +410,7 @@ storage:
 writeConcernMajorityJournalDefault: true
 ```
 
-### Сценарий 2: Электронная коммерция
+#### Сценарий 2: Электронная коммерция
 ```javascript
 // Заказ с гарантией согласованности
 db.orders.insert({
@@ -432,9 +434,9 @@ session.startTransaction({
 });
 ```
 
-## 10. **Компромиссы и trade-offs**
+### 10. **Компромиссы и trade-offs**
 
-### При сетевом разделении
+#### При сетевом разделении
 
 ```mermaid
 graph LR
@@ -450,7 +452,7 @@ graph LR
     style D fill:#27ae60
 ```
 
-### Настройка времени выборов
+#### Настройка времени выборов
 ```javascript
 // Более быстрые выборы (меньшая availability, выше consistency)
 settings: {
@@ -465,25 +467,25 @@ settings: {
 }
 ```
 
-## Итог
+### Итог
 
 **MongoDB обеспечивает CP через:**
 
-### ✅ **Consistency:**
-- **Write Concern "majority"** - запись подтверждается большинством узлов
-- **Read Concern "majority"/"linearizable"** - чтение только согласованных данных
-- **Replica Sets** - синхронная репликация через oplog
-- **ACID Transactions** - распределенные транзакции
+#### ✅ **Consistency:**
+* **Write Concern "majority"** - запись подтверждается большинством узлов
+* **Read Concern "majority"/"linearizable"** - чтение только согласованных данных
+* **Replica Sets** - синхронная репликация через oplog
+* **ACID Transactions** - распределенные транзакции
 
-### ✅ **Partition Tolerance:**
-- **Automatic Failover** - выбор нового primary при сетевых разделах
-- **Election Protocol** - консенсус-based выбор лидера
-- **Heartbeat Mechanism** - обнаружение сетевых проблем
-- **Replica Sets** - избыточность данных на multiple узлах
+#### ✅ **Partition Tolerance:**
+* **Automatic Failover** - выбор нового primary при сетевых разделах
+* **Election Protocol** - консенсус-based выбор лидера
+* **Heartbeat Mechanism** - обнаружение сетевых проблем
+* **Replica Sets** - избыточность данных на multiple узлах
 
-### ⚠️ **Компромисс:**
-- При сетевых разделах **жертвуется Availability** - minority partition становится недоступной для записи
-- **Более строгие гарантии** увеличивают задержки
-- **Требуется кворум** для операций записи
+#### ⚠️ **Компромисс:**
+* При сетевых разделах **жертвуется Availability** - minority partition становится недоступной для записи
+* **Более строгие гарантии** увеличивают задержки
+* **Требуется кворум** для операций записи
 
 MongoDB предоставляет гибкие настройки для балансировки между строгой согласованностью и доступностью в зависимости от требований приложения.

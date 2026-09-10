@@ -1,16 +1,16 @@
 ---
 aliases:
+  - Round trip
+  - Round trips
+  - Round trips per second
   - Round‑Trip Time
   - RTT
-  - Round trips per second
-  - Round trips
-  - Round trip
 ---
-# Метрика Round‑Trip Time
+## Метрика Round‑Trip Time
 
 **Round-Trip Time (RTT)** — это **время, за которое пакет данных проходит от отправителя к получателю и обратно**.
 
-> 💡 Простыми словами:  
+> 💡 Простыми словами:
 > *«Сколько времени уходит на вопрос и ответ».*
 
 ### 🔑 Основные моменты:
@@ -29,5 +29,5 @@ aliases:
 - Интернет (в пределах страны): **20–50 мс**
 - Между континентами: **100–300 мс**
 
-> ⚠️ **RTT ≠ задержка (latency)**:  
+> ⚠️ **RTT ≠ задержка (latency)**:
 > Latency — это время в один конец, RTT ≈ 2 × latency (плюс накладные расходы).

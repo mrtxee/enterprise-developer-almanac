@@ -1,10 +1,10 @@
+**BASE vs ACID** — это **две противоположные философии**, определяющие, как работает база данных:
 
-**BASE vs ACID** — это **две противоположные философии**, определяющие, как работает база данных:  
-- **ACID** — строгая согласованность (как в банке)  
+- **ACID** — строгая согласованность (как в банке)
 - **BASE** — доступность и гибкость (как в соцсетях)
 
 > [!NOTE] ACID vs BASE
-> ACID приоритет отдаётся согласованности в ущерб доступности. 
+> ACID приоритет отдаётся согласованности в ущерб доступности.
 > BASE — приоритизируется доступность в ущерб согласованности.
 
 ---
@@ -19,7 +19,7 @@
 | **Транзакции**      | Полные ACID-транзакции                    | Частичные или отсутствуют        |
 | **Примеры**         | Банки, бухгалтерия                        | Социальные сети, IoT, чаты       |
 
-> 🔑 **ACID = "всё или ничего"**  
+> 🔑 **ACID = "всё или ничего"**
 > **BASE = "работает почти всегда"**
 
 ---
@@ -28,7 +28,7 @@
 
 Аббревиатура из 4 свойств:
 
-### 📘 A — **Atomicity (Атомарность)**  
+### 📘 A — **Atomicity (Атомарность)**
 > Транзакция — единое целое: либо всё выполнится, либо ничто.
 
 ```sql
@@ -42,7 +42,7 @@ COMMIT; -- обе операции → вместе
 
 ---
 
-### 📘 C — **Consistency (Согласованность)**  
+### 📘 C — **Consistency (Согласованность)**
 > После транзакции данные остаются в **валидном состоянии** (по триггерам, FK, CHECK)
 
 ```sql
@@ -54,10 +54,11 @@ ALTER TABLE accounts ADD CONSTRAINT chk_balance CHECK (balance >= 0);
 
 ---
 
-### 📘 I — **Isolation (Изолированность)**  
+### 📘 I — **Isolation (Изолированность)**
 > Параллельные транзакции не мешают друг другу
 
 Уровни:
+
 - `READ UNCOMMITTED`
 - `READ COMMITTED`
 - `REPEATABLE READ`
@@ -65,7 +66,7 @@ ALTER TABLE accounts ADD CONSTRAINT chk_balance CHECK (balance >= 0);
 
 ---
 
-### 📘 D — **Durability (Надёжность)**  
+### 📘 D — **Durability (Надёжность)**
 > После `COMMIT` данные сохранены навсегда (даже при падении сервера)
 
 Через WAL (Write-Ahead Log), репликацию, RAID.
@@ -91,13 +92,13 @@ ALTER TABLE accounts ADD CONSTRAINT chk_balance CHECK (balance >= 0);
 
 Аббревиатура:
 
-### 🌐 BA — **Basically Available**  
+### 🌐 BA — **Basically Available**
 > Система **всегда доступна**, даже если часть узлов упала.
 
-### 🌐 S — **Soft state**  
+### 🌐 S — **Soft state**
 > Состояние может меняться со временем, даже без внешних воздействий (например, через репликацию).
 
-### 🌐 E — **Eventual Consistency**  
+### 🌐 E — **Eventual Consistency**
 > Данные станут согласованными **со временем**, но **не сразу**.
 
 ---
@@ -112,9 +113,10 @@ Bob в США видит: «ещё нет»
 Через 2 секунды — появляется  
 ```
 
-→ Это **eventual consistency**:  
-- Сначала доступен в одном регионе  
-- Потом реплицируется  
+→ Это **eventual consistency**:
+
+- Сначала доступен в одном регионе
+- Потом реплицируется
 - Через несколько секунд — повсюду
 
 ### ❌ Не ACID:
@@ -171,7 +173,8 @@ PUT /items/123 { "status": "active" }
 GET /items/123 → { "status": "inactive" } # пока не реплицировалось
 ```
 
-→ Через 1–2 секунды станет `"active"`  
+→ Через 1–2 секунды станет `"active"`
+
 → Это **eventual consistency** — основа **BASE**
 
 > ✅ Можно включить **strong consistency**, но это замедлит систему
@@ -187,8 +190,10 @@ UPDATE users SET balance = balance + 100 WHERE id = 2;
 COMMIT;
 ```
 
-→ Обе строки изменятся **или ни одна**  
-→ Баланс всегда **valid**  
+→ Обе строки изменятся **или ни одна**
+
+→ Баланс всегда **valid**
+
 → Консистентность — **немедленная**
 
 > ✅ **ACID** — каждый шаг контролируется
@@ -218,7 +223,7 @@ COMMIT;
 | 🔹 Транзакции, блокировки        | 🔹 Асинхронность, gossip         |
 | 🔹 PostgreSQL, Oracle            | 🔹 DynamoDB, Cassandra           |
 
-> 💬 _“ACID is about correctness. BASE is about availability.”_  
+> 💬 _“ACID is about correctness. BASE is about availability.”_
 > — Martin Kleppmann
 
 ---
@@ -238,23 +243,26 @@ COMMIT;
 
 ## 📚 Где учиться дальше?
 
-- Book: *“Designing Data-Intensive Applications”* — Martin Kleppmann
+- Book: _“Designing Data-Intensive Applications”_ — Martin Kleppmann
 - [ACID on Wikipedia](https://en.wikipedia.org/wiki/ACID)
 - [BASE Model Explained](https://www.computerworld.com/article/2578694/database-acid-vs-base.html)
 - AWS DynamoDB Docs — eventual consistency
-- YouTube: *“ACID vs BASE – What’s the Difference?”* — TechWorld with Nana
+- YouTube: _“ACID vs BASE – What’s the Difference?”_ — TechWorld with Nana
 
 ---
 
-✅ **ACID и BASE — не технологии. Это выбор.**  
-Выбираете **надёжность** или **доступность**?  
+✅ **ACID и BASE — не технологии. Это выбор.**
+
+Выбираете **надёжность** или **доступность**?
+
 Ответ на этот вопрос определит, какую БД вы будете использовать.
 
-> 💡 **Не думайте: «Какая лучше?»**  
+> 💡 **Не думайте: «Какая лучше?»**
 > Думайте: **«Что мне нужно?»**
 
 ---
 
-📌 **Запомните:**  
-> **ACID** — когда ошибка = катастрофа  
+📌 **Запомните:**
+
+> **ACID** — когда ошибка = катастрофа
 > **BASE** — когда недоступность = катастрофа

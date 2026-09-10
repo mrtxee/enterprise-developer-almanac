@@ -2,6 +2,7 @@
 aliases:
   - Read Replica
 ---
+
 **Паттерн Read Replica (реплика для чтения)** — это **ключевой подход к повышению производительности, масштабируемости и отказоустойчивости баз данных**. Он используется во всех серьёзных системах: от банков до соцсетей.
 
 ---
@@ -11,6 +12,7 @@ aliases:
 > **Read Replica** — это **копия основной (primary) базы данных**, настроенная **только для операций чтения (SELECT)**.
 
 Она получает данные с **master-узла (primary)** через **асинхронную репликацию** и позволяет:
+
 - Разгрузить основной сервер
 - Увеличить пропускную способность
 - Повысить доступность
@@ -83,6 +85,7 @@ graph LR
 ### 1. Настройка Streaming Replication
 
 На **Primary** (`postgresql.conf`):
+
 ```conf
 wal_level = replica
 max_wal_senders = 5
@@ -90,6 +93,7 @@ archive_mode = on
 ```
 
 В `pg_hba.conf`:
+
 ```conf
 host replication replicator 192.168.1.2/32 md5
 ```
@@ -101,6 +105,7 @@ pg_basebackup -h primary-host -D /var/lib/postgresql/data -U replicator -P --wal
 ```
 
 Файл `recovery.conf`:
+
 ```conf
 standby_mode = 'on'
 primary_conninfo = 'host=primary-host port=5432 user=replicator password=secret'
@@ -149,6 +154,7 @@ spring:
 ```
 
 Используйте аннотацию:
+
 ```java
 @ReadOnly
 public List<Order> getOrders() { ... }
@@ -212,7 +218,7 @@ public void createOrder(Order o) { ... }
 
 ## 💬 Цитата от эксперта
 
-> _“If your database is slow, you have two options: cache or read replicas.  
+> _“If your database is slow, you have two options: cache or read replicas.
 > Cache for speed. Read replicas for scale.”_
 
 ---
@@ -234,11 +240,12 @@ public void createOrder(Order o) { ... }
 - [PostgreSQL Replication](https://www.postgresql.org/docs/current/warm-standby.html)
 - [AWS RDS Read Replicas](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html)
 - [MySQL Replication](https://dev.mysql.com/doc/refman/8.0/en/replication.html)
-- YouTube: *“Read Replicas Explained”* — TechWorld with Nana
+- YouTube: _“Read Replicas Explained”_ — TechWorld with Nana
 
 ---
 
-✅ **Read Replica — это когда ваша база данных перестаёт быть «одним сервером» и становится «системой».**  
+✅ **Read Replica — это когда ваша база данных перестаёт быть «одним сервером» и становится «системой».**
+
 Она масштабируется, живёт дольше, работает быстрее.
 
 > 💡 **Если вы не используете реплики — вы строите дом на одном столбе.**

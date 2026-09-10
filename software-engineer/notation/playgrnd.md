@@ -33,4 +33,3 @@ C4Context
     Rel(SystemAA, SystemC, "Sends e-mails", "SMTP")
     Rel(SystemC, customerA, "Sends e-mails to")
 ```
-

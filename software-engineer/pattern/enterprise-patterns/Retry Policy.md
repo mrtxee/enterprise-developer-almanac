@@ -1,12 +1,13 @@
 ---
 aliases:
-  - Retry
+  - Conditional Retry
   - Exponential Backoff
   - Jitter
   - Linear Backoff
   - No Retry
-  - Conditional Retry
+  - Retry
 ---
+
 **Retry Policy (политика повторных попыток)** — это **ключевой элемент надёжности в распределённых системах**, особенно при работе с сетью, внешними API, базами данных и очередями.
 
 ---
@@ -52,6 +53,7 @@ aliases:
 ```
 
 #### 🔍 Случайный jitter:
+
 Вместо 4s → 3.5–4.8s (рандом)
 
 #### ✅ Преимущества:
@@ -75,6 +77,7 @@ aliases:
 > Повтор только при **временных ошибках**, а не при ошибках клиента
 
 #### ❌ Не повторяйте:
+
 | Код | Причина |
 |-----|---------|
 | `400 Bad Request` | Ошибка клиента — передавайте правильно |
@@ -83,6 +86,7 @@ aliases:
 | `409 Conflict` | Конфликт — нужна бизнес-логика |
 
 #### ✅ Повторяйте:
+
 | Код / Ошибка | Причина |
 |---------------|---------|
 | `503 Service Unavailable` | Сервис перегружен — можно попробовать позже |
@@ -106,6 +110,7 @@ aliases:
   }
 }
 ```
+
 → Exponential backoff: 1s → 2s → 4s → 8s → 16s → stop
 
 ---
@@ -198,20 +203,24 @@ Retry retry = Retry.of("external-api", config);
 
 > **Idempotent operation** — это операция, которую можно **повторять много раз без побочных эффектов**.
 
-#### ❌ Не idempotent:
+### ❌ Не idempotent:
 ```http
 POST /api/v1/payments → charge $100
 ```
+
 → Если запрос повторится — **снимет ещё $100** → плохо!
 
-#### ✅ Idempotent:
+### ✅ Idempotent:
 ```http
 PUT /payments/123 → charge $100
 ```
+
 или
+
 ```http
 POST /payments?request_id=abc123 → charge $100
 ```
+
 → Сервер проверяет `request_id` → если уже был — **не снимает деньги второй раз**
 
 > ✅ **Retry возможен только для idempotent операций!**
@@ -281,7 +290,7 @@ def fetch_data():
 
 ## 💬 Цитата от Google:
 
-> _“The best way to handle transient errors is to retry with exponential backoff and jitter.”_  
+> *“The best way to handle transient errors is to retry with exponential backoff and jitter.”*
 > — **Site Reliability Engineering (SRE) Book**
 
 ---
@@ -296,7 +305,7 @@ def fetch_data():
 | **Fixed Delay** | ⚠️ Только если вы уверены, что сервис быстро восстановится |
 | **No Retry** | ✅ Для HFT, идемпотентных систем |
 
-> ✅ **Exponential backoff + jitter — это золотой стандарт.**  
+> ✅ **Exponential backoff + jitter — это золотой стандарт.**
 > Он **прост**, **эффективен**, **надёжен** и **используется повсюду**.
 
 ---
@@ -310,5 +319,6 @@ def fetch_data():
 
 ---
 
-✅ **Теперь вы знаете: не просто “делайте retry”, а “как делать retry правильно”.**  
+✅ **Теперь вы знаете: не просто “делайте retry”, а “как делать retry правильно”.**
+
 Используйте **exponential backoff + jitter** — и ваши системы станут **намного надёжнее**.

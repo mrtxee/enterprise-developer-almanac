@@ -1,4 +1,5 @@
-**Feature Flagging** и **[[Feature Toggling]]** — это **одно и то же**, но с небольшой разницей в **оттенке смысла**.  
+**Feature Flagging** и **[[Feature Toggling]]** — это **одно и то же**, но с небольшой разницей в **оттенке смысла**.
+
 На практике их часто используют как синонимы, но есть **тонкое различие** — особенно в контексте DevOps, CI/CD и масштабируемых систем.
 
 ---
@@ -67,6 +68,7 @@ if flag {
 ```
 
 → Флаг `new-checkout` может быть:
+
 - Включен только для `role=admin`
 - Для 5% пользователей (canary)
 - Только в `region=eu-west`
@@ -89,7 +91,7 @@ if flag {
 | **Примеры инструментов** | `if`, `config.getProperty()` | LaunchDarkly, Flagsmith, Unleash, Split.io |
 | **Цель** | Скрыть неготовый код | Управление рисками, тестирование, безопасный выпуск |
 
-> ✅ **Feature Flagging — это профессиональный подход.**  
+> ✅ **Feature Flagging — это профессиональный подход.**
 > **Feature Toggling — это его простая версия.**
 
 ---
@@ -128,6 +130,7 @@ if flags.IsOn("new-checkout", user) {
 ```
 
 → В LaunchDarkly:
+
 - 1% пользователей → новая корзина
 - Если error rate > 1% → автоматически откат
 - Можно включить только для `beta-testers`
@@ -193,6 +196,7 @@ if flags.IsOn("new-checkout", user) {
 ```
 
 → Эта фича:
+
 - Включена для 10% пользователей
 - Всегда включена для `admin-123`
 - Можно изменить через UI → без перезапуска
@@ -215,10 +219,10 @@ if flags.IsOn("new-checkout", user) {
 
 ## 💬 Цитата от эксперта
 
-> _“Feature toggles are a code smell if you don’t have a system to manage them.”_  
+> _“Feature toggles are a code smell if you don’t have a system to manage them.”_
 > — Martin Fowler
 
-> ✅ **Если у вас много флагов — вам нужна система управления ими.**  
+> ✅ **Если у вас много флагов — вам нужна система управления ими.**
 > Иначе они станут техническим долгом.
 
 ---
@@ -233,7 +237,7 @@ if flags.IsOn("new-checkout", user) {
 | **Лучше для** | MVP, временное решение | Production, большие команды |
 | **Вывод** | Это **начало** | Это **профи-подход** |
 
-> ✅ **Feature Toggling — это инструмент.**  
+> ✅ **Feature Toggling — это инструмент.**
 > ✅ **Feature Flagging — это культура.**
 
 ---
@@ -243,9 +247,10 @@ if flags.IsOn("new-checkout", user) {
 - [Martin Fowler — Feature Toggle](https://martinfowler.com/bliki/FeatureToggle.html)
 - [LaunchDarkly Docs](https://docs.launchdarkly.com/)
 - [Unleash Open Source](https://unleash.github.io/)
-- YouTube: *“Feature Flags Explained”* — TechWorld with Nana
+- YouTube: _“Feature Flags Explained”_ — TechWorld with Nana
 
 ---
 
-✅ **Если вы пишете микросервисы, делаете CI/CD, используете DevOps — Feature Flagging — ваш следующий шаг.**  
+✅ **Если вы пишете микросервисы, делаете CI/CD, используете DevOps — Feature Flagging — ваш следующий шаг.**
+
 Он превращает релиз из **рискованного события** в **непрерывный процесс**.

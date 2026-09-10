@@ -1,5 +1,5 @@
->java.util.logging
-# Logger
+> java.util.logging
+## Logger
 
 `java.util.logging.Logger` считается устаревшим. Принято использовать Lombok SL4J, когда нет ограничений на подключение внешний пакетов, либо Logback
 

@@ -3,7 +3,7 @@ aliases:
   - Security Information and Event Management
   - SIEM
 ---
-# Security Information and Event Management
+## Security Information and Event Management
 
 Схема работы SIEM
 
@@ -61,4 +61,3 @@ graph LR
     %% ========== ПОДПИСИ ==========
     style title font-size:24px,font-weight:bold
 ```
-

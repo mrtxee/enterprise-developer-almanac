@@ -1,18 +1,18 @@
 ---
 aliases:
   - RAGAS
-  - Retrieval-Augmented Generation Assessment
   - Retrieval-Augmented Generation
+  - Retrieval-Augmented Generation Assessment
 ---
-# RAGAS Framework - полное руководство
+## RAGAS Framework - полное руководство
 
-## Что такое RAGAS?
+### Что такое RAGAS?
 
 **RAGAS** (Retrieval-Augmented Generation Assessment) - это специализированный фреймворк для **оценки качества систем RAG** (Retrieval-Augmented Generation). RAGAS предоставляет метрики и инструменты для измерения эффективности RAG-систем, которые объединяют поиск информации и генерацию текста.
 
-## Архитектура RAGAS
+### Архитектура RAGAS
 
-### **Основные компоненты RAGAS**
+#### **Основные компоненты RAGAS**
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    RAG Pipeline Evaluation                   │
@@ -43,9 +43,10 @@ aliases:
 └─────────────────────────────────────────────────────────────┘
 ```
 
-## Ключевые метрики RAGAS
+### Ключевые метрики RAGAS
 
-### **1. Faithfulness (Верность/Фактическая точность)**
+#### **1. Faithfulness (Верность/Фактическая точность)**
+
 **Измеряет**: Насколько сгенерированный ответ соответствует предоставленному контексту (без галлюцинаций)
 
 ```python
@@ -69,7 +70,8 @@ print(f"Faithfulness score: {score['faithfulness']}")
 # Высокий score если ответ соответствует контексту
 ```
 
-### **2. Answer Relevance (Релевантность ответа)**
+#### **2. Answer Relevance (Релевантность ответа)**
+
 **Измеряет**: Насколько ответ соответствует вопросу
 
 ```python
@@ -87,7 +89,8 @@ score = evaluate(
 )
 ```
 
-### **3. Context Relevance (Релевантность контекста)**
+#### **3. Context Relevance (Релевантность контекста)**
+
 **Измеряет**: Насколько извлеченные документы релевантны вопросу
 
 ```python
@@ -109,7 +112,7 @@ score = evaluate(
 )
 ```
 
-### **4. Context Precision/Recall**
+#### **4. Context Precision/Recall**
 ```python
 from ragas.metrics import context_precision, context_recall
 
@@ -127,9 +130,9 @@ score = evaluate(
 )
 ```
 
-## Полный процесс оценки с RAGAS
+### Полный процесс оценки с RAGAS
 
-### **Пример end-to-end оценки**
+#### **Пример end-to-end оценки**
 ```python
 import pandas as pd
 from ragas import evaluate
@@ -192,7 +195,7 @@ print(f"Answer Relevancy: {results_df['answer_relevancy'].mean():.3f}")
 print(f"Context Relevancy: {results_df['context_relevancy'].mean():.3f}")
 ```
 
-### **Интеграция с RAG pipeline**
+#### **Интеграция с RAG pipeline**
 ```python
 from langchain.vectorstores import FAISS
 from langchain.embeddings import OpenAIEmbeddings
@@ -266,9 +269,9 @@ class RAGPipelineEvaluator:
         return pd.DataFrame(scores)
 ```
 
-## Кастомные метрики в RAGAS
+### Кастомные метрики в RAGAS
 
-### **Создание собственных метрик**
+#### **Создание собственных метрик**
 ```python
 from ragas.metrics.base import Metric
 from ragas.llms import llm_factory
@@ -315,7 +318,7 @@ custom_metric = CustomHallucinationMetric()
 results = evaluate(dataset, metrics=[faithfulness, custom_metric])
 ```
 
-### **Composite Metrics (Составные метрики)**
+#### **Composite Metrics (Составные метрики)**
 ```python
 from ragas.metrics import MetricWithLLM
 
@@ -343,9 +346,9 @@ class RAGQualityScore(MetricWithLLM):
         return total_score
 ```
 
-## Best Practices использования RAGAS
+### Best Practices использования RAGAS
 
-### **Настройка оценки для разных сценариев**
+#### **Настройка оценки для разных сценариев**
 ```python
 class RAGASEvaluationConfig:
     """Конфигурация оценки в зависимости от use case"""
@@ -404,7 +407,7 @@ class RAGASEvaluationConfig:
         }
 ```
 
-### **Автоматизированная оценка пайплайна**
+#### **Автоматизированная оценка пайплайна**
 ```python
 import json
 from datetime import datetime
@@ -490,9 +493,9 @@ class AutomatedRAGEvaluator:
         return json.dumps(report, indent=2, ensure_ascii=False)
 ```
 
-## Визуализация результатов
+### Визуализация результатов
 
-### **Dashboard с результатами оценки**
+#### **Dashboard с результатами оценки**
 ```python
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -560,7 +563,7 @@ class RAGASVisualizer:
         return fig
 ```
 
-## Интеграция с MLflow для отслеживания экспериментов
+### Интеграция с MLflow для отслеживания экспериментов
 
 ```python
 import mlflow
@@ -605,7 +608,7 @@ class RAGASMLflowTracker:
                 )
 ```
 
-## Пример полного workflow
+### Пример полного workflow
 
 ```python
 def complete_rag_evaluation_workflow():

@@ -1,14 +1,15 @@
 ---
 aliases:
-  - Сериализация
-  - Десериализация
-  - Serializable
   - ObjectMapper
+  - Serializable
+  - Десериализация
+  - Сериализация
 ---
->[!info] `java.io.Serializable`
-# interface Serializable
+> [!info] `java.io.Serializable`
+## interface Serializable
 
 Eg: мы сохраняем состояние нашей программы. Допустим, ты играешь в стратегию за Испанию. У твоей игры есть состояние: кто какими территориями владеет, у кого сколько ресурсов, кто с кем в союзе, а кто наоборот — в состоянии войны, и так далее. Эту информацию, состояние нашей программы, необходимо как-то сохранить, чтобы в дальнейшем восстановить данные и продолжить игру.
+
 Для этого как раз и используются механизмы сериализации и десереализации.
 
 **Сериализация** — это процесс сохранения состояния объекта в последовательность байт.
@@ -19,9 +20,9 @@ Eg: мы сохраняем состояние нашей программы. Д
 
 ---
 
-## ☕ `java.io.Serializable` — Краткое объяснение
+### ☕ `java.io.Serializable` — Краткое объяснение
 
-### 📌 Что это?
+#### 📌 Что это?
 
 **`Serializable`** — это **маркерный интерфейс** (без методов), который указывает JVM, что объекты класса можно **сериализовать** (преобразовать в байтовый поток) и **десериализовать** (восстановить из байтов).
 
@@ -39,7 +40,7 @@ public class User implements Serializable {
 
 ---
 
-## 🔄 Что такое сериализация?
+### 🔄 Что такое сериализация?
 
 ```
 Объект в памяти → [Сериализация] → Байтовый поток → [Десериализация] → Объект в памяти
@@ -51,7 +52,7 @@ User{id=1, name="John"}
 
 ---
 
-## 🎯 Для чего нужен?
+### 🎯 Для чего нужен?
 
 | Сценарий | Пример |
 |----------|--------|
@@ -63,9 +64,9 @@ User{id=1, name="John"}
 
 ---
 
-## ⚙️ Ключевые моменты
+### ⚙️ Ключевые моменты
 
-### 1. **`serialVersionUID`**
+#### 1. **`serialVersionUID`**
 
 ```java
 public class User implements Serializable {
@@ -76,7 +77,7 @@ public class User implements Serializable {
 
 > **Зачем:** Контроль совместимости версий. Если изменить класс без `serialVersionUID`, десериализация старой версии может упасть с `InvalidClassException`.
 
-### 2. **`transient` — исключить поле из сериализации**
+#### 2. **`transient` — исключить поле из сериализации**
 
 ```java
 public class User implements Serializable {
@@ -87,7 +88,7 @@ public class User implements Serializable {
 }
 ```
 
-### 3. **Наследование**
+#### 3. **Наследование**
 
 ```java
 // Если родитель сериализуем — дети тоже
@@ -103,7 +104,7 @@ public class User extends NonSerializableBase implements Serializable {
 
 ---
 
-## 🧪 Пример использования
+### 🧪 Пример использования
 
 ```java
 // Сериализация
@@ -122,7 +123,7 @@ try (ObjectInputStream ois = new ObjectInputStream(
 
 ---
 
-## ⚠️ Важные предостережения
+### ⚠️ Важные предостережения
 
 | Проблема | Решение |
 |----------|---------|
@@ -133,7 +134,7 @@ try (ObjectInputStream ois = new ObjectInputStream(
 
 ---
 
-## 🔄 Современные альтернативы
+### 🔄 Современные альтернативы
 
 | Формат | Плюсы | Минусы |
 |--------|-------|--------|
@@ -144,7 +145,7 @@ try (ObjectInputStream ois = new ObjectInputStream(
 
 ---
 
-## 📌 Памятка
+### 📌 Памятка
 
 ```
 ✅ Serializable — маркерный интерфейс для сериализации
@@ -157,7 +158,7 @@ try (ObjectInputStream ois = new ObjectInputStream(
 
 ---
 
-## 🚀 Итог
+### 🚀 Итог
 
 | Вопрос | Ответ |
 |--------|-------|
@@ -170,18 +171,19 @@ try (ObjectInputStream ois = new ObjectInputStream(
 > 💡 **Совет:** Для новых проектов предпочитайте **JSON/Protobuf** вместо стандартной сериализации, если нет специфических требований Java-to-Java.
 
 ---
-# Serializable vs ObjectMapper
-## ❌ Нет, `Serializable` НЕ связан с `ObjectMapper.writeValueAsString()`
 
-### 📌 Краткий ответ
+## Serializable vs ObjectMapper
+### ❌ Нет, `Serializable` НЕ связан с `ObjectMapper.writeValueAsString()`
 
-> **`Serializable`** — для **бинарной сериализации Java** (`ObjectOutputStream`).  
-> **`writeValueAsString()`** — для **JSON-сериализации через Jackson**.  
+#### 📌 Краткий ответ
+
+> **`Serializable`** — для **бинарной сериализации Java** (`ObjectOutputStream`).
+> **`writeValueAsString()`** — для **JSON-сериализации через Jackson**.
 > **Это два независимых механизма.**
 
 ---
 
-## 🔄 Сравнение механизмов
+### 🔄 Сравнение механизмов
 
 | Характеристика | **`Serializable`** | **Jackson `writeValueAsString()`** |
 |----------------|-------------------|-----------------------------------|
@@ -195,7 +197,7 @@ try (ObjectInputStream ois = new ObjectInputStream(
 
 ---
 
-## 🧪 Пример: один класс, два способа
+### 🧪 Пример: один класс, два способа
 
 ```java
 // Класс БЕЗ Serializable
@@ -210,7 +212,7 @@ public class User {
 }
 ```
 
-### ✅ Jackson (работает без `Serializable`)
+#### ✅ Jackson (работает без `Serializable`)
 
 ```java
 ObjectMapper mapper = new ObjectMapper();
@@ -222,7 +224,7 @@ String json = mapper.writeValueAsString(user);
 // ✅ Serializable не нужен!
 ```
 
-### ❌ Стандартная сериализация (упадёт без `Serializable`)
+#### ❌ Стандартная сериализация (упадёт без `Serializable`)
 
 ```java
 User user = new User(1L, "John", "secret123");
@@ -244,7 +246,7 @@ public class User implements Serializable {
 
 ---
 
-## 🔍 Как Jackson на самом деле работает
+### 🔍 Как Jackson на самом деле работает
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -262,9 +264,9 @@ public class User implements Serializable {
 
 ---
 
-## ⚠️ Когда они могут "пересекаться"
+### ⚠️ Когда они могут "пересекаться"
 
-### 1. **Класс реализует оба интерфейса (для разных целей)**
+#### 1. **Класс реализует оба интерфейса (для разных целей)**
 
 ```java
 public class User implements Serializable {
@@ -279,7 +281,7 @@ public class User implements Serializable {
 }
 ```
 
-### 2. **Кэширование с разными стратегиями**
+#### 2. **Кэширование с разными стратегиями**
 
 ```java
 @Service
@@ -301,7 +303,7 @@ public class UserService {
 }
 ```
 
-### 3. **Миграция со `Serializable` на JSON**
+#### 3. **Миграция со `Serializable` на JSON**
 
 ```java
 // Старый код (бинарная сериализация)
@@ -324,7 +326,7 @@ public class UserAdapter {
 
 ---
 
-## 📋 Чек-лист: что использовать?
+### 📋 Чек-лист: что использовать?
 
 ```
 □ Нужно передать данные через HTTP API?
@@ -348,7 +350,7 @@ public class UserAdapter {
 
 ---
 
-## 📌 Памятка
+### 📌 Памятка
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -370,7 +372,7 @@ public class UserAdapter {
 
 ---
 
-## 🚀 Итог
+### 🚀 Итог
 
 | Вопрос                                                       | Ответ                             |
 | ------------------------------------------------------------ | --------------------------------- |
@@ -383,17 +385,18 @@ public class UserAdapter {
 > 💡 **Практический совет:** Для 99% современных задач (REST API, микросервисы, кэширование) используйте **Jackson**. `Serializable` оставьте для специфических Java-интеграций.
 
 ---
-# ObjectMapper serialization criteria
-## ✅ Критерии для успешной сериализации через `ObjectMapper.writeValueAsString()`
 
-### 📌 Краткий ответ
+## ObjectMapper serialization criteria
+### ✅ Критерии для успешной сериализации через `ObjectMapper.writeValueAsString()`
 
-> Класс или record должен быть **инстанцируемым** и иметь **доступные для чтения свойства** (геттеры, публичные поля или конструктор с `@JsonProperty`).  
+#### 📌 Краткий ответ
+
+> Класс или record должен быть **инстанцируемым** и иметь **доступные для чтения свойства** (геттеры, публичные поля или конструктор с `@JsonProperty`).
 > **`Serializable` НЕ требуется.**
 
 ---
 
-## 📋 Основные требования
+### 📋 Основные требования
 
 | Требование | Класс | Record | Зачем нужно |
 |------------|-------|--------|-------------|
@@ -405,9 +408,9 @@ public class UserAdapter {
 
 ---
 
-## 🧩 Примеры
+### 🧩 Примеры
 
-### ✅ Минимальный рабочий класс
+#### ✅ Минимальный рабочий класс
 
 ```java
 public class User {
@@ -433,7 +436,7 @@ String json = mapper.writeValueAsString(new User(1L, "John"));
 // {"id":1,"name":"John"} ✅
 ```
 
-### ✅ Immutable класс с `@JsonProperty`
+#### ✅ Immutable класс с `@JsonProperty`
 
 ```java
 public class User {
@@ -455,7 +458,7 @@ public class User {
 }
 ```
 
-### ✅ Record (Java 14+, Jackson 2.12+)
+#### ✅ Record (Java 14+, Jackson 2.12+)
 
 ```java
 // ✅ Record работает из коробки (Jackson 2.12+)
@@ -471,9 +474,9 @@ User user = mapper.readValue(json, User.class); // ✅ тоже работает
 
 ---
 
-## ⚙️ Детали: как Jackson читает свойства
+### ⚙️ Детали: как Jackson читает свойства
 
-### 1. **По умолчанию (стандартная видимость)**
+#### 1. **По умолчанию (стандартная видимость)**
 
 ```java
 MapperFeature.DEFAULT_VIEW_INCLUSION = true
@@ -486,7 +489,7 @@ MapperFeature.DEFAULT_VIEW_INCLUSION = true
 | `private` поле без геттера | ❌ Нет |
 | `protected` / `package-private` | ❌ Нет (по умолчанию) |
 
-### 2. **Изменение видимости через `@JsonAutoDetect`**
+#### 2. **Изменение видимости через `@JsonAutoDetect`**
 
 ```java
 @JsonAutoDetect(
@@ -499,7 +502,7 @@ public class User {
 }
 ```
 
-### 3. **Явное указание через `@JsonProperty`**
+#### 3. **Явное указание через `@JsonProperty`**
 
 ```java
 public class User {
@@ -516,9 +519,9 @@ public class User {
 
 ---
 
-## ⚠️ Распространённые ошибки и решения
+### ⚠️ Распространённые ошибки и решения
 
-### ❌ Ошибка 1: Нет геттеров и нет публичных полей
+#### ❌ Ошибка 1: Нет геттеров и нет публичных полей
 
 ```java
 public class User {
@@ -543,7 +546,7 @@ public class User { ... }
 
 ---
 
-### ❌ Ошибка 2: Нет конструктора для десериализации
+#### ❌ Ошибка 2: Нет конструктора для десериализации
 
 ```java
 public class User {
@@ -571,7 +574,7 @@ mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_CONSTRUCTORS, true);
 
 ---
 
-### ❌ Ошибка 3: Циклические ссылки
+#### ❌ Ошибка 3: Циклические ссылки
 
 ```java
 public class User {
@@ -610,7 +613,7 @@ public class User { ... }
 
 ---
 
-### ❌ Ошибка 4: `null` значения в результате
+#### ❌ Ошибка 4: `null` значения в результате
 
 ```java
 public class User {
@@ -634,7 +637,7 @@ private String email;
 
 ---
 
-## 📊 Record vs Class: сравнение
+### 📊 Record vs Class: сравнение
 
 | Критерий | **Class** | **Record** |
 |----------|-----------|------------|
@@ -645,7 +648,7 @@ private String email;
 | **Код** | Больше (боилерплейт) | ✅ Минимум кода |
 | **Десериализация** | ⚠️ Требует настройки | ✅ Работает из коробки |
 
-### Пример: минимальный record
+#### Пример: минимальный record
 
 ```java
 // ✅ Всё, что нужно:
@@ -661,7 +664,7 @@ Order order = mapper.readValue(json, Order.class); // ✅
 
 ---
 
-## ⚙️ Настройка ObjectMapper для гибкости
+### ⚙️ Настройка ObjectMapper для гибкости
 
 ```java
 ObjectMapper mapper = new ObjectMapper();
@@ -685,7 +688,7 @@ mapper.enable(SerializationFeature.INDENT_OUTPUT);
 
 ---
 
-## 📋 Чек-лист: "Работает ли мой класс с Jackson?"
+### 📋 Чек-лист: "Работает ли мой класс с Jackson?"
 
 ```
 □ Класс не абстрактный? ✅
@@ -700,7 +703,7 @@ mapper.enable(SerializationFeature.INDENT_OUTPUT);
 
 ---
 
-## 📌 Памятка
+### 📌 Памятка
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -720,7 +723,7 @@ mapper.enable(SerializationFeature.INDENT_OUTPUT);
 
 ---
 
-## 🚀 Итог
+### 🚀 Итог
 
 | Вопрос | Ответ |
 |--------|-------|

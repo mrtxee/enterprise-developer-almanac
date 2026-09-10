@@ -13,7 +13,6 @@
 - Сложности с масштабированием
 - Блокировки при высокой нагрузке
 - Единая модель данных для всех сервисов
-    
 
 **Решение:**
 
@@ -41,7 +40,6 @@
 **Пример:**
 
 - `users_db` — OLTP (транзакции)
-    
 - `users_analytics_db` — OLAP (аналитика)
 
 ## ⚠️ Проблемы и решения
@@ -51,20 +49,22 @@
 **Solution:**
 
 - API composition pattern
-    
 - Кэширование данных
-    
 - Денормализация (копия нужных полей)
-    
 
 java
 
 // Вместо SQL JOIN делаем API вызовы
+
 public OrderDetails getOrderWithUser(Long orderId) {
+
     Order order = orderRepository.findById(orderId);
+
     User user = userServiceClient.getUser(order.getUserId());
+
     
     return new OrderDetails(order, user);
+
 }
 
 ### **Problem 2: Distributed transactions**
@@ -72,18 +72,17 @@ public OrderDetails getOrderWithUser(Long orderId) {
 **Solution:**
 
 - Saga pattern
-    
 - Event-driven architecture
-    
 - Compensating transactions
-    
 
 java
 
 // Saga pattern implementation
+
 @Saga
+
 public class OrderCreationSaga {
-    
+
     @StartSaga
     @SagaEventHandler(associationProperty = "orderId")
     public void handle(OrderCreatedEvent event) {
@@ -96,6 +95,7 @@ public class OrderCreationSaga {
         // 2. Process payment
         sagaManager.send(new ProcessPaymentCommand(event.getOrderId()));
     }
+
 }
 
 ### **Problem 3: Data consistency**
@@ -103,18 +103,21 @@ public class OrderCreationSaga {
 **Solution:**
 
 - Event sourcing
-    
 - Change data capture (CDC)
-    
 - Асинхронная репликация
-    
 
 sql
 
 -- CDC с помощью Debezium
+
 CREATE CONNECTOR user_cdc WITH (
+
     'connector.class' = 'io.debezium.connector.postgresql.PostgresConnector',
+
     'database.hostname' = 'user_db',
+
     'database.dbname' = 'user_service',
+
     'table.include.list' = 'public.users'
+
 );

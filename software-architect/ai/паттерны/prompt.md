@@ -1,12 +1,23 @@
+---
+aliases:
+  - agent
+  - ai
+  - prompt
+---
+
 **Как писать промты**
+
 $Task → Context → Example → Format$
+
  * Контекст может включать в себя роль *Напиши рецепт как шеф ресторана …*
- * Формат:  * $…\ using\ the\ slash-separated\ date\ format\ (DD/MM/YYYY)$
+ * Формат: * $…\ using\ the\ slash-separated\ date\ format\ (DD/MM/YYYY)$
 
 **Генерация изображений**
+
 Генерация изображений работает на основе **диффузии** – процесса вначале которого шум из пикселей, на каждом шаге которого шум превращается в изображение более подходящее промту.
 
- Отлично!  
+ Отлично!
+
 Вы хотите понять **три ключевых типа промтов**, которые критически важны при работе с LLM (большими языковыми моделями):
 
 1. ✅ **Zero-Shot Prompting**
@@ -29,10 +40,11 @@ $Task → Context → Example → Format$
 ```
 
 ### 🔧 Как работает:
-- Модель полагается на **предобученные знания**
-- Никаких подсказок не даётся
+* Модель полагается на **предобученные знания**
+* Никаких подсказок не даётся
 
 ### ✅ Преимущества:
+
 | Плюс | Объяснение |
 |------|------------|
 | ✅ Кратко | Не нужно писать много |
@@ -40,8 +52,8 @@ $Task → Context → Example → Format$
 | ✅ Экономит токены | Важно в API с лимитами |
 
 ### ❌ Ограничения:
-- Может ошибаться в сложных логических задачах
-- Не всегда следует формату
+* Может ошибаться в сложных логических задачах
+* Не всегда следует формату
 
 ---
 
@@ -68,14 +80,14 @@ $Task → Context → Example → Format$
 → LLM ответит: `order_type=service`
 
 ### ✅ Почему лучше?
-- Модель учится по аналогии
-- Лучше соблюдает формат
-- Работает даже если никогда не видела такую задачу
+* Модель учится по аналогии
+* Лучше соблюдает формат
+* Работает даже если никогда не видела такую задачу
 
 ### 📌 Используйте, когда:
-- Нужен строгий формат
-- Задача нетипичная
-- Вы хотите избежать ошибок
+* Нужен строгий формат
+* Задача нетипичная
+* Вы хотите избежать ошибок
 
 ---
 
@@ -86,12 +98,14 @@ $Task → Context → Example → Format$
 ### 💡 Пример:
 
 ❌ Без CoT:
+
 ```text
 Если у Ани было 5 яблок, она отдала 2, потом взяла ещё 3. Сколько теперь?
 → 6
 ```
 
 ✅ С CoT:
+
 ```text
 Рассуждай шаг за шагом:
 1. У Ани было 5 яблок.
@@ -107,14 +121,15 @@ $Task → Context → Example → Format$
 ### 🔧 Как работает CoT?
 
 LLM:
+
 1. Разбивает задачу на шаги
 2. Анализирует каждый
 3. Делает вывод
 
 > ✅ Особенно важно для:
-- Математики
-- Логики
-- Алгоритмических задач
+* Математики
+* Логики
+* Алгоритмических задач
 
 ---
 
@@ -184,22 +199,23 @@ LLM:
 | **Few-Shot** | Когда нужен конкретный формат |
 | **Chain-of-Thought** | Для логики, математики, анализа |
 
-> 💬 _“The best prompt is the one that makes the model think.”_
+> 💬 *“The best prompt is the one that makes the model think.”*
 
 ---
 
 ## 📚 Где учиться дальше?
 
-- [Prompt Engineering Guide](https://www.promptengineering.org/)
-- YouTube: *“Chain of Thought Explained”* — James Briggs
-- Paper: *"Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"* — Google (2022)
-- Book: *“Building LLM-Powered Applications”*
+* [Prompt Engineering Guide](https://www.promptengineering.org/)
+* YouTube: *“Chain of Thought Explained”* — James Briggs
+* Paper: *"Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"* — Google (2022)
+* Book: *“Building LLM-Powered Applications”*
 
 ---
 
-✅ **Теперь вы знаете:**  
+✅ **Теперь вы знаете:**
+
 Как правильно говорить с LLM — чтобы получить **точный, логичный и предсказуемый ответ**
 
 📌 Сохраните эту шпаргалку — она станет основой вашего AI-проекта.
 
-> 🧠 _"Give it context. Give it structure. Get intelligence."_
+> 🧠 *"Give it context. Give it structure. Get intelligence."*

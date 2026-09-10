@@ -1,4 +1,4 @@
-**Kibana** и **[[Grafana]]** — это два популярных инструмента визуализации, но они созданы для разных целей.  
+**Kibana** и **[[Grafana]]** — это два популярных инструмента визуализации, но они созданы для разных целей.
 
 ## ✅ Краткий ответ:
 
@@ -16,15 +16,15 @@
 | **Стоимость**                | Бесплатная версия + платные фичи (Elastic Cloud) | Grafana Cloud — Freemium                                                    |
 | **Open Source**              | Да, но Elastic изменила лицензию (SSPL)          | Да — Apache 2.0                                                             |
 
-> 🔑 **Kibana = "Найти любой лог"**  
+> 🔑 **Kibana = "Найти любой лог"**
 > **Grafana = "Покажи мне графики CPU, latency, ошибки"**
 
 ---
 
 ## ✅ 1. Что такое Kibana?
 
-> **Kibana** — это **визуализационный интерфейс для Elasticsearch** (или OpenSearch).  
-> Создана компанией Elastic, как часть **[[ELK]]-стека**:  
+> **Kibana** — это **визуализационный интерфейс для Elasticsearch** (или OpenSearch).
+> Создана компанией Elastic, как часть **[[ELK]]-стека**:
 > `Elasticsearch` → `Logstash/Filebeat` → `Kibana`
 
 ### 💡 Основные возможности:
@@ -45,7 +45,7 @@
 
 ## ✅ 2. Что такое Grafana?
 
-> **Grafana** — это **платформа для визуализации и анализа метрик**.  
+> **Grafana** — это **платформа для визуализации и анализа метрик**.
 > Работает с **любым источником данных**.
 
 ### 💡 Основные возможности:
@@ -56,7 +56,7 @@
 - Multi-source: один дашборд → из 3 источников
 
 ### 📊 Где используется?
-- Мониторинг [[software-engineer/технологии/kubernetes/Kubernetes]] (CPU, memory, pod restarts)
+- Мониторинг [[kubernetes]] (CPU, memory, pod restarts)
 - Наблюдаемость ([[Observability]])
 - CI/CD pipeline dashboards
 
@@ -99,7 +99,8 @@ graph TD
     style F fill:#f0b34d,stroke:#fff,color:#fff
 ```
 
-→ **Kibana** — для поиска ошибок в логах  
+→ **Kibana** — для поиска ошибок в логах
+
 → **Grafana** — для просмотра нагрузки, p95, CPU
 
 ---
@@ -153,14 +154,14 @@ graph LR
 | **Для Product**     | ❌                         | ✅ Дашборды, аналитика    |
 | **Best for**        | Поиск в логах             | Мониторинг и алерты      |
 
-> 💬 _“Use Kibana when you need to find a needle in the haystack.”_  
+> 💬 _“Use Kibana when you need to find a needle in the haystack.”_
 > _“Use Grafana when you want to see the health of the entire stack.”_
 
 ---
 
-✅ **Не выбирайте “один или другой”.**  
+✅ **Не выбирайте “один или другой”.**
+
 Выбирайте **по задаче**.
 
-> 🔹 **Kibana — ваш детектив.**  
+> 🔹 **Kibana — ваш детектив.**
 > 🔹 **Grafana — ваш доктор.**
-

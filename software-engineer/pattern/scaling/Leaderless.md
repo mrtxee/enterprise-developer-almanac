@@ -3,6 +3,7 @@ aliases:
   - Leaderless
   - Leaderless-архитектура
 ---
+
 **Leaderless-архитектура** — это **современный подход к построению распределённых систем**, в котором **нет центрального управляющего узла (лидера)**. В отличие от традиционных архитектур с лидером (например, Raft, Paxos), здесь **все узлы равны**.
 
 ---
@@ -12,6 +13,7 @@ aliases:
 > **Leaderless-архитектура** — это система, где **никакой узел не является "мастером" или "координатором"**, и каждый может принимать запросы на чтение/запись.
 
 Вместо одного лидера, который управляет согласованием, используется **децентрализованная логика**:
+
 - Кворумы
 - Версионирование данных
 - Сравнение версий (vector clocks, version vectors)
@@ -43,6 +45,7 @@ aliases:
 Допустим, у вас 5 узлов (`N = 5`)
 
 Вы устанавливаете:
+
 - `W = 3` — нужно **3 подтверждения записи**
 - `R = 3` — нужно **3 узла для чтения**
 
@@ -58,7 +61,8 @@ graph LR
     G --> H[Узел D]
 ```
 
-→ Запись считается успешной, если **3 из 5** ответили `OK`  
+→ Запись считается успешной, если **3 из 5** ответили `OK`
+
 → Чтение — если **3 из 5** дали одинаковый ответ
 
 > Если есть **конфликт** (разные версии) — клиент решает, какую взять (last write wins, merge strategy).
@@ -91,7 +95,7 @@ DynamoDB — одна из первых систем, реализующих lea
 - Конфликты: через vector clocks
 - Чтение: с 2 узлов → если разные — клиент получает обе версии → должен решить, какую оставить
 
-> ✅ **Нет single point of failure**  
+> ✅ **Нет single point of failure**
 > ✅ **Можно писать даже при частичном отказе сети**
 
 ---
@@ -167,7 +171,7 @@ INSERT INTO users(id, name) VALUES (1, 'Alice');
 
 ## ✅ Финальный вывод
 
-> **Leaderless-архитектура — это когда вы говорите:**  
+> **Leaderless-архитектура — это когда вы говорите:**
 > _«Никто не командует. Мы договорились сами.»_
 
 > Она отлично подходит:
@@ -192,25 +196,29 @@ INSERT INTO users(id, name) VALUES (1, 'Alice');
 ## 📚 Где учиться дальше?
 
 - 📘 [Amazon Dynamo Paper](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf)
-- Book: *“Designing Data-Intensive Applications”* — Martin Kleppmann
-- YouTube: *“Leaderless Architecture Explained”* — TechWorld with Nana
+- Book: _“Designing Data-Intensive Applications”_ — Martin Kleppmann
+- YouTube: _“Leaderless Architecture Explained”_ — TechWorld with Nana
 - Docs: [Apache Cassandra](https://cassandra.apache.org/), [AWS DynamoDB](https://aws.amazon.com/dynamodb/)
 
 ---
 
-✅ **Leaderless-архитектура — выбор тех, кто ставит доступность выше согласованности.**  
+✅ **Leaderless-архитектура — выбор тех, кто ставит доступность выше согласованности.**
+
 Она позволяет системам **работать почти всегда**, даже если мир вокруг рушится.
 
 > 💡 **Не просто "не имеет лидера". Она не нуждается в нём.**
 
-# multi-master vs leaderless
-Отличный и тонкий вопрос!  
-**Leaderless** и **Multi-Master** — это **близкие, но не одинаковые понятия**.  
+## multi-master vs leaderless
+
+Отличный и тонкий вопрос!
+
+**Leaderless** и **Multi-Master** — это **близкие, но не одинаковые понятия**.
+
 Они оба означают, что **запись возможна на нескольких узлах**, но **отличаются по архитектуре, согласованности и поведению при конфликтах**.
 
 ---
 
-## ✅ Краткий ответ:
+### ✅ Краткий ответ:
 
 | Характеристика                           | **Multi-Master**                                    | **Leaderless**                                |
 | ---------------------------------------- | --------------------------------------------------- | --------------------------------------------- |
@@ -221,22 +229,22 @@ INSERT INTO users(id, name) VALUES (1, 'Alice');
 | **Примеры**                              | MySQL Cluster, PostgreSQL BDR, Oracle RAC           | DynamoDB, Cassandra, Riak                     |
 | **Кто решает, кто лидер?**               | Иногда есть временный координатор                   | ❌ Никто — нет лидера                          |
 
-> 🔑 **Multi-Master может быть leaderless, но не обязан.**  
+> 🔑 **Multi-Master может быть leaderless, но не обязан.**
 > **Leaderless — это частный случай Multi-Master с максимальной децентрализацией.**
 
 ---
 
-## ✅ 1. Что такое **Multi-Master Replication**?
+### ✅ 1. Что такое **Multi-Master Replication**?
 
-### 🔹 Определение:
+#### 🔹 Определение:
 > **Multi-Master** — это архитектура, где **несколько узлов могут принимать операции записи**, в отличие от классического Master-Slave.
 
-### 💡 Пример:
+#### 💡 Пример:
 - Узел A → принимает `INSERT`
 - Узел B → принимает `UPDATE`
 - Оба рассылают изменения другим
 
-### 🔄 Как работает:
+#### 🔄 Как работает:
 ```mermaid
 graph LR
     A[Master A] <--> B[Master B]
@@ -247,14 +255,14 @@ graph LR
 
 → Данные реплицируются между мастерами (например, через binlog)
 
-### ✅ Преимущества:
+#### ✅ Преимущества:
 - Высокая доступность
 - Можно писать ближе к пользователю
 - Лучше масштабируется по записи
 
-### ⚠️ Недостатки:
+#### ⚠️ Недостатки:
 - Возможны **конфликты**
-- Требуется **механизм разрешения**:  
+- Требуется **механизм разрешения**:
   - Last Write Wins (LWW)
   - Application-level merge
   - Timestamp-based resolution
@@ -265,19 +273,20 @@ graph LR
 
 ---
 
-## ✅ 2. Что такое **Leaderless Architecture**?
+### ✅ 2. Что такое **Leaderless Architecture**?
 
-### 🔹 Определение:
+#### 🔹 Определение:
 > **Leaderless** — это архитектура, где **нет ни одного лидера**, **нет центрального координатора**, и **все узлы равноправны**.
 
 Работает на основе:
+
 - **Quorum** (`W + R > N`)
 - **Vector Clocks / Version Vectors**
 - **Gossip Protocol**
 - **Hinted Handoff**
 - **Read Repair**
 
-### 💡 Пример: AWS DynamoDB, Apache Cassandra
+#### 💡 Пример: AWS DynamoDB, Apache Cassandra
 
 ```mermaid
 graph TD
@@ -292,13 +301,15 @@ graph TD
     style NodeA,B,C,D,E,F fill:#dfe9f5,stroke:#000
 ```
 
-→ Любой узел может принять запись  
-→ Использует **quorum** и **eventual consistency**  
+→ Любой узел может принять запись
+
+→ Использует **quorum** и **eventual consistency**
+
 → Конфликты решает **клиент**
 
 ---
 
-## 🆚 Подробное сравнение
+### 🆚 Подробное сравнение
 
 | Критерий | **Multi-Master** | **Leaderless** |
 |----------|------------------|---------------|
@@ -315,9 +326,9 @@ graph TD
 
 ---
 
-## ✅ Визуальное сравнение
+### ✅ Визуальное сравнение
 
-### Multi-Master:
+#### Multi-Master:
 ```mermaid
 graph LR
     A[Master A] <--> B[Master B]
@@ -325,11 +336,13 @@ graph LR
     B --> D[Slave B]
 ```
 
-→ Мастера общаются напрямую  
-→ Есть протокол репликации  
+→ Мастера общаются напрямую
+
+→ Есть протокол репликации
+
 → Может быть **временный координатор**
 
-### Leaderless:
+#### Leaderless:
 ```mermaid
 graph LR
     A[Cassandra Node]
@@ -343,35 +356,38 @@ graph LR
     D -- Gossip --> A
 ```
 
-→ Нет главного узла  
-→ Все узлы обмениваются данными «по слухам»  
+→ Нет главного узла
+
+→ Все узлы обмениваются данными «по слухам»
+
 → Клиент выбирает, куда писать
 
 ---
 
-## ✅ Пример: Запись в Multi-Master vs Leaderless
+### ✅ Пример: Запись в Multi-Master vs Leaderless
 
-### Сценарий:  
+#### Сценарий:
+
 Пользователь A и B одновременно меняют профиль
 
-#### 🔹 Multi-Master (MySQL Cluster):
+##### 🔹 Multi-Master (MySQL Cluster):
 - Оба пишут → система сравнивает `timestamp`
 - Если конфликт → использует **встроенный механизм разрешения**
 - Результат: `last write wins`
 
-#### 🔹 Leaderless (Cassandra):
-- Узел A: `name = Alice`, version = 1, timestamp = T1  
-- Узел B: `name = Alisa`, version = 1, timestamp = T2  
+##### 🔹 Leaderless (Cassandra):
+- Узел A: `name = Alice`, version = 1, timestamp = T1
+- Узел B: `name = Alisa`, version = 1, timestamp = T2
 - Клиент читает → получает **обе версии**
 - Клиент должен **решить**, какую оставить
 - Или использовать `LWW`
 
-> ✅ **Leaderless передаёт ответственность клиенту**  
+> ✅ **Leaderless передаёт ответственность клиенту**
 > ✅ **Multi-Master может решить сам**
 
 ---
 
-## ✅ Когда использовать каждый?
+### ✅ Когда использовать каждый?
 
 | Сценарий | Рекомендация |
 |----------|--------------|
@@ -386,7 +402,7 @@ graph LR
 
 ---
 
-## ✅ Финальный вывод
+### ✅ Финальный вывод
 
 | | **Multi-Master** | **Leaderless** |
 |--|------------------|----------------|
@@ -400,14 +416,14 @@ graph LR
 
 ---
 
-## 💬 Цитата из Dynamo Paper:
+### 💬 Цитата из Dynamo Paper:
 
-> _“We are moving away from master-slave replication towards a more peer-to-peer system.”_  
+> _“We are moving away from master-slave replication towards a more peer-to-peer system.”_
 > — Amazon Dynamo
 
 ---
 
-## ✅ Итог: Главное отличие
+### ✅ Итог: Главное отличие
 
 | Вопрос | Ответ |
 |--------|-------|
@@ -419,19 +435,21 @@ graph LR
 
 ---
 
-## 📚 Где учиться дальше?
+### 📚 Где учиться дальше?
 
 - [Amazon Dynamo Paper](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf)
-- Book: *“Designing Data-Intensive Applications”* — Martin Kleppmann
+- Book: _“Designing Data-Intensive Applications”_ — Martin Kleppmann
 - Docs: [Apache Cassandra](https://cassandra.apache.org/)
-- YouTube: *“Leaderless Architecture Explained”* — TechWorld with Nana
+- YouTube: _“Leaderless Architecture Explained”_ — TechWorld with Nana
 
 ---
 
-✅ **Leaderless — когда вы говорите:**  
+✅ **Leaderless — когда вы говорите:**
+
 > _«Нам не нужен командир. Мы договоримся сами.»_
 
 А **Multi-Master** — это:
+
 > _«У нас несколько командиров. Но они всё равно советуются.»_
 
 Выбирайте осознанно — в зависимости от требований к **согласованности**, **задержкам**, **географии** и **сложности**.

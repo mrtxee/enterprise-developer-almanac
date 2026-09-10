@@ -1,7 +1,7 @@
 ---
 aliases:
-  - Токенизация
   - Tokenization
+  - Токенизация
 ---
 ## Токенизация (Tokenization)
 

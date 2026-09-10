@@ -1,8 +1,12 @@
->[!info] `java.lang.reflect`
-# рефлесия
+> [!info] `java.lang.reflect`
+## рефлесия
+
 Рефлексия Java — это механизм, который позволяет разработчику вносить изменения и получать информацию о классах, интерфейсах, полях и методах во время выполнения, не зная их имен при этом.
+
 Reflection API также помогает создавать новые экземпляры классов, вызывать методы и получать или устанавливать значения полей.
+
 Недостатки
+
 - низкая производительность
 - прореха в безопасности
 ```Java
@@ -18,13 +22,16 @@ Class<?> clazz = null;
   }
 };
 ```
-# class Class
->[!info] `import java.lang.Class`
->`implements java.io.Serializable, GenericDeclaration, Type, AnnotatedElement, TypeDescriptor.OfField<Class<?>>, Constable`
+## class Class
+> [!info] `import java.lang.Class`
+> `implements java.io.Serializable, GenericDeclaration, Type, AnnotatedElement, TypeDescriptor.OfField<Class<?>>, Constable`
 
 Instances of the class Class represent **classes** and **interfaces** in a running Java application. An **enum** class and a **record** class are kinds of class; an annotation interface is a kind of interface. Every **array** also belongs to a class that is reflected as a Class object that is shared by all arrays with the same element type and number of dimensions. The **primitive Java types** (boolean, byte, char, short, int, long, float, and double), and the keyword **void** are also represented as Class objects.
+
 Class object is constructed automatically by the Java Virtual Machine when a class is derived from the bytes of a class file
+
 Основные методы
+
 ```Java
 String getName(); // Возвращает название класса
 int getModifiers(); // Возвращает модификаторы доступа
@@ -46,7 +53,7 @@ getCanonicalName() // возвращает каноническое имя ба�
 getSimpleName() // возвращает простое имя базового класса, как указано в исходном коде. Возвращает пустую строку, если базовый класс является анонимным.
 getTypeName() // возвращает информативную строку для имени этого типа.
 ```
-## Получение класса объекта
+### Получение класса объекта
 ```Java
 // .forName()
 try {
@@ -59,10 +66,14 @@ Class aClass = Person.class;
 //object.getClass().
 Class aClass = person.getClass();
 ```
-## Получение методов класса
+### Получение методов класса
+
 `import java.lang.reflect.Method`
+
 `Method[] getDeclaredMethods()` возвращает массив всех объявленных методов класса.
+
 `Method[] getMethods()` возвращает массив всех объявленных методов класса а так же методы унаследованые от суперклассов и суперинтерфейсов.
+
 ```Java
 final Method[] declaredMethods = Number.class.getDeclaredMethods();
         List<String> actualMethodNames = getMethodNames(declaredMethods);
@@ -72,6 +83,8 @@ private static List<String> getMethodNames(Method[] methods) {
                 .map(Method::getName)
                 .collect(Collectors.toList());
 ```
-## Получение полей класса
+### Получение полей класса
+
 `import java.lang.reflect.Field`
+
 Методы `Field[] getFields()`, `Field[] getDeclaredFields()` и `Field getField(String name)`используются для получения полей класса.

@@ -1,25 +1,25 @@
 
 
-# DDD Context Map vs 4C Context Map
+## DDD Context Map vs 4C Context Map
 
 **[[4C|4C]] Context Map** и **[[Domain-Driven Design|DDD]] Context Map** — это **две разные диаграммы**, хотя обе используются для визуализации бизнес-контекстов.
 
 ---
 
-## ✅ 1. Что такое DDD Context Map?
+### ✅ 1. Что такое DDD Context Map?
 
 > **DDD Context Map (Domain-Driven Design)** — это диаграмма, созданная **Эриком Эвансом** для визуализации **бизнес-контекстов (bounded contexts)** и их взаимодействий.
 
-### 🔧 Основные элементы:
+#### 🔧 Основные элементы:
 - **Bounded Contexts** — границы ответственности
 - **Типы взаимодействий**: Customer-Supplier, Conformist, ACL, Open Host Service и др.
 - **Фокус**: на **архитектуре, границах, коммуникации между командами**
 
-### 💡 Пример: `Order Processing` ↔ `User Management`
+#### 💡 Пример: `Order Processing` ↔ `User Management`
 
 ---
 
-## ✅ 2. Что такое 4C Context Map?
+### ✅ 2. Что такое 4C Context Map?
 
 > **4C Context Map** — это **диаграмма из книги "The Art of Business Analysis" (Майкл Браун)**, которая показывает **четыре типа контекста**:
 
@@ -30,7 +30,7 @@
 | **Collaboration** | Сотрудничество | Другие подразделения внутри компании |
 | **Competition** | Конкуренция | Конкуренты, рынки, угрозы |
 
-### 💡 Пример:
+#### 💡 Пример:
 - **Core**: Обработка заказов
 - **Context**: Платёжные шлюзы (Stripe, PayPal)
 - **Collaboration**: Отдел маркетинга
@@ -38,7 +38,7 @@
 
 ---
 
-## ✅ Сравнение: DDD Context Map vs 4C Context Map
+### ✅ Сравнение: DDD Context Map vs 4C Context Map
 
 | Критерий | **DDD Context Map** | **4C Context Map** |
 |----------|---------------------|--------------------|
@@ -52,7 +52,7 @@
 
 ---
 
-## ✅ Когда использовать?
+### ✅ Когда использовать?
 
 | Сценарий | Рекомендация |
 |----------|--------------|
@@ -63,24 +63,25 @@
 
 ---
 
-## ✅ Финальный вывод
+### ✅ Финальный вывод
 
-> ✅ **DDD Context Map** — это **техническая диаграмма** для разработчиков.  
+> ✅ **DDD Context Map** — это **техническая диаграмма** для разработчиков.
 > ✅ **4C Context Map** — это **стратегическая диаграмма** для бизнес-аналитиков.
 
 > 💬 _“DDD tells you how to build software. 4C tells you what business to build.”_
 
 ---
 
-## 📚 Где учиться дальше?
+### 📚 Где учиться дальше?
 
-- Book: *“Domain-Driven Design”* — Eric Evans  
-- Book: *“The Art of Business Analysis”* — Michael Brown  
-- YouTube: *“DDD Context Maps Explained”* — TechWorld with Nana
+- Book: _“Domain-Driven Design”_ — Eric Evans
+- Book: _“The Art of Business Analysis”_ — Michael Brown
+- YouTube: _“DDD Context Maps Explained”_ — TechWorld with Nana
 
 ---
 
-✅ **Теперь вы знаете:**  
+✅ **Теперь вы знаете:**
+
 Какие различия между двумя картами — и когда выбирать каждую.
 
 📌 Сохраните эту таблицу — она станет вашей **картой анализа бизнеса и архитектуры**.

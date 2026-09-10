@@ -1,8 +1,11 @@
 > [!info] `java.util.Collection`
 
-# Структура **Java Collection Framework**
+## Структура **Java Collection Framework**
+
 `import java.util.Collection` — **Java Collection Framework**
+
 Java Collection — это фреймворк, который обеспечивает унифицированную архитектуру для управления групповыми структурами данных
+
 - Java Collection Framework включена в JDK
 - Java Collection Framework представляет собой иерархию интерфейсов и классов.
 
@@ -133,14 +136,17 @@ direction RL
 	classDef interfaceType :,fill:#E6F7FF,stroke:#1976D2,color:#0d3054,stroke-width:2px,stroke-dasharray: 5 5
 	classDef regularType :,fill:#F8FAFF,stroke:#3D5A80,stroke-width:1.5px
 ```
-    
+
 - `Collection` и `Map` разделают все коллекции, входящие во фреймворк по типу хранения данные: линейные наборы данных и наборы типа ключ-значение (словари).
-    
+
 ![[attachments/Untitled 12 3.png|Untitled 12 3.png]]
-# interface Map
+
+## interface Map
+
 базовые методы для работы с данными вида «ключ — значение». Которые выражены через интефейс `interface Entry<K, V>`
+
 - Основные методы:
-    
+
     ```Java
     V get(Object key);
     V put(K key, V value);
@@ -165,10 +171,13 @@ direction RL
     ofEntries()
     entry()
     ```
-    
-## class HashMap
+
+### class HashMap
+
 `extends AbstractMap<K,V>` `implements Map<K,V>, Cloneable, Serializable`
+
 This implementation provides constant-time performance for the basic operations (get and put). It is unsynchronized and permits nulls.
+
 - операции поиска и модификации за константное время, при условии что распределение по бакетам ==**buckets**== близкое к равномерному
 - Элементы хранятся в случайном порядке.
 - Небезопасная структура для потоков. Можно обернуть в synchronizedMap, чтобы решить проблему.
@@ -193,22 +202,31 @@ This implementation provides constant-time performance for the basic operations 
         1. вычисляем индекс бакета, в котором элемент может содержаться. Берем хешкод ключа, пропускаем через int HashMap.hash(Object key), применяем лоигческое и к значению хэша И количество индексов бакетов. После
             1. ?если в бакете пусто - возвращаем null?
             2. если в бакете список или дерево, рекурсивно обходим, на каждом шаге выполняем сравнение: hashCode(). Если hashCode() совпал, тогда сравниваем ключи по equals(). Возвращаем результат. Если в бакете 1 элемент - проводим такое же сравнение.
-### HashMap vs Hashtable?
+#### HashMap vs Hashtable?
 - Hashtable — потокобезопасный, а HashMap нет.
-## class LinkedHashMap
+### class LinkedHashMap
+
 `extends HashMap<K,V>` `implements Map<K,V>`
+
 LinkedHashMap provides constant-time performance for the basic operations (add, contains and remove), assuming the hash function disperses elements properly among the buckets.
+
 - элементы хранятся в порядке добавления.
 - операции поиска и модификации за константное время
-## interface SortedMap
+### interface SortedMap
+
 `extends Map<K,V>`
+
 В интерфейсе появился компаратор
+
 ```Java
 Comparator<? super K> comparator();
 ```
-## interface NavigableMap
+### interface NavigableMap
+
 `extends SortedMap<K,V>`
+
 Появились методы работы с последовательностью
+
 ```Java
 lowerEntry()
 lowerKey()
@@ -232,24 +250,36 @@ subMap()
 headMap()
 tailMap()
 ```
-## class TreeMap
+### class TreeMap
+
 `extends AbstractMap<K,V>` `implements NavigableMap<K,V>, Cloneable, Serializable`
+
 Основные операции (containsKey(), get(), put() and remove()) работают за логарифмическое время. Algorithms are adaptations of those in _**Cormen**_, Leiserson, and Rivest's Introduction to Algorithms.
+
 Элементы хранятся в заданном порядке. Должны быть `Comparable`, либо `Comparator`.
-## class Hashtable
+
+### class Hashtable
+
 `extends Dictionary<K,V>` `implements Map<K,V>, Cloneable, Serializable`
+
 Has two parameters that affect its performance: `**initialCapacity**` and `**loadFactor**`
+
 Load factor (.75) offers a good tradeoff between time and space costs. Higher values decrease the space overhead but increase the time cost to look up an entry.
+
 The initial capacity controls a tradeoff between wasted space and the need for rehash operations, which are time-consuming.
+
 ```Java
 Hashtable()
 Hashtable(int initialCapacity, float loadFactor)
 ```
-# interface Collection
+## interface Collection
+
 `extends Iterable<E>` `import java.util.Collection`
+
 Корневой интерфейс для последовательных коллекций
+
 - Включает методы
-    
+
     ```Java
     boolean add(E e)
     boolean addAll(Collection c) // добавить к одной коллекции другую
@@ -276,11 +306,15 @@ Hashtable(int initialCapacity, float loadFactor)
     stringCollection.add("world");
     System.out.println("Number of elements: " + stringCollection.size());
     ```
-    
-## interface List
+
+### interface List
+
 `interface List<E> extends Collection<E>`
+
 Упорядоченная коллекция элементов.
+
 **У всех элементов коллекции есть индекс.** Поэтому добавились, которые позволяеют обращаться через индекс элемента
+
 ```Java
 Object set(int index, Object o)
 Object get(int index)
@@ -291,32 +325,49 @@ Object getIndex(int index)
 Object remove(int index)
 ListIterator listIterator()
 ```
-### class LinkedList
+#### class LinkedList
+
 `extends AbstractSequentialList<E>` `implements List<E>, Deque<E>, Cloneable, Serializable`
+
 Основан на двунаправленном связном списке. Поэтому добавление, удаление происходит за константу, а поиск за линейное время. Так как связный список состоит из сущности с полями: значение, ссылка на след сущность. Позволяет хранить фрагментированные данные.
-### class ArrayList
+
+#### class ArrayList
+
 `extends AbstractList<E>` `implements List<E>, RandomAccess, Cloneable, Serializable`
+
 Основан на массиве. Хорошо, то что константное время поиска. Плохо, что при заполнении массива, создается новый в полтора раза больше. Объект массива храниться в памяти единым блоком. Поэтому плохой вариант, для ситуации с дефицитом памяти.
 
 |                | Поиск   | Добавление | Удаление |
 | -------------- | ------- | ---------- | -------- |
 | **LinkedList** | O(n)    | O(1) ✔️    | O(1) ✔️  |
 | **ArrayList**  | O(1) ✔️ | O(n)       | O(n)     |
-### class Vector (deprecated)
+
+#### class Vector (deprecated)
+
 `extends AbstractList` `implements List, RandomAccess, Cloneable, Serializable`
+
 Потокобезопасный ArrayList. Блокировка объекта для других потоков, когда обращение к Vector. Медленее добавление, удаление объектов.
-### class Stack (deprecated)
+
+#### class Stack (deprecated)
+
 `extends Vector` `java.util.Stack`
+
 Реализация стэка (”стопка бумаг”, модель LIFO). Добавились методы:
+
 ```Java
 E push(E item) // добваить в верх голову
 E peek() // показать верхний элемент, без удаления из стека
 E pop() // выдать верхний элемент с удалением из стека
 ```
+
 Устарел. Рекомендуется использовать **Deque**.
-## interface Queue
+
+### interface Queue
+
 `extends Collection<E>`
+
 Очередь FIFO
+
 ```Java
 boolean add(E e);
 boolean offer(E e); //добавить элемент, если возможно.
@@ -325,15 +376,20 @@ E poll(); // то же что и remove(), только null вместо NoSuch
 E element(); // получить эл из головы, но не удалить из очереди
 E peek(); // то же что и element(), только null вместо NoSuchElementException
 ```
-### class PriorityQueue
+#### class PriorityQueue
+
 `extends AbstractQueue implements Queue` `implements Serializable`
+
 - позволяет делать сортировку элементов.
     - все элементы должны быть comparable
 - добавление, удаление элементов на логарифмическое время (`balanced binary heap`)
 - чтение за константу, так как реализация но основе массива
-### interface Dequeue
+#### interface Dequeue
+
 `extends Queue<E>`
+
 Двусторонная очередь, которая позволяет реализовать LIFO и FIFO. Рекомендуется исползовать вместое устаревшего Stack. Добавились методы:
+
 ```Java
 void addFirst(E e);
 void addLast(E e);
@@ -352,9 +408,9 @@ boolean removeLastOccurrence(Object o);
 Iterator<E> iterator();
 Iterator<E> descendingIterator(); // возвращает элементы в порядке от хвоста к голове.
 ```
-### class LinkedList
+#### class LinkedList
 - [[java.util.Collection]]
-    
+
     ```Java
     Queue<String> que = new LinkedList<>();
     que.offer("first");
@@ -364,36 +420,50 @@ Iterator<E> descendingIterator(); // возвращает элементы в п
     System.out.println(que.poll()); // second
     System.out.println(que.poll()); // null
     ```
-    
-### class ArrayDeque
+
+#### class ArrayDeque
+
 `extends AbstractCollection<E>` `implements Deque<E>, Cloneable, Serializable`
+
 Реализация двусторонней очереди, основанная на массиве.
+
 - быстрее чем Stack, если используется как LIFO
 - быстрее чем LinkedList, если используется как FIFO
-## interface Set
+### interface Set
+
 `extends Collection<E>`
+
 Неупорядоченное множество элементов. Дубли запрещены. Аналог математического множества. Получать объекты можно только через `**Iterator**`.
+
 ```Java
 Object[] toArray();
 <E> Set<E> of() // Returns an unmodifiable set containing zero elements.
 ```
-### class HashSet
+#### class HashSet
+
 `extends AbstractSet<E>` `implements Set<E>, Cloneable, Serializable`
+
 Основноые операции (add, remove, contains and size) выполняеются за константное время.
-  
+
 ```Java
 static <T> HashSet<T> newHashSet(int numElements)
 HashSet(int initialCapacity, float loadFactor)
 ```
-### class LinkedHashSet
+#### class LinkedHashSet
+
 `extends HashSet<E>` `implements Set<E>, Cloneable, Serializable`
+
 Множество, в котором сохраняется порядок элементов согласно очередности добавления. Базовый операции выполняются за константное время. (add, contains and remove)
+
 ```Java
 LinkedHashSet(int initialCapacity, float loadFactor)
 ```
-### interface SortedSet
+#### interface SortedSet
+
 `extends Set<E>`
+
 Упорядоченной множество элементов. Элементы реализуют интерфейс `Comparable` или указан `Comparator`.
+
 ```Java
 E first(); // returs highest element in the set
 E last(); // returs lowest element in the set
@@ -401,9 +471,12 @@ SortedSet<E> subSet(E fromElement, E toElement);
 SortedSet<E> headSet(E toElement); // Returns a view of the portion of this set whose elements are greater than or equal to fromElement
 SortedSet<E> tailSet(E fromElement);
 ```
-### interface NavigableSet
+#### interface NavigableSet
+
 `extends SortedSet<E>`
+
 Упорядоченное множество с возможностью менять направление сортировки.
+
 ```Java
 E floor(E e) // returns element >= e
 E ceiling(E e) // returns element >  e
@@ -412,10 +485,15 @@ E pollLast()
 NavigableSet<E> descendingSet() // Returns a reverse order view of this set
 Iterator<E> descendingIterator()
 ```
+
 `descendingSet()` возвращает вид view, т.е. не копию множества, а ссылки на объекты множества в обратном порядке. При изменении элементов вида, меняются элменты множества.
-### class TreeSet
+
+#### class TreeSet
+
 `extends AbstractSet<E>` `implements NavigableSet<E>, Cloneable, Serializable`
+
 В основе лежат красночерные деревья ==RBTree==. А значит получаем логарифмическую сложность для основных операций (add, remove and contains).
+
 ```Java
 @Test
 public void whenUsingTailSet_shouldReturnTailSetElements() {
@@ -424,7 +502,7 @@ public void whenUsingTailSet_shouldReturnTailSetElements() {
     assertEquals(subSet, treeSet.subSet(3, true, 6, true));
 }
 ```
-# Iterator vs ListIterator vs Spliterator
+## Iterator vs ListIterator vs Spliterator
 
 Сравнительная таблица
 
@@ -437,7 +515,9 @@ public void whenUsingTailSet_shouldReturnTailSetElements() {
 | **Тип коллекций**          | Любые `Iterable`      | Только `List`                         | Любые `Iterable`, массивы, потоки   |
 | **Fail‑fast**              | Да (обычно)           | Да (обычно)                           | Да (при изменении источника)        |
 | **Основное применение**    | Общий обход коллекций | Детальная работа со списками          | Параллельные потоки, большие данные |
+
 Являются частью любой коллекии
+
 ```mermaid
 ---
 config:
@@ -483,19 +563,20 @@ direction BT
 **Назначение**: базовый инструмент для однопроходного обхода любой коллекции (List, Set, Map.values и др.).
 
 **Ключевые методы**:
+
 - `hasNext()` — есть ли следующий элемент;
 - `next()` — вернуть следующий элемент;
 - `remove()` — удалить текущий элемент (опционально).
 
-
 **Особенности**:
+
 - **Однонаправленный обход** — только вперёд (`next()`).
 - **Минимальные возможности** — чтение и удаление (не всегда поддерживается).
 - **Fail‑fast** — вызывает `ConcurrentModificationException` при изменении коллекции во время итерации (если реализация поддерживает).
 - **Универсальность** — работает с любой коллекцией, реализующей интерфейс `Iterable`.
 
-
 **Пример**:
+
 ```java
 List<String> list = Arrays.asList("a", "b", "c");
 Iterator<String> it = list.iterator();
@@ -508,28 +589,26 @@ while (it.hasNext()) {
 
 ### ListIterator
 
-
 **Назначение**: расширенный итератор для списков (`ArrayList`, `LinkedList` и др.), поддерживающий двунаправленный обход и модификацию.
 
-
 **Ключевые методы** (дополнительно к `Iterator`):
+
 - `hasPrevious()` — есть ли предыдущий элемент;
 - `previous()` — вернуть предыдущий элемент;
 - `add(E e)` — вставить элемент перед текущим;
 - `set(E e)` — заменить текущий элемент;
 - `nextIndex()` / `previousIndex()` — получить индекс текущего положения.
 
-
 **Особенности**:
+
 - **Двунаправленный обход** — вперёд и назад.
 - **Полная модификация** — добавление, удаление, замена элементов во время итерации.
 - **Работа с индексами** — можно отслеживать позицию в списке.
 - **Только для списков** — не работает с `Set`, `Map` и др.
-
 - **Fail‑fast** — аналогично `Iterator`.
 
-
 **Пример**:
+
 ```java
 List<String> list = new ArrayList<>(Arrays.asList("a", "b", "c"));
 ListIterator<String> lit = list.listIterator();
@@ -547,15 +626,15 @@ while (lit.hasNext()) {
 
 **Назначение**: итератор для **параллельной обработки** больших коллекций и потоков (`Stream`). Введён в Java 8.
 
-
 **Ключевые методы**:
+
 - `tryAdvance(Consumer<? super T> action)` — обработать следующий элемент (если есть);
 - `forEachRemaining(Consumer<? super T> action)` — обработать все оставшиеся элементы;
 - `trySplit()` — разделить на две части для параллельной обработки;
 - `estimateSize()` — оценить количество оставшихся элементов.
 
-
 **Особенности**:
+
 - **Параллелизм** — поддерживает разбиение (`trySplit()`) для обработки в нескольких потоках.
 - **Внутренняя итерация** — управление обходом берёт на себя `Spliterator`, а не вызывающий код.
 - **Работа с потоками** — основное применение в `Stream API` (`parallelStream()`).
@@ -563,8 +642,8 @@ while (lit.hasNext()) {
 - **Гибкая оценка размера** — `estimateSize()` может возвращать приблизительное значение.
 - **Потокобезопасность** — при корректном использовании может работать в многопоточной среде.
 
-
 **Пример** (низкоуровневое использование):
+
 ```java
 List<String> list = Arrays.asList("a", "b", "c", "d");
 Spliterator<String> spliterator = list.spliterator();
@@ -579,6 +658,7 @@ part2.forEachRemaining(System.out::println);  // "c", "d"
 ```
 
 ### Enumeration
+
 Устаревший интерфейс был заменён `Iterator`.
 
 > **Примечание**: В большинстве случаев для обхода коллекций достаточно `for‑each` или `Stream API`, которые внутренне используют `Iterator`/`Spliterator`. Явное применение этих интерфейсов нужно при реализации кастомных коллекций или низкоуровневой оптимизации.

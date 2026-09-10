@@ -1,13 +1,15 @@
 ---
 aliases:
   - Dialog Management
-  - NLU
-  - NLG
+  - DM
   - Natural Language Generation
   - Natural Language Understanding
-  - DM
+  - NLG
+  - NLU
 ---
+
 Разберём по частям:
+
 - ✅ **NLU (Natural Language Understanding)**
 - ✅ **DM (Dialog Management)** → с политиками и заполнением слотов
 - ✅ **NLG (Natural Language Generation)**
@@ -34,6 +36,7 @@ aliases:
 ```
 
 → NLU выдаёт:
+
 ```json
 {
   "intent": "reschedule_meeting",
@@ -78,6 +81,7 @@ aliases:
 ```
 
 → DM понимает: нужно собрать:
+
 - Тип визита (`slot: visit_type`)
 - Дата (`slot: date`)
 - Время (`slot: time`)
@@ -135,6 +139,7 @@ aliases:
 ```
 
 → NLG генерирует:
+
 > _«Запись к кардиологу назначена на пятницу, 18 апреля, в 10:00. Приходите вовремя!»_
 
 ---

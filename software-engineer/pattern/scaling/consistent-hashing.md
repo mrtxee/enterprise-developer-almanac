@@ -1,6 +1,7 @@
 **Consistent Hashing (согласованное хеширование)** — это **интеллектуальный способ распределения данных или запросов между узлами**, который минимизирует перераспределение при добавлении/удалении серверов.
 
 Оно широко используется в:
+
 - **Distributed databases**: Cassandra, DynamoDB, Riak
 - **Load balancers**
 - **Caching systems**: Redis Cluster, Memcached (с библиотекой)
@@ -13,7 +14,8 @@
 
 ### ❌ Проблема: `hash(key) % N`
 
-Допустим, у вас 3 сервера (`S0`, `S1`, `S2`)  
+Допустим, у вас 3 сервера (`S0`, `S1`, `S2`)
+
 Вы используете:
 
 ```python
@@ -26,8 +28,10 @@ server_index = hash(key) % 3
 
 Теперь `N = 4` → формула меняется
 
-→ **Почти все ключи сместятся**  
-→ `user_123` теперь может быть на `S0`  
+→ **Почти все ключи сместятся**
+
+→ `user_123` теперь может быть на `S0`
+
 → Придётся **перемещать 75% данных**
 
 > ❌ Это катастрофа при масштабировании!
@@ -109,7 +113,8 @@ graph LR
 
 Без них — сервера могут занять неравные участки кольца → дисбаланс
 
-### 💡 Решение:  
+### 💡 Решение:
+
 Каждый физический сервер → **множество виртуальных узлов** на кольце
 
 ```text
@@ -210,12 +215,13 @@ def get_node_for_key(key):
 
 ## 📚 Где учиться дальше?
 
-- Book: *“Designing Data-Intensive Applications”* — Martin Kleppmann
+- Book: _“Designing Data-Intensive Applications”_ — Martin Kleppmann
 - [Wikipedia: Consistent Hashing](https://en.wikipedia.org/wiki/Consistent_hashing)
-- YouTube: *“Consistent Hashing Explained”* — TechWorld with Nana
+- YouTube: _“Consistent Hashing Explained”_ — TechWorld with Nana
 - Redis Cluster Docs: https://redis.io/docs/reference/cluster-spec/
 
 ---
 
-✅ **Consistent Hashing — основа современных распределённых систем.**  
+✅ **Consistent Hashing — основа современных распределённых систем.**
+
 Если вы строите что-то с горизонтальным масштабированием — знайте этот паттерн.

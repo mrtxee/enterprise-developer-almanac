@@ -1,10 +1,11 @@
 ---
 aliases:
+  - asymmetric cryptography
+  - Public-key cryptography
   - Асимметричное шифрование
   - Шифрование с открытым ключом
-  - Public-key cryptography
-  - asymmetric cryptography
 ---
+
 **Асимметричное шифрование = Шифрование с открытым ключом** — это одно и то же понятие, просто разные названия.
 
 ## Детальное объяснение

@@ -1,16 +1,18 @@
 ---
 aliases:
-  - Федеративная идентификация
   - Federated Identity
+  - Федеративная идентификация
 ---
-Отлично!  
+
+Отлично!
+
 **Federated Identity (Федеративная идентификация)** — это **система, позволяющая пользователям аутентифицироваться в одной системе (Identity Provider) и получать доступ к другим системам (Service Providers) без повторного входа.**
 
 ---
 
 ## ✅ Что такое Federated Identity?
 
-> **Federated Identity** — это **обмен доверием между разными системами**.  
+> **Federated Identity** — это **обмен доверием между разными системами**.
 > Пользователь аутентифицируется один раз → получает доступ ко всем связанным сервисам.
 
 ### 💬 Простыми словами:
@@ -97,7 +99,7 @@ sequenceDiagram
 
 ## ✅ Финальный вывод
 
-> ✅ **Federated Identity = Single Sign-On + Trust between systems**  
+> ✅ **Federated Identity = Single Sign-On + Trust between systems**
 > ✅ Она позволяет:
 > - Упростить вход для пользователей
 > - Увеличить безопасность
@@ -109,14 +111,15 @@ sequenceDiagram
 
 ## 📚 Где учиться дальше?
 
-- Book: *“Designing Identity and Access Management”* — Mark R. Miller  
-- [OpenID Connect Docs](https://openid.net/connect/)  
-- [SAML Docs](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=saml)  
-- YouTube: *“Federated Identity Explained”* — TechWorld with Nana
+- Book: _“Designing Identity and Access Management”_ — Mark R. Miller
+- [OpenID Connect Docs](https://openid.net/connect/)
+- [SAML Docs](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=saml)
+- YouTube: _“Federated Identity Explained”_ — TechWorld with Nana
 
 ---
 
-✅ **Теперь вы знаете:**  
+✅ **Теперь вы знаете:**
+
 Как работает Федеративная идентификация, зачем она нужна и как устроены её компоненты.
 
 📌 Сохраните эту таблицу — она станет вашей **картой безопасности**.

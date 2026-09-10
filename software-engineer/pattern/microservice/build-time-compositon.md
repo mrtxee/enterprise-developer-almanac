@@ -1,15 +1,16 @@
-# Build-Time Композиция
+## Build-Time Композиция
 
 **Build-Time Композиция** — это подход в микрофронтендах, при котором отдельные приложения (микрофронты) компилируются (**build**) независимо друг от друга, но затем объединяются в единое целое на этапе **сборки (build)**, а не во время выполнения (run-time) в браузере.
 
 Есть 2 варианта релазиации
+
 1. [[Module Federation]] Build
 	* на основе плагина сборщика javaScript сборщика пакетов webpack
 2. Nginx-based build
 3. **Runtime импорт с проверкой**
 
-## 1. [[Module Federation]] компоновка
-## 2. Nginx-based компоновка
+### 1. [[Module Federation]] компоновка
+### 2. Nginx-based компоновка
 
 ```nginx
 
@@ -28,7 +29,7 @@ server {
     }
 }
 ```
-## 3. Runtime импорт с проверкой
+### 3. Runtime импорт с проверкой
 
 ```jsx
 
@@ -58,9 +59,9 @@ const useRemoteModule = (scope, module) => {
 
 ---
 
-## 🔒 Безопасность и оптимизация
+### 🔒 Безопасность и оптимизация
 
-### **CORS настройки:**
+#### **CORS настройки:**
 
 ```nginx
 
@@ -78,7 +79,7 @@ server {
     }
 }
 ```
-### **Health checks:**
+#### **Health checks:**
 
 ```javascript
 
@@ -95,9 +96,9 @@ const checkDepositUIAvailability = async () => {
 
 ---
 
-## 📊 Мониторинг и логирование
+### 📊 Мониторинг и логирование
 
-### **Метрики взаимодействия:**
+#### **Метрики взаимодействия:**
 
 ```javascript
 
@@ -114,7 +115,7 @@ const withMetrics = (WrappedComponent, moduleName) => {
 };
 ```
 
-## 🎯 Рекомендации:
+### 🎯 Рекомендации:
 
 1. **Используйте Webpack Module Federation** - это стандарт для micro-frontends
 2. **Настройте shared dependencies** - для избежания дублирования React

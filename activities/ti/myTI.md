@@ -1,4 +1,4 @@
-# вопросы
+## вопросы
 
 1. Petterns Basiscs
 	1. Расскажите про принципы SOLID, приведите примеры
@@ -10,7 +10,7 @@
 2. Java Basics
 	1. Immutable классы и объекты: что значит и как реализовать
 	2. Annotation: что такое, для чего используется, как работает
-	3. Что такое "утечка памяти"? Каков алгоритм поиска учетки? 
+	3. Что такое "утечка памяти"? Каков алгоритм поиска учетки?
 	4. 🟢 Java: Чем StringBuilder отличается от StringBuffer?
 	5. 🟢 Java: Как работает HashMap при коллизиях?
 	6. 🟢 Java: В чём разница между fail-fast и fail-safe итераторами?
@@ -52,9 +52,10 @@
 	3. Как организовать graceful shutdown в Kubernetes + Spring Boot?
 
 ---
+
 ---
 
-## fail-fast vs fail-safe итераторы
+### fail-fast vs fail-safe итераторы
 
 | Характеристика                | fail-fast                                   | fail-safe                                   |
 | ----------------------------- | ------------------------------------------- | ------------------------------------------- |
@@ -66,9 +67,10 @@
 | **Потокобезопасность**        | Нет (один поток)                            | Да (для чтения)                             |
 | **Использование**             | Однопоточный код, раннее обнаружение ошибок | Многопоточное чтение с редкими записями     |
 
-## ApplicationContext vs BeanFactory
+### ApplicationContext vs BeanFactory
 
-**ApplicationContext** — расширенный контейнер Spring, управляющий бинами и предоставляющий enterprise-функции.  
+**ApplicationContext** — расширенный контейнер Spring, управляющий бинами и предоставляющий enterprise-функции.
+
 **BeanFactory** — базовый DI-контейнер с минимальной функциональностью.
 
 | Характеристика                 | BeanFactory                   | ApplicationContext         |
@@ -83,10 +85,9 @@
 
 **Итог:** `ApplicationContext` — надстройка над `BeanFactory`, используется в 99% случаев.
 
-
 ---
 
-## Proxy vs Decorator with Spring
+### Proxy vs Decorator with Spring
 
 **Proxy** и **Decorator** — структурные паттерны, оба оборачивают объект, но цели разные.
 
@@ -99,7 +100,6 @@
 | **Создаёт ли новый функционал** | Нет (управляет существующим)                                   | Да (расширяет поведение)                       |
 | **Отношение к оригиналу**       | Контролирует доступ                                            | Обогащает поведение                            |
 | **Время жизни**                 | Создаётся один раз, переиспользуется                           | Можно оборачивать несколько раз (композиция)   |
-
 
 **Примеры в Spring:**
 
@@ -139,10 +139,9 @@ class LoggingDecorator implements Service {
 
 **Итог:** Proxy управляет доступом (транзакции, кэш, lazy loading), Decorator расширяет поведение (добавляет логирование, сжатие, шифрование).
 
-
 ---
 
-## Circuit Breaker
+### Circuit Breaker
 
 **Circuit Breaker** — паттерн для защиты системы от каскадных отказов при вызовах удалённых сервисов.
 
@@ -163,10 +162,9 @@ class LoggingDecorator implements Service {
 | **Open** (разомкнут)     | Запросы блокируются мгновенно (fail fast)                         |
 | **Half-Open** (проверка) | Пропускается пробный запрос, если успех → Closed, если нет → Open |
 
-
 ---
 
-## Graceful Shutdown в Kubernetes + Spring Boot
+### Graceful Shutdown в Kubernetes + Spring Boot
 
 1. **Spring Boot встроенный graceful shutdown**
 	- Настроить `server.shutdown=graceful` в application.properties
@@ -179,9 +177,11 @@ class LoggingDecorator implements Service {
 	- Задержка перед отправкой SIGTERM
 
 	**terminationGracePeriodSeconds** – общее время на завершение:
+
 	- Дефолт 30 секунд, для тяжелых приложений увеличивать до 60-90
-	
+
 	**readinessProbe** – критически важен:
+
 	- При shutdown первым делом отключаем readiness probe
 	- Pod перестает получать трафик из Service
 
@@ -192,7 +192,6 @@ class LoggingDecorator implements Service {
 	4. Spring Boot перестает принимать новые запросы
 	5. Текущие запросы дообрабатываются (timeout)
 	6. После завершения – Pod удаляется
-
 4. **Подводные камни**
 	- **Readiness probe настроен агрессивно** – при задержках Pod могут преждевременно исключить из ротации
 	- **Короткий terminationGracePeriodSeconds** – не успевают дообработаться запросы
@@ -200,4 +199,3 @@ class LoggingDecorator implements Service {
 	- **Long-running запросы** – нужно уменьшить `spring.lifecycle.timeout-per-shutdown-phase`
 	- **@Async задачи** – отдельный пул потоков, их тоже нужно завершать
 	- **Kafka consumers** – нужно закрыть сессии и закоммитить offset'ы
-

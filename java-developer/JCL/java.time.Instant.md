@@ -1,55 +1,69 @@
 ---
 aliases:
   - Date
+  - DateTime
   - Instant
-  - LocalDateTime
-  - java.util.Date
   - java.sql.Date
   - java.time
-  - DateTime
+  - java.util.Date
+  - LocalDateTime
 ---
-# DateTime java formats
+## DateTime java formats
 
-## Сравнение типов дат в Java
+### Сравнение типов дат в Java
 
-### **1. `java.util.Date` (с Java 1.0)**
+#### **1. `java.util.Date` (с Java 1.0)**
+
 **Что это:** Устаревший класс, представляет конкретный момент времени (миллисекунды с 1970-01-01)
+
 ```java
 Date date = new Date(); // Текущее время
 ```
+
 **Когда использовать:** ⚠️ **Избегать!** Только для легаси-кода
 
-### **2. `java.sql.Date` (с Java 1.1)**
+#### **2. `java.sql.Date` (с Java 1.1)**
+
 **Что это:** Подкласс `java.util.Date` для работы с SQL DATE (только дата, без времени)
+
 ```java
 java.sql.Date sqlDate = java.sql.Date.valueOf("2023-12-25");
 ```
+
 **Когда использовать:** Только для JDBC при работе с полями SQL DATE
 
-### **3. `java.time.LocalDateTime` (с Java 8)**
+#### **3. `java.time.LocalDateTime` (с Java 8)**
+
 **Что это:** Дата и время без временной зоны
+
 ```java
 LocalDateTime ldt = LocalDateTime.now();
 LocalDateTime specific = LocalDateTime.of(2023, 12, 25, 10, 30);
 ```
-**Когда использовать:** 
+
+**Когда использовать:**
+
 - Локальные события (встречи, праздники)
 - Когда временная зона не важна
 - Работа с датами без привязки к часовому поясу
 
-### **4. `java.time.Instant` (с Java 8)**
+#### **4. `java.time.Instant` (с Java 8)**
+
 **Что это:** Момент времени на временной шкале (UTC)
+
 ```java
 Instant now = Instant.now();
 Instant specific = Instant.parse("2023-12-25T10:30:00Z");
 ```
+
 **Когда использовать:**
+
 - Таймстампы событий
 - Логирование
 - Работа с distributed systems
 - Когда нужна точная точка во времени
 
-## **Сравнительная таблица:**
+### **Сравнительная таблица:**
 
 | Тип | Временная зона | Точность | Использование |
 |-----|----------------|----------|---------------|
@@ -58,9 +72,9 @@ Instant specific = Instant.parse("2023-12-25T10:30:00Z");
 | `LocalDateTime` | ❌ Без зоны | Наносекунды | Локальные события |
 | `Instant` | ✅ UTC | Наносекунды | Точные моменты времени |
 
-## **Рекомендации по использованию:**
+### **Рекомендации по использованию:**
 
-### **✅ Используйте `java.time.*` (Java 8+)**
+#### **✅ Используйте `java.time.*` (Java 8+)**
 ```java
 // Для локальных дат/времени
 LocalDate date = LocalDate.now();
@@ -76,7 +90,7 @@ java.sql.Timestamp timestamp = java.sql.Timestamp.from(instant);
 java.sql.Date sqlDate = java.sql.Date.valueOf(date);
 ```
 
-### **❌ Избегайте `java.util.Date`**
+#### **❌ Избегайте `java.util.Date`**
 ```java
 // ПЛОХО
 Date oldDate = new Date();
@@ -85,7 +99,7 @@ Date oldDate = new Date();
 Instant instant = Instant.now();
 ```
 
-## **Примеры преобразований:**
+### **Примеры преобразований:**
 
 ```java
 // Instant ↔ LocalDateTime
@@ -101,7 +115,7 @@ Date utilDate = new Date();
 Instant instant = utilDate.toInstant();
 ```
 
-## **Ключевые выводы:**
+### **Ключевые выводы:**
 
 1. **Для новых проектов** — используйте только `java.time.*`
 2. **Для точных моментов** — `Instant`
@@ -110,7 +124,7 @@ Instant instant = utilDate.toInstant();
 5. **`java.util.Date`** — полностью устарел, не использовать
 
 
-# UTC - Coordinated Universal Time (Всемирное координированное время)
+## UTC - Coordinated Universal Time (Всемирное координированное время)
 
 ### **Что такое UTC?**
 

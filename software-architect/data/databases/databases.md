@@ -6,6 +6,7 @@ aliases:
 ---
 
 гайд по выбору базы
+
 ```mermaid
 graph LR
     A[Какую базу данных выбрать?] --> B{Данные структурированы?}
@@ -71,7 +72,6 @@ graph LR
     classDef question fill:#f9f9f9,stroke:#555,color:#333;
     class B,C,D,E,F,G,H,J,L,O,S,U,Y,Z,AA question
 ```
-
 
 duarbility в распределенных базах
 

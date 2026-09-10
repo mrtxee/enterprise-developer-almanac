@@ -1,7 +1,7 @@
 ---
 aliases:
-  - Behavior-Driven
   - BDD
+  - Behavior-Driven
   - Behavior-Driven Development
   - Spock
 ---

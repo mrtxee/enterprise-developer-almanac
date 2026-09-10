@@ -3,8 +3,11 @@ aliases:
   - Tokenizators
   - Токенизаторы
 ---
-**Токенизаторы** — это **фундамент [[NLP]]**, особенно при работе с трансформерами.  
+
+**Токенизаторы** — это **фундамент [[NLP]]**, особенно при работе с трансформерами.
+
 Выбор правильного токенизатора влияет на:
+
 - Качество модели
 - Размер векторов
 - Поддержку языков
@@ -30,7 +33,7 @@ aliases:
 
 ## 🔍 Подробнее по каждому
 
-### 1. **Byte-Pair Encoding (BPE)**  
+### 1. **Byte-Pair Encoding (BPE)**
 > 🌐 Разработан в 1994, популяризирован в NLP в 2016+
 
 #### ✅ Когда использовать:
@@ -51,7 +54,7 @@ aliases:
 
 ---
 
-### 2. **SentencePiece (Google)**  
+### 2. **SentencePiece (Google)**
 > 🔤 Независим от пробелов → работает даже с японского
 
 #### ✅ Особенности:
@@ -70,7 +73,7 @@ aliases:
 
 ---
 
-### 3. **WordPiece (BERT)**  
+### 3. **WordPiece (BERT)**
 > 🔠 Как BPE, но с жадным поиском
 
 #### ✅ Особенности:
@@ -87,7 +90,7 @@ aliases:
 
 ---
 
-### 4. **Tiktoken (OpenAI)**  
+### 4. **Tiktoken (OpenAI)**
 > ⚡ Самый быстрый токенизатор в мире
 
 #### ✅ Особенности:
@@ -113,7 +116,7 @@ enc.encode("Hello world") → [15496, 9047]
 
 ---
 
-### 5. **Hugging Face Tokenizers**  
+### 5. **Hugging Face Tokenizers**
 > 🧰 Универсальная библиотека
 
 #### ✅ Что делает:
@@ -169,11 +172,12 @@ tokens = tokenizer.tokenize("Привет, мир!")
 - [Hugging Face Tokenizers Docs](https://huggingface.co/docs/tokenizers/)
 - [Tiktoken GitHub](https://github.com/openai/tiktoken)
 - [SentencePiece Paper](https://arxiv.org/abs/1808.06226)
-- YouTube: *“How Tokenization Works”* — James Briggs
+- YouTube: _“How Tokenization Works”_ — James Briggs
 
 ---
 
-✅ **Теперь вы знаете:**  
+✅ **Теперь вы знаете:**
+
 Как устроен каждый токенизатор — и когда его применять.
 
 📌 Сохраните эту таблицу — она станет шпаргалкой при выборе стека для LLM.

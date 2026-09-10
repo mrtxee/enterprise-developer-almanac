@@ -1,13 +1,15 @@
-# Logstash - полное руководство
+## Logstash - полное руководство
 
-## Что такое Logstash?
+### Что такое Logstash?
 
 **Logstash** — Конвейер (pipeline) обработки данных
+
 * **Logstash** — это инструмент с открытым исходным кодом для приема, обработки и передачи данных в реальном времени. Является ключевым компонентом стека [[ELK]] ([[Elasticsearch]], [[Logstash]], [[Kibana]]).
 
-## Архитектура Logstash
+### Архитектура Logstash
 
 **Конвейер обработки данных (Pipeline)**
+
 ```
 ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
 │   Inputs    │───▶│  Filters    │───▶│   Outputs   │
@@ -20,9 +22,10 @@
 └─────────────┘    └─────────────┘    └─────────────┘
 ```
 
-## Основные компоненты
+### Основные компоненты
 
-### 1. **Inputs (Входы)**
+#### 1. **Inputs (Входы)**
+
 Прием данных из различных источников.
 
 ```ruby
@@ -61,7 +64,8 @@ input {
 }
 ```
 
-### 2. **Filters (Фильтры)**
+#### 2. **Filters (Фильтры)**
+
 Обработка и преобразование данных.
 
 ```ruby
@@ -112,7 +116,8 @@ filter {
 }
 ```
 
-### 3. **Outputs (Выходы)**
+#### 3. **Outputs (Выходы)**
+
 Отправка обработанных данных в целевые системы.
 
 ```ruby
@@ -152,9 +157,10 @@ output {
 }
 ```
 
-## Полные примеры конфигураций
+### Полные примеры конфигураций
 
 **Пример 1: Обработка веб-логов**
+
 ```ruby
 input {
   file {
@@ -214,6 +220,7 @@ output {
 ```
 
 **Пример 2: Обработка JSON логов приложения**
+
 ```ruby
 input {
   beats {
@@ -258,9 +265,10 @@ output {
 }
 ```
 
-## [[Grok]] Patterns
+### [[Grok]] Patterns
 
 **Создание кастомных паттернов**
+
 ```ruby
 filter {
   grok {
@@ -278,6 +286,7 @@ MY_LOG_PATTERN \[%{TIMESTAMP_ISO8601:timestamp}\] %{LOGLEVEL:level} %{GREEDYDATA
 ```
 
 **Популярные Grok паттерны**
+
 ```ruby
 # Apache access log
 %{COMBINEDAPACHELOG}
@@ -289,9 +298,10 @@ MY_LOG_PATTERN \[%{TIMESTAMP_ISO8601:timestamp}\] %{LOGLEVEL:level} %{GREEDYDATA
 ^{"timestamp":"%{TIMESTAMP_ISO8601:timestamp}","level":"%{LOGLEVEL:level}","message":"%{GREEDYDATA:message}"}
 ```
 
-## Управление и эксплуатация
+### Управление и эксплуатация
 
 **Запуск Logstash**
+
 ```bash
 # Базовая команда
 bin/logstash -f config_file.conf
@@ -307,6 +317,7 @@ bin/logstash -f config_file.conf --pipeline.workers 4
 ```
 
 **Конфигурация JVM**
+
 ```yaml
 # config/jvm.options
 -Xms2g
@@ -317,6 +328,7 @@ bin/logstash -f config_file.conf --pipeline.workers 4
 ```
 
 **Мониторинг Logstash**
+
 ```ruby
 input {
   # Встроенный мониторинг
@@ -330,9 +342,10 @@ input {
 # GET http://localhost:9600/_node/pipelines
 ```
 
-## Продвинутые техники
+### Продвинутые техники
 
 **Работа с многолинейными логами**
+
 ```ruby
 input {
   file {
@@ -347,6 +360,7 @@ input {
 ```
 
 **Клонирование событий**
+
 ```ruby
 filter {
   # Клонирование для разных обработок
@@ -366,6 +380,7 @@ output {
 ```
 
 **Агрегация событий**
+
 ```ruby
 filter {
   aggregate {
@@ -382,9 +397,10 @@ filter {
 }
 ```
 
-## Оптимизация производительности
+### Оптимизация производительности
 
 **Настройки pipeline**
+
 ```ruby
 # pipelines.yml
 - pipeline.id: main
@@ -395,6 +411,7 @@ filter {
 ```
 
 **Рекомендации по настройке**
+
 ```yaml
 # Для high-throughput систем:
 pipeline.workers: количество ядер CPU
@@ -406,9 +423,10 @@ queue.type: persisted
 queue.max_bytes: 4gb
 ```
 
-## Troubleshooting и отладка
+### Troubleshooting и отладка
 
 **Логи Logstash**
+
 ```bash
 # Просмотр логов
 tail -f /var/log/logstash/logstash-plain.log
@@ -418,6 +436,7 @@ tail -f /var/log/logstash/logstash-plain.log
 ```
 
 **Тестирование конфигурации**
+
 ```bash
 # Валидация конфигурации
 bin/logstash -f config.conf --config.test_and_exit
@@ -426,14 +445,16 @@ bin/logstash -f config.conf --config.test_and_exit
 bin/logstash -f config.conf --config.reload.automatic --debug
 ```
 
-## Интеграция с ELK стеком
+### Интеграция с ELK стеком
 
 **Полный pipeline ELK**
+
 ```
 Application Logs → Filebeat → Logstash → Elasticsearch → Kibana
 ```
 
 **Конфигурация Filebeat → Logstash**
+
 ```yaml
 # filebeat.yml
 output.logstash:
@@ -441,9 +462,10 @@ output.logstash:
   loadbalance: true
 ```
 
-## Best Practices
+### Best Practices
 
 **Структура конфигураций**
+
 ```
 /etc/logstash/
 ├── conf.d/
@@ -456,6 +478,7 @@ output.logstash:
 ```
 
 **Безопасность**
+
 ```ruby
 # SSL/TLS для beats input
 beats {

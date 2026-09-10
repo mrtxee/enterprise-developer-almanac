@@ -1,14 +1,15 @@
 ---
 aliases:
-  - OLTP
   - OLAP
-  - Online Transaction Processing
+  - OLTP
   - Online Analytical Processing
+  - Online Transaction Processing
 ---
-# OLTP vs OLAP транзакции
+## OLTP vs OLAP транзакции
 
 **OLTP (Online Transaction Processing)** и **OLAP (Online Analytical Processing)** — это **две разные архитектуры баз данных**, каждая для своей задачи.
-> ✅ **OLTP — для "делать"**  
+
+> ✅ **OLTP — для "делать"**
 > ✅ **OLAP — для "понимать"**
 > 💬 _“OLTP is for the now. OLAP is for the past.”_
 
@@ -24,7 +25,9 @@ aliases:
 | **БД**                       | PostgreSQL, MySQL, Oracle        | ClickHouse, Redshift, BigQuery             |
 | **Используется**             | Веб-приложения, CRM, ERP         | BI, Data Science, Reporting                |
 | **Масштабируемость**         | Горизонтальная (по серверам)     | Вертикальная (по мощности)                 |
+
 схематично
+
 ```mermaid
 ---
 config:
@@ -119,30 +122,34 @@ graph TB
     style D fill:#6c757d,stroke:#fff,color:#fff
 ```
 
-→ **OLTP** — для операций  
+→ **OLTP** — для операций
+
 → **OLAP** — для аналитики
+
 → **[[ELT]]/Streaming** — для передачи данных из OLTP в OLAP
 
 ---
 
-## ✅ Что такое OLTP?
+### ✅ Что такое OLTP?
 
-> **OLTP** — **онлайн-обработка транзакций**.  
+> **OLTP** — **онлайн-обработка транзакций**.
 > Система, которая обрабатывает **множество коротких, быстрых операций** (INSERT, UPDATE, DELETE).
 
 💬 Примеры:
+
 - Банковские транзакции
 - Заказы в интернет-магазине
 - Регистрация пользователей
 
 ---
 
-## ✅ Что такое OLAP?
+### ✅ Что такое OLAP?
 
-> **OLAP** — **онлайн-аналитическая обработка**.  
+> **OLAP** — **онлайн-аналитическая обработка**.
 > Система для **сложных аналитических запросов** (SELECT с GROUP BY, JOIN, SUM, AVG).
 
 💬 Примеры:
+
 - Отчёты по продажам за месяц
 - Анализ поведения пользователей
 - Прогнозирование спроса

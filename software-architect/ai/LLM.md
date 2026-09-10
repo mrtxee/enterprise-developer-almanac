@@ -1,6 +1,5 @@
-
-
 ваыа
+
 ```mermaid
 ---
 title: Что происходит при запросе в LLM
@@ -25,4 +24,3 @@ graph TD
     class B,C,D,E,G step
     class B,C,D,E,F,G,H BCDEFGH
 ```
-

@@ -3,7 +3,9 @@ aliases:
   - Natural Language Understanding
   - NLU
 ---
-Отлично!  
+
+Отлично!
+
 **NLU (Natural Language Understanding)** — это **ключевой компонент искусственного интеллекта**, который позволяет машинам **понимать смысл, намерение и контекст человеческого языка**.
 
 ---
@@ -20,13 +22,15 @@ aliases:
 "Перенести встречу с Иваном на пятницу"
 ```
 
-→ Без NLU:  
+→ Без NLU:
+
 `[перенести, встреча, Иван, пятница]` → просто токены
 
-→ С NLU:  
+→ С NLU:
+
 - **Намерение (intent):** `reschedule_meeting`
-- **Сущности:**  
-  - `person = "Иван"`  
+- **Сущности:**
+  - `person = "Иван"`
   - `new_date = "пятница"`
 
 ---
@@ -38,7 +42,7 @@ aliases:
 | **NLP (Natural Language Processing)** | Общий термин: всё, что связано с текстом<br>• Токенизация<br>• POS Tagging<br>• Лемматизация |
 | **NLU (Natural Language Understanding)** | Подмножество NLP<br>Фокусируется на **смысле**:<br>• Намерение<br>• Контекст<br>• Диалоговое состояние |
 
-> 🔑 **NLP = «Что написано?»**  
+> 🔑 **NLP = «Что написано?»**
 > **NLU = «Что имеется в виду?»**
 
 ---
@@ -145,12 +149,13 @@ graph LR
 
 - [Rasa Docs](https://rasa.com/docs/)
 - [Hugging Face Course](https://huggingface.co/course/chapter1)
-- Book: *“Speech and Language Processing”* — Jurafsky & Martin
-- YouTube: *“How NLU Works”* — Siraj Raval
+- Book: _“Speech and Language Processing”_ — Jurafsky & Martin
+- YouTube: _“How NLU Works”_ — Siraj Raval
 
 ---
 
-✅ **NLU — основа всех умных систем**:  
+✅ **NLU — основа всех умных систем**:
+
 - Чат-ботов
 - Голосовых помощников
 - Поиска по смыслу

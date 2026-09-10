@@ -1,14 +1,15 @@
 ---
 aliases:
-  - Database Change Data Capture
   - CDC
   - Database CDC
+  - Database Change Data Capture
 ---
-### Database-Based Solutions (Базы данных)
+## Database-Based Solutions (Базы данных)
 
-#### Database Change Data Capture (CDC)
+### Database Change Data Capture (CDC)
 
 Пример реализации [[Publish-Subscribe]] в [[PostgreSQL]]
+
 ```sql
 
 -- PostgreSQL LISTEN/NOTIFY

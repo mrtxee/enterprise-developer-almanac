@@ -1,10 +1,10 @@
 ---
 aliases:
-  - highload
   - high-load
+  - highload
+  - load metrics
   - высоконагруженные системы
   - нагрузка
-  - load metrics
 ---
 
 ## Повышение отказоустойчивости системы
@@ -14,8 +14,8 @@ aliases:
 * Используй событийно‑ориентированную архитектуру [[Event-Driven Architecture|EDA]] для декуплинга распределенных систем
 * Используй [[software-architect/highload/caching/caching|кэширование]] для кратного снижения нагрузки
 * Проводи [[Performance testing|Нагрузочное тестирование]]
-* Автоматизируй управление масштабированием, 
-	* eg. [[Kubernetes scaling]]
+* Автоматизируй управление масштабированием,
+	* eg. [[kubernetes-scaling]]
 * Улучшай наблюдаемость системы
 	* [[Monitoring]] – *Что сломалось в системе?*
 		* **Реактивных подход** к анализу состояния системы
@@ -32,14 +32,15 @@ aliases:
 * Используй [[stream processing|потоковую обработку]] в среде реального времени, где это требуется.
 
 
-# highload в realtime-среде
-
+## highload в realtime-среде
 
 plan
+
 * проектировании front-to-back и back-to-back интеграций
 * технологии, как REST, GraphQL, WebSockets, gRPC, RabbitMQ, Apache ActiveMQ Artemis и Kafka
 
 data
+
 * front-to-back
 	* [[Client pull]]
 		* паттерн Polling
@@ -64,18 +65,18 @@ data
 
 
 
-## Композиция API
-* с реализацией через 
+### Композиция API
+* с реализацией через
 	* [[REST]] для общего случая
 	* [[GraphQL]] чтобы избежать избыточности
 
-# [[Kubernetes scaling]]
+## [[kubernetes-scaling]]
 * VPA – Vertical Pod Autoscaler – выделяем больше ресурсов поду
 	* Существует три режима работы VPA: «Off», «Initial» и «Auto»
 * HPA – Horizontal Pod Autoscaler – наращивает число подов
 * CA – Cluster Autoscaler – наращиваем число нодов
 
-# [[Event-Driven Architecture]]
+## [[Event-Driven Architecture]]
 * [[Event-Driven Architecture|EDA]] – событийно‑ориентированная архитектура
 	* [[Event Storming]]
 	* [[CQRS]]
@@ -93,12 +94,12 @@ data
 			* отдельный демон, публикует события этой таблицы в брокер
 	* событийно-ориентированная обработка ошибок
 
-# [[stream processing]]
+## [[stream processing]]
 
 * Существует 4 модели потоковой обработки:
 	* синхронная микропакетная обработка
 	* асинхронная микропакетная обработка
 	* streaming-модель
 	* модель непрерывного обновления.
-- В потоковой обработке используется метод оконной агрегации
-- Apache Kafka, Flink и Storm
+* В потоковой обработке используется метод оконной агрегации
+* Apache Kafka, Flink и Storm

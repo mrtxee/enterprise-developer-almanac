@@ -1,24 +1,25 @@
 ---
 aliases:
-  - Lightweight Directory Access Protocol
-  - LDAP
   - Directory Information Tree
   - DIT
+  - LDAP
+  - Lightweight Directory Access Protocol
 ---
-# Lightweight Directory Access Protocol
-## LDAP
+## Lightweight Directory Access Protocol
+### LDAP
 
 > **LDAP (Lightweight Directory Access Protocol)** — это **протокол для доступа к иерархическим каталогам**, содержащим информацию о пользователях, группах, устройствах и других ресурсах.
-## LDAPS
+### LDAPS
 
 **Всегда используйте LDAPS (LDAP over SSL/TLS).** Название расшифровывается как LDAP Secure. Это защищённая версия протокола LDAP, которая использует SSL/TLS для шифрования данных при передаче по сети.
 
-### 💬 Простыми словами:
+#### 💬 Простыми словами:
 > Это **телефонная книга для сетей**: вы можете быстро найти, кто такой "Иван Петров", в какой он группе, какой у него email.
 
 ---
 
 Пример: Directory Information Tree
+
 ```mermaid
 ---
 title: Структура LDAP-каталога
@@ -69,7 +70,7 @@ graph LR
 
 ---
 
-## ✅ Зачем нужен LDAP?
+### ✅ Зачем нужен LDAP?
 
 | Цель | Объяснение |
 |------|------------|
@@ -81,7 +82,7 @@ graph LR
 
 ---
 
-## ✅ Основные реализации LDAP
+### ✅ Основные реализации LDAP
 
 | Реализация | Описание |
 |-----------|----------|
@@ -93,9 +94,9 @@ graph LR
 
 ---
 
-## ✅ Основные понятия LDAP
+### ✅ Основные понятия LDAP
 
-### 1. **DIT (Directory Information Tree)**
+#### 1. **DIT (Directory Information Tree)**
 
 > **DIT** — это **иерархическое дерево данных**, которое представляет всю структуру каталога.
 
@@ -104,11 +105,11 @@ graph LR
 
 ---
 
-### 2. **Атрибуты (Attributes)**
+#### 2. **Атрибуты (Attributes)**
 
 > Каждая запись в LDAP состоит из **атрибутов** — пар "ключ-значение".
 
-#### 💡 Пример записи пользователя:
+##### 💡 Пример записи пользователя:
 ```ldif
 dn: cn=Alice Smith,ou=People,dc=example,dc=com
 objectClass: inetOrgPerson
@@ -127,11 +128,11 @@ userPassword: secret123
 
 ---
 
-### 3. **RDN (Relative Distinguished Name)**
+#### 3. **RDN (Relative Distinguished Name)**
 
 > **RDN** — это **уникальное имя объекта относительно его родителя**.
 
-#### 💡 Пример:
+##### 💡 Пример:
 - Для записи `cn=Alice Smith,ou=People,dc=example,dc=com`
 - RDN = `cn=Alice Smith`
 
@@ -139,11 +140,11 @@ userPassword: secret123
 
 ---
 
-### 4. **DN (Distinguished Name)**
+#### 4. **DN (Distinguished Name)**
 
 > **DN** — это **полный путь к объекту в дереве**, уникальный во всём каталоге.
 
-#### 💡 Пример:
+##### 💡 Пример:
 ```text
 cn=Alice Smith,ou=People,dc=example,dc=com
 ```
@@ -152,22 +153,22 @@ cn=Alice Smith,ou=People,dc=example,dc=com
 
 ---
 
-### 5. **CN (Common Name)**
+#### 5. **CN (Common Name)**
 
 > **CN** — это **человекочитаемое имя объекта**.
 
-#### 💡 Используется для:
+##### 💡 Используется для:
 - Пользователей: `cn=Alice Smith`
 - Групп: `cn=HR Team`
 - Сервисов: `cn=jenkins`
 
 ---
 
-### 6. **OU (Organizational Unit)**
+#### 6. **OU (Organizational Unit)**
 
 > **OU** — это **контейнер для группировки объектов** (пользователей, групп, сервисов).
 
-#### 💡 Примеры:
+##### 💡 Примеры:
 - `ou=People`
 - `ou=Groups`
 - `ou=IT`
@@ -177,11 +178,11 @@ cn=Alice Smith,ou=People,dc=example,dc=com
 
 ---
 
-### 7. **DC (Domain Component)**
+#### 7. **DC (Domain Component)**
 
 > **DC** — это **часть доменного имени**, используемая для построения корня дерева.
 
-#### 💡 Пример:
+##### 💡 Пример:
 - Домен: `example.com`
 - DC: `dc=example,dc=com`
 
@@ -189,11 +190,11 @@ cn=Alice Smith,ou=People,dc=example,dc=com
 
 ---
 
-### 8. **Корневой элемент (Root)**
+#### 8. **Корневой элемент (Root)**
 
 > **Корень** — это **верхний уровень дерева**, обычно совпадает с доменом.
 
-#### 💡 Пример:
+##### 💡 Пример:
 ```text
 dc=example,dc=com
 ```
@@ -202,7 +203,7 @@ dc=example,dc=com
 
 ---
 
-## ✅ Визуализация: Структура LDAP
+### ✅ Визуализация: Структура LDAP
 
 ```mermaid
 graph LR
@@ -230,7 +231,7 @@ graph LR
 
 ---
 
-## ✅ Типичные objectClass
+### ✅ Типичные objectClass
 
 | objectClass | Назначение |
 |-------------|------------|
@@ -256,7 +257,7 @@ graph LR
 
 ---
 
-## ✅ Финальный вывод
+### ✅ Финальный вывод
 
 | Понятие | Что это? | Пример |
 |---------|----------|--------|
@@ -269,4 +270,3 @@ graph LR
 | **Атрибуты** | Данные объекта | `mail`, `userPassword` |
 
 > 💬 _“LDAP is not magic. It’s a hierarchical phone book for your network.”_
-

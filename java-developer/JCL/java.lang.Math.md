@@ -1,6 +1,6 @@
->[!info] `java.lang.Math`
->public final class Math
-# методы
+> [!info] `java.lang.Math`
+> public final class Math
+## методы
 ```Java
 sin()
 cos()

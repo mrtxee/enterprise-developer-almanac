@@ -4,13 +4,17 @@ aliases:
   - Future
   - ListenableFuture
 ---
+
 Вот подробное сравнение `Future`, `ListenableFuture` и `CompletableFuture` в Java — с акцентом на **назначение, возможности, ограничения и практическое применение**.
 
 ---
 
-## 🔷 1. `java.util.concurrent.Future`  
-**Появился**: Java 5  
-**Пакет**: `java.util.concurrent`  
+## 🔷 1. `java.util.concurrent.Future`
+
+**Появился**: Java 5
+
+**Пакет**: `java.util.concurrent`
+
 **Цель**: Представление результата асинхронной операции (базовый интерфейс).
 
 ### 📌 Интерфейс:
@@ -45,9 +49,12 @@ Integer result = future.get(); // БЛОКИРУЕТ поток!
 
 ---
 
-## 🔷 2. `com.google.common.util.concurrent.ListenableFuture`  
-**Появился**: Google Guava (v10+, ~2011)  
-**Пакет**: `com.google.common.util.concurrent`  
+## 🔷 2. `com.google.common.util.concurrent.ListenableFuture`
+
+**Появился**: Google Guava (v10+, ~2011)
+
+**Пакет**: `com.google.common.util.concurrent`
+
 **Цель**: Добавить **callback-возможности** к `Future` без блокировки.
 
 ### 📌 Интерфейс (расширяет `Future`):
@@ -94,9 +101,12 @@ ListenableFuture<String> transformed = Futures.transform(
 
 ---
 
-## 🔷 3. `java.util.concurrent.CompletableFuture`  
-**Появился**: Java 8  
-**Пакет**: `java.util.concurrent`  
+## 🔷 3. `java.util.concurrent.CompletableFuture`
+
+**Появился**: Java 8
+
+**Пакет**: `java.util.concurrent`
+
 **Цель**: Полноценная реализация **асинхронной реактивной модели** с поддержкой цепочек, комбинирования, обработки ошибок и неблокирующих операций.
 
 ### 📌 Ключевые особенности:
@@ -180,7 +190,7 @@ future.completeExceptionally(new RuntimeException("timeout"));
 | Операторы                          | Базовые (`map`, `flatMap`)       | Расширенные (`retry`, `timeout`, `window`, `groupBy`) |
 | Использование                      | Однократные асинхронные операции | Стримы событий, WebSocket, HTTP-стримы                |
 
-> 📌 Совет: Для простых асинхронныховов (API-запросы, DB) — `CompletableFuture`.  
+> 📌 Совет: Для простых асинхронныховов (API-запросы, DB) — `CompletableFuture`.
 > Для сложных потоковых пайплайнов — переходите на Reactive Streams (Project Reactor, RxJava).
 
 ---
@@ -189,7 +199,7 @@ future.completeExceptionally(new RuntimeException("timeout"));
 
 - **`Future`** — база, но устарела для асинхронного программирования.
 - **`ListenableFuture`** — мост между старым и новым, полезен в Guava-экосистеме.
-- **`CompletableFuture`** — **современный стандарт** для асинхронных операций в Java.  
+- **`CompletableFuture`** — **современный стандарт** для асинхронных операций в Java.
   → Используйте его по умолчанию в новых проектах.
 
 Если вы пишете на Java 11+ — `CompletableFuture` + `ExecutorService` (или `virtual threads` в Java 21+) — это золотой стандарт.

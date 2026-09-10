@@ -1,4 +1,5 @@
-Отлично!  
+Отлично!
+
 **Snapshotting (снимки состояния)** — это **ключевой паттерн в системах с Event Sourcing**, который позволяет **ускорить восстановление агрегата**, не пересчитывая все события с самого начала.
 
 ---
@@ -6,6 +7,7 @@
 ## ✅ Проблема: Почему нужен Snapshotting?
 
 Представьте, что у вас есть заказ:
+
 - Создан → 10 событий
 - Изменён адрес → 20
 - Оплата → 30
@@ -13,6 +15,7 @@
 - Возврат средств → 50
 
 Чтобы получить текущее состояние заказа `Order #123`, нужно:
+
 ```text
 Event 1: OrderCreated
 Event 2: AddressUpdated
@@ -30,6 +33,7 @@ Event 999: RefundProcessed
 > **Создавайте «снимок» каждые N событий**
 
 Например:
+
 ```text
 [SNAPSHOT] Order #123 at version 500:
 {
@@ -40,6 +44,7 @@ Event 999: RefundProcessed
 ```
 
 Теперь:
+
 - Начинаете не с версии 1
 - А с **снимка на версии 500**
 - Затем применяете только **события с 501 до 999**
@@ -154,14 +159,15 @@ private SnapshotTriggerDefinition snapshotTrigger;
 
 ## 📚 Где учиться дальше?
 
-- Book: *“Domain-Driven Design”* — Eric Evans
-- Book: *“Implementing Domain-Driven Design”* — Vaughn Vernon
+- Book: _“Domain-Driven Design”_ — Eric Evans
+- Book: _“Implementing Domain-Driven Design”_ — Vaughn Vernon
 - [Axon Docs](https://docs.axoniq.io/)
-- YouTube: *“Event Sourcing with Snapshots”* — Greg Young
+- YouTube: _“Event Sourcing with Snapshots”_ — Greg Young
 
 ---
 
-✅ **Snapshotting — это как сохранение игры в видеоигре.**  
+✅ **Snapshotting — это как сохранение игры в видеоигре.**
+
 Вы не начинаете с уровня 1 — вы загружаетесь из последнего save’а.
 
 📌 Сохраните эту информацию — она станет основой вашей производительной системы.

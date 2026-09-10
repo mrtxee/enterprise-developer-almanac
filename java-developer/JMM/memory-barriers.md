@@ -1,9 +1,9 @@
 ---
 aliases:
-  - Memory Fence
   - Memory Barrier
+  - Memory Fence
 ---
-### **Java Memory Barrier (Барьеры памяти в Java)**
+## **Java Memory Barrier (Барьеры памяти в Java)**
 
 **Memory Barrier** (также known as **Memory Fence**) — это механизм, который обеспечивает порядок выполнения операций с памятью в многопоточных программах. В Java они неявно используются в механизмах синхронизации.
 
@@ -30,6 +30,7 @@ System.out.println(x);  // Может напечатать 1 или 42?
 ```
 
 **Без memory barrier** операции могут быть переупорядочены:
+
 ```java
 // Фактический порядок выполнения (возможен)
 ready = true;  // Сначала!
@@ -44,7 +45,7 @@ x = 42;        // Потом
 - Гарантирует, что все операции **чтения ДО барьера** завершатся до операций **чтения ПОСЛЕ барьера**
 - Пример: `volatile read`
 
-### **StoreStore Barrier**  
+### **StoreStore Barrier**
 - Гарантирует, что все операции **записи ДО барьера** завершатся до операций **записи ПОСЛЕ барьера**
 - Пример: `volatile write`
 
@@ -79,8 +80,9 @@ class Example {
 ```
 
 **Что гарантирует `volatile`:**
+
 - **StoreStore барьер** перед записью в `volatile`
-- **StoreLoad барьер** после записи в `volatile`  
+- **StoreLoad барьер** после записи в `volatile`
 - **LoadLoad барьер** после чтения `volatile`
 - **LoadStore барьер** после чтения `volatile`
 
@@ -109,6 +111,7 @@ class SynchronizedExample {
 ```
 
 **`synchronized` создает барьеры:**
+
 - **Вход в монитор** → LoadLoad + LoadStore барьеры
 - **Выход из монитора** → StoreStore + StoreLoad барьеры
 
@@ -167,6 +170,7 @@ class Visibility {
 ## **6. Happens-Before и Memory Barriers**
 
 **Правило happens-before для `volatile`:**
+
 - Запись в `volatile` happens-before последующее чтение того же `volatile`
 - Это создает необходимые memory barriers автоматически
 
@@ -211,12 +215,14 @@ class AtomicExample {
 ### **Итог**
 
 **Memory Barriers в Java:**
+
 - **Невидимый механизм** обеспечения порядка операций с памятью
 - **Автоматически создаются** при использовании `volatile`, `synchronized`, атомарных операций
 - **Гарантируют видимость изменений** между потоками
 - **Предотвращают переупорядочивание** операций компилятором/процессором
 
 **Когда думать о memory barriers:**
+
 - При разработке многопоточных структур данных
 - При оптимизации производительности synchronized блоков
 - При работе с lock-free алгоритмами

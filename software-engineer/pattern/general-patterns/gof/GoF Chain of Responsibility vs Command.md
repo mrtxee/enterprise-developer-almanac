@@ -1,9 +1,10 @@
-# GoF: Chain of Responsibility vs Command
+## GoF: Chain of Responsibility vs Command
+
 Отлично! Вот **полное сравнение паттернов GoF Command и Chain of Responsibility** с диаграммами классов, живыми примерами на Java и детальным анализом.
 
 ---
 
-## 📚 Обзор паттернов GoF
+### 📚 Обзор паттернов GoF
 
 | Паттерн | Категория | Суть |
 |---------|-----------|------|
@@ -12,9 +13,9 @@
 
 ---
 
-## 🖼️ Диаграммы классов (Mermaid)
+### 🖼️ Диаграммы классов (Mermaid)
 
-### Command Pattern
+#### Command Pattern
 ```mermaid
 classDiagram
     class Command {
@@ -53,7 +54,7 @@ classDiagram
     Client --> Receiver : creates
 ```
 
-### Chain of Responsibility Pattern
+#### Chain of Responsibility Pattern
 ```mermaid
 classDiagram
     class Handler {
@@ -88,9 +89,9 @@ classDiagram
 
 ---
 
-## 💻 Живые примеры на Java
+### 💻 Живые примеры на Java
 
-### 🔘 Command Pattern: Текстовый редактор с отменой
+#### 🔘 Command Pattern: Текстовый редактор с отменой
 
 ```java
 // Receiver
@@ -223,7 +224,7 @@ public class CommandDemo {
 
 ---
 
-### 🔗 Chain of Responsibility: Система обработки запросов на отпуск
+#### 🔗 Chain of Responsibility: Система обработки запросов на отпуск
 
 ```java
 // Общий запрос
@@ -334,7 +335,7 @@ public class ChainDemo {
 
 ---
 
-## 🆚 Глубокое сравнение
+### 🆚 Глубокое сравнение
 
 | Критерий | **Command** | **Chain of Responsibility** |
 |----------|-------------|-----------------------------|
@@ -351,7 +352,7 @@ public class ChainDemo {
 
 ---
 
-## 💡 Комбинация паттернов: Реальный пример
+### 💡 Комбинация паттернов: Реальный пример
 
 **Сценарий**: Веб-приложение с middleware-цепочкой, где каждый шаг — команда
 
@@ -415,13 +416,14 @@ public class CombinedPatternDemo {
 ```
 
 **Где это используется в реальности**:
+
 - **Spring Security**: `FilterChain` (CoR) + `AuthenticationProvider` (Command)
 - **Express.js**: Middleware chain (CoR) с каждым middleware как командой
 - **GUI Frameworks**: Обработка событий через цепочку с возможностью отмены
 
 ---
 
-## ✅ Когда выбирать какой паттерн?
+### ✅ Когда выбирать какой паттерн?
 
 | Ваша задача | Выберите |
 |-------------|----------|
@@ -436,19 +438,22 @@ public class CombinedPatternDemo {
 
 ---
 
-## 💬 Ключевая цитата GoF
+### 💬 Ключевая цитата GoF
 
-> **Command**:  
+> **Command**:
 > *"Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations."*
 
-> **Chain of Responsibility**:  
+> **Chain of Responsibility**:
 > *"Avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along the chain until an object handles it."*
 
 ---
 
-✅ **Итог**:  
-Оба паттерна снижают связанность и повышают гибкость, но решают разные задачи:  
-🔹 **Command** — управление *операциями* (что сделать и как управлять)  
-🔹 **Chain of Responsibility** — маршрутизация *запросов* (кто и в каком порядке обработает)  
+✅ **Итог**:
+
+Оба паттерна снижают связанность и повышают гибкость, но решают разные задачи:
+
+🔹 **Command** — управление *операциями* (что сделать и как управлять)
+
+🔹 **Chain of Responsibility** — маршрутизация *запросов* (кто и в каком порядке обработает)
 
 Выбирайте по задаче, а при сложных сценариях — комбинируйте! 🚀

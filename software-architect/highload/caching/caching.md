@@ -1,23 +1,24 @@
 ---
 aliases:
-  - кэширование
-  - caching
   - cache
   - Cache
-  - Кэш
   - cache-hit
   - cache-miss
+  - caching
   - Invalidation
   - Инвалидация
+  - Кэш
+  - кэширование
 ---
 ## Кэширование
 
 **Кэширование — это временное хранение данных, чтобы избежать повторного выполнения дорогой операции** (например, запроса к базе данных, HTTP-вызова, вычисления).
 
-**Главная цель**:  
-✅ **Уменьшить latency** (время ответа)  
-✅ **Снизить нагрузку** на медленные системы (БД, API, файловую систему)
+**Главная цель**:
 
+✅ **Уменьшить latency** (время ответа)
+
+✅ **Снизить нагрузку** на медленные системы (БД, API, файловую систему)
 
 ```mermaid
 flowchart RL
@@ -28,13 +29,14 @@ flowchart RL
 ```
 
 
-> **Кэширование — это искусство баланса между скоростью и согласованностью.**  
+> **Кэширование — это искусство баланса между скоростью и согласованностью.**
 > Правильно настроенный кэш:
 > - Ускоряет ответы в **10–1000 раз**
 > - Снижает нагрузку на БД на **90%+**
 > - Позволяет масштабироваться **линейно**
 
 ---
+
 🧠 Основные понятия
 
 | Термин                                         | Описание                                                    |
@@ -64,20 +66,22 @@ flowchart RL
 ---
 
 Система кэширования состоит из частей
+
 1. Метод чтения кэша
 2. Метод обновления кэша
 3. Cache eviction policy
 4. Cache invalidation policy
 
 🔁 Основные стратегии использования кэша – **[[cache patterns]]**
+
 1. Read Patterns
-	* Cache-aside
-	* Read-through
-	* Cache-ahead / Pre-fetching
-2.  Write Patterns
-	* Write-through
-	* Write-behind / Write-back
-	* Refresh-ahead
+	- Cache-aside
+	- Read-through
+	- Cache-ahead / Pre-fetching
+2. Write Patterns
+	- Write-through
+	- Write-behind / Write-back
+	- Refresh-ahead
 3. [[cache patterns|Cache eviction]] policy
 	1. LRU – Least Recently Used
 	2. LFU – Least Frequently Used
@@ -85,10 +89,10 @@ flowchart RL
 	4. TTL‑based
 	5. RR – Random Replacement
 4. [[cache patterns|Cache invalidation]] policy
-	1. Explicit delete — удаление ключа по событию в системе (eg. после UPDATE в БД).  
-	2. Event‑driven — срабатывание по сообщению из очереди (eg, Kafka).  
-	3. Write‑through — запись в кэш сразу при обновлении источника.  
-	4. Tag‑based invalidation — аннулирование групп ключей по тегу.  
+	1. Explicit delete — удаление ключа по событию в системе (eg. после UPDATE в БД).
+	2. Event‑driven — срабатывание по сообщению из очереди (eg, Kafka).
+	3. Write‑through — запись в кэш сразу при обновлении источника.
+	4. Tag‑based invalidation — аннулирование групп ключей по тегу.
 
  **⚙️ Популярные кэш-системы**
 
@@ -127,18 +131,18 @@ public class UserService {
 
  ⚠️ Главные проблемы кэширования
 
-1. **Несогласованность данных**  
+1. **Несогласованность данных**
    → Решение: короткий TTL + инвалидация при записи.
 
-2. **Каскадный промах (Cache Stampede)**  
-   При истечении TTL тысячи запросов одновременно идут в БД.  
+2. **Каскадный промах (Cache Stampede)**
+   При истечении TTL тысячи запросов одновременно идут в БД.
    → Решение: **Refresh-Ahead** (обновление до истечения TTL).
 
-3. **Засорение кэша**  
-   Хранение редко используемых данных.  
+3. **Засорение кэша**
+   Хранение редко используемых данных.
    → Решение: **LFU/LRU eviction policies**.
 
-4. **Сложность отладки**  
+4. **Сложность отладки**
    → Решение: мониторинг hit/miss rate, логирование.
 
 ---
@@ -154,8 +158,9 @@ public class UserService {
 
 ---
 
-Но помните:  
-> **«There are only two hard problems in Computer Science: cache invalidation and naming things.»**  
-> — Phil Karlton #👨 
+Но помните:
+
+> **«There are only two hard problems in Computer Science: cache invalidation and naming things.»**
+> — Phil Karlton #👨
 
 ___

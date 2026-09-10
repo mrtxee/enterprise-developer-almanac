@@ -1,0 +1,17 @@
+---
+aliases:
+  - Java record
+  - record
+  - Record
+  - record type
+  - запись
+---
+
+## Record type в Java
+
+Тип был добавлен в Java 16. Тип расширяет абстрактный класс `java.lang.Record`.
+
+`record` type удобен для сокращения количества кода при описание класса, так как реализует базовый функционал класса:
+
+- Все объекта типа record поля `private final`.
+- Сам объект static final.

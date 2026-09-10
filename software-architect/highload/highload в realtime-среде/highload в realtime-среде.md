@@ -1,25 +1,27 @@
 
-# highload в realtime-среде
+## highload в realtime-среде
 
 методы оценки масштабируемости систем и научитесь внедрять контейнеризацию для динамического масштабирования, используя Kubernetes и его механизмы HPA, VPA и Cluster Autoscaler
 
-
 Apache Kafka, Flink и Storm
+
 стратегии отказоустойчивости, такие как Active-Passive, Active-Active и Geo-Redundancy
+
 Rate Limiting и BulkHead
+
 проектировании front-to-back и back-to-back интеграций
+
 технологии, как REST, GraphQL, WebSockets, gRPC, RabbitMQ, Apache ActiveMQ Artemis и Kafka
 
-
 * [[Performance testing|Нагрузочное тестирование]]
-* [[Kubernetes scaling]]
+* [[kubernetes-scaling]]
 	* Vertical Pod Autoscaler – выделяем больше ресурсов поду
 		* Существует три режима работы VPA: «Off», «Initial» и «Auto»
 	* Horizontal Pod Autoscaler – наращивает число подов
 	* Cluster Autoscaler – наращиваем число нодов
 * [[Resilience Patterns|Fault Tolerance]] – отказоустойчивость системы
 	* системы [[Observability|мониторинга и алертов]]
-	* [[Resilience Patterns|Rate Limiting]]  – ограничение скорости
+	* [[Resilience Patterns|Rate Limiting]] – ограничение скорости
 	* [[Resilience Patterns|Bulkhead]] – отсек
 	* [[Retry Policy]]
 	* [[Rate Limiting|Rate limiter]]
@@ -35,7 +37,7 @@ Rate Limiting и BulkHead
 		* специализированные БД событий
 			* [[EventStoreDB]]
 			* Axon Server
-			* Apache [[software-engineer/технологии/kafka/Kafka]]
+			* Apache [[kafka]]
 		* паттерн [[Snapshotting]] чтобы кропать длину лога
 	* паттерны обеспечения консистентности событий между сервисом и ивент басом
 		* [[Transaction log tailing]]
@@ -50,4 +52,4 @@ Rate Limiting и BulkHead
 		* асинхронная микропакетная обработка
 		* streaming-модель
 		* модель непрерывного обновления.
-	- В потоковой обработке используется метод оконной агрегации
+	* В потоковой обработке используется метод оконной агрегации

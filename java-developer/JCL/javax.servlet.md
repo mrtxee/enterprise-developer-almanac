@@ -1,9 +1,10 @@
 ---
 aliases:
-  - Servlet API
   - Servlet
+  - Servlet API
   - сервелет
 ---
+
 **Servlet API** — это **стандарт Java-интерфейсов и классов** для построения веб-приложений, работающих на стороне сервера. Он определяет, как Java-код взаимодействует с HTTP-запросами и ответами.
 
 > 💡.Servlet — это **Java-класс**, который обрабатывает HTTP-запросы (GET, POST и др.) и формирует HTTP-ответы.
@@ -104,7 +105,7 @@ public class HelloServlet extends HttpServlet {
 | **Совместимость** | Все Java-веб-серверы | Требует реактивный сервер (Netty) |
 | **Стандарт** | Jakarta EE (ранее Java EE) | Реактивный стек (Reactor) |
 
-> 🔸 Spring WebFlux **не требует Servlet API** — он может работать на Netty напрямую.  
+> 🔸 Spring WebFlux **не требует Servlet API** — он может работать на Netty напрямую.
 > 🔸 Spring MVC **обязательно требует Servlet API**.
 
 ---
@@ -112,7 +113,7 @@ public class HelloServlet extends HttpServlet {
 ## 📜 Эволюция: от `javax` к `jakarta`
 
 - До 2017: пакеты — `javax.servlet.*`
-- После передачи Java EE в Eclipse Foundation:  
+- После передачи Java EE в Eclipse Foundation:
   → переименовано в **Jakarta Servlet** → пакеты `jakarta.servlet.*`
 - **Tomcat 10+**, **Jetty 11+** используют `jakarta.*`
 
@@ -131,8 +132,8 @@ public class HelloServlet extends HttpServlet {
 
 ## 🎯 Итог
 
-> **Servlet API — это фундамент Java-веба.**  
-> Он стандартизирует взаимодействие между веб-сервером и Java-кодом, позволяя писать переносимые веб-приложения.  
+> **Servlet API — это фундамент Java-веба.**
+> Он стандартизирует взаимодействие между веб-сервером и Java-кодом, позволяя писать переносимые веб-приложения.
 > Даже если вы используете Spring Boot, под капотом — **всё равно сервлеты** (если не WebFlux).
 
 ---

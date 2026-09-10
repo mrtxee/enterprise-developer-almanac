@@ -1,12 +1,12 @@
 ---
 aliases:
-  - Stream API
   - Stream
+  - Stream API
 ---
->[!info] `java.util.stream`
-# Методы Java Stream API
+> [!info] `java.util.stream`
+## Методы Java Stream API
 
-#### Промежуточные (intermediate) методы
+### Промежуточные (intermediate) методы
 
 Возвращают новый поток (`Stream<T>`), позволяя выстраивать цепочки операций. Выполняются лениво — только при вызове терминальной операции.
 
@@ -23,7 +23,8 @@ aliases:
 11. `sequential()` — преобразование в последовательный поток.
 12. `unordered()` — снятие требования упорядоченности (может повысить производительность).
 
-#### Терминальные (terminal) методы
+### Терминальные (terminal) методы
+
 Завершают работу с потоком, возвращают результат или выполняют действие. После вызова терминальной операции поток нельзя использовать повторно.
 
 1. `forEach(Consumer<? super T> action)` — выполнение действия для каждого элемента.
@@ -46,18 +47,22 @@ aliases:
 ---
 
 **Важные замечания:**
+
 * Промежуточные операции делятся на **stateless** (не зависят от других элементов: `filter`, `map`) и **stateful** (требуют информации о других элементах: `sorted`, `distinct`).
 * Терминальная операция **обязательно** должна присутствовать в цепочке — без неё промежуточные операции не выполняются.
 * После терминальной операции поток **закрывается** — попытка использовать его повторно вызовет исключение `IllegalStateException`.
 
 Хотите, разберу какой‑то метод подробнее или приведу примеры использования?
 
-# Java Stream API
+## Java Stream API
 
 Пакет `java.util.stream` содержит классы для поддержки операций с потоками элементов в функциональном стиле. Ключевой абстракцией, введенной в этом пакете, является Поток.
+
 `Stream API` – по сути это поток данных и последовательные операции над ними.
+
 Интерфейсы Stream, IntStream, LongStream и DoubleStream – это потоки объектов и примитивных типов int, long и double.
-## Создание потока
+
+### Создание потока
 ```Java
 List<Integer> numbers = new ArrayList<>();
 numbers.stream().mapToInt(value -> value);
@@ -87,8 +92,10 @@ random.ints();
 random.longs();
 random.doubles();
 ```
-## Intermediate Промежуточные операции потока
+### Intermediate Промежуточные операции потока
+
 Они же **отложенные** операции. Выполнятся когда их запустит конечная терминальная операция над стримом
+
 ```Java
 //привести данные к потоковому типу, map()
 Stream.of(1, 2, 3).map((x) -> String.valueOf(x));
@@ -125,8 +132,10 @@ Arrays.stream(array2d).flatMap(Arrays::stream);    // [1, 2, 3, 4, 5]
 String str = transitions.keySet().stream().map(ch -> ch + "->" + transitions.get(ch)).collect(Collectors.joining("; "));
 String str = outputStack.stream().map(Lexem::getValue).collect(Collectors.joining(","));
 ```
-## Terminal Конечные операции
+### Terminal Конечные операции
+
 Запускают всю цепь промежуточных операций и возвращают конечный результат, закрывают поток.
+
 ```Java
 //Собрать элементы потока и преобразовать их к нужному типу collect(Collector с)
 List<String> collect = Stream.of("a", "b", "c").collect(Collectors.toList());
@@ -148,12 +157,18 @@ Stream.of("a", "bb", "ccc")
         .max(Comparator.comparingInt(String::length))
         .get();
 ```
-### Сборка потока
+#### Сборка потока
+
 Терминальный метод `collect()` интерфейса Stream служит для того, чтобы перейти от потоков к привычным коллекциям — `List<T>`, `Set<T>`, `Map<T, R>` и другим.
+
 В метод `collect()` нужно передать специальный объект — `collector`.
-### Класс Collectors
+
+#### Класс Collectors
+
 `import java.util.stream.Collectors;`
+
 Коллектор имплиментирет интерфейс `public interface Collector<T,A,R>`. Последний тип `R` — это обычно и есть тип вроде `List<T>`. Поэтому компилятор может по этому типу подставить правильный тип результата самого метода `collect()`.
+
 Обычно можно воспользоваться уже готовыми объектами, которые возвращают статические методы класса `Collectors`.
 
 |   |   |
@@ -164,6 +179,7 @@ Stream.of("a", "bb", "ccc")
 |`joining()`|Склеивает элементы потока в одну строку|
 |`mapping()`|Преобразует элементы потока в `Map<K, V>`|
 |`groupingBy()`|Группирует элементы, возвращает `Map <K, V>`|
+
 ```Java
 ArrayList<String> list = new ArrayList<String>();
 Collections.addAll(list, "a=2", "b=3", "c=4", "d==3");

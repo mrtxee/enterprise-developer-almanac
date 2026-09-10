@@ -1,38 +1,54 @@
 многослойная архитектура
 
->[!important] xxx
->Репозиторий ↔ `Entity` ↔ Сервисный слой ↔ `DTO` ↔ Контроллер  
->Репозиторий ↔  `Entity` ↔ Маппер ↔ DTO ↔ Сервисный слой ↔ DTO ↔ Контроллер  
->Model ↔ Controller ↔ View 
+> [!important] xxx
+> Репозиторий ↔ `Entity` ↔ Сервисный слой ↔ `DTO` ↔ Контроллер
+> Репозиторий ↔ `Entity` ↔ Маппер ↔ DTO ↔ Сервисный слой ↔ DTO ↔ Контроллер
+> Model ↔ Controller ↔ View
 
 ==MVC style==
+
 Традиционно включает в себя:
+
 - controller
 - service
 - dto – слой транспортных объектов
 - mapper
-- repository ~ model ~ entites 
+- repository ~ model ~ entites
 Слои приложения в от верхнего.
 ## (0) **Интерфейсный слой**
+
 **Интерфейсный слой —** UI Layer (Web Browser, JavaScript)
+
 - может быть представвлен консолью ввода или Rest котроллером, любым иным клиентским интерфейсом
 ## [Слой аутентификации]
 ## (1) Контроллер
+
 **Контроллер** — MVC Controller — **==controller==**
+
 - Spring components annotated with `@Controller`
 - получает команды от интерфейсного слоя и обращается к сервисному слою, бизнес-логике. Получает и передает **DTO**
 ## (2) Сервис
+
 **Сервисный слой** — Service Layer — **==service==**
+
 - , i.e. Spring components annotated with `@Service`
 - слой бизнес логики
 ## [Маппер]
+
 Маппер — ==**mapper**==
+
 адаптер задач которого сопоставлять `Entity ⇔ DTO`
+
 `org.mapstruct` — пакет для маппинга
+
 ## (3) Слой данных
+
 **Слой данных** — Data Access Layer — ==**repository, mapper, model, dto**==
+
 Слой взаимодействия с данными. При реализации может представлен репозиторием.
+
 Репозиторий — класс который умеет общаться с хранилищем данных — **==repository==**
+
 1. Spring components annotated with `@Repository`
 2. По MVC-паттерну относится к **model**
 Репозиторий возвращает сущности — `@Entity` — Сущность (по JPA)

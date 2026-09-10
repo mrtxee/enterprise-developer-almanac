@@ -1,30 +1,32 @@
 ---
 aliases:
-  - WebSocket
   - GraphQL Subscriptions
-  - SSE
-  - Server-Sent Events
   - Server Push
+  - Server-Sent Events
+  - SSE
+  - WebSocket
 ---
-Отлично!  
+
+Отлично!
+
 Вот **полное, структурированное и понятное объяснение** паттерна **Server Push** — когда **сервер сам отправляет данные клиенту**, без запроса. Это **противоположность Client Pull** (опросу).
 
 ---
 
 ## ✅ Что такое Server Push?
 
-> **Server Push** — это модель, при которой **сервер инициирует отправку данных клиенту в реальном времени**, как только они появляются.  
+> **Server Push** — это модель, при которой **сервер инициирует отправку данных клиенту в реальном времени**, как только они появляются.
 > Клиент **не спрашивает** — он **ждёт**, пока сервер "позвонит".
 
-### 🔁 Противоположность:  
-- **[[Client pull]]**: *«Есть ли новые данные?»* → опрос  
+### 🔁 Противоположность:
+- **[[Client pull]]**: *«Есть ли новые данные?»* → опрос
 - **Server Push**: *«Вот новые данные — держи!»* → уведомление
 
 ---
 
 ## ✅ 1. WebSocket
 
-> **WebSocket** — это **двустронний, постоянный TCP-канал** между клиентом и сервером.  
+> **WebSocket** — это **двустронний, постоянный TCP-канал** между клиентом и сервером.
 > После установки соединения — обе стороны могут **слать любые данные в любое время**.
 
 ### 🔧 Как работает:
@@ -61,7 +63,7 @@ sequenceDiagram
 
 ## ✅ 2. SSE (Server-Sent Events)
 
-> **SSE** — это **односторонняя** технология: **сервер отправляет данные клиенту** по протоколу HTTP.  
+> **SSE** — это **односторонняя** технология: **сервер отправляет данные клиенту** по протоколу HTTP.
 > Клиент **не может отправлять данные** — только получать.
 
 ### 🔧 Как работает:
@@ -71,6 +73,7 @@ Accept: text/event-stream
 ```
 
 Сервер отвечает:
+
 ```http
 HTTP/1.1 200 OK
 Content-Type: text/event-stream
@@ -81,6 +84,7 @@ data: {"type": "status", "message": "Оплата прошла"}
 ```
 
 Клиент (браузер) слушает событие:
+
 ```javascript
 const eventSource = new EventSource('/events');
 eventSource.onmessage = (e) => {
@@ -112,7 +116,7 @@ eventSource.onmessage = (e) => {
 
 ## ✅ 3. GraphQL Subscriptions
 
-> **GraphQL Subscriptions** — это **подписка на события** в рамках GraphQL API.  
+> **GraphQL Subscriptions** — это **подписка на события** в рамках GraphQL API.
 > Это **не отдельный протокол**, а **функция GraphQL**, реализуемая поверх WebSocket или SSE.
 
 ### 🔧 Как работает:
@@ -199,22 +203,23 @@ subscription {
 | **SSE** | Односторонний поток | Радио-эфир |
 | **GraphQL Subscriptions** | Умное радио с выбором станции | "Включите мне только новости о ценах на нефть" |
 
-> 💬 _“WebSocket is a phone. SSE is a radio. GraphQL Subscriptions are smart radio with filters.”_
+> 💬 *“WebSocket is a phone. SSE is a radio. GraphQL Subscriptions are smart radio with filters.”*
 
 ---
 
 ## 📚 Где учиться дальше?
 
-- Book: *“Designing Web APIs”* — Brenda Jin  
-- YouTube: *“SSE vs WebSocket vs GraphQL Subscriptions”* — The Net Ninja  
-- [MDN: Server-Sent Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)  
+- Book: *“Designing Web APIs”* — Brenda Jin
+- YouTube: *“SSE vs WebSocket vs GraphQL Subscriptions”* — The Net Ninja
+- [MDN: Server-Sent Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)
 - [GraphQL Subscriptions Docs](https://www.apollographql.com/docs/apollo-server/data/subscriptions/)
 
 ---
 
-✅ **Теперь вы знаете:**  
-- Когда использовать **реальный push**, а не опрос  
-- Как выбрать между WebSocket, SSE и GraphQL Subscriptions  
+✅ **Теперь вы знаете:**
+
+- Когда использовать **реальный push**, а не опрос
+- Как выбрать между WebSocket, SSE и GraphQL Subscriptions
 - Почему **SSE — лучший выбор для уведомлений**, а **WebSocket — для чатов**
 
 📌 Сохраните эту таблицу — она станет основой вашей стратегии **реального времени**.

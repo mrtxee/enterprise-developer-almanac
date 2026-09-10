@@ -1,12 +1,13 @@
 ---
 aliases:
-  - LOB
-  - CLOB
-  - BLOB
-  - Large Object
   - Binary Large Object
+  - BLOB
+  - CLOB
+  - Large Object
+  - LOB
 ---
-# Large Object – LOB
+## Large Object – LOB
+
 Разберу расшифровку и суть этих терминов:
 
 **1. LOB** – Large Object

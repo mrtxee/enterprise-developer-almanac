@@ -19,14 +19,14 @@
 | **Формы**                   | ❌ Нет                               | ✅ Да (embedded form, Camunda Forms)       |
 | **Подходит для**            | Инженеры, data pipelines            | Бизнес-процессы, workflow                 |
 
-> 🔑 **Airflow = для данных**  
+> 🔑 **Airflow = для данных**
 > **Camunda = для людей и бизнес-логики**
 
 ---
 
 ## ✅ 1. Apache Airflow — для инженеров
 
-> **[[Airflow]]** — это **платформа для программной оркестрации сложных пайплайнов**:  
+> **[[Airflow]]** — это **платформа для программной оркестрации сложных пайплайнов**:
 > - [[ELT]]
 > - [[ML|Машинное обучение]]
 > - Аналитика
@@ -61,6 +61,7 @@ t1 >> t2 >> t3
 ---
 
 ### ✅ Преимущества Airflow:
+
 | Плюс | Объяснение |
 |------|------------|
 | ✅ **Code as Workflow** | DAG’и в Git → контроль версий |
@@ -72,6 +73,7 @@ t1 >> t2 >> t3
 ---
 
 ### ❌ Недостатки:
+
 | Минус | Объяснение |
 |-------|------------|
 | ❌ Не подходит для человеко-задач | Нет форм, нет пользовательских задач |
@@ -83,7 +85,7 @@ t1 >> t2 >> t3
 
 ## ✅ 2. Camunda — для бизнес-процессов
 
-> **Camunda** — это **движок BPM (Business Process Management)**, основанный на стандарте **[[BPMN]] 2.0**  
+> **Camunda** — это **движок BPM (Business Process Management)**, основанный на стандарте **[[BPMN]] 2.0**
 > Используется для:
 > - Онбординга сотрудников
 > - Подтверждения заказов
@@ -110,6 +112,7 @@ graph LR
 ---
 
 ### ✅ Преимущества Camunda:
+
 | Плюс | Объяснение |
 |------|------------|
 | ✅ **Визуальное моделирование** | BPMN — понятно аналитикам |
@@ -123,6 +126,7 @@ graph LR
 ---
 
 ### ❌ Недостатки:
+
 | Минус | Объяснение |
 |-------|------------|
 | ❌ Сложнее масштабировать | Требует Java EE / Spring Boot |
@@ -159,7 +163,7 @@ graph LR
 | **Где живёт процесс** | В коде (`DAG`) | В графическом редакторе |
 | **Лучше для** | Данных, автоматизации | Процессов, compliance |
 
-> 💬 _“Airflow asks: ‘What needs to run?’_  
+> 💬 _“Airflow asks: ‘What needs to run?’_
 > _Camunda asks: ‘Who needs to approve it?’”_
 
 ---
@@ -168,12 +172,13 @@ graph LR
 
 - [Apache Airflow Docs](https://airflow.apache.org/)
 - [Camunda Docs](https://docs.camunda.org/)
-- YouTube: *“Airflow vs Camunda”* — TechWorld with Nana
-- Book: *“Orchestrating Success with Airflow”*
+- YouTube: _“Airflow vs Camunda”_ — TechWorld with Nana
+- Book: _“Orchestrating Success with Airflow”_
 
 ---
 
-✅ **Airflow — ваш выбор, если вы строите data platform**  
+✅ **Airflow — ваш выбор, если вы строите data platform**
+
 ✅ **Camunda — если вы оптимизируете бизнес-процессы**
 
 📌 Сохраните эту таблицу — она поможет выбрать правильный инструмент.

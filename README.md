@@ -1,8 +1,8 @@
-# enterprise-developer-almanac
+## enterprise-developer-almanac
 > альманах корпоративного разработчика
 
 
-## toc enterprise-developer-almanac
+### toc enterprise-developer-almanac
 
 ```plain
 Структура папок тома: 744A-2683
@@ -626,7 +626,6 @@ L---software-engineer
         L---nginx
                 Синтаксис конфигураций Nginx.md
 ```
-
 
 ----
 
