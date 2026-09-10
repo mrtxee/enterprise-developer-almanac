@@ -1,8 +1,29 @@
+---
+aliases:
+  - Aggregate Root
+  - Корень агрегата
+  - Aggregate
+  - Агрегат
+  - Domain-Driven Design
+  - DDD
+  - Предметно-ориентированное проектирование
+  - Entity
+  - Сущность
+  - Value Object
+  - Объект-значение
+  - Repository
+  - Репозиторий
+  - Event Sourcing
+  - CQRS
+---
+
+# Aggregate Root (Корень агрегата)
+
 **Aggregate Root (Корень агрегата)** — это **ключевое понятие в DDD ([[Domain-Driven Design]])**, которое помогает управлять сложностью и обеспечивать целостность бизнес-объектов.
 
 ---
 
-## ✅ Что такое **Aggregate Root**?
+## ✅ Что такое Aggregate Root?
 
 > **Aggregate Root** — это **главный объект в группе связанных сущностей**, который:
 > - Является **единственной точкой входа** в агрегат
@@ -167,10 +188,9 @@ public class Order {
 
 ## 📚 Где учиться дальше?
 
-- Book: **“Domain-Driven Design” — Eric Evans**
-- Book: **“Implementing Domain-Driven Design” — Vaughn Vernon**
-- Video: *“What is an Aggregate Root?”* — Nick Tune
-- [https://dddcommunity.org](https://dddcommunity.org)
+- Книга: **«Domain-Driven Design»** — Eric Evans #👨 #📘
+- Книга: **«Implementing Domain-Driven Design»** — Vaughn Vernon #👨 #📘
+- Видео: *«What is an Aggregate Root?»* — Nick Tune #👨
 
 ---
 
@@ -209,7 +229,7 @@ public class Order {
 
 ### ✅ Подробное объяснение
 
-#### 1. **Что такое Aggregate?**
+#### Что такое Aggregate?
 
 > **Aggregate** — это **паттерн моделирования домена**, при котором:
 > - Несколько объектов (сущности, value objects) образуют **единицу целостности**
@@ -232,7 +252,7 @@ Aggregate: Order
 
 ---
 
-#### 2. **Что такое Aggregate Root?**
+#### Что такое Aggregate Root?
 
 > **Aggregate Root** — это **главная сущность** внутри агрегата, которая:
 > - Является **единственным способом доступа** к агрегату
@@ -374,7 +394,7 @@ public class Order {
 ### 💬 Цитата из книги
 
 > *“An AGGREGATE is a cluster of associated objects that we treat as a unit for the purpose of data changes.”*
-> — *Domain-Driven Design, Eric Evans*, Chapter 6 #👨
+> — *Domain-Driven Design, Eric Evans* #👨 #📘, Chapter 6
 
 > ✅ **Aggregate — это "кластер".
 > Aggregate Root — это "ключ" к этому кластеру.**

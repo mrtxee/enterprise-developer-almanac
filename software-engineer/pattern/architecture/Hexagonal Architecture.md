@@ -1,10 +1,13 @@
 ---
 aliases:
-  - Ports and Adapters
-  - архитектура портов и адаптеров
-  - гексагональная архитектура
+  - Hexagonal Architecture
+  - Гексагональная архитектура
   - Шестиугольная архитектура
+  - Ports and Adapters
+  - Архитектура портов и адаптеров
 ---
+
+# Hexagonal Architecture
 
 **Hexagonal Architecture (Шестиугольная архитектура)**, также известная как **Ports and Adapters**, — это **мощный паттерн проектирования**, при котором **бизнес-логика (ядро) не зависит от внешних систем** — таких как базы данных, веб-фреймворки, очереди или UI.
 
@@ -27,6 +30,9 @@ aliases:
 ## 🔧 Основные компоненты
 
 ```mermaid
+---
+title: Взаимодействие адаптеров с ядром через порты
+---
 graph LR
     A[HTTP Adapter] -->|через порт| B[Application Core]
     C[Database Adapter] -->|через порт| B
@@ -35,12 +41,12 @@ graph LR
     F[UI / Frontend] -->|через порт| B
 ```
 
-### 1. **Application Core (Ядро)**
+### Application Core (Ядро)
 - Содержит **всю бизнес-логику**: правила, доменные объекты, сервисы
 - **Не использует** `@SpringBootApplication`, `@RestController`, `JPARepository`
 - Не знает, что он работает в Spring, Django или Node.js
 
-### 2. **Port (Порт)**
+### Port (Порт)
 - Это **интерфейс**, который определяет, **что может делать ядро**.
 - Примеры:
   ```java
@@ -50,7 +56,7 @@ graph LR
   }
   ```
 
-### 3. **Adapter (Адаптер)**
+### Adapter (Адаптер)
 - Реализует **порт** для конкретной технологии.
 - Может быть **входным** (inbound) или **выходным** (outbound).
 
@@ -70,6 +76,8 @@ graph LR
 
 > 🔹 Потому что **ядро** — в центре, а вокруг него **шесть сторон (ports)** — как у шестиугольника.
 > На практике их может быть больше — но концепция та же: **где угодно можно подключиться к ядру**.
+
+Схема: ядро в центре, порты и адаптеры вокруг
 
 ```plaintext
           +------------------+
@@ -130,7 +138,7 @@ public interface InventoryRepository {
 
 ### 🔌 Адаптеры (Adapters)
 
-#### 1. **Веб-адаптер (Inbound)**
+#### Веб-адаптер (Inbound)
 ```java
 @RestController
 public class OrderController {
@@ -147,7 +155,7 @@ public class OrderController {
 
 → Это **адаптер**, который связывает HTTP с ядром.
 
-#### 2. **База данных (Outbound Adapter)**
+#### База данных (Outbound Adapter)
 ```java
 @Repository
 public class JpaInventoryRepository implements InventoryRepository {
@@ -157,7 +165,7 @@ public class JpaInventoryRepository implements InventoryRepository {
 
 → Подключается к ядру через интерфейс `InventoryRepository`.
 
-#### 3. **Email-адаптер (Outbound)**
+#### Email-адаптер (Outbound)
 ```java
 @Service
 public class SmtpPaymentNotifier implements PaymentNotifier {
@@ -287,10 +295,10 @@ public class SmtpPaymentNotifier implements PaymentNotifier {
 
 ## 📚 Где учиться дальше?
 
-- [Alistair Cockburn — Hexagonal Architecture](https://alistair.cockburn.us/hexagonal-architecture/)
-- Book: _“Growing Object-Oriented Software, Guided by Tests”_ — Steve Freeman
-- Book: _“Clean Architecture”_ — Robert Martin
-- YouTube: _“Hexagonal Architecture Explained”_ — TechWorld with Nana
+- Alistair Cockburn #👨 — Hexagonal Architecture
+- Книга: «Growing Object-Oriented Software, Guided by Tests» — Steve Freeman #👨 #📘
+- Книга: «Clean Architecture» — Robert Martin #👨 #📘
+- YouTube: «Hexagonal Architecture Explained» — TechWorld with Nana #👨
 
 ---
 
@@ -329,7 +337,6 @@ public class SmtpPaymentNotifier implements PaymentNotifier {
 
 > _«Когда технологии меняются — бизнес остаётся.
 > Пусть ваш код так же.»_
-
 
 ## Hexagonal Architecture vs Domain-Driven Design
 

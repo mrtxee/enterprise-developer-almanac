@@ -1,27 +1,42 @@
+---
+aliases:
+  - Message Broker
+  - Брокер сообщений
+  - Message Queueing
+  - Очередь сообщений
+  - RabbitMQ
+  - Apache Kafka
+  - Amazon SQS
+  - Producer
+  - Продюсер
+  - Consumer
+  - Консьюмер
+  - AMQP
+  - Pub/Sub
+  - Публикация/Подписка
+  - Dead-Letter Queue
+  - DLQ
+---
+# Message Broker
 
-## Message Broker
+Message Broker является технической реализацией паттерна [[message-queueing]].
 
-Message Broker является технической реализацией паттерна [[message-queueing]]
+## Популярные системы обмена сообщениями
 
-**Популярные системы обмена сообщениями**
-
-1. **RabbitMQ** — это брокер сообщений с открытым исходным кодом, использующий протокол Advanced Message Queuing Protocol (AMQP). Он поддерживает различные схемы обмена сообщениями, включая «точка — точка» и «публикация — подписка».
-
-    RabbitMQ подходит для таких задач, как обработка заданий, распределение событий и обработка данных в реальном времени. Он характеризуется высокой доступностью, кластеризацией, гибкой маршрутизацией и пользовательским интерфейсом управления.
-
+1. **RabbitMQ** — это брокер сообщений с открытым исходным кодом, использующий протокол Advanced Message Queuing Protocol (AMQP). Он поддерживает различные схемы обмена сообщениями, включая «точка — точка» и «публикация — подписка». RabbitMQ подходит для таких задач, как обработка заданий, распределение событий и обработка данных в реальном времени. Он характеризуется высокой доступностью, кластеризацией, гибкой маршрутизацией и пользовательским интерфейсом управления.
 2. **Apache Kafka** — это распределённая потоковая платформа с открытым исходным кодом, предназначенная для обработки сообщений с высокой пропускной способностью и низкой задержкой. Она широко используется для создания конвейеров данных в реальном времени и потоковых приложений.
 3. **Amazon SQS (Simple Queue Service)** — это полностью управляемый сервис очередей сообщений, предоставляемый AWS. Он позволяет разделять и масштабировать микросервисы, распределённые системы и бессерверные приложения. Amazon SQS широко используется для фоновой обработки заданий, асинхронных рабочих процессов и развязки микросервисов.
 
 ## Message Broker vs Message Queueing
 
-**Message Queueing** и **Message Broker**, считая их синонимами. На самом деле, это **разные уровни абстракции**:
+**Message Queueing** и **Message Broker** часто считают синонимами. На самом деле, это **разные уровни абстракции**:
 
 > **[[message-queueing]] — это паттерн (что делаем).**
 > **Message Broker — это инструмент (как делаем).**
 
 ---
 
-### ✅ Краткий ответ:
+### Краткий ответ
 
 | Термин               | Что это?                                                                                             |
 | -------------------- | ---------------------------------------------------------------------------------------------------- |
@@ -32,25 +47,28 @@ Message Broker является технической реализацией п
 > Как:
 > - **Pub/Sub — это паттерн**,
 > - **Kafka — это его реализация**.
-> 
+>
 > Аналогично:
 > - **Message Queueing — это паттерн**,
 > - **RabbitMQ — это его реализация (Message Broker)**.
 
 ---
 
-### ✅ 1. Что такое **Message Queueing**?
+### Что такое Message Queueing?
 
-#### 🔹 Определение:
+#### Определение
+
 > **Message Queueing** — это **архитектурный подход**, при котором **отправители (producers)** помещают сообщения в **очередь**, а **получатели (consumers)** забирают их **по мере готовности**, без необходимости быть одновременно активными.
 
-#### 💡 Цель:
+#### Цель
+
 - Декуплинг компонентов
 - Асинхронность
 - Буферизация нагрузки
 - Надёжность (сообщения не теряются)
 
-#### 🔄 Принцип работы:
+#### Принцип работы
+
 ```plaintext
 [Producer] → [Queue] → [Consumer]
 ```
@@ -59,7 +77,8 @@ Message Broker является технической реализацией п
 - Queue хранит сообщение до тех пор, пока Consumer не возьмёт его.
 - Consumer обрабатывает сообщение — и удаляет его из очереди.
 
-#### ✅ Примеры использования:
+#### Примеры использования
+
 - Отправка email после оформления заказа
 - Обработка платежей
 - Логирование событий
@@ -69,14 +88,15 @@ Message Broker является технической реализацией п
 
 ---
 
-### ✅ 2. Что такое **Message Broker**?
+### Что такое Message Broker?
 
-#### 🔹 Определение:
+#### Определение
+
 > **Message Broker** — это **специализированное программное обеспечение**, которое **реализует** паттерн [[message-queueing]] (и часто [[Publish-Subscribe|Pub/Sub]]), обеспечивая надёжную доставку, маршрутизацию, масштабируемость и управление очередями.
 
 Это **сервис**, который вы **устанавливаете, настраиваете и управляете** — он работает как посредник между producer и consumer.
 
-#### 💡 Его задачи:
+#### Его задачи
 
 | Задача | Описание |
 |--------|----------|
@@ -87,7 +107,7 @@ Message Broker является технической реализацией п
 | **Управление подключениями** | Обеспечивает безопасность, аутентификацию, TLS |
 | **Мониторинг** | Показывает lag, количество сообщений, ошибки |
 
-#### ✅ Примеры Message Brokers:
+#### Примеры Message Brokers
 
 | Инструмент | Тип | Особенности |
 |-----------|------|-------------|
@@ -103,7 +123,7 @@ Message Broker является технической реализацией п
 
 ---
 
-### 🆚 Сравнение: Message Queueing vs Message Broker
+### Сравнение: Message Queueing vs Message Broker
 
 | Критерий                                | **Message Queueing**                                           | **Message Broker**                                                      |
 | --------------------------------------- | -------------------------------------------------------------- | ----------------------------------------------------------------------- |
@@ -120,21 +140,24 @@ Message Broker является технической реализацией п
 
 ---
 
-### 🧩 Практический пример
+### Практический пример
 
-#### ❌ Без Message Broker (неверно для продакшена):
+#### Без Message Broker (неверно для продакшена)
+
+Пример внутренней очереди в памяти на Python:
+
 ```python
 # Python: внутренняя очередь в памяти
 import queue
 q = queue.Queue()
 
 def send_email():
-    q.put("Send welcome email to alice@example.com")
+  q.put("Send welcome email to alice@example.com")
 
 def process_queue():
-    while True:
-        msg = q.get()  # Берёт из памяти
-        send_email(msg)
+  while True:
+    msg = q.get()  # Берёт из памяти
+    send_email(msg)
 ```
 
 → **Это Message Queueing?** — да, по паттерну.
@@ -143,7 +166,10 @@ def process_queue():
 
 → **Это production-ready?** — нет!
 
-#### ✅ С Message Broker (правильно):
+#### С Message Broker (правильно)
+
+Пример использования RabbitMQ на Python:
+
 ```python
 import pika
 
@@ -155,9 +181,9 @@ channel.basic_publish(exchange='', routing_key='email_queue', body='Send welcome
 
 # Consumer
 def callback(ch, method, properties, body):
-    print(f"Processing: {body}")
-    send_email(body)
-    ch.basic_ack(delivery_tag=method.delivery_tag)
+  print(f"Processing: {body}")
+  send_email(body)
+  ch.basic_ack(delivery_tag=method.delivery_tag)
 
 channel.basic_consume(queue='email_queue', on_message_callback=callback)
 channel.start_consuming()
@@ -175,7 +201,7 @@ channel.start_consuming()
 
 ---
 
-### 📊 Таблица: Message Queueing vs Message Broker — резюме
+### Таблица: Message Queueing vs Message Broker — резюме
 
 | Признак | Message Queueing | Message Broker |
 |--------|------------------|----------------|
@@ -189,15 +215,17 @@ channel.start_consuming()
 
 ---
 
-### ✅ Когда говорят “Message Queueing” — имеют в виду паттерн
+### Когда говорят “Message Queueing” — имеют в виду паттерн
+
 > *«Мы используем message queueing, чтобы не блокировать пользователей при отправке email»*
 
-### ✅ Когда говорят “Message Broker” — имеют в виду инструмент
+### Когда говорят “Message Broker” — имеют в виду инструмент
+
 > *«Мы выбрали RabbitMQ как message broker для нашей системы»*
 
 ---
 
-### 🔍 Частые ошибки и путаницы
+### Частые ошибки и путаницы
 
 | Ошибка | Почему неверно | Правильно |
 |-------|---------------|-----------|
@@ -208,7 +236,7 @@ channel.start_consuming()
 
 ---
 
-### ✅ Лучшие практики
+### Лучшие практики
 
 | Практика | Объяснение |
 |---------|------------|
@@ -220,7 +248,7 @@ channel.start_consuming()
 
 ---
 
-### 💬 Финальная аналогия
+### Финальная аналогия
 
 | Компонент | Аналогия |
 |----------|----------|
@@ -231,7 +259,7 @@ channel.start_consuming()
 
 ---
 
-### ✅ Заключение: Ключевое отличие
+### Заключение: Ключевое отличие
 
 | Вопрос | Ответ |
 |--------|-------|
@@ -244,12 +272,12 @@ channel.start_consuming()
 
 ---
 
-### 📚 Где учиться дальше?
+### Где учиться дальше?
 
-- [RabbitMQ Tutorials](https://www.rabbitmq.com/getstarted.html)
-- [Kafka: The Definitive Guide](https://www.confluent.io/resources/books/kafka-the-definitive-guide/)
-- Book: **“Designing Data-Intensive Applications” — Martin Kleppmann** (Глава 8: Message Brokers)
-- YouTube: *“Message Queueing vs Message Broker” — TechWorld with Nana*
+- RabbitMQ Tutorials
+- Kafka: The Definitive Guide [#📘]
+- Book: **“Designing Data-Intensive Applications”** [#📘] — Martin Kleppmann [#👨] (Глава 8: Message Brokers)
+- YouTube: *“Message Queueing vs Message Broker”* — TechWorld with Nana [#👨]
 
 ---
 

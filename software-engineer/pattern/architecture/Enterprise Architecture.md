@@ -1,15 +1,27 @@
 ---
 aliases:
+  - EA
   - AE
   - Enterprise Architecture
   - Архитектура предприятия
+  - TOGAF
+  - Zachman Framework
+  - ArchiMate
+  - COBIT
+  - ITIL
+  - BPMN
+  - C4
+  - Digital Transformation
+  - Цифровая трансформация
 ---
+
+# Enterprise Architecture (EA)
 
 **Enterprise Architecture (EA) — Архитектура предприятия** — это **системный, стратегический подход к проектированию и управлению всей IT- и бизнес-инфраструктурой компании**, чтобы она **эффективно поддерживала бизнес-цели**.
 
 ---
 
-## ✅ Что такое **Enterprise Architecture (EA)**?
+## ✅ Что такое Enterprise Architecture (EA)?
 
 > **Enterprise Architecture (EA)** — это **дисциплина**, которая **описывает, как бизнес, процессы, данные, приложения и технологии взаимосвязаны** в организации, и **как они должны быть устроены**, чтобы достигать стратегических целей.
 
@@ -77,8 +89,11 @@ EA описывает компоненты компании на **четырё�
 
 ### 📊 EA-диаграммы (уровни):
 
-#### 1. **Business Architecture**
+#### Business Architecture
 ```mermaid
+---
+title: Business Architecture онлайн-магазина
+---
 graph TD
     A[Бизнес-цель: Рост онлайн-продаж на 50%] --> B[Процесс: Оформление заказа]
     B --> C[Роль: Клиент]
@@ -86,8 +101,11 @@ graph TD
     B --> E[Роль: Бухгалтер]
 ```
 
-#### 2. **Data Architecture**
+#### Data Architecture
 ```mermaid
+---
+title: Data Architecture онлайн-магазина
+---
 graph LR
     F[Клиент] --> G[БД: PostgreSQL - customers]
     H[Заказ] --> I[БД: PostgreSQL - orders]
@@ -97,8 +115,11 @@ graph LR
     K --> L
 ```
 
-#### 3. **Application Architecture**
+#### Application Architecture
 ```mermaid
+---
+title: Application Architecture онлайн-магазина
+---
 graph TD
     M[Клиент] --> N[Frontend: React]
     N --> O[API Gateway: Kong]
@@ -114,8 +135,11 @@ graph TD
     S --> Y[External: Stripe API]
 ```
 
-#### 4. **Technology Architecture**
+#### Technology Architecture
 ```mermaid
+---
+title: Technology Architecture онлайн-магазина
+---
 graph TD
     Z[Cloud: AWS] --> AA[EC2: Frontend]
     Z --> AB[EC2: API Gateway]
@@ -239,7 +263,7 @@ graph TD
 
 ---
 
-## ✅ Когда EA — **не нужна**?
+## ✅ Когда EA — не нужна?
 
 | Ситуация | Почему не нужна |
 |----------|------------------|
@@ -254,16 +278,16 @@ graph TD
 
 | Ресурс | Ссылка |
 |--------|--------|
-| **TOGAF 10 — официальный стандарт** | https://www.opengroup.org/togaf |
+| **TOGAF 10 — официальный стандарт** | — |
 | **Книга: "TOGAF 10 Foundation"** | Обязательно для чтения |
 | **Сертификация TOGAF** | Стоит $300–$500 — **очень ценится в корпорациях** |
-| **COBIT 2019** | https://www.isaca.org/resources/cobit |
-| **ArchiMate** | https://pubs.opengroup.org/architecture/archimate31-doc/ |
+| **COBIT 2019** | — |
+| **ArchiMate** | — |
 | **Курс на Udemy** | *“Enterprise Architecture: TOGAF & ArchiMate”* — 15+ часов |
 
 ---
 
-## ✅ Финальный вывод: EA — это **не про технологии. Это про стратегию.**
+## ✅ Финальный вывод: EA — это не про технологии. Это про стратегию.
 
 | EA — это... | Это не... |
 |------------|-----------|

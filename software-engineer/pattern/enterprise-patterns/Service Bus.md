@@ -1,21 +1,38 @@
-**Service Bus** и **[[event-bus]]** — звучат похоже, но на самом деле **относятся к разным уровням абстракции**.
+---
+aliases:
+  - Service Bus
+  - Сервисная шина
+  - Event Bus
+  - Шина событий
+  - ESB
+  - Enterprise Service Bus
+  - Корпоративная сервисная шина
+  - Message Queue
+  - Очередь сообщений
+  - Pub/Sub
+  - Публикация-подписка
+  - Message Broker
+  - Брокер сообщений
+  - Decoupling
+  - Декуплинг
+---
+Service Bus и [[event-bus]] — звучат похоже, но на самом деле **относятся к разным уровням абстракции**.
 
-| Аспект          | **Service Bus**                                                    | **Event Bus**                                |
+| Аспект          | **Service Bus** | **Event Bus** |
 | --------------- | ------------------------------------------------------------------ | -------------------------------------------- |
 | **Тип**         | Архитектурный паттерн                                              | Техническая реализация                       |
 | **Определение** | Паттерн: система, где компоненты общаются через центральный брокер | Конкретная технология, реализующая messaging |
-| **Примеры**     | [[Event-Driven Architecture]], [[message-broker]] как концепция                          | Kafka, RabbitMQ, AWS EventBridge             |
+| **Примеры**     | [[Event-Driven Architecture]], [[message-broker]] как концепция    | Kafka, RabbitMQ, AWS EventBridge             |
 | **Уровень**     | Концептуальный (архитектура)                                       | Реализационный (инструмент)                  |
 | **Аналогия**    | Идея почтового ящика                                               | Почта России                                 |
 
 > 🔑 **Service Bus — это *концепция*.**
 > **Event Bus — это *реализация* этой концепции в виде конкретной системы.**
 
----
+## Что такое Service Bus
 
-## ✅ 1. Что такое **Service Bus**?
+Определение:
 
-### 🔹 Определение:
 > **Service Bus** — это **архитектурный паттерн**, при котором **разные сервисы обмениваются сообщениями через централизованный брокер** (шину), чтобы избежать прямых зависимостей.
 
 Это **не инструмент**, а **принцип проектирования**:
@@ -24,35 +41,38 @@
 - Сервис B **подписывается** на нужные события
 - Никакой зависимости между A и B
 
-### 💡 Цель Service Bus:
+Цель Service Bus:
+
 - Декуплинг (слабая связность)
 - Асинхронность
 - Масштавируемость
 - Отказоустойчивость
 - Управление трафиком (очереди, топики)
 
-### 🔄 Пример Service Bus в архитектуре:
+Пример Service Bus в архитектуре:
 
 ```mermaid
+---
+title: Пример Service Bus в архитектуре
+---
 graph LR
-    A[Order Service] -->|Событие: OrderCreated| SB[Service Bus]
-    SB --> B[Email Service]
-    SB --> C[Inventory Service]
-    SB --> D[Fraud Detection]
+  A[Order Service] -->|Событие: OrderCreated| SB[Service Bus]
+  SB --> B[Email Service]
+  SB --> C[Inventory Service]
+  SB --> D[Fraud Detection]
 ```
 
 → `Order Service` ничего не знает о других сервисах — просто "бросает" событие в шину.
 
----
+## Что такое Event Bus
 
-## ✅ 2. Что такое **Event Bus**?
+Определение:
 
-### 🔹 Определение:
 > **Event Bus** — это **конкретная система или инструмент**, реализующий **паттерн Service Bus** для **событий**.
 
 Это **реализация**, а не паттерн.
 
-### 📦 Примеры Event Bus:
+Примеры Event Bus:
 
 | Инструмент | Тип |
 |-----------|------|
@@ -65,9 +85,7 @@ graph LR
 
 > ✅ **Event Bus — это то, что вы устанавливаете, настраиваете, масштабируете.**
 
----
-
-## 🆚 Сравнение: Service Bus vs Event Bus
+## Сравнение: Service Bus vs Event Bus
 
 | Критерий | **Service Bus** | **Event Bus** |
 |----------|----------------|---------------|
@@ -82,9 +100,8 @@ graph LR
 > 💬 **Service Bus — это «почта».**
 > **Event Bus — это «Почта России».**
 
----
+## Как соотносятся
 
-## 🔧 Как соотносятся?
 ```plaintext
 Service Bus (паттерн)
       ↑
@@ -94,9 +111,7 @@ Service Bus (паттерн)
 > ✅ **Event Bus — это один из способов реализации Service Bus.**
 > Но не единственный.
 
----
-
-## ✅ Когда говорят "Service Bus", имеют в виду?
+## Когда говорят "Service Bus", имеют в виду
 
 В разных контекстах этот термин может означать:
 
@@ -108,9 +123,7 @@ Service Bus (паттерн)
 
 > ⚠️ **Azure Service Bus ≠ Service Bus (паттерн)** — это **продукт Microsoft**, который **реализует паттерн**.
 
----
-
-## ✅ Разница между **Event Bus** и **Message Queue**
+## Разница между Event Bus и Message Queue
 
 Иногда эти понятия тоже путают.
 
@@ -124,38 +137,35 @@ Service Bus (паттерн)
 
 > ✅ **Event Bus — подвид Service Bus**, сфокусированный на **событиях (events)**.
 
----
+## Примеры использования
 
-## ✅ Примеры использования
-
-### 1. **Service Bus (как паттерн)**
+### Service Bus (как паттерн)
 
 > Мы решили **не делать прямые вызовы между сервисами**.
 > Теперь все взаимодействие происходит через **шину сообщений** — это наш **Service Bus**.
 
 ✅ Здесь — **архитектурное решение**.
 
----
-
-### 2. **Event Bus (как инструмент)**
+### Event Bus (как инструмент)
 
 > Для реализации Service Bus мы выбрали **Apache Kafka** — он будет работать как **Event Bus**.
 
 ✅ Здесь — **выбор технологии**.
 
----
-
-### 3. **Объединённый пример**
+### Объединённый пример
 
 ```mermaid
+---
+title: Event Bus на базе Kafka
+---
 graph LR
-    A[Order Service] -->|Publish| B[Kafka (Event Bus)]
-    B --> C[Email Service]
-    B --> D[Inventory Service]
-    B --> E[Analytics Service]
+  A[Order Service] -->|Publish| B[Kafka (Event Bus)]
+  B --> C[Email Service]
+  B --> D[Inventory Service]
+  B --> E[Analytics Service]
 
-    style B fill:#f0ad4e,stroke:#c9510c,color:#fff
-    style A,C,D,E fill:#dfe9f5,stroke:#000
+  style B fill:#f0ad4e,stroke:#c9510c,color:#fff
+  style A,C,D,E fill:#dfe9f5,stroke:#000
 ```
 
 > 🔹 **Service Bus** — это **архитектурный подход**:
@@ -164,9 +174,7 @@ graph LR
 > 🔹 **Kafka** — это **Event Bus**:
 > > *«Наши события хранятся и маршрутизируются через Kafka»*
 
----
-
-## ✅ Когда что использовать?
+## Когда что использовать
 
 | Ваша цель | Рекомендация |
 |----------|--------------|
@@ -177,9 +185,7 @@ graph LR
 | ✅ Вы делаете event-driven систему | → **Event Bus + Service Bus как паттерн** |
 | ✅ Вы пишете в документации | → *«Мы используем паттерн Service Bus. Реализован через Kafka как Event Bus»* |
 
----
-
-## ✅ Финальный вывод
+## Финальный вывод
 
 | Вопрос | Ответ |
 |--------|-------|
@@ -188,19 +194,15 @@ graph LR
 | **Можно ли использовать Event Bus вне Service Bus?** | Можно, но тогда вы просто используете очередь — не применяя архитектурный подход |
 | **Лучше сказать: «Мы используем Service Bus» или «Мы используем Kafka»?** | Лучше: **«Мы используем паттерн Service Bus, реализованный через Kafka как Event Bus»** |
 
----
+## Цитата для запоминания
 
-## 💬 Цитата для запоминания
-
-> *“Service Bus is the architecture.
-> Event Bus is the engine that makes it run.”*
+> *"Service Bus is the architecture.
+> Event Bus is the engine that makes it run."*
 
 > 🔹 **Service Bus** — это **план города**.
 > 🔹 **Event Bus** — это **трамвайная линия**, которая по этому плану работает.
 
----
-
-## ✅ Итог: Сводная таблица
+## Итог: Сводная таблица
 
 | Понятие | Что это? | Примеры |
 |--------|----------|---------|
@@ -209,23 +211,17 @@ graph LR
 | **Message Queue** | Подсистема внутри Event Bus | Oчередь в Kafka или RabbitMQ |
 | **Pub/Sub** | Шаблон доставки | Один источник → много подписчиков |
 
----
-
 ✅ **Запомните:**
 
 > - **Service Bus** = **Как мы общаемся? Через шину.**
 > - **Event Bus** = **Что за шина? Kafka.**
 
----
+## Где учиться дальше
 
-## 📚 Где учиться дальше?
-
-- [https://microservices.io/patterns/communication-style/messaging.html](https://microservices.io/patterns/communication-style/messaging.html)
-- [https://kafka.apache.org/intro](https://kafka.apache.org/intro)
-- [https://www.rabbitmq.com/tutorials/amqp-concepts.html](https://www.rabbitmq.com/tutorials/amqp-concepts.html)
-- Book: **"Designing Data-Intensive Applications" — Martin Kleppmann**
-
----
+- Паттерн обмена сообщениями в микросервисах (microservices.io)
+- Введение в Apache Kafka
+- Основы протокола AMQP в RabbitMQ
+- Книга **«Designing Data-Intensive Applications»** — Martin Kleppmann #👨 #📘
 
 💡 **Если вы строите распределённую систему — вам нужен и Service Bus (как принцип), и Event Bus (как инструмент).**
 

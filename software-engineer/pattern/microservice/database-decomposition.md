@@ -1,10 +1,33 @@
+---
+aliases:
+  - Database Decomposition
+  - Декомпозиция базы данных
+  - Vertical Decomposition
+  - Вертикальная декомпозиция
+  - Horizontal Decomposition
+  - Горизонтальная декомпозиция
+  - Functional Decomposition
+  - Функциональная декомпозиция
+  - Distributed Transactions
+  - Распределённые транзакции
+  - Saga Pattern
+  - API Composition
+  - Change Data Capture
+  - CDC
+  - Denormalization
+  - Денормализация
+  - OLTP
+  - OLAP
+  - Sharding
+  - Шардирование
+---
 ## Database Decomposition
 
 **Database Decomposition** (декомпозиция базы данных) — это стратегия разделения единой монолитной базы данных на несколько меньших, специализированных баз данных, каждая из которых принадлежит отдельному микросервису.
 
 Это **самый сложный и критический этап** при переходе от монолита к микросервисам.
 
-## 🎯 Зачем это нужно?
+## Зачем это нужно?
 
 **Проблема монолитной БД:**
 
@@ -21,30 +44,30 @@
 - Независимое масштабирование
 - Выбор оптимальной БД для каждой задачи
 
-## 🗺️ Стратегии декомпозиции
+## Стратегии декомпозиции
 
-### 1. **Vertical Decomposition (Вертикальная)**
+### Vertical Decomposition (Вертикальная)
 
 Разделение по бизнес-доменам.
 
-### 2. **Horizontal Decomposition (Горизонтальная)**
+### Horizontal Decomposition (Горизонтальная)
 
 Шардирование данных по ключу.
 
-**Пример:** Разделение пользователей по географическому признаку
+**Пример:** Разделение пользователей по географическому признаку.
 
-### 3. **Functional Decomposition (Функциональная)**
+### Functional Decomposition (Функциональная)
 
-Разделение по patterns доступа.
+Разделение по паттернам доступа.
 
 **Пример:**
 
 - `users_db` — OLTP (транзакции)
 - `users_analytics_db` — OLAP (аналитика)
 
-## ⚠️ Проблемы и решения
+## Проблемы и решения
 
-### **Problem 1: Join across services**
+### Problem 1: Join across services
 
 **Solution:**
 
@@ -52,22 +75,18 @@
 - Кэширование данных
 - Денормализация (копия нужных полей)
 
-java
+Пример API-вызовов вместо SQL JOIN:
 
+```java
 // Вместо SQL JOIN делаем API вызовы
-
 public OrderDetails getOrderWithUser(Long orderId) {
-
-    Order order = orderRepository.findById(orderId);
-
-    User user = userServiceClient.getUser(order.getUserId());
-
-    
-    return new OrderDetails(order, user);
-
+  Order order = orderRepository.findById(orderId);
+  User user = userServiceClient.getUser(order.getUserId());
+  return new OrderDetails(order, user);
 }
+```
 
-### **Problem 2: Distributed transactions**
+### Problem 2: Distributed transactions
 
 **Solution:**
 
@@ -75,30 +94,28 @@ public OrderDetails getOrderWithUser(Long orderId) {
 - Event-driven architecture
 - Compensating transactions
 
-java
+Реализация паттерна Saga:
 
+```java
 // Saga pattern implementation
-
 @Saga
-
 public class OrderCreationSaga {
+  @StartSaga
+  @SagaEventHandler(associationProperty = "orderId")
+  public void handle(OrderCreatedEvent event) {
+    // 1. Reserve products
+    sagaManager.send(new ReserveProductsCommand(event.getOrderId()));
+  }
 
-    @StartSaga
-    @SagaEventHandler(associationProperty = "orderId")
-    public void handle(OrderCreatedEvent event) {
-        // 1. Reserve products
-        sagaManager.send(new ReserveProductsCommand(event.getOrderId()));
-    }
-    
-    @SagaEventHandler(associationProperty = "orderId")  
-    public void handle(ProductsReservedEvent event) {
-        // 2. Process payment
-        sagaManager.send(new ProcessPaymentCommand(event.getOrderId()));
-    }
-
+  @SagaEventHandler(associationProperty = "orderId")
+  public void handle(ProductsReservedEvent event) {
+    // 2. Process payment
+    sagaManager.send(new ProcessPaymentCommand(event.getOrderId()));
+  }
 }
+```
 
-### **Problem 3: Data consistency**
+### Problem 3: Data consistency
 
 **Solution:**
 
@@ -106,18 +123,14 @@ public class OrderCreationSaga {
 - Change data capture (CDC)
 - Асинхронная репликация
 
-sql
+Пример CDC с помощью Debezium:
 
+```sql
 -- CDC с помощью Debezium
-
 CREATE CONNECTOR user_cdc WITH (
-
-    'connector.class' = 'io.debezium.connector.postgresql.PostgresConnector',
-
-    'database.hostname' = 'user_db',
-
-    'database.dbname' = 'user_service',
-
-    'table.include.list' = 'public.users'
-
+  'connector.class' = 'io.debezium.connector.postgresql.PostgresConnector',
+  'database.hostname' = 'user_db',
+  'database.dbname' = 'user_service',
+  'table.include.list' = 'public.users'
 );
+```

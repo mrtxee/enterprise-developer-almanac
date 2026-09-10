@@ -1,18 +1,29 @@
 ---
 aliases:
-  - Conditional Retry
-  - Exponential Backoff
-  - Jitter
-  - Linear Backoff
-  - No Retry
+  - Retry Policy
   - Retry
+  - Повторная попытка
+  - Политика повторных попыток
+  - Exponential Backoff
+  - Экспоненциальная задержка
+  - Jitter
+  - Джиттер
+  - Fixed Delay
+  - Фиксированная задержка
+  - Linear Backoff
+  - Линейная задержка
+  - Conditional Retry
+  - Условный повтор
+  - No Retry
+  - Без повтора
+  - Fail Fast
+  - Быстрый отказ
+  - Idempotency
+  - Идемпотентность
 ---
-
 **Retry Policy (политика повторных попыток)** — это **ключевой элемент надёжности в распределённых системах**, особенно при работе с сетью, внешними API, базами данных и очередями.
 
----
-
-## ✅ Что такое **Retry Policy**?
+## Что такое Retry Policy
 
 > **Retry Policy** — это **правило**, определяющее:
 > - Когда и сколько раз **повторять операцию** после сбоя
@@ -22,28 +33,26 @@ aliases:
 
 > 💡 Без retry-логики ваша система будет **ломаться при временных сбоях** (например, сетевая задержка, кратковременный недоступность сервиса).
 
----
+## Основные типы Retry Policies
 
-## ✅ Основные типы Retry Policies
-
-| Тип                                 | Описание                                                                                                                                                         | Когда использовать                                                  |
+| Тип                                 | Описание                                         | Когда использовать                                                  |
 | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| **1. Fixed Delay**                  | Повтор через **фиксированную задержку** (например, каждые 2 секунды)                                                                                             | Простые случаи, когда вы уверены, что сервис быстро восстановится   |
-| **2. Exponential Backoff**          | Задержка растёт экспоненциально: `1s → 2s → 4s → 8s → ...`                                                                                                       | Рекомендуется для большинства случаев — снижает нагрузку на сервер  |
-| **3. Exponential Backoff + Jitter** | То же, что выше, но **случайное отклонение** (`jitter`) — например, вместо 4s → 3.7s или 5.2s                                                                    | Чтобы избежать "thundering herd" — все клиенты не бьют одновременно |
-| **4. Linear Backoff**               | Задержка увеличивается линейно: `1s → 2s → 3s → 4s → ...`                                                                                                        | Устаревший, почти не используется — хуже экспоненциального          |
-| **5. No Retry (Fail Fast)**         | Никаких попыток — сразу ошибка                                                                                                                                   | Для HFT, критичных транзакций, где задержка = провал                |
-| **6. [[Circuit Breaker]] + Retry**  | После N неудач — **перестать пытаться** на время                                                                                                                 | Если сервис упал — не нужно его забивать запросами                  |
-| **7. Conditional Retry**            | Повтор только при **определённых ошибках**: <br> • `503 Service Unavailable`<br> • `Timeout`<br> • `Connection refused`<br> • Не повторять при `400 Bad Request` | Умная политика — не повторяйте, если ошибка клиента                 |
+| **1. Fixed Delay**                  | Повтор через **фиксированную задержку** (например, каждые 2 секунды)                             | Простые случаи, когда вы уверены, что сервис быстро восстановится   |
+| **2. Exponential Backoff**          | Задержка растёт экспоненциально: `1s → 2s → 4s → 8s → ...`                                       | Рекомендуется для большинства случаев — снижает нагрузку на сервер  |
+| **3. Exponential Backoff + Jitter** | То же, что выше, но **случайное отклонение** (`jitter`) — например, вместо 4s → 3.7s или 5.2s   | Чтобы избежать "thundering herd" — все клиенты не бьют одновременно |
+| **4. Linear Backoff**               | Задержка увеличивается линейно: `1s → 2s → 3s → 4s → ...`                                        | Устаревший, почти не используется — хуже экспоненциального          |
+| **5. No Retry (Fail Fast)**         | Никаких попыток — сразу ошибка                                                                   | Для HFT, критичных транзакций, где задержка = провал                |
+| **6. [[Circuit Breaker]] + Retry**  | После N неудач — **перестать пытаться** на время                                                 | Если сервис упал — не нужно его забивать запросами                  |
+| **7. Conditional Retry**            | Повтор только при **определённых ошибках**: `503 Service Unavailable`, `Timeout`, `Connection refused`; не повторять при `400 Bad Request` | Умная политика — не повторяйте, если ошибка клиента |
 
----
+## Наиболее часто используемые типы
 
-## 🔝 Наиболее часто используемые типы
+### Exponential Backoff + Jitter
 
-### 🥇 **1. Exponential Backoff + Jitter**
 > **Самый популярный и рекомендуемый подход**
 
-#### 🔧 Пример:
+Пример:
+
 ```plaintext
 Попытка 1: немедленно
 Попытка 2: через 1s
@@ -52,31 +61,30 @@ aliases:
 Попытка 5: через 8s
 ```
 
-#### 🔍 Случайный jitter:
+Случайный jitter:
 
 Вместо 4s → 3.5–4.8s (рандом)
 
-#### ✅ Преимущества:
+Преимущества:
+
 - Предотвращает **обвал сервера** под грузом повторных запросов
 - Эффективно при **временных сбоях** (сетевые флуктуации, краткие перезагрузки)
 - Используется в **Google Cloud**, **AWS**, **Kafka**, **RabbitMQ**, **gRPC**
 
-> 💬 *«Exponential backoff is the single most effective thing you can do to make your system resilient.»* — Google SRE Handbook
+> 💬 *«Exponential backoff is the single most effective thing you can do to make your system resilient.»* — Google SRE Handbook #📘
 
----
+### Exponential Backoff без Jitter
 
-### 🥈 **2. Exponential Backoff без Jitter**
 - Проще реализовать
 - Но может вызвать **синхронизированные повторы** (все клиенты ждут 2s → бьют одновременно)
 
 > ⚠️ **Используйте только если нет jitter** — а лучше всегда добавлять jitter.
 
----
+### Conditional Retry
 
-### 🥉 **3. Conditional Retry**
 > Повтор только при **временных ошибках**, а не при ошибках клиента
 
-#### ❌ Не повторяйте:
+Не повторяйте:
 
 | Код | Причина |
 |-----|---------|
@@ -85,7 +93,7 @@ aliases:
 | `404 Not Found` | Ресурс не существует |
 | `409 Conflict` | Конфликт — нужна бизнес-логика |
 
-#### ✅ Повторяйте:
+Повторяйте:
 
 | Код / Ошибка | Причина |
 |---------------|---------|
@@ -95,11 +103,10 @@ aliases:
 | `Network timeout`, `Connection reset` | Временная сетевая проблема |
 | `500 Internal Server Error` | Иногда — если известно, что это временное состояние |
 
----
+## Примеры реальных систем
 
-## ✅ Примеры реальных систем
+### Google Cloud APIs
 
-### 1. **Google Cloud APIs**
 ```json
 {
   "retry_policy": {
@@ -113,9 +120,8 @@ aliases:
 
 → Exponential backoff: 1s → 2s → 4s → 8s → 16s → stop
 
----
+### AWS SDK (Java)
 
-### 2. **AWS SDK (Java)**
 ```java
 import software.amazon.awssdk.core.retry.RetryPolicy;
 
@@ -127,9 +133,8 @@ SdkClientConfiguration config = SdkClientConfiguration.builder()
 
 > ✅ AWS SDK **автоматически применяет retry** для `ThrottlingException`, `InternalError`, `Timeout`
 
----
+### Spring Retry (Java)
 
-### 3. **Spring Retry (Java)**
 ```java
 @Retryable(
     value = {RestClientException.class},
@@ -143,9 +148,8 @@ public String callExternalApi() {
 
 → delay: 1s → 2s → 4s → stop
 
----
+### Resilience4j (Java)
 
-### 4. **Resilience4j (Java)**
 ```java
 RetryConfig config = RetryConfig.custom()
     .maxAttempts(3)
@@ -159,11 +163,9 @@ Retry retry = Retry.of("external-api", config);
 
 > ✅ Поддерживает всё: exponential backoff, jitter, ignore, circuit breaker
 
----
+### gRPC
 
-### 5. **gRPC**
-```yaml
-# gRPC service config
+```json
 {
   "methodConfig": [
     {
@@ -182,9 +184,7 @@ Retry retry = Retry.of("external-api", config);
 
 → Только для **временных ошибок**, не для `INVALID_ARGUMENT`
 
----
-
-## ✅ Best Practices: Как правильно делать retry?
+## Best Practices: Как правильно делать retry?
 
 | Правило | Объяснение |
 |--------|------------|
@@ -197,20 +197,20 @@ Retry retry = Retry.of("external-api", config);
 | ✅ **Мониторьте retry-rate** | Высокий % retry — признак проблем |
 | ✅ **Учитывайте idempotency** | Повтор должен быть безопасным для бизнеса |
 
----
-
-## ✅ Idempotency — почему важна?
+## Idempotency — почему важна?
 
 > **Idempotent operation** — это операция, которую можно **повторять много раз без побочных эффектов**.
 
-### ❌ Не idempotent:
+Не idempotent:
+
 ```http
 POST /api/v1/payments → charge $100
 ```
 
 → Если запрос повторится — **снимет ещё $100** → плохо!
 
-### ✅ Idempotent:
+Idempotent:
+
 ```http
 PUT /payments/123 → charge $100
 ```
@@ -225,9 +225,7 @@ POST /payments?request_id=abc123 → charge $100
 
 > ✅ **Retry возможен только для idempotent операций!**
 
----
-
-## ✅ Пример: Политика в коде (Python)
+## Пример: Политика в коде (Python)
 
 ```python
 import time
@@ -245,12 +243,12 @@ def retry_with_exponential_backoff(max_retries=5, base_delay=1, max_delay=60):
                 except (ConnectionError, TimeoutError, HTTPError) as e:
                     if attempt == max_retries - 1:
                         raise e
-                    
+
                     # Exponential backoff + jitter
                     sleep_time = min(delay * (2 ** attempt), max_delay)
                     jitter = random.uniform(0.5, 1.5)
                     actual_sleep = sleep_time * jitter
-                    
+
                     print(f"Ошибка: {e}. Повтор через {actual_sleep:.2f} сек")
                     time.sleep(actual_sleep)
             return None
@@ -263,9 +261,7 @@ def fetch_data():
     pass
 ```
 
----
-
-## ✅ Когда **не использовать** retry?
+## Когда не использовать retry?
 
 | Сценарий | Почему |
 |----------|--------|
@@ -274,9 +270,7 @@ def fetch_data():
 | ✅ **Если операция не idempotent** | Может привести к дублям |
 | ✅ **Критичные системы реального времени** | Где каждый цикл важен |
 
----
-
-## ✅ Итог: Какие retry policy используются чаще всего?
+## Итог: Какие retry policy используются чаще всего?
 
 | Тип | Частота | Рекомендация |
 |------|--------|--------------|
@@ -286,16 +280,12 @@ def fetch_data():
 | **Fixed Delay** | ✅✅ | Только для простых случаев |
 | **No Retry** | ✅ | Для HFT, идемпотентных систем |
 
----
+## Цитата от Google
 
-## 💬 Цитата от Google:
+> *"The best way to handle transient errors is to retry with exponential backoff and jitter."*
+> — **Site Reliability Engineering (SRE) Book** #📘
 
-> *“The best way to handle transient errors is to retry with exponential backoff and jitter.”*
-> — **Site Reliability Engineering (SRE) Book**
-
----
-
-## ✅ Финальный вывод
+## Финальный вывод
 
 | Политика | Когда использовать |
 |--------|------------------|
@@ -308,17 +298,13 @@ def fetch_data():
 > ✅ **Exponential backoff + jitter — это золотой стандарт.**
 > Он **прост**, **эффективен**, **надёжен** и **используется повсюду**.
 
----
+## Где учиться дальше
 
-## 📚 Где учиться дальше?
+- Книга: *«Site Reliability Engineering»* — Google #📘
+- Resilience4j
+- Spring Retry
+- gRPC Retry
 
-- **Book**: *“Site Reliability Engineering”* — Google
-- **Resilience4j**: https://resilience4j.readme.io/
-- **Spring Retry**: https://github.com/spring-projects/spring-retry
-- **gRPC Retry**: https://github.com/grpc/proposal/blob/master/A6-client-retries.md
-
----
-
-✅ **Теперь вы знаете: не просто “делайте retry”, а “как делать retry правильно”.**
+✅ **Теперь вы знаете: не просто "делайте retry", а "как делать retry правильно".**
 
 Используйте **exponential backoff + jitter** — и ваши системы станут **намного надёжнее**.
