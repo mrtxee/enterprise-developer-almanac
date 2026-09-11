@@ -1,6 +1,11 @@
 .trash
 .obsidian
-markdown & obsidian.md
-activities/**
+/activities/
 !activities/ti/
 !activities/ti/myTI.md
+/.idea/
+/.gigacode/
+/.gigaide/
+/attachments/agent
+markdown & obsidian.md
+*.iml
