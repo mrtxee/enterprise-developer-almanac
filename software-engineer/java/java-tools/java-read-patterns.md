@@ -1,21 +1,21 @@
 ---
 aliases:
-  - BufferedReader
   - BufferedInputStream
+  - BufferedReader
   - File Reading Methods
   - File Reading Patterns
   - File Reading Strategies
   - FileInputStream
   - Files.lines
   - Java File I/O API
-  - JDK 17
-  - Stream
   - java read
   - java-read-data
+  - JDK 17
   - newBufferedReader
   - readAllBytes
   - readAllLines
   - readString
+  - Stream
   - Методы чтения файлов
   - Паттерны чтения файлов
   - Стратегии чтения файлов

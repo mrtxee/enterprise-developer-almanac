@@ -1,14 +1,14 @@
 ---
 aliases:
+  - cups
   - CUPS
   - EndeavourOS
   - Generic PostScript
   - Gutenprint
-  - HPLIP
-  - PostScript
-  - cups
   - hplip
+  - HPLIP
   - modprobe
+  - PostScript
   - print
   - printer
   - usblp

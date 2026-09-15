@@ -1,13 +1,13 @@
 ---
 aliases:
+  - Event bus
   - Event Bus
   - Message Bus
   - Pub/Sub
   - Publish/Subscribe
-  - Event bus
-  - Шина событий
-  - Событийная шина
   - Издатель/Подписчик
+  - Событийная шина
+  - Шина событий
 ---
 
 ## Event Bus (Шина событий)

@@ -1,11 +1,11 @@
 ---
 aliases:
   - GGUF
-  - Qwen
-  - Vulkan
   - llama-cli
   - llama-server
   - llama.cpp
+  - Qwen
+  - Vulkan
 ---
 
 После сборки `llama.cpp` у вас есть всё необходимое для запуска больших языковых моделей локально. Осталось получить саму модель и запустить её с помощью `llama-cli` или `llama-server`.

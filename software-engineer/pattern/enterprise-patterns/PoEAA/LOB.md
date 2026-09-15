@@ -1,11 +1,11 @@
 ---
 aliases:
-  - BLOB
   - Binary Large Object
-  - CLOB
+  - BLOB
   - Character Large Object
-  - LOB
+  - CLOB
   - Large Object
+  - LOB
   - NCLOB
   - Большой двоичный объект
   - Большой объект

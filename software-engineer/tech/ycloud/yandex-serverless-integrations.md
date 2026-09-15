@@ -1,53 +1,53 @@
 ---
 aliases:
-  - Yandex Serverless Integrations
-  - Serverless integrations
-  - FaaS
-  - Yandex Workflows Language
-  - YaWL
-  - Workflows
-  - EventRouter
-  - Yandex API Gateway
-  - API Gateway
-  - OpenAPI
-  - OpenAPI 3.0
-  - RESTful API
-  - NGINX
-  - Apigee
-  - Axway
   - 3scale
-  - PaaS
-  - Yandex Message Queue
-  - YDB
+  - Amazon S3 API
+  - API Gateway
+  - API-шлюз
+  - Apigee
+  - AWS DynamoDB API
+  - Axway
+  - Cloud Functions
+  - Cloud Logging
   - Distributed SQL
   - Document API
-  - AWS DynamoDB API
-  - Yandex Object Storage
-  - Object Storage
-  - Amazon S3 API
-  - S3 API
-  - Yandex Serverless Containers
-  - Serverless Containers
-  - Yandex Cloud Functions
-  - Cloud Functions
-  - Yandex Cloud Logging
-  - Cloud Logging
-  - Yandex IoT Core
+  - EventRouter
+  - FaaS
+  - free tier
+  - Free tier
   - IoT Core
   - Message Queuing Telemetry Transport
   - MQTT
-  - Yandex Data Streams
-  - Yandex Query
-  - Yandex Cloud Postbox
-  - Postbox
-  - Yandex Cloud Notification Service
+  - NGINX
   - Notification Service
-  - SMS
+  - Object Storage
+  - OpenAPI
+  - OpenAPI 3.0
+  - PaaS
+  - Postbox
   - Push
-  - Free tier
-  - free tier
-  - API-шлюз
   - Push-уведомления
+  - RESTful API
+  - S3 API
+  - Serverless Containers
+  - Serverless integrations
+  - SMS
+  - Workflows
+  - Yandex API Gateway
+  - Yandex Cloud Functions
+  - Yandex Cloud Logging
+  - Yandex Cloud Notification Service
+  - Yandex Cloud Postbox
+  - Yandex Data Streams
+  - Yandex IoT Core
+  - Yandex Message Queue
+  - Yandex Object Storage
+  - Yandex Query
+  - Yandex Serverless Containers
+  - Yandex Serverless Integrations
+  - Yandex Workflows Language
+  - YaWL
+  - YDB
   - бессерверные интеграции
   - интернет вещей
 ---

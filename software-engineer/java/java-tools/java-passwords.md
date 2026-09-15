@@ -2,15 +2,15 @@
 aliases:
   - char[]
   - immutable
-  - java-passwords
   - Java Cryptography Architecture
+  - java-passwords
   - JCA
   - Password storage
   - String
   - terminal null
   - Терминальный ноль
-  - Хранение пароля
   - Хранение паролей в Java
+  - Хранение пароля
   - Чувствительные данные
 ---
 

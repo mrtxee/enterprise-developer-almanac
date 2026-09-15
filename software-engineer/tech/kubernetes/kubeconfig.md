@@ -1,9 +1,9 @@
 ---
 aliases:
-  - Kubeconfig
   - k8s
-  - kubernates
+  - Kubeconfig
   - kubectl
+  - kubernates
 ---
 ## Kubeconfig
 

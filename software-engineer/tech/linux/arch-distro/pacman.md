@@ -1,8 +1,8 @@
 ---
 aliases:
-  - AUR
   - Arch Linux
   - Arch User Repository
+  - AUR
   - makepkg
   - pacman
   - paru

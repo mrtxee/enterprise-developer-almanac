@@ -1,11 +1,11 @@
 ---
 aliases:
   - Hibernation
-  - zram
   - swap
   - swap partition
   - swap-partition
   - swap-раздел
+  - zram
   - Гибернация
 ---
 

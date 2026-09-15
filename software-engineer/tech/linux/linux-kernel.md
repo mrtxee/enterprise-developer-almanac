@@ -1,16 +1,16 @@
 ---
 aliases:
   - CFS
-  - Kernel Thread
-  - Linux Kernel
-  - kthreadd
   - kernel
+  - Kernel Thread
+  - kthreadd
   - linux
+  - Linux Kernel
   - linux-kernel
   - syscall
   - Системный вызов
-  - Ядро Linux
   - Ядерные потоки
+  - Ядро Linux
 ---
 ## Linux Kernel I/O Schema
 

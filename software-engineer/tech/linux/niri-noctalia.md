@@ -2,15 +2,15 @@
 aliases:
   - DRM
   - Dynamic Tiling
-  - KMS
-  - OpenGL ES
-  - Vulkan
-  - Wayland
   - evdev
+  - KMS
   - niri
   - noctalia
+  - OpenGL ES
   - smithay
   - sway
+  - Vulkan
+  - Wayland
   - wlroots
   - Динамический тайлинг
   - Композитор Wayland

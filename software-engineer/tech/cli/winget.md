@@ -1,17 +1,19 @@
 ---
 aliases:
   - Windows Package Manager
-  - Winget
   - winget
+  - Winget
   - менеджер пакетов Windows
   - пакетный менеджер Windows
 ---
+
 ---
-# winget
+
+## winget
 
 **winget** (Windows Package Manager) — менеджер пакетов для Windows. Ниже — список самых востребованных команд с краткими пояснениями и примерами.
 
-## Основные команды
+### Основные команды
 
 1. **Поиск пакетов**
 
@@ -138,7 +140,7 @@ aliases:
     - Выводит список всех команд и опций.
     - Для справки по конкретной команде: `winget <команда> --help` (например, `winget install --help`).
 
-## Полезные опции
+### Полезные опции
 
 - `--exact` — точное совпадение имени (например, `winget search --exact "vscode"`).
 - `--versions` — показать все версии пакета (например, `winget show Mozilla.Firefox --versions`).
@@ -147,7 +149,7 @@ aliases:
 - `--accept-package-agreements` — автоматически принять лицензионные соглашения.
 - `--location <путь>` — указать каталог установки (например, `--location "D:\Programs"`).
 
-## Примечания
+### Примечания
 
 - Команды выполняются в **PowerShell** или **Windows Terminal** (с правами администратора, если требуется).
 - По умолчанию winget использует репозитории `winget` (официальный) и `msstore` (Microsoft Store).

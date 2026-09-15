@@ -4,15 +4,17 @@ aliases:
   - "@Transactional"
   - AOP
   - Connection
-  - DSLContext
   - DataSourceTransactionManager
+  - DSLContext
   - EnableTransactionManagement
   - EntityManager
   - EntityManagerFactory
   - EntityTransaction
   - Hibernate
   - Isolation
+  - java-tx
   - JDBC
+  - jOOQ
   - JPA
   - JpaTransactionManager
   - PlatformTransactionManager
@@ -22,12 +24,10 @@ aliases:
   - Spring
   - Spring MVC
   - Transaction
-  - TransactionInterceptor
   - Transactional
   - TransactionalRunnable
+  - TransactionInterceptor
   - Transactions
-  - java-tx
-  - jOOQ
   - Транзакции
 ---
 ## Способы создания транзакций в Java

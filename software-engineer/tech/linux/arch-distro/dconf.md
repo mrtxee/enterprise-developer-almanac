@@ -1,19 +1,19 @@
 ---
 aliases:
+  - dconf
   - GLib
   - GNOME
-  - dconf
   - gsettings
   - GVariant
   - Каталог настроек
   - Настройки GNOME
   - Хранилище конфигурации
 ---
-# dconf и gsettings
+## dconf и gsettings
 
 dconf — низкоуровневая система хранения настроек, используемая GNOME и другими приложениями. gsettings — интерфейс командной строки для доступа к этим настройкам.
 
-## Основные команды gsettings
+### Основные команды gsettings
 
 **Просмотр всех настроек схемы:**
 
@@ -39,7 +39,7 @@ gsettings get org.gnome.desktop.interface font-name
 gsettings set org.gnome.desktop.interface font-name 'Ubuntu 11'
 ```
 
-## dconf и gsettings
+### dconf и gsettings
 
 dconf — низкоуровневая система хранения настроек, используемая GNOME. gsettings — интерфейс командной строки для доступа к настройкам.
 
@@ -65,7 +65,7 @@ dconf reset /org/example/key
 dconf read /org/example/key
 ```
 
-## Команды gsettings для работы с настройками
+### Команды gsettings для работы с настройками
 
 **Список изменённых ключей (не значения по умолчанию):**
 
@@ -103,7 +103,7 @@ gsettings monitor org.gnome.desktop.interface
 gsettings reset org.gnome.desktop.interface font-name
 ```
 
-## Использование dconf для тематизации
+### Использование dconf для тематизации
 
 Если используется сторонняя тема и она ломает «официальный» вид, можно применить настройку через `dconf`:
 
@@ -111,7 +111,7 @@ gsettings reset org.gnome.desktop.interface font-name
 dconf write /org/gnome/desktop/interface/gtk-theme 'Some Theme Name'
 ```
 
-## Резервное копирование настроек dconf
+### Резервное копирование настроек dconf
 
 **Резервное копирование всех настроек:**
 
@@ -133,7 +133,7 @@ dconf dump /org/gnome/ > ~/dconf-gnome-backup.txt
 dconf load / < ~/dconf-backup.txt
 ```
 
-## Управление настройками через ключи и полные пути
+### Управление настройками через ключи и полные пути
 
 Эти термины — то же самое: `path = key` при обращении через gsettings/dconf.
 
@@ -151,7 +151,7 @@ gsettings get org.gnome.desktop.interface cursor-size
 
 В gsettings путь `org.gnome.desktop.interface/cursor-size` = путь dconf `/org/gnome/desktop/interface/cursor-size`.
 
-## Версии dconf
+### Версии dconf
 
 **Версия командной строки dconf:**
 
@@ -171,7 +171,7 @@ gsettings --version
 pkg-config --modversion dconf
 ```
 
-## UI Elements
+### UI Elements
 
 **UI@font_name / symbol / unit**
 
@@ -191,7 +191,7 @@ gsettings set org.gnome.desktop.interface font-name "'Ubuntu 11'"
 
 **`@font_name`** — имя шрифта. **`@symbol`** — символ. **`@unit`** — единица измерения.
 
-## Схемы и профили gsettings
+### Схемы и профили gsettings
 
 **Схемы** — типизированные объекты (`GLib.Variant`), которые используются в qsettings; хранятся в бинарном виде.
 
@@ -213,7 +213,7 @@ gsettings set org.gnome.desktop.interface font-name "'Ubuntu 11'"
 </schemalist>
 ```
 
-## Экспорт и импорт настроек
+### Экспорт и импорт настроек
 
 **Синхронизация настроек между машинами:**
 
@@ -228,7 +228,7 @@ dconf load / < dconf-dump.txt
 dconf dump /org/gnome/tweaks/ > dconf-tweaks.txt
 ```
 
-## Полный список специальных символов в dconf
+### Полный список специальных символов в dconf
 
 | Символ | Описание |
 | ------ | -------- |
@@ -241,7 +241,7 @@ dconf dump /org/gnome/tweaks/ > dconf-tweaks.txt
 
 **Пример:** значение `@b true` — булево `true`.
 
-## Резюме по dconf
+### Резюме по dconf
 
 dconf и gsettings — мощные инструменты для управления конфигурацией GNOME. gsettings — более высокоуровневый интерфейс, удобный для большинства задач; dconf — низкоуровневый и гибкий, позволяет работать с точным путём ключа и выполнять резервное копирование.
 
@@ -250,77 +250,77 @@ dconf и gsettings — мощные инструменты для управле
 
 **Итог: настройка GNOME через терминал — это просто, если знать пару команд. А dconf — это нижний слой, на котором всё это основано.**
 
-## dconf для управления настройками GNOME
+### dconf для управления настройками GNOME
 
 dconf может управлять настройками приложений GNOME, используя текстовый файл с парами `key=value` (INI-формат).
 
-### Резервное копирование всех настроек
+#### Резервное копирование всех настроек
 
 ```bash
 dconf dump / > dconf-backup-file.txt
 ```
 
-### Восстановление настроек
+#### Восстановление настроек
 
 ```bash
 dconf load / < dconf-backup-file.txt
 ```
 
-### Экспорт настроек в файл
+#### Экспорт настроек в файл
 
 ```bash
 dconf dump / > dconf-export.txt
 ```
 
-### Импорт настроек из файла
+#### Импорт настроек из файла
 
 ```bash
 dconf load / < dconf-export.txt
 ```
 
-### Мониторинг изменений настроек
+#### Мониторинг изменений настроек
 
 ```bash
 dconf watch /
 ```
 
-### Установка значения для конкретного приложения
+#### Установка значения для конкретного приложения
 
 ```bash
 dconf write /org/gnome/shell/app-picker-view 'icon-grid'
 ```
 
-## GNOME gsettings
+### GNOME gsettings
 
-### Список всех изменённых настроек
+#### Список всех изменённых настроек
 
 ```bash
 gsettings list-changes org.gnome.desktop.interface
 ```
 
-### Сброс всех настроек на значения по умолчанию
+#### Сброс всех настроек на значения по умолчанию
 
 ```bash
 gsettings reset-recursively org.gnome.desktop.interface
 ```
 
-### Экспорт настроек в файл
+#### Экспорт настроек в файл
 
 ```bash
 dconf dump /org/gnome/desktop/interface/ > gnome-interface-settings.conf
 ```
 
-### Импорт настроек из файла
+#### Импорт настроек из файла
 
 ```bash
 dconf load /org/gnome/desktop/interface/ < gnome-interface-settings.conf
 ```
 
-## gsettings для работы с настройками GNOME
+### gsettings для работы с настройками GNOME
 
 gsettings — команда для управления настройками приложений GNOME. Хранит настройки в dconf (бинарном backend 1:1 на диске).
 
-### Путь записи и ключ
+#### Путь записи и ключ
 
 Путь к настройке:
 
@@ -330,37 +330,37 @@ gsettings — команда для управления настройками 
 
 **Ключи** записываются с помощью `key.name`. Полный путь ключа — `/org/gnome/desktop/interface/font-name`.
 
-### Просмотр всех ключей и значений
+#### Просмотр всех ключей и значений
 
 ```bash
 gsettings list-recursively
 ```
 
-### Установка значения
+#### Установка значения
 
 ```bash
 gsettings set org.gnome.desktop.interface font-name 'Ubuntu 11'
 ```
 
-### Получение значения
+#### Получение значения
 
 ```bash
 gsettings get org.gnome.desktop.interface font-name
 ```
 
-### Сброс ключа на значение по умолчанию
+#### Сброс ключа на значение по умолчанию
 
 ```bash
 gsettings reset org.gnome.desktop.interface font-name
 ```
 
-### Список схем
+#### Список схем
 
 ```bash
 gsettings list-schemas
 ```
 
-### Поиск путей
+#### Поиск путей
 
 ```bash
 gsettings list-relocatable-schemas
@@ -368,7 +368,7 @@ gsettings list-relocatable-schemas
 
 `relocatable-schemas` — схема, путь которой не зафиксирован (например, приложение может указать любой путь).
 
-### Монитор изменений
+#### Монитор изменений
 
 ```bash
 gsettings monitor org.gnome.desktop.interface
@@ -380,7 +380,7 @@ gsettings monitor org.gnome.desktop.interface
 font-name: 'Ubuntu 12'
 ```
 
-## Где хранятся настройки (dconf binary / каталог)
+### Где хранятся настройки (dconf binary / каталог)
 
 **dconf binary** — бинарный файл, в котором gsettings хранит настройки.
 
@@ -394,7 +394,7 @@ font-name: 'Ubuntu 12'
 | Просмотр | редактором | cat/Nano |
 | Применение | gsettings | dconfed |
 
-## Примеры использования настройки GNOME на примере resursor-size
+### Примеры использования настройки GNOME на примере resursor-size
 
 Рекурсивный вывод настроек с фильтром:
 
@@ -422,33 +422,33 @@ dconf write /org/gnome/desktop/interface/cursor-size 30
 sudo apt install dconf-editor
 ```
 
-## Работа с GNOME Shell Extensions
+### Работа с GNOME Shell Extensions
 
-### Список всех дополнений
+#### Список всех дополнений
 
 ```bash
 gnome-extensions list
 ```
 
-### Включение (по имени)
+#### Включение (по имени)
 
 ```bash
 gnome-extensions enable ['extension-name']
 ```
 
-### Отключение
+#### Отключение
 
 ```bash
 gnome-extensions disable ['extension-name']
 ```
 
-### Перезагрузка GNOME Shell
+#### Перезагрузка GNOME Shell
 
 ```bash
 alt+F2 → r → Enter
 ```
 
-### Расширения GNOME Shell (библиотеки)
+#### Расширения GNOME Shell (библиотеки)
 
 Вместо кнопки `extension-name` можно использовать `--extension-id`:
 
@@ -456,13 +456,13 @@ alt+F2 → r → Enter
 gnome-extensions enable --extension-id 307
 ```
 
-### Изменение настроек расширений
+#### Изменение настроек расширений
 
 ```bash
 gsettings set org.gnome.shell.extensions.[extension-name] [path] [value]
 ```
 
-### Открытие расширения в браузере
+#### Открытие расширения в браузере
 
 ```bash
 xdg-open https://extensions.gnome.org/extension/307/extensions-organizer/
@@ -470,7 +470,7 @@ xdg-open https://extensions.gnome.org/extension/307/extensions-organizer/
 
 При настройке расширений используются стандартные правила изменения настроек приложений GNOME.
 
-## Изменение конфигурации приложений через dconf/gsettings
+### Изменение конфигурации приложений через dconf/gsettings
 
 Все настройки GNOME и приложений (например, Gedit, Nautilus) хранятся в dconf. Изменяются через:
 
@@ -478,27 +478,27 @@ xdg-open https://extensions.gnome.org/extension/307/extensions-organizer/
 gsettings set org.gnome.<app> <key> <value>
 ```
 
-## Keyboard Shortcuts
+### Keyboard Shortcuts
 
-### Просмотр всех клавиатурных сочетаний
+#### Просмотр всех клавиатурных сочетаний
 
 ```bash
 gsettings list-recursively org.gnome.desktop.wm.keybindings
 ```
 
-### Установка пользовательского сочетания
+#### Установка пользовательского сочетания
 
 ```bash
 gsettings set org.gnome.desktop.wm.keybindings cycle-windows "['<Alt>Tab']"
 ```
 
-### Сброс сочетаний на значения по умолчанию
+#### Сброс сочетаний на значения по умолчанию
 
 ```bash
 gsettings reset-recursively org.gnome.desktop.wm.keybindings
 ```
 
-## Автозагрузка приложений при старте GNOME
+### Автозагрузка приложений при старте GNOME
 
 **Через gsettings (не рекомендуется):**
 
@@ -528,7 +528,7 @@ Exec=example
 X-GNOME-Autostart-enabled=true
 ```
 
-## Дополнительные команды dconf и gsettings
+### Дополнительные команды dconf и gsettings
 
 - проверить, что все изменения применились, без перезагрузки — `dconf watch`;
 - сделать дамп всех настроек — `dconf dump /`;

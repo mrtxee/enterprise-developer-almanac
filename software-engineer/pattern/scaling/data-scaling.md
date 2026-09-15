@@ -2,6 +2,7 @@
 aliases:
   - Auto-Scaling
   - Cache Aside
+  - cache-aside
   - Citus
   - ClickHouse
   - Elasticsearch
@@ -12,7 +13,6 @@ aliases:
   - Redis
   - Redis Cluster
   - Sharding
-  - cache-aside
   - Автоматическое масштабирование
   - Вертикальное масштабирование
   - Географически распределённые ресурсы

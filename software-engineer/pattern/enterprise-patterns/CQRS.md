@@ -1,11 +1,11 @@
 ---
 aliases:
-  - CQRS
-  - Command Query Responsibility Segregation
   - Command
+  - Command Query Responsibility Segregation
+  - CQRS
   - Query
-  - Разделение ответственности команд и запросов
   - Команды и запросы
+  - Разделение ответственности команд и запросов
 ---
 
 ## CQRS — Command Query Responsibility Segregation

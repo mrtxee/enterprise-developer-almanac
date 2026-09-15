@@ -1,21 +1,21 @@
 ---
 aliases:
-  - EJB
   - Eclipse Foundation
   - Eclipse Transformer
+  - EJB
+  - jakarta
+  - Jakarta EE
+  - jakarta.*
+  - Java EE
+  - javax
+  - javax.*
   - JPA
   - JSP
-  - Jakarta EE
-  - Java EE
   - Payara
   - Servlet
   - Spring Boot
   - Tomcat
   - WildFly
-  - jakarta
-  - jakarta.*
-  - javax
-  - javax.*
 ---
 
 ## javax и jakarta

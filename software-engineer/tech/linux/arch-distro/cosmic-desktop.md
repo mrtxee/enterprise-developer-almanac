@@ -4,8 +4,8 @@ aliases:
   - clipboard manager
   - config.ron
   - COSMIC
-  - cosmic-session
   - Cosmic Comp
+  - cosmic-session
   - GDM
   - GNOME
   - localectl

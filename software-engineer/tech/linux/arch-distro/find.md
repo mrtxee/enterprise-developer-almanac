@@ -1,8 +1,8 @@
 ---
 aliases:
-  - GNU find
   - find
   - findutils
+  - GNU find
   - команда find
   - поиск файлов
 ---

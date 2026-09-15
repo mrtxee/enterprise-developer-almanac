@@ -1,56 +1,44 @@
 ---
 aliases:
-  - @Audited
-  - @Column
-  - @DiscriminatorColumn
-  - @DiscriminatorValue
-  - @Embeddable
-  - @Embedded
-  - @Entity
-  - @EntityResult
-  - @GeneratedValue
-  - @Id
-  - @Inheritance
-  - @JoinColumn
-  - @JoinTable
-  - @Lob
-  - @MapsId
-  - @ManyToMany
-  - @ManyToOne
-  - @NamedQueries
-  - @NamedQuery
-  - @NotAudited
-  - @OneToMany
-  - @OneToOne
-  - @OrderBy
-  - @PersistenceContext
-  - @PrimaryKeyJoinColumn
-  - @SqlResultSetMapping
-  - @Table
-  - @Temporal
-  - @Transient
-  - @Type
-  - @Version
+  - "@Audited"
+  - "@Column"
+  - "@Transient"
+  - DiscriminatorColumn
+  - DiscriminatorValue
   - Entity
   - EntityManager
+  - EntityResult
+  - GeneratedValue
   - Hibernate
   - Jakarta Persistence API
   - Java Persistence API
+  - JoinColumn
+  - JoinTable
   - JPA
+  - Lob
+  - ManyToMany
+  - ManyToOne
+  - MapsId
+  - NamedQueries
+  - NamedQuery
+  - NotAudited
   - Object-Relational Mapping
+  - OneToMany
+  - OneToOne
   - ORM
+  - PersistenceContext
   - persistent class
   - POJO
+  - PrimaryKeyJoinColumn
+  - SqlResultSetMapping
   - Сохраняемый класс
   - Сущность
 ---
-
-Одна из имплементаций → [[software-engineer/java/java-tools/hibernate/hibernate]]
-
 ## JPA — Jakarta Persistence API
 
 Jakarta Persistence API (JPA; ранее Java Persistence API) — спецификация API Jakarta EE, предоставляет возможность сохранять в удобном виде Java-объекты в базе данных. Существует несколько реализаций этого интерфейса, одна из самых популярных использует для этого Hibernate. JPA описывает спецификацию для ORM.
 
+Одна из имплементаций → [[hibernate|Hibernate]]
 ## Entity
 
 Entity (Сущность) — POJO-класс, связанный с БД с помощью аннотации (`@Entity`) или через XML. К такому классу предъявляются следующие требования:

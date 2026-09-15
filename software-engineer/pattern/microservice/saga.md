@@ -2,15 +2,15 @@
 aliases:
   - Choreography-based Saga
   - Orchestration-based Saga
-  - SAGA
   - Saga
+  - SAGA
   - Saga pattern
+  - оркестратор
+  - оркестрация
   - Паттерн Saga
   - Сага
-  - Хореография
   - хореографическая сага
-  - оркестрация
-  - оркестратор
+  - Хореография
 ---
 ## Saga
 

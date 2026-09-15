@@ -7,21 +7,21 @@ aliases:
   - Data Transfer Object
   - Dependency Injection
   - Dependency Inversion
+  - DIV
   - DRY
   - DTO
   - FIRST
   - Hungarian notation
   - Interface Segregation
-  - Lazy Initialization
+  - ISP
   - Law of Demeter
+  - Lazy Initialization
   - Liskov Substitution Principle
+  - LSP
+  - OCP
   - Open Closed Principle
   - Single Responsibility Principle
   - SRP
-  - OCP
-  - LSP
-  - ISP
-  - DIV
   - TDD
   - Test-Driven Development
   - Uncle Bob

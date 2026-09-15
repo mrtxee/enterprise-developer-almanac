@@ -1,8 +1,8 @@
 ---
 aliases:
-  - MPP
-  - Massive Parallel Processing
   - Greenplum
+  - Massive Parallel Processing
+  - MPP
   - Tanzu
   - VMware
 ---

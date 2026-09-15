@@ -20,17 +20,17 @@ aliases:
   - Digital Transformation Roadmap
   - Gross Profit
   - Internal Development Platform
-  - LTV
-  - Lean Canvas
   - Leads
+  - Lean Canvas
   - Lifetime Value
+  - LTV
   - MAU
-  - MVP
   - Minimal Valuable Product
   - Minimum Viable Product
+  - MVP
   - Net Profit
-  - OPEX
   - Operational Expenditure
+  - OPEX
   - PMBOK
   - PRINCE2
   - Product Manager
@@ -39,8 +39,8 @@ aliases:
   - Revenue
   - TOGAF
   - UML
-  - WAU
   - value stream
+  - WAU
   - Автоматизация
   - Бизнес-возможности
   - Бизнес-процессы
@@ -57,19 +57,19 @@ aliases:
   - Платформа разработки
   - Поток создания ценности
   - Прибыль
-  - Продуктовый подход
   - Продуктовые исследования
+  - Продуктовый подход
+  - Проект
   - Проектное управление
   - Проектный офис
   - Проектный подход
-  - Проект
+  - работа с требованиями
   - Роадмап
   - Стейкхолдеры
   - Стратегия цифровой трансформации
   - Финансовые метрики
   - Цифровая трансформация
   - Цифровизация
-  - работа с требованиями
 ---
 ## Цифровая трансформация
 

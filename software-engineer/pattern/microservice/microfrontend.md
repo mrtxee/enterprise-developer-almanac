@@ -1,17 +1,17 @@
 ---
 aliases:
   - Backend for Frontend
+  - build time
   - Micro frontend
   - Microfrontend
   - Module Federation
-  - Single SPA
-  - build time
   - run time
+  - Single SPA
   - Композиция
   - Компоновка
-  - Микрофронтенды
   - микрофронтенд
   - микрофронтенды
+  - Микрофронтенды
   - микрофронтэнды
 ---
 ## Микрофронтенд

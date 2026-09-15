@@ -17,9 +17,9 @@ aliases:
   - Командная строка
 ---
 
-# CLI
+## CLI
 
-## SSH config
+### SSH config
 
 Файл **`~/.ssh/config`** нужен, чтобы закешировать «адресную книгу» с доступами к разным SSH-хостам.
 
@@ -60,16 +60,16 @@ Host *
   ssh -F /dev/null user@example.com
   ```
 
-## Bash
+### Bash
 
-### Версия Linux
+#### Версия Linux
 
 ```bash
 cat /etc/os-release
 uname -a
 ```
 
-### Работа с файлами
+#### Работа с файлами
 
 - `ls -la` — все файлы списком в столбик.
 - `mc` — midnight commander, работа с файловой системой в интерфейсе.
@@ -79,11 +79,11 @@ uname -a
 - `touch file1 file2 file3` — обновить временные метки существующих файлов, а также создать новые пустые файлы.
 - `stat <file_name>` — показать статус файла, включая временные метки.
 
-### ssh-keygen: смена пароля приватного ключа
+#### ssh-keygen: смена пароля приватного ключа
 
 `ssh-keygen -p -P oldPw -N newPw -f /path/to/private_key`
 
-### grep: фильтр по регулярным выражениям
+#### grep: фильтр по регулярным выражениям
 
 Search **g**lobally for lines matching the **r**egular **e**xpression, and **p**rint them.
 
@@ -99,7 +99,7 @@ grep --version | grep grep
 grep "^[a-zA-Z]" pgm.s
 ```
 
-### Переменные
+#### Переменные
 
 ```bash
 #!/bin/bash
@@ -111,11 +111,11 @@ COMPILE_OPTS="-D maven.repo.local=${CUR_DIR}"
 COMPILE_OPTS="${COMPILE_OPTS} -llr"
 ```
 
-### Vim
+#### Vim
 
 Связанная тема: [[vim]].
 
-## SSH
+### SSH
 
 SSH — Secure Shell — протокол удалённого управления компьютером с операционной системой Linux.
 
@@ -135,9 +135,9 @@ SSH — Secure Shell — протокол удалённого управлен�
 - **X** — включить перенаправление X11;
 - **C** — включить сжатие.
 
-## Maven
+### Maven
 
-### Скачивание зависимости
+#### Скачивание зависимости
 
 ```bash
 mvn dependency:resolve
@@ -145,7 +145,7 @@ mvn dependency:resolve
 mvn dependency:get -Dartifact=groupId:artifactId:version
 ```
 
-### Сборка определённого модуля
+#### Сборка определённого модуля
 
 ```bash
 -pl, --projects
@@ -157,18 +157,18 @@ mvn package -pl :my-module -am
 mvn install -pl :my-module -am
 ```
 
-### Продолжение сборки («build resume»)
+#### Продолжение сборки («build resume»)
 
 `mvn package -rf :my-module`
 
-### Сборка артефакта в IntelliJ IDEA
+#### Сборка артефакта в IntelliJ IDEA
 
 1. В главном меню выберите Build | Build Artifacts.
 2. Укажите созданный .jar (HelloWorld:jar) и выберите Build. После этого в папке `out/artifacts` появится .jar-файл.
 
-## Kafka
+### Kafka
 
-### Прочитать / записать пару в Kafka
+#### Прочитать / записать пару в Kafka
 
 ```bash
 /bin/kafka-console-producer \
@@ -183,13 +183,13 @@ mvn install -pl :my-module -am
   --property "print.key=true"
 ```
 
-### Файл конфигурации Kafka
+#### Файл конфигурации Kafka
 
 `/opt/kafka/config/server.properties`
 
-## Docker
+### Docker
 
-### Деплой проекта в Docker
+#### Деплой проекта в Docker
 
 ```bash
 # выключить проект с набором контейнеров
@@ -202,14 +202,14 @@ docker-compose -p stand3100 -f loans.yml up -d
 docker-compose -p stand3100 -f loans.yml logs -f loans | grep 'loans-for-business'
 ```
 
-### Создать контейнер из docker-compose.yml
+#### Создать контейнер из docker-compose.yml
 
 ```bash
 cd <dir>
 docker-compose up -d
 ```
 
-### Подключиться к консоли контейнера
+#### Подключиться к консоли контейнера
 
 Чтобы открыть интерактивную оболочку внутри контейнера Docker (например, для изучения файловой системы или отладки процессов), используется `docker exec` с флагами `-i` и `-t`. Флаг `-i` держит ввод открытым, флаг `-t` создаёт псевдотерминал:
 
@@ -217,17 +217,17 @@ docker-compose up -d
 
 Эта команда запустит оболочку `sh` в указанном контейнере. Для выхода введите `exit` и нажмите `Enter`. Если образ содержит более продвинутую оболочку, например `bash`, можно заменить `sh` на `bash`.
 
-### Рестарт контейнера
+#### Рестарт контейнера
 
 `docker restart my_container`
 
-### Логи контейнера
+#### Логи контейнера
 
 `docker container logs [OPTIONS] CONTAINER_NAME`
 
-## Git
+### Git
 
-### Обычный цикл
+#### Обычный цикл
 
 ```bash
 # regular cycle
@@ -240,7 +240,7 @@ git push
 git cherrypick #?
 ```
 
-### git stash — припрятать
+#### git stash — припрятать
 
 ```bash
 git stash        # спрятать на полку
@@ -251,7 +251,7 @@ git stash clear  # очистить полку
 git stash drop   # очистить полку в случае конфликта при выполнении git stash pop
 ```
 
-### Опубликовать новую ветку
+#### Опубликовать новую ветку
 
 ```bash
 git push -u origin <local-branch-name>
@@ -259,7 +259,7 @@ git push -u origin feature/mySuperFeature
 # git push upstream ... # когда локальная ветка «детачед» от удалённой
 ```
 
-### Исключить файлы из отслеживания
+#### Исключить файлы из отслеживания
 
 ```bash
 git rm --cached /path/to/files
@@ -267,9 +267,9 @@ git rm --cached /path/to/files
 
 Связанная тема: [[git]].
 
-## Batch (cmd)
+### Batch (cmd)
 
-### Аналоги между bash, batch (cmd) и PowerShell
+#### Аналоги между bash, batch (cmd) и PowerShell
 
 | Действие | bash | batch (cmd) | PowerShell |
 |----------|------|-------------|------------|
@@ -279,7 +279,7 @@ git rm --cached /path/to/files
 | Очистить экран | `clear` | `cls` | — |
 | Запуск в фоне | — | `call` | — |
 
-### Работа с файлами
+#### Работа с файлами
 
 ```bash
 dir            # список файлов, ls -la
@@ -287,7 +287,7 @@ dir            # список файлов, ls -la
 %__appdir__%   # expands to the executable that runs the current script
 ```
 
-### Упаковать jar-артефакт
+#### Упаковать jar-артефакт
 
 ```bash
 cd <into your package directory> # then use:
@@ -304,21 +304,21 @@ cd <path>
 mvn package
 ```
 
-### Запись данных о сертификатах в файл
+#### Запись данных о сертификатах в файл
 
 `<что-то> > <путь к файлу>`
 
 `keytool -v -list .\jdks\cacerts > c:\cacerts-list.txt`
 
-### Прочитать переменную среды
+#### Прочитать переменную среды
 
 `echo %JAVA_HOME%`
 
-### Очистка консоли
+#### Очистка консоли
 
 `cls`
 
-## Keytool cacerts — хранилище сертификатов
+### Keytool cacerts — хранилище сертификатов
 
 **cacerts** — файл с хранилищем сертификатов для доступа к репозиториям.
 

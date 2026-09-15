@@ -1,10 +1,10 @@
 ---
 aliases:
-  - TELNET
-  - Telnet
   - Teletype Network
-  - Телнет
+  - Telnet
+  - TELNET
   - Телетайпная сеть
+  - Телнет
 ---
 
 ## Telnet

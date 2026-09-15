@@ -1,8 +1,8 @@
 ---
 aliases:
   - cliphist
-  - clipmenu
   - clipman
+  - clipmenu
   - wl-clipboard
   - wofi
   - wtype

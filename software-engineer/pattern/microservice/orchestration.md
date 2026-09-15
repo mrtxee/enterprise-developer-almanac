@@ -1,19 +1,19 @@
 ---
 aliases:
   - Apache Mesos
+  - Container orchestration
   - Docker Swarm
   - Eventual Consistency
+  - Kubernetes
   - Marathon
   - Orchestration
   - Partitioning
   - Strong Consistency
-  - Kubernetes
-  - Container orchestration
+  - оркестрация
   - Оркестрация контейнеров
   - Партицирование
   - Согласованность в конечном итоге
   - Строгая согласованность
-  - оркестрация
 ---
 
 ## Оркестрация контейнеров

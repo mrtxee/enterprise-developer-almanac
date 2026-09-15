@@ -256,4 +256,4 @@ stream
 | **Мониторинг, уведомления**              | **Streaming-модель + окна**     |
 | **Реальный дашборд (биржа, IoT)**        | **Непрерывное обновление**      |
 
-> _Batch is for yesterday. Streaming is for now. Continuous is for tomorrow._
+> *Batch is for yesterday. Streaming is for now. Continuous is for tomorrow.*

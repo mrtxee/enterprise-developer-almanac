@@ -2,8 +2,8 @@
 aliases:
   - Sankey Diagram
   - Sankey-диаграмма
-  - Диаграмма Санкея
   - Диаграмма потоков
+  - Диаграмма Санкея
   - Санкей
 ---
 ## Sankey-диаграмма (Sankey Diagram)

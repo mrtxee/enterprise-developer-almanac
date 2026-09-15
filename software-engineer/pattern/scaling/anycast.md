@@ -1,8 +1,8 @@
 ---
 aliases:
   - Anycast
-  - BGP
   - Anycast-адресация
+  - BGP
 ---
 
 ## Anycast

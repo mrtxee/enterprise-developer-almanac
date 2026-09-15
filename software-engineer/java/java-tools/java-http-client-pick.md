@@ -3,8 +3,8 @@ aliases:
   - Apache HttpClient
   - ApacheV4
   - ApacheV5
-  - HttpClient
   - httpclient
+  - HttpClient
   - httpclient5
   - java.net.http
   - RestTemplate
@@ -46,9 +46,9 @@ HttpResponse<String> resp = client.send(req, HttpResponse.BodyHandlers.ofString(
 System.out.println(resp.body());
 ```
 
-3. **Будущее и поддержка.** Активно развивается, поддерживает HTTP/2, реактивные потоки — это на шаг вперёд относительно RestTemplate.
-4. **RestTemplate** Spring больше не развивает, рекомендует `WebClient`. Для простого клиента тащить весь Spring из‑за RestTemplate неоправданно.
-5. **Apache HC 4 — мёртвая ветка**, использовать не стоит. **Apache HC 5** хорош как мощный низкоуровневый вариант, но для простого клиента это избыточно.
+1. **Будущее и поддержка.** Активно развивается, поддерживает HTTP/2, реактивные потоки — это на шаг вперёд относительно RestTemplate.
+2. **RestTemplate** Spring больше не развивает, рекомендует `WebClient`. Для простого клиента тащить весь Spring из‑за RestTemplate неоправданно.
+3. **Apache HC 4 — мёртвая ветка**, использовать не стоит. **Apache HC 5** хорош как мощный низкоуровневый вариант, но для простого клиента это избыточно.
 
 ## Когда выбирать другие клиенты
 

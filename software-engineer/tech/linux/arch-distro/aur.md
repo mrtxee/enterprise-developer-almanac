@@ -3,6 +3,7 @@ aliases:
   - Arch User Repository
   - AUR
   - AUR helper
+  - AUR-хелпер
   - makepkg
   - Octopi
   - Pamac
@@ -10,9 +11,8 @@ aliases:
   - PKGBUILD
   - yay
   - Yet Another Yogurt
-  - AUR-хелпер
-  - помощник AUR
   - Пользовательский репозиторий Arch
+  - помощник AUR
 ---
 
 ## AUR
@@ -35,7 +35,7 @@ yay (Yet Another Yogurt) — помощник, который автоматиз
 sudo pacman -S --needed base-devel git
 ```
 
-2. Клонируйте репозиторий yay и соберите:
+1. Клонируйте репозиторий yay и соберите:
 
 ```bash
 git clone https://aur.archlinux.org/yay.git
@@ -47,7 +47,7 @@ makepkg -si
 - `-s` — установить зависимости
 - `-i` — после сборки сразу установить
 
-3. Проверка:
+1. Проверка:
 
 ```bash
 yay --version
@@ -131,7 +131,7 @@ paru — AUR-хелпер для Arch Linux, написанный на Rust.
 sudo pacman -S --needed base-devel git
 ```
 
-2. Склонируйте и соберите:
+1. Склонируйте и соберите:
 
 ```bash
 git clone https://aur.archlinux.org/paru.git

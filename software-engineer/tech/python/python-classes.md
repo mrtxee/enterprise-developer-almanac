@@ -1,19 +1,18 @@
 ---
 aliases:
+  - __eq__
+  - __init__
+  - __repr__
+  - __str__
+  - class
+  - Classes
   - Python
   - Python classes
-  - Classes
-  - class
-  - __init__
   - self
-  - __str__
-  - __repr__
-  - __eq__
-  - Классы Python
-  - Посылка сообщений
   - Волшебные методы
+  - Классы Python
   - Магические методы
-
+  - Посылка сообщений
 ---
 ## Парадигма ООП
 

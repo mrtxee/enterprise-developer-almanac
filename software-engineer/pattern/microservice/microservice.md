@@ -1,6 +1,7 @@
 ---
 aliases:
   - 12-Factor App
+  - 12-факторное приложение
   - Anti-Corruption Layer
   - API Gateway
   - Backend for Frontend
@@ -11,8 +12,8 @@ aliases:
   - Conway's Law
   - CQRS
   - Database Decomposition
-  - Domain-Driven Design
   - DDD
+  - Domain-Driven Design
   - Envoy
   - Event Sourcing
   - Event-Driven Architecture
@@ -28,8 +29,8 @@ aliases:
   - Monolith
   - MSA
   - Prometheus
-  - Publish/Subscribe
   - Pub/Sub
+  - Publish/Subscribe
   - REST
   - Saga
   - Service Mesh
@@ -46,7 +47,6 @@ aliases:
   - Модульный монолит
   - Монолит
   - Событийная архитектура
-  - 12-факторное приложение
 ---
 
 ## Взаимодействие микросервисов

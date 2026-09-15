@@ -2,8 +2,8 @@
 aliases:
   - Client-Server
   - Collection+JSON
-  - HATEOAS
   - HAL
+  - HATEOAS
   - HTTP
   - Hypertext Transfer Protocol
   - JSON-LD

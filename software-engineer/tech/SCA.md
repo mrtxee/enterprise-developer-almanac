@@ -1,5 +1,6 @@
 ---
 aliases:
+  - cdxgen
   - CVE
   - CycloneDX
   - Dependency and vulnerability analysis
@@ -11,7 +12,6 @@ aliases:
   - Software Bill of Materials
   - Software composition analysis
   - Trivy
-  - cdxgen
   - Инструменты анализа зависимостей и уязвимостей
   - Инструменты анализа состава программного обеспечения
   - Инструменты сканирования безопасности

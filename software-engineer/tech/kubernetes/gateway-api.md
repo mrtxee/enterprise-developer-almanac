@@ -1,11 +1,11 @@
 ---
 aliases:
-  - GKE Gateway
   - Gateway API
+  - GKE Gateway
   - Istio
+  - k8s
   - Kubernetes
   - NGINX Ingress Controller
-  - k8s
 ---
 
 ## Gateway API

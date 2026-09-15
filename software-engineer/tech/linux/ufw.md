@@ -4,8 +4,8 @@ aliases:
   - Firewall
   - GNOME Quick Share
   - GnomeQS
-  - GUFW
   - gufw
+  - GUFW
   - IANA
   - mDNS
   - QS

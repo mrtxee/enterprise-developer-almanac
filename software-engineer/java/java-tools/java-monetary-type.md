@@ -7,12 +7,12 @@ aliases:
   - JSR 354
   - Long
   - Moneta
+  - monetary-type
+  - monetary-type-java
   - MonetaryAmount
   - Money
   - MoneyInCents
   - RoundingMode
-  - monetary-type
-  - monetary-type-java
 ---
 ## Как правильно хранить деньги в Java
 

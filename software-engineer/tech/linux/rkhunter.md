@@ -1,8 +1,8 @@
 ---
 aliases:
+  - rkhunter
   - Rootkit
   - Rootkit Hunter
-  - rkhunter
   - руткит
 ---
 ## Как пользоваться rkhunter

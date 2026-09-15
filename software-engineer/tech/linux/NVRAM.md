@@ -3,8 +3,8 @@ aliases:
   - EEPROM
   - FRAM
   - MRAM
-  - Non-Volatile Random-Access Memory
   - Non-volatile random-access memory
+  - Non-Volatile Random-Access Memory
   - NVRAM
   - PCM
   - Энергонезависимая память

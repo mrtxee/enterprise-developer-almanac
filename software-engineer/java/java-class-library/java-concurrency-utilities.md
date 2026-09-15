@@ -1,23 +1,17 @@
 ---
 aliases:
   - Atomic
-  - AtomicInteger
-<<<<<<< HEAD
-=======
   - Atomic operations
+  - AtomicInteger
   - Atomics
->>>>>>> 8667d92 (stashing)
   - Callable
   - CAS
   - Compare-And-Swap
   - compareAndSet
-  - Condition
-<<<<<<< HEAD
-=======
-  - Condition queue
-  - Concurrent
   - concurrency
->>>>>>> 8667d92 (stashing)
+  - Concurrent
+  - Condition
+  - Condition queue
   - CountDownLatch
   - CyclicBarrier
   - DelayQueue
@@ -32,19 +26,13 @@ aliases:
   - Lock
   - LockSupport
   - LongAdder
-<<<<<<< HEAD
-  - Phaser
-  - PriorityBlockingQueue
-  - ReadWriteLock
-=======
   - Mutex
-  - parallelism
   - Parallel computing
+  - parallelism
   - Phaser
   - PriorityBlockingQueue
   - ReadWriteLock
   - Reentrant lock
->>>>>>> 8667d92 (stashing)
   - ReentrantLock
   - ReentrantReadWriteLock
   - Runnable
@@ -52,7 +40,6 @@ aliases:
   - Semaphore
   - Synchronizers
   - SynchronousQueue
-<<<<<<< HEAD
   - Thread pool
   - ThreadPoolExecutor
   - Атомарные классы
@@ -61,51 +48,11 @@ aliases:
   - Семафор
   - Синхронизаторы
 ---
-
-
-## Структура пакета concurrent
-> `java.util.concurrent`
-> *concurrent ≅ параллельный*
-=======
-  - Thread
-  - Thread pool
-  - ThreadPoolExecutor
-  - Virtual threads
-  - атомарные классы
-  - атомарные операции
-  - Атомарные классы
-  - Барьерная синхронизация
-  - Блокирующая очередь
-  - блокировка чтения-записи
-  - Защёлка с обратным отсчётом
-  - Кража работы
-  - конкурентность
-  - Многопоточность
-  - Мьютекс
-  - оптимистическая блокировка
-  - Очередь условия
-  - Параллелизм
-  - Параллельные вычисления
-  - Поток
-  - Потоки
-  - Пул потоков
-  - повторно используемая блокировка
-  - повторно используемая блокировка чтения-записи
-  - Повторно используемая блокировка
-  - Повторно используемая блокировка чтения-записи
-  - Семафор
-  - синхронизация
-  - Синхронизаторы
-  - справедливость
-  - Циклический барьер
----
-
 ## Структура пакета concurrent
 
 `java.util.concurrent`
 
 *concurrent ≅ параллельный*
->>>>>>> 8667d92 (stashing)
 
 ```mermaid
 ---
@@ -146,21 +93,14 @@ namespace java.util.concurrent {
 - `CopyOnWrite*` — коллекции для интерфейсов Set, List
 - `Concurrent*` — коллекции для интерфейсов Queue, Set, Map
 - `BlockingQueue` — коллекции для интерфейса Queue
-<<<<<<< HEAD
-=======
 
->>>>>>> 8667d92 (stashing)
 ## Синхронизаторы (Synchronizers)
 
 Мьютекс встроен в класс Object и, следовательно, имеется у каждого объекта.
 
 Пакет `java.util.concurrent` содержит пять объектов синхронизации, позволяющих накладывать определённые условия для синхронизации потоков.
 
-<<<<<<< HEAD
-1. **Semaphore** («семафор») — ограничивает одновременный доступ к общему ресурсу нескольким потокам с помощью счётчика. При запросе разрешения и значении счётчика больше нуля доступ предоставляется, а счётчик уменьшается; в противном случае доступ запрещается. При освобождении ресурса значение счётчика увеличивается. Количество разрешений определяется в конструкторе. Второй конструктор добавляет параметр «справедливости», определяющий порядок предоставления разрешения ожидающим доступа потокам.
-=======
 1. **Semaphore** («семафор») — ограничивает одновременный доступ к общему ресурсу нескольким потокам с помощью счётчика. При запросе разрешения и значении счётчика больше нуля доступ предоставляется, а счётчик уменьшается; в противном случае доступ запрещается. При освобождении ресурса значение счётчика увеличивается. Количество разрешений определяется в конструкторе. Второй конструктор добавляет параметр справедливости, определяющий порядок предоставления разрешения ожидающим доступа потокам.
->>>>>>> 8667d92 (stashing)
 2. **CountDownLatch** («защёлка с обратным отсчётом») — блокирует один или несколько потоков, пока не будут выполнены определённые условия. Количество условий задаётся счётчиком. При обнулении счётчика блокировки снимаются, и потоки продолжают выполнение. Счётчик одноразовый и не может быть инициализирован заново.
 3. **CyclicBarrier** («циклический барьер») — используется, как правило, в распределённых вычислениях. Барьерная синхронизация останавливает участника (поток) в определённом месте в ожидании остальных потоков группы. Как только все потоки достигли барьера, он снимается, и выполнение продолжается. В отличие от `CountDownLatch`, барьер можно использовать повторно (в цикле).
 4. **Phaser** — объект синхронизации типа «барьер», но, в отличие от `CyclicBarrier`, может иметь несколько барьеров (фаз), и количество участников на каждой фазе может быть разным.
@@ -172,20 +112,16 @@ namespace java.util.concurrent {
 
 Основные методы: создать семафор, задать количество одновременных разрешений для потоков, получать разрешения и возвращать их назад. Конкурирующие потоки будут ожидать, пока число разрешений не станет больше 0.
 
-<<<<<<< HEAD
-```java
-=======
 Конструкторы и методы Semaphore:
 
 ```text
->>>>>>> 8667d92 (stashing)
 public void acquire() throws InterruptedException // получает разрешение, блокируя поток, пока оно недоступно
 public void release() // возвращает разрешение семафору
 public Semaphore(int permits)
 public Semaphore(int permits, boolean fair) // если fair = true, семафор гарантирует FIFO-предоставление
 ```
 
-![[Untitled 5.gif|Untitled 5.gif]]
+![[attachments/Untitled 5.gif|Untitled 5.gif]]
 
 ### class CountDownLatch
 
@@ -193,7 +129,7 @@ public Semaphore(int permits, boolean fair) // если fair = true, семаф�
 
 Объект синхронизации потоков `CountDownLatch`, блокирующий один или несколько потоков до тех пор, пока не будут выполнены определённые условия. Количество условий задаётся счётчиком. При обнулении счётчика, то есть при выполнении всех условий, блокировки снимаются, и потоки продолжают выполнение. Пример: экскурсовод, собирающий группу из заданного количества туристов; как только группа собрана, она отправляется на экскурсию. Счётчик одноразовый и не может быть инициализирован заново.
 
-![[Untitled 1 2.gif|Untitled 1 2.gif]]
+![[attachments/Untitled 1 2.gif|Untitled 1 2.gif]]
 
 ### class CyclicBarrier
 
@@ -203,7 +139,7 @@ public Semaphore(int permits, boolean fair) // если fair = true, семаф�
 
 Барьер для группы потоков означает, что каждый поток должен остановиться в определённом месте и ожидать прихода остальных. Как только все потоки достигли барьера, их выполнение продолжается.
 
-![[Untitled 2 2.gif|Untitled 2 2.gif]]
+![[attachments/Untitled 2 2.gif|Untitled 2 2.gif]]
 
 ### class Phaser
 
@@ -216,7 +152,7 @@ public Semaphore(int permits, boolean fair) // если fair = true, семаф�
 - Количество участников-потоков для каждой фазы жёстко не задано и может меняться. Поток может регистрироваться в качестве участника и отменять своё участие.
 - Исполнительный поток не обязан ожидать, пока все остальные участники соберутся у барьера, — достаточно сообщить о своём прибытии.
 
-![[Untitled 3 2.gif|Untitled 3 2.gif]]
+![[attachments/Untitled 3 2.gif|Untitled 3 2.gif]]
 
 ### class Exchanger
 
@@ -224,7 +160,7 @@ public Semaphore(int permits, boolean fair) // если fair = true, семаф�
 
 Класс `Exchanger` (обменник) предназначен для упрощения процесса обмена данными между двумя потоками. Принцип действия связан с ожиданием того, что два потока вызовут метод `exchange()`. Как только это произойдёт, Exchanger произведёт обмен данными, предоставляемыми обоими потоками.
 
-![[Untitled 4 2.gif|Untitled 4 2.gif]]
+![[attachments/Untitled 4 2.gif|Untitled 4 2.gif]]
 
 ## Атомарные классы (Atomic)
 
@@ -240,11 +176,8 @@ public Semaphore(int permits, boolean fair) // если fair = true, семаф�
 
 Пакет включает классы: `AtomicBoolean`, `AtomicInteger`, `AtomicIntegerArray`, `AtomicIntegerFieldUpdater`, `AtomicLong`, `AtomicLongArray`, `AtomicLongFieldUpdater`, `AtomicMarkableReference`, `AtomicReference`, `AtomicReferenceArray`, `AtomicReferenceFieldUpdater`, `AtomicStampedReference`, `DoubleAccumulator`, `DoubleAdder`, `LongAccumulator`, `LongAdder`, `Striped64`.
 
-<<<<<<< HEAD
-=======
 Описание метода compareAndSet:
 
->>>>>>> 8667d92 (stashing)
 ```java
 public final boolean compareAndSet(int expectedValue, int newValue)
 ```
@@ -253,11 +186,7 @@ public final boolean compareAndSet(int expectedValue, int newValue)
 
 | Классы | Назначение |
 |--------|------------|
-<<<<<<< HEAD
-| `AtomicBoolean`, `AtomicInteger`, `AtomicLong`, `AtomicReference` | Atomic-классы для boolean, integer, long и ссылок на объекты. Содержат метод `compareAndSet`, а также `getAndSet`, который безусловно устанавливает новое значение и возвращает старое. `AtomicInteger` и `AtomicLong` имеют методы инкремента, декремента и добавления нового значения. |
-=======
 | `AtomicBoolean`, `AtomicInteger`, `AtomicLong`, `AtomicReference` | Atomic-классы для boolean, integer, long и ссылок на объекты. Содержат метод `compareAndSet`, а также `getAndSet`, который безусловно устанавливает новое значение и возвращает старое. `AtomicInteger` и `AtomicLong` имеют методы инкремента (+, ++, +=), декремента (-, --, -=) и добавления нового значения. |
->>>>>>> 8667d92 (stashing)
 | `AtomicIntegerArray`, `AtomicLongArray`, `AtomicReferenceArray` | Atomic-классы для массивов. Элементы массивов могут быть изменены атомарно. |
 | `AtomicIntegerFieldUpdater`, `AtomicLongFieldUpdater`, `AtomicReferenceFieldUpdater` | Atomic-классы для обновления полей по их именам с использованием reflection. Смещения полей для CAS операций определяются в конструкторе и кэшируются. Сильного падения производительности из-за reflection не наблюдается. |
 | `AtomicStampedReference`, `AtomicMarkableReference` | Atomic-классы для реализации некоторых алгоритмов. |
@@ -268,11 +197,8 @@ public final boolean compareAndSet(int expectedValue, int newValue)
 
 `java.util.concurrent.atomic.AtomicInteger`
 
-<<<<<<< HEAD
-=======
 Пример использования AtomicInteger в многопоточном контексте:
 
->>>>>>> 8667d92 (stashing)
 ```java
 AtomicInteger atomicInt = new AtomicInteger(0);
 ExecutorService executor = Executors.newFixedThreadPool(6);
@@ -288,11 +214,8 @@ System.out.printf("======%n%s", atomicInt.get());
 
 ### class LongAdder
 
-<<<<<<< HEAD
-=======
 Пример использования LongAdder с пулом потоков:
 
->>>>>>> 8667d92 (stashing)
 ```java
 ExecutorService executor = Executors.newFixedThreadPool(4);
 LongAdder adder = new LongAdder();
@@ -317,11 +240,8 @@ executor.close();
 
 Интерфейс `Lock` — абстракция, допускающая выполнение блокировок, которые реализуются как классы Java, а не как возможность языка. Это расширяет возможности применения блокировок по сравнению с synchronized-блоками.
 
-<<<<<<< HEAD
-=======
 Пример использования Lock с try-finally:
 
->>>>>>> 8667d92 (stashing)
 ```java
 Lock lk = ...;
 lk.lock();
@@ -343,11 +263,8 @@ try {
 
 `ReentrantLock` предлагает более высокую эффективность в условиях жёсткой состязательности: когда несколько потоков пытаются получить доступ к совместно используемому ресурсу, виртуальной машине JVM потребуется меньше времени на установление очерёдности потоков.
 
-<<<<<<< HEAD
-=======
 Пример использования ReentrantLock с прерыванием:
 
->>>>>>> 8667d92 (stashing)
 ```java
 Lock l = new ReentrantLock();
 try {
@@ -370,11 +287,8 @@ try {
 
 Готовых реализаций нет. Интерфейс реализуется для каждого типа отдельно.
 
-<<<<<<< HEAD
-=======
 Пример использования Condition с ReentrantLock:
 
->>>>>>> 8667d92 (stashing)
 ```java
 // Чтобы получить Condition для блокировки Lock, используют метод newCondition().
 ReentrantLock locker = new ReentrantLock();
@@ -399,13 +313,9 @@ condition.signalAll();
 
 «Повторно используемая блокировка чтения-записи».
 
-<<<<<<< HEAD
-Блокировку чтение-запись следует использовать при длительных и частых операциях чтения и редких операциях записи. Тогда при доступе к защищённому ресурсу используются разные методы блокировки:
-=======
 Блокировку чтение-запись следует использовать при длительных и частых операциях чтения и редких операциях записи. Тогда при доступе к защищённому ресурсу используются разные методы блокировки.
 
 Пример раздельных блокировок чтения и записи:
->>>>>>> 8667d92 (stashing)
 
 ```java
 ReadWriteLock rwl = new ReentrantReadWriteLock();
@@ -421,11 +331,8 @@ Basic thread blocking primitives for creating locks and other synchronization cl
 
 Без конструктора. Все методы — `static`.
 
-<<<<<<< HEAD
-=======
 Статические методы LockSupport:
 
->>>>>>> 8667d92 (stashing)
 ```java
 static Object getBlocker(Thread t) // возвращает объект блокировки последнего вызова park, который ещё не разблокирован
 static void park() // отключает текущий поток, если permit недоступен
@@ -443,11 +350,8 @@ static void unpark(Thread thread) // делает permit доступным дл
 
 Модель пула потоков помогает экономить ресурсы в многопоточных приложениях: чем больше потоков генерируется, тем меньше времени каждый поток тратит на работу.
 
-<<<<<<< HEAD
-=======
 Модель ExecutorService:
 
->>>>>>> 8667d92 (stashing)
 ```mermaid
 ---
 title: Executor Service
@@ -521,11 +425,8 @@ classDef Sky stroke-width:1px, stroke-dasharray:none, stroke:#374D7C, fill:#E2EB
 
 Интерфейс `Future` служит для получения результата асинхронного вычисления. Предусмотрены методы для проверки завершения вычисления, ожидания завершения и получения результата.
 
-<<<<<<< HEAD
-=======
 Методы интерфейса Future:
 
->>>>>>> 8667d92 (stashing)
 ```java
 boolean cancel(boolean mayInterruptIfRunning) // отменить выполнение
 Throwable exceptionNow() // возвращает исключение, брошенное задачей
@@ -543,11 +444,8 @@ State state() // ENUM текущего состояния выполнения
 
 Функциональный интерфейс описывает задание, которое возвращает результат.
 
-<<<<<<< HEAD
-=======
 Исходный код интерфейса Callable:
 
->>>>>>> 8667d92 (stashing)
 ```java
 public interface Callable<V> {
     // Computes a result, or throws an exception if unable to do so.
@@ -563,11 +461,8 @@ public interface Callable<V> {
 
 Функциональный интерфейс, позволяющий выполнять процедуру без параметров.
 
-<<<<<<< HEAD
-=======
 Исходный код интерфейса Runnable:
 
->>>>>>> 8667d92 (stashing)
 ```java
 @FunctionalInterface
 public interface Runnable {
@@ -576,11 +471,7 @@ public interface Runnable {
 }
 ```
 
-<<<<<<< HEAD
-## class Executors
-=======
 ### class Executors
->>>>>>> 8667d92 (stashing)
 
 `import java.util.concurrent.Executors`
 
@@ -590,11 +481,8 @@ class Executors также содержит методы для создания
 
 Все методы класса Executors — **public static**.
 
-<<<<<<< HEAD
-=======
 Список фабричных методов:
 
->>>>>>> 8667d92 (stashing)
 ```java
 ExecutorService newCachedThreadPool()
 ExecutorService newCachedThreadPool(ThreadFactory threadFactory)
@@ -620,11 +508,8 @@ ThreadFactory defaultThreadFactory() // возвращает фабрику по
 
 Метод класса Executors, который позволяет запустить выполнение в один поток.
 
-<<<<<<< HEAD
-=======
 Пример однопоточного исполнения:
 
->>>>>>> 8667d92 (stashing)
 ```java
 Executor executor = Executors.newSingleThreadExecutor();
 executor.execute(() -> System.out.println("Hello World"));
@@ -634,11 +519,8 @@ executor.execute(() -> System.out.println("Hello World"));
 
 Создаёт `ThreadPoolExecutor` с `corePoolSize` и `maximumPoolSize` равными и `keepAliveTime` равным 0, что означает, что потоки в пуле всегда активны.
 
-<<<<<<< HEAD
-=======
 Пример пула из двух потоков:
 
->>>>>>> 8667d92 (stashing)
 ```java
 ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
 executor.submit(() -> {
@@ -655,11 +537,7 @@ executor.submit(() -> {
 });
 ```
 
-<<<<<<< HEAD
-## interface ExecutorService
-=======
 ### interface ExecutorService
->>>>>>> 8667d92 (stashing)
 
 `extends Executor, AutoCloseable` `import java.util.concurrent.ExecutorService`
 
@@ -667,11 +545,8 @@ executor.submit(() -> {
 
 Метод `submit()` принимает задачу через функциональный интерфейс `Runnable` или `Callable` и возвращает объект `Future`.
 
-<<<<<<< HEAD
-=======
 Сигнатуры метода submit():
 
->>>>>>> 8667d92 (stashing)
 ```java
 Future<?> submit(Runnable task)
 <T> Future<T> submit(Runnable task, T result)
@@ -680,11 +555,8 @@ Future<?> submit(Runnable task)
 
 Метод `execute()` запускает выполнение потока.
 
-<<<<<<< HEAD
-=======
 Сигнатура метода execute():
 
->>>>>>> 8667d92 (stashing)
 ```java
 void execute(Runnable command)
 ```
@@ -710,22 +582,15 @@ void execute(Runnable command)
 
 `ForkJoinPool` является основной частью платформы fork/join. Она решает общую проблему генерации нескольких задач в рекурсивных алгоритмах. С простым `ThreadPoolExecutor` можно быстро исчерпать потоки, потому что для каждой задачи или подзадачи требуется собственный поток. В каркасе fork/join любая задача может разветвляться на множество подзадач и использовать метод join для ожидания их завершения. Преимущество структуры fork/join в том, что она не создаёт новые потоки для каждой задачи или подзадачи, а реализует алгоритм кражи работы.
 
-<<<<<<< HEAD
-=======
 Пример запуска задачи в ForkJoinPool:
 
->>>>>>> 8667d92 (stashing)
 ```java
 SimpleClass simpleClass = new SimpleClass();
 ForkJoinPool forkJoinPool = new ForkJoinPool();
 System.out.println(forkJoinPool.invoke(simpleClass));
 ```
 
-<<<<<<< HEAD
-## interface ScheduledExecutorService
-=======
 ### interface ScheduledExecutorService
->>>>>>> 8667d92 (stashing)
 
 `extends ExecutorService`
 

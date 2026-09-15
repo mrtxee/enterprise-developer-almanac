@@ -1,9 +1,9 @@
 ---
 aliases:
-  - SIGHUP
   - disown
   - nohup
   - screen
+  - SIGHUP
   - supervisord
   - tmux
 ---

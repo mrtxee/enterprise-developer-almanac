@@ -1,25 +1,25 @@
 ---
 aliases:
   - Base Directory Specification
-  - FHS
-  - Filesystem Hierarchy Standard
-  - XDG
-  - XDG Base Directory Specification
+  - dconf
   - directory
   - directory slash
   - dirs
-  - dconf
+  - FHS
+  - Filesystem Hierarchy Standard
   - Flatpak
   - folders
   - linux-directory
   - linux-folders
   - slash
   - usrmerge
+  - XDG
+  - XDG Base Directory Specification
   - Домашний каталог
   - Каталог
   - Папка
-  - Схема базовых каталогов
   - Стандарт иерархии файловой системы
+  - Схема базовых каталогов
 ---
 
 ## Filesystem Hierarchy Standard (FHS)

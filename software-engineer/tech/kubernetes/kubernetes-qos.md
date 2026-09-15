@@ -1,10 +1,10 @@
 ---
 aliases:
   - Eviction
-  - QoS
-  - Quality of Service
   - k8s
   - kubernetes
+  - QoS
+  - Quality of Service
   - Вытеснение
 ---
 

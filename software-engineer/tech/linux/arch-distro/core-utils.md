@@ -1,29 +1,29 @@
 ---
 aliases:
+  - 9base
   - Arch Linux
-  - BusyBox
   - bat
+  - BusyBox
   - Core utilities
   - core-utils
+  - eza
   - fd
   - fzf
   - GNU Core Utilities
   - GNU coreutils
   - Heirloom Toolchest
   - Linux Core Utilities
-  - POSIX
-  - POSIX utilities
-  - Toybox
-  - Unix
-  - eza
   - linux core utils
   - moreutils
   - plocate
+  - POSIX
+  - POSIX utilities
   - ripgrep
   - sbase
+  - Toybox
+  - Unix
   - uutils
   - zoxide
-  - 9base
   - Базовые утилиты Linux
   - Основные утилиты Linux
   - Утилиты POSIX

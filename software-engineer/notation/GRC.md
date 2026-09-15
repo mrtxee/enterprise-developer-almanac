@@ -1,10 +1,10 @@
 ---
 aliases:
-  - COSO ERM
   - Compliance
-  - GRC
+  - COSO ERM
   - Governance
   - Governance Risk Compliance
+  - GRC
   - ISO 27001
   - ISO 31000
   - NIST CSF

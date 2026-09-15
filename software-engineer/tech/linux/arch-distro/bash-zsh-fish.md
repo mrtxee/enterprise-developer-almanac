@@ -1,11 +1,11 @@
 ---
 aliases:
+  - bash
+  - fish
   - Fisher
   - Oh My Zsh
-  - bash
   - p10k
   - Powerlevel10k
-  - fish
   - zsh
 ---
 

@@ -1,15 +1,15 @@
 ---
 aliases:
-  - Yandex Message Queue
-  - Message retention period
-  - Maximum message size
   - Delivery delay
+  - Maximum message size
+  - Message retention period
+  - Yandex Message Queue
+  - Время ожидания при получении сообщения
+  - Задержка доставки
+  - Максимальный размер сообщения
+  - Срок хранения сообщений
   - Стандартный таймаут видимости
   - Таймаут видимости
-  - Срок хранения сообщений
-  - Максимальный размер сообщения
-  - Задержка доставки
-  - Время ожидания при получении сообщения
 ---
 
 ## Yandex Message Queue: очередь сообщений

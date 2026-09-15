@@ -6,12 +6,12 @@ aliases:
   - Hibernate
   - Hibernate caching
   - HQL
-  - JPA
   - Java Persistence API
+  - JPA
   - LazyInitializationException
+  - n+1
   - N+1
   - N+1 problem
-  - n+1
   - Query Cache
   - Second Level Cache
   - Second-Level Cache

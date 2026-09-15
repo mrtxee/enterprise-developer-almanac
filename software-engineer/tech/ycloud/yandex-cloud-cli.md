@@ -1,17 +1,17 @@
 ---
 aliases:
-  - Yandex Cloud CLI
-  - Yandex Cloud
-  - ycloud
-  - yc
-  - yc init
   - CLI
   - resource-manager
   - virtual machine
   - VM
-  - интерфейс командной строки
+  - Yandex Cloud
+  - Yandex Cloud CLI
+  - yc
+  - yc init
+  - ycloud
   - виртуальная машина
   - ВМ
+  - интерфейс командной строки
 ---
 ## Yandex Cloud CLI
 

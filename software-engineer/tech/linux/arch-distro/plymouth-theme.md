@@ -4,13 +4,13 @@ aliases:
   - plymouth-theme
 ---
 
-# Plymouth
+## Plymouth
 
 **Демо (предпросмотр) любой темы Plymouth** можно посмотреть без перезагрузки системы. Это удобно, чтобы выбрать подходящую тему перед установкой через `plymouth-set-default-theme`.
 
 Вот как это сделать:
 
-## Проверка запуска Plymouth
+### Проверка запуска Plymouth
 
 ```bash
 sudo systemctl status plymouth.service
@@ -22,7 +22,7 @@ sudo systemctl status plymouth.service
 sudo systemctl start plymouth.service
 ```
 
-### Предпросмотр конкретной темы
+#### Предпросмотр конкретной темы
 
 Сначала посмотрите список доступных тем:
 
@@ -66,7 +66,7 @@ for i in {1..100}; do sudo plymouth --update=step-$i; sleep 0.1; done
 sudo plymouth --quit
 ```
 
-## Быстрый просмотр на 5 секунд
+### Быстрый просмотр на 5 секунд
 
 Для быстрого просмотра, как выглядит тема:
 
@@ -76,13 +76,13 @@ sudo plymouthd && sudo plymouth --show-splash && sleep 5 && sudo plymouth --quit
 
 > Тема отобразится на 5 секунд и автоматически закроется.
 
-## Советы
+### Советы
 
 - Во время просмотра темы можно переключаться между терминалами: `Ctrl+Alt+F6` — в консоль, `Ctrl+Alt+F1` (или `F7`) — обратно в графику.
 - Анимация логотипа и прогресс-бара появляется только при обновлении статуса (`--update`).
 - Если ничего не отображается — проверьте, включён ли KMS (Kernel Mode Setting) для вашей видеокарты.
 
-## Пример: просмотр темы spinfinity
+### Пример: просмотр темы spinfinity
 
 ```bash
 sudo plymouth-set-default-theme --list | grep spinfinity  # проверить наличие

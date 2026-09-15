@@ -274,7 +274,7 @@ public class GrpcOrderService extends OrderServiceGrpc.OrderServiceImplBase {
 }
 ```
 
-3. Готово! Ядро **не изменилось**.
+1. Готово! Ядро **не изменилось**.
 
 ---
 

@@ -1,11 +1,11 @@
 ---
 aliases:
+  - cmd
   - CMD
-  - PowerShell
   - mv
   - netstat
-  - cmd
   - ports
+  - PowerShell
   - порты
   - список портов
 ---

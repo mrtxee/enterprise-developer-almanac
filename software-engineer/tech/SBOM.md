@@ -4,8 +4,8 @@ aliases:
   - BOM
   - CycloneDX
   - SBOM
-  - SPDX
   - Software Bill of Materials
+  - SPDX
   - Софтверная спецификация
 ---
 

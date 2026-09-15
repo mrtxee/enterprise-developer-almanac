@@ -3,11 +3,11 @@ aliases:
   - Apple Silicon
   - Darwin
   - GNU
+  - launchd
   - Mach-O
+  - macOS
   - NeXTSTEP
   - XNU
-  - launchd
-  - macOS
 ---
 
 ## Архитектура macOS

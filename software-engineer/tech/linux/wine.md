@@ -2,11 +2,11 @@
 aliases:
   - DXVK
   - Proton
-  - WINEPREFIX
   - Wine
   - wine_gecko
   - wine-mono
   - winecfg
+  - WINEPREFIX
   - winetricks
 ---
 ## Запуск установки игры через Wine (Setup.exe)
@@ -49,7 +49,7 @@ winecfg
 cd /путь/к/папке/с/установщиком
 ```
 
-2. Запустите установщик:
+1. Запустите установщик:
 
 ```bash
 wine Setup.exe

@@ -1,19 +1,20 @@
 ---
 aliases:
+  - Apache APISIX
   - API Gateway
+  - API-шлюз
   - APISIX
   - APISIX Gateway
-  - Apache APISIX
-  - API-шлюз
   - шлюз API
 ---
+
 ---
 
-# APISIX Gateway
+## APISIX Gateway
 
 **APISIX Gateway** — это динамический, высокопроизводительный cloud-native API шлюз, построенный на основе etcd. Он может выполнять множество задач для управления API трафиком.
 
-## Основные возможности APISIX Gateway
+### Основные возможности APISIX Gateway
 
 ```mermaid
 ---
@@ -57,9 +58,9 @@ graph LR
     H --> H2[Response Caching]
 ```
 
-## Динамическая маршрутизация и балансировка
+### Динамическая маршрутизация и балансировка
 
-### Конфигурация маршрутов
+#### Конфигурация маршрутов
 
 ```yaml
 # routes.yaml
@@ -80,7 +81,7 @@ routes:
         uri: "/products$1"
 ```
 
-### Service Discovery с Consul
+#### Service Discovery с Consul
 
 ```yaml
 routes:
@@ -93,9 +94,9 @@ routes:
         group_name: production
 ```
 
-## Аутентификация и авторизация
+### Аутентификация и авторизация
 
-### JWT аутентификация
+#### JWT аутентификация
 
 ```yaml
 plugins:
@@ -107,7 +108,7 @@ plugins:
       - "email"
 ```
 
-### Key Authentication
+#### Key Authentication
 
 ```yaml
 plugins:
@@ -116,9 +117,9 @@ plugins:
     hide_credentials: true
 ```
 
-## Rate Limiting и защита
+### Rate Limiting и защита
 
-### Ограничение запросов
+#### Ограничение запросов
 
 ```yaml
 plugins:
@@ -135,7 +136,7 @@ plugins:
     policy: local
 ```
 
-### IP Whitelist/Blacklist
+#### IP Whitelist/Blacklist
 
 ```yaml
 plugins:
@@ -147,9 +148,9 @@ plugins:
       - "192.168.2.100"
 ```
 
-## Трансформация запросов/ответов
+### Трансформация запросов/ответов
 
-### Proxy Rewrite
+#### Proxy Rewrite
 
 ```yaml
 plugins:
@@ -161,7 +162,7 @@ plugins:
       X-User-ID: "$user_id"
 ```
 
-### Response Rewrite
+#### Response Rewrite
 
 ```yaml
 plugins:
@@ -173,9 +174,9 @@ plugins:
     body: '{"status": "success", "data": $response_body}'
 ```
 
-## Кэширование
+### Кэширование
 
-### Proxy Caching
+#### Proxy Caching
 
 ```yaml
 plugins:
@@ -194,9 +195,9 @@ plugins:
     cache_ttl: 300
 ```
 
-## Мониторинг и логирование
+### Мониторинг и логирование
 
-### Prometheus Metrics
+#### Prometheus Metrics
 
 ```yaml
 plugins:
@@ -211,7 +212,7 @@ plugins:
         desc: "HTTP request duration in seconds"
 ```
 
-### Логирование в Kafka
+#### Логирование в Kafka
 
 ```yaml
 plugins:
@@ -224,9 +225,9 @@ plugins:
     timeout: 3
 ```
 
-## Canary Release и A/B тестирование
+### Canary Release и A/B тестирование
 
-### Canary deployments
+#### Canary deployments
 
 ```yaml
 upstream:
@@ -242,7 +243,7 @@ upstream:
       weight: 10
 ```
 
-### Traffic Splitting по заголовкам
+#### Traffic Splitting по заголовкам
 
 ```yaml
 plugins:
@@ -262,9 +263,9 @@ plugins:
             weight: 100
 ```
 
-## gRPC и WebSocket поддержка
+### gRPC и WebSocket поддержка
 
-### gRPC прокси
+#### gRPC прокси
 
 ```yaml
 routes:
@@ -276,7 +277,7 @@ routes:
         method: "SayHello"
 ```
 
-### WebSocket
+#### WebSocket
 
 ```yaml
 routes:
@@ -287,9 +288,9 @@ routes:
         max_payload_len: 65535
 ```
 
-## Serverless функции
+### Serverless функции
 
-### AWS Lambda интеграция
+#### AWS Lambda интеграция
 
 ```yaml
 plugins:
@@ -300,7 +301,7 @@ plugins:
     timeout: 3000
 ```
 
-### Azure Functions
+#### Azure Functions
 
 ```yaml
 plugins:
@@ -309,9 +310,9 @@ plugins:
     authorization: "abc123"
 ```
 
-## Custom plugins
+### Custom plugins
 
-### Пример кастомного плагина на Lua
+#### Пример кастомного плагина на Lua
 
 ```lua
 local plugin_name = "custom-auth"
@@ -342,9 +343,9 @@ end
 return _M
 ```
 
-## Динамическая конфигурация через etcd
+### Динамическая конфигурация через etcd
 
-### Hot-reload конфигурации
+#### Hot-reload конфигурации
 
 ```bash
 # Добавление маршрута через API
@@ -370,9 +371,9 @@ curl "http://127.0.0.1:9080/apisix/admin/routes/1" \
 }'
 ```
 
-## Health Checking
+### Health Checking
 
-### Активные проверки здоровья
+#### Активные проверки здоровья
 
 ```yaml
 upstream:
@@ -397,9 +398,9 @@ upstream:
         http_failures: 3
 ```
 
-## Security Features
+### Security Features
 
-### WAF (Web Application Firewall)
+#### WAF (Web Application Firewall)
 
 ```yaml
 plugins:
@@ -415,9 +416,9 @@ plugins:
     max_age: 3600
 ```
 
-## Производительность и масштабирование
+### Производительность и масштабирование
 
-### Конфигурация для high-load
+#### Конфигурация для high-load
 
 ```yaml
 # config.yaml
@@ -446,9 +447,9 @@ apisix:
     timeout: 30
 ```
 
-## Практические сценарии использования
+### Практические сценарии использования
 
-### Микросервисная архитектура
+#### Микросервисная архитектура
 
 ```yaml
 routes:
@@ -468,7 +469,7 @@ routes:
       discovery_type: consul
 ```
 
-### API Versioning
+#### API Versioning
 
 ```yaml
 routes:
@@ -487,7 +488,7 @@ routes:
       service_name: api-v2
 ```
 
-### Географическая маршрутизация
+#### Географическая маршрутизация
 
 ```yaml
 plugins:
@@ -501,7 +502,7 @@ plugins:
         upstream_id: "eu-upstream"
 ```
 
-## Итог
+### Итог
 
 **APISIX Gateway может выполнять:**
 

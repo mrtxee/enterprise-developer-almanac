@@ -1,7 +1,7 @@
 ---
 aliases:
-  - PCI DSS
   - Payment Card Industry Data Security Standard
+  - PCI DSS
   - Стандарт безопасности данных индустрии платёжных карт
 ---
 

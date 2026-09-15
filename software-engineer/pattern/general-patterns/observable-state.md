@@ -4,8 +4,8 @@ aliases:
   - MobX
   - NgRx
   - Observable state
-  - RxJS
   - Redux
+  - RxJS
   - Valtio
   - Zustand
   - Наблюдаемое состояние

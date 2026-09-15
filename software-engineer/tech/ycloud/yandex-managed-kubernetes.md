@@ -1,21 +1,21 @@
 ---
 aliases:
-  - Yandex Managed Service for Kubernetes
-  - Managed Service for Kubernetes
-  - Yandex Container Registry
-  - Container Registry
-  - Yandex Identity and Access Management
-  - IAM
-  - Yandex Cloud
-  - Kubernetes
-  - K8s
-  - Kubernetes API
   - API server
+  - Container Registry
   - Container Resource Monitoring
+  - IAM
   - internal DNS server
-  - контроллеры основных ресурсов
-  - зоны доступности
+  - K8s
+  - Kubernetes
+  - Kubernetes API
+  - Managed Service for Kubernetes
+  - Yandex Cloud
+  - Yandex Container Registry
+  - Yandex Identity and Access Management
+  - Yandex Managed Service for Kubernetes
   - внутренний DNS-сервер
+  - зоны доступности
+  - контроллеры основных ресурсов
 ---
 
 ## Оркестрация

@@ -1,20 +1,20 @@
 ---
 aliases:
-  - HCL
   - HashiCorp
+  - HCL
   - IaC
   - Infrastructure as Code
   - Packer
-  - Terraform
-  - Yandex Cloud
   - specification
   - state
-  - tfstate
-  - variable
+  - Terraform
   - terraform apply
   - terraform destroy
   - terraform init
   - terraform plan
+  - tfstate
+  - variable
+  - Yandex Cloud
   - инфраструктура как код
 ---
 ## Terraform — Infrastructure as Code

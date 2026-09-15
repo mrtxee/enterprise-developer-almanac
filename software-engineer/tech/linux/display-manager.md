@@ -1,10 +1,10 @@
 ---
 aliases:
-  - DM
   - Display Manager
+  - DM
   - GDM
-  - LXDM
   - LightDM
+  - LXDM
   - SDDM
   - XDM
 ---

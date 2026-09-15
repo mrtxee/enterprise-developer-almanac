@@ -1,16 +1,16 @@
 ---
 aliases:
-  - DIP
   - Dependency Inversion Principle
-  - ISP
+  - DIP
   - Interface Segregation Principle
-  - LSP
+  - ISP
   - Liskov Substitution Principle
+  - LSP
   - OCP
   - Open Closed Principle
-  - SRP
-  - SOLID
   - Single Responsibility Principle
+  - SOLID
+  - SRP
   - Принцип единственной ответственности
   - Принцип инверсии зависимостей
   - Принцип открытости и закрытости

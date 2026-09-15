@@ -5,8 +5,8 @@ aliases:
   - Probe
   - Readiness Probe
   - Startup Probe
-  - Проба
   - Зондирование
+  - Проба
 ---
 
 ## Kubernetes Probes

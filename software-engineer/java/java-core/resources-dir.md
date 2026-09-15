@@ -2,8 +2,8 @@
 aliases:
   - ClassLoader
   - Classpath resources
-  - Project resources
   - getResourceAsStream
+  - Project resources
   - resources
   - resources dir
   - resources-dir

@@ -33,7 +33,7 @@ aliases:
   - Эфемерные контейнеры
 ---
 
-# Иерархия сущностей Kubernetes
+## Иерархия сущностей Kubernetes
 
 Иерархия сущностей Kubernetes показывает, как объекты кластера связаны между собой: кластер состоит из узлов, на узлах запускаются поды, подами управляют Deployment, доступ к подам предоставляет Service.
 
@@ -48,7 +48,7 @@ aliases:
 | `Deployment → HPA` | HPA масштабирует Deployment по метрикам |
 | `Namespace → все` | Namespace изолирует ресурсы: Nodes, Pods, Deployments, Services, HPA |
 
-## Полная иерархия
+### Полная иерархия
 
 ```mermaid
 ---
@@ -74,7 +74,7 @@ flowchart TB
 > - К подам не обращаются напрямую — обращаются к Service.
 > - Контейнеры не запускаются вручную в K8s — они живут внутри Pod'ов.
 
-## Container в иерархии
+### Container в иерархии
 
 Container — самая маленькая исполняемая единица. Он находится внутри спецификации Pod'а.
 
@@ -103,7 +103,7 @@ spec:
 
 Pod — это квартира (имеет адрес, электричество, воду). Container — жилец в этой квартире, который делает полезную работу.
 
-## Namespace
+### Namespace
 
 Namespace — логический изолированный контейнер для ресурсов: виртуальный кластер внутри реального, изолирующий проекты, окружения (dev/stage/prod) и команды.
 
@@ -123,7 +123,7 @@ kubectl -n my-namespace get pods
 - Ресурсы из разных Namespace не видят друг друга по умолчанию.
 - Аналогия: «разные комнаты в одном доме».
 
-## Deployment
+### Deployment
 
 Deployment — управляющий контроллер для Pod'ов. Объект гарантирует, что нужное количество идентичных Pod'ов запущено и работает. Он управляет ReplicaSet'ами и обеспечивает обновления, откаты и восстановление при сбое.
 
@@ -174,7 +174,7 @@ NAME                                   READY   STATUS    RESTARTS   AGE
 pod/my-app-6cbbdd56fd-l8s4s            1/1     Running   0          1h
 ```
 
-## ReplicaSet
+### ReplicaSet
 
 ReplicaSet (RS) — физический механизм создания Pod'ов: реализация Deployment'а и группа одинаковых Pod'ов (по шаблону). Deployment управляет ReplicaSet'ами, а ReplicaSet создаёт и удаляет Pod'ы.
 
@@ -190,7 +190,7 @@ kubectl -n my-namespace get replicaset
 
 ReplicaSet не создаётся вручную — только Deployment.
 
-## Pod
+### Pod
 
 Pod — самая маленькая единица развертывания: группа из одного или нескольких контейнеров, которые работают на одном узле, делят сеть, storage, IPC и имеют один IP-адрес в кластере.
 
@@ -234,7 +234,7 @@ Pod не может существовать без хотя бы одного �
 
 Pod = контейнер(ы) + общие ресурсы (сеть, диск). Без контейнера Pod — пустая мета-информация, которая не имеет смысла в архитектуре Kubernetes.
 
-## Service
+### Service
 
 Service — сетевой доступ к группе Pod'ов: стабильный IP и DNS-имя, которое всегда ведёт к группе Pod'ов, даже если они пересоздаются.
 
@@ -277,7 +277,7 @@ kubectl -n my-namespace run debug --rm -i --image=curlimages/curl -- sh -c "curl
 | `LoadBalancer` | Внешний балансировщик (в облаке) |
 | `Ingress` | HTTP/HTTPS через прокси |
 
-## Другие сущности Kubernetes
+### Другие сущности Kubernetes
 
 | Понятие | Что это? |
 |--------|----------|
@@ -291,7 +291,7 @@ kubectl -n my-namespace run debug --rm -i --image=curlimages/curl -- sh -c "curl
 | Job / CronJob | Запуск задачи один раз или по расписанию (например, миграции БД) |
 | Role / RoleBinding / ClusterRole / ClusterRoleBinding | RBAC — права доступа |
 
-## Проверка сущностей
+### Проверка сущностей
 
 | Вопрос | Как узнать |
 |------------------------|-------------|
@@ -302,7 +302,7 @@ kubectl -n my-namespace run debug --rm -i --image=curlimages/curl -- sh -c "curl
 | Какой Ingress направляет трафик? | `kubectl -n my-namespace get ingress` — смотреть `HOSTS` и `PATHS` |
 | Какой порт слушает Pod? | `kubectl -n my-namespace exec <pod> -- netstat -tlnp` |
 
-## Резюме
+### Резюме
 
 | Уровень | Роль | Кто управляет кем? |
 |--------|------|-------------------|
@@ -322,7 +322,7 @@ kubectl -n my-namespace run debug --rm -i --image=curlimages/curl -- sh -c "curl
 - Secret / ConfigMap — «настройки и пароли».
 - StatefulSet + PVC — «базы данных и состояние».
 
-## Ingress
+### Ingress
 
 Поток трафика при использовании Ingress:
 
@@ -337,7 +337,7 @@ flowchart LR
     Service --> Pod
 ```
 
-## Init Containers
+### Init Containers
 
 Init Containers (инициализационные контейнеры) — специальные контейнеры, которые запускаются до основных (`containers`) и выполняются строго последовательно. Их главная задача — подготовить среду для основного приложения. Если любой Init-контейнер падает, Pod не перейдёт в статус `Running`, а будет перезапускать этот Init-контейнер до успеха.
 

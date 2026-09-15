@@ -1,7 +1,7 @@
 ---
 aliases:
-  - Alert
   - Alarm
+  - Alert
   - cascading failures
   - dashboards
   - domino effect

@@ -1,8 +1,8 @@
 ---
 aliases:
   - iNet wireless daemon
-  - iwd
   - iwctl
+  - iwd
 ---
 ## Как подключиться к Wi-Fi при установке Arch Linux
 

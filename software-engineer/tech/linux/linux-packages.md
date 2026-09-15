@@ -1,5 +1,7 @@
 ---
 aliases:
+  - .deb
+  - .rpm
   - AppArmor
   - AppImage
   - AUR
@@ -10,8 +12,6 @@ aliases:
   - Portable Packages
   - Snap
   - Universal Linux Packages
-  - .deb
-  - .rpm
   - Нативные пакеты
   - Пакетные менеджеры
   - Пакеты Linux

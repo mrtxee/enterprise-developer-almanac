@@ -1,7 +1,7 @@
 ---
 aliases:
-  - ASN
   - Anycast
+  - ASN
   - BGP
   - Border Gateway Protocol
   - CDN

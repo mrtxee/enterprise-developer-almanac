@@ -3,8 +3,8 @@ aliases:
   - equals
   - equals()
   - hashCode
-  - hashCode()
   - hashCode contract
+  - hashCode()
   - java.lang.Object
   - monitor
   - notify

@@ -5,8 +5,8 @@ aliases:
   - AMQP 0-9-1
   - AMQP 1.0
   - Exchange
-  - JMS
   - Java Message Service
+  - JMS
   - KahaDB
   - Message Broker
   - MQTT

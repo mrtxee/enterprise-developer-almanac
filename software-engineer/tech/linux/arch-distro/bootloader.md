@@ -1,32 +1,32 @@
 ---
 aliases:
-  - GRUB
-  - Secure Boot
-  - UKI
-  - UEFI
   - boot-chains
   - bootloader
   - dracut
   - efibootmgr
+  - GRUB
   - i801_smbus
   - initramfs
   - mkinitcpio
   - os-prober
   - plymouth
   - sbctl
+  - Secure Boot
   - systemd-boot
   - systemd-stub
   - systemd-ukify
+  - UEFI
+  - UKI
   - unified kernel image
   - Единый образ ядра
-  - Загрузчик
   - Загрузка Arch Linux
+  - Загрузчик
   - Первичный загрузчик
   - Файлы настройки загрузки
 ---
-# Загрузка и загрузчики Arch Linux
+## Загрузка и загрузчики Arch Linux
 
-## Сообщение i801_smbus при загрузке
+### Сообщение i801_smbus при загрузке
 
 Что означает сообщение при загрузке ОС Arch Linux и как его исправить:
 
@@ -34,7 +34,7 @@ aliases:
 i801_smbus 0000:00:1f.4: SMBus is busy, can't use it!
 ```
 
-## Где находится bootloader-logo
+### Где находится bootloader-logo
 
 Логотип загрузчика:
 
@@ -67,7 +67,7 @@ sudo plymouth-set-default-theme -l
 sudo plymouth-set-default-theme bgrt
 ```
 
-## Переход с [[boot-chains]] на GRUB
+### Переход с [[boot-chains]] на GRUB
 
 Установка GRUB и перенос загрузки с systemd-boot:
 
@@ -114,11 +114,11 @@ sudo grub-install --target=x86_64-efi --efi-directory=/boot --recheck
 sudo efibootmgr -b 0001 -B
 ```
 
-## Файлы настройки загрузки
+### Файлы настройки загрузки
 
 Назначение каждого файла и его роль в процессе загрузки Linux (на примере Arch Linux).
 
-### /etc/mkinitcpio.d/linux.preset
+#### /etc/mkinitcpio.d/linux.preset
 
 **Назначение:** файл настроек для генерации initramfs (initial RAM filesystem) при обновлении ядра. Определяет, какие образы initramfs создавать и где их размещать.
 
@@ -138,7 +138,7 @@ sudo efibootmgr -b 0001 -B
 - `ALL_initrd="/boot/initramfs-linux.img"`;
 - `ALL_uki="/boot/EFI/Linux/arch.efi"` (для UKI).
 
-### /etc/mkinitcpio.conf
+#### /etc/mkinitcpio.conf
 
 **Назначение:** основной конфигурационный файл для утилиты `mkinitcpio`, отвечающей за создание initramfs.
 
@@ -157,7 +157,7 @@ sudo efibootmgr -b 0001 -B
 
 **Когда редактируют:** при настройке шифрования диска, LVM, RAID, добавлении поддержки нестандартного оборудования.
 
-### /etc/kernel/cmdline
+#### /etc/kernel/cmdline
 
 **Назначение:** файл с параметрами ядра Linux, которые передаются загрузчиком (GRUB, systemd-boot и т.д.) при старте системы.
 
@@ -182,7 +182,7 @@ root=PARTUUID=... rw quiet loglevel=3
 
 **Когда меняют:** при настройке splash-экранов, отладке загрузки, изменении корневого раздела.
 
-### /proc/cmdline
+#### /proc/cmdline
 
 **Назначение:** виртуальный файл в псевдофайловой системе `/proc`, отображающий текущие параметры ядра, с которыми система была загружена.
 
@@ -210,7 +210,7 @@ BOOT_IMAGE=/boot/vmlinuz-linux root=PARTUUID=... rw quiet loglevel=3
 - проверка, применились ли изменения из `/etc/kernel/cmdline` или `/etc/default/grub`;
 - определение режима монтирования корня (`rw`/`ro`).
 
-### /etc/default/grub
+#### /etc/default/grub
 
 **Назначение:** главный конфигурационный файл загрузчика GRUB в дистрибутивах на базе Debian/Arch.
 
@@ -240,7 +240,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 **Роль:** связывает настройки пользователя с реальным конфигурационным файлом загрузчика (`grub.cfg`).
 
-### Сравнение файлов настройки загрузки
+#### Сравнение файлов настройки загрузки
 
 | Файл | Тип | Назначение | Редактируется вручную? | Когда применяется |
 | ---- | --- | ---------- | ---------------------- | ----------------- |
@@ -250,7 +250,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 | `/proc/cmdline` | Виртуальный | Текущие параметры ядра (только чтение) | Нет | Для диагностики |
 | `/etc/default/grub` | Конфиг | Настройки GRUB | Да | Перед генерацией `grub.cfg` |
 
-### Взаимосвязь файлов в процессе загрузки
+#### Взаимосвязь файлов в процессе загрузки
 
 1. `/etc/mkinitcpio.conf` и `/etc/mkinitcpio.d/linux.preset` используются `mkinitcpio` для создания `initramfs-linux.img`.
 2. `/etc/kernel/cmdline` или `/etc/default/grub` задают параметры ядра (`root=`, `quiet` и т.д.).
@@ -258,11 +258,11 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 4. Ядро запускается с параметрами из `/proc/cmdline` (копия переданных настроек).
 5. initramfs монтирует корневой раздел и передаёт управление ОС.
 
-## Архитектуры загрузки: GRUB с initramfs и systemd-boot с UKI
+### Архитектуры загрузки: GRUB с initramfs и systemd-boot с UKI
 
 Переход на `systemd-boot + UKI` с отказом от `mkinitcpio` возможен, но требует изменения подхода к сборке ядра. Вместо `mkinitcpio` используется `systemd-ukify` — встроенный инструмент `systemd` для создания UKI-образов.
 
-### Архитектура UKI, создаваемая через systemd-ukify
+#### Архитектура UKI, создаваемая через systemd-ukify
 
 Архитектура опирается на `systemd-stub` (загрузочный загрузчик), который вшит в сам UKI-образ.
 
@@ -275,15 +275,15 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 Все компоненты упакованы в единый `.efi`-файл, подписанный для Secure Boot.
 
-### Пошаговая инструкция по переходу
+#### Пошаговая инструкция по переходу
 
-#### Важные предупреждения
+##### Важные предупреждения
 
 - Сделайте резервную копию загрузочного раздела (ESP) и важных файлов.
 - Процесс требует создания файлов в ESP, которые могут перезаписать существующие.
 - Подготовьте загрузочную флешку с Arch на случай, если что-то пойдёт не так.
 
-#### Установка необходимых пакетов
+##### Установка необходимых пакетов
 
 `systemd-ukify` уже входит в состав `systemd`, но для создания UKI потребуется установить дополнительные утилиты.
 
@@ -294,7 +294,7 @@ sudo pacman -S systemd-ukify sbctl
 - `systemd-ukify` — утилита для создания UKI.
 - `sbctl` — для управления Secure Boot и подписью.
 
-#### Настройка параметров ядра и initramfs
+##### Настройка параметров ядра и initramfs
 
 Создание файла `/etc/kernel/cmdline` с параметрами командной строки ядра (вместо набора в `/etc/default/grub`):
 
@@ -308,7 +308,7 @@ EOF
 
 Для создания initramfs без `mkinitcpio` нужно либо использовать глобальный `initramfs` (если ядро его поддерживает), либо сгенерировать его с помощью `dracut`. `mkinitcpio` в Arch тесно интегрирован с ядром, поэтому полный отказ от него не рекомендуется и может привести к проблемам с загрузкой модулей. Однако можно использовать `mkinitcpio` для генерации образа, а затем упаковать его в UKI с помощью `ukify`.
 
-#### Генерация initramfs (через mkinitcpio)
+##### Генерация initramfs (через mkinitcpio)
 
 ```bash
 sudo mkinitcpio -P
@@ -316,7 +316,7 @@ sudo mkinitcpio -P
 
 Это создаст `/boot/initramfs-linux.img`.
 
-#### Создание UKI через systemd-ukify
+##### Создание UKI через systemd-ukify
 
 ```bash
 sudo ukify build \
@@ -335,7 +335,7 @@ sudo ukify build \
 - `--splash` — картинка-заставка (опционально).
 - `--output` — куда сохранить UKI.
 
-#### Установка systemd-boot
+##### Установка systemd-boot
 
 ```bash
 bootctl install
@@ -343,11 +343,11 @@ bootctl install
 
 Он создаст записи в UEFI и скопирует `systemd-bootx64.efi` в `/boot/EFI/systemd/`.
 
-#### Создание загрузочных записей для UKI
+##### Создание загрузочных записей для UKI
 
 `systemd-boot` автоматически обнаружит все `.efi`-файлы в `/boot/EFI/Linux/`. Если поместить `arch-linux.efi` туда, он появится в меню загрузки. Для Windows или других ОС создаются отдельные `.conf`-файлы в `/boot/loader/entries/`.
 
-#### Настройка Secure Boot (опционально)
+##### Настройка Secure Boot (опционально)
 
 Если Secure Boot включён, подпишите UKI с помощью `sbctl`.
 
@@ -360,13 +360,13 @@ sbctl enroll-keys -m
 sbctl sign -s /boot/EFI/Linux/arch-linux.efi
 ```
 
-#### Удаление GRUB
+##### Удаление GRUB
 
 ```bash
 sudo pacman -Rns grub
 ```
 
-#### Настройка таймера для автоматического обновления UKI
+##### Настройка таймера для автоматического обновления UKI
 
 Чтобы UKI обновлялся при каждом обновлении ядра, создайте хук для `pacman`. Создание файла `/etc/pacman.d/hooks/update-uki.hook`:
 
@@ -383,7 +383,7 @@ When = PostTransaction
 Exec = /usr/bin/ukify build --linux=/boot/vmlinuz-linux --initrd=/boot/initramfs-linux.img --cmdline=/etc/kernel/cmdline --splash=/usr/share/systemd/bootctl/splash-arch.bmp --output=/boot/EFI/Linux/arch-linux.efi
 ```
 
-### Финальная очистка
+#### Финальная очистка
 
 Полный отказ от `mkinitcpio` в процессе сборки (не только UKI) требует перехода на `dracut` или другой генератор initramfs. Это отдельный сложный процесс, не рекомендуется для новичков.
 

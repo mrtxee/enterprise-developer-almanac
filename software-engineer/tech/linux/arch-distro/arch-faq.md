@@ -1,12 +1,12 @@
 ---
 aliases:
   - AmneziaWG
-  - Double Commander
-  - VSCodium
   - arch-faq
   - celluloid
   - cutefish
+  - Double Commander
   - fastfetch
+  - VSCodium
   - Вопросы по Arch Linux
   - Настройки GNOME
   - Подбор графической оболочки

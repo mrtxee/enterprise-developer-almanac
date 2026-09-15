@@ -1,22 +1,22 @@
 ---
 aliases:
-  - AOP
-  - AspectJ
-  - Aspect-oriented programming
-  - MOP
   - advice
+  - AOP
   - aspect
+  - Aspect-oriented programming
+  - AspectJ
   - introduction
   - join point
   - metaobject protocol
+  - MOP
   - pointcut
   - АОП
+  - Аспект
   - Аспектно-ориентированное программирование
   - Внедрение
   - Совет
   - Срез
   - Точка соединения
-  - Аспект
 ---
 
 ## Аспектно-ориентированное программирование (АОП)

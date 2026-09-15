@@ -2,12 +2,11 @@
 aliases:
   - CDI
   - Constructor Injection
-  - DI
   - Dependency Injection
+  - DI
   - Global Registry
   - Guice
   - JNDI
-  - SPI
   - Service Container
   - Service Container pattern
   - Service Locator
@@ -18,6 +17,7 @@ aliases:
   - Singleton
   - Singleton Container
   - Singleton Container pattern
+  - SPI
   - Spring
   - Spring Boot
   - Spring Framework

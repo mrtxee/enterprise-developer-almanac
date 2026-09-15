@@ -3,8 +3,8 @@ aliases:
   - Arch Linux
   - mirror
   - mirrorlist
-  - Pacman Mirrorlist Generator
   - pacman
+  - Pacman Mirrorlist Generator
   - reflector
   - Rolling Release
   - зеркала

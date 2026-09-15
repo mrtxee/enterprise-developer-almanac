@@ -3,6 +3,7 @@ aliases:
   - Garbage Collector
   - GC
   - Java Reference
+  - Java-ссылки
   - Phantom Reference
   - Reference
   - ReferenceQueue
@@ -10,7 +11,6 @@ aliases:
   - Strong Reference
   - Weak Reference
   - WeakHashMap
-  - Java-ссылки
   - Мягкая ссылка
   - Сборщик мусора
   - Сильная ссылка

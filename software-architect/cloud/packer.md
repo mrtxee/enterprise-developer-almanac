@@ -1,41 +1,41 @@
 ---
 aliases:
-  - Packer
+  - Amazon
+  - build
+  - configuration
+  - Docker
+  - EC2
+  - environment variable
   - HashiCorp
   - HashiCorp Language
   - HCL
+  - image
   - JSON
   - machine image
-  - image
-  - virtual machine
-  - VM
-  - build
-  - template
-  - specification
-  - configuration
-  - environment variable
-  - variable
-  - source
-  - provisioner
-  - Amazon
-  - EC2
-  - VMware
-  - Docker
-  - Ubuntu
   - NGINX
+  - Packer
   - packer build
   - packer hc2_upgrade
-  - упаковщик
-  - машинный образ
-  - образ
+  - provisioner
+  - source
+  - specification
+  - template
+  - Ubuntu
+  - variable
+  - virtual machine
+  - VM
+  - VMware
   - виртуальная машина
   - ВМ
-  - сборка
-  - шаблон
-  - спецификация
   - конфигурация
-  - переменная окружения
+  - машинный образ
+  - образ
   - переменная
+  - переменная окружения
+  - сборка
+  - спецификация
+  - упаковщик
+  - шаблон
 ---
 
 ## Packer — упаковщик образов ВМ

@@ -4,11 +4,11 @@ aliases:
   - AWS CodePipeline
   - Azure DevOps
   - Bamboo
+  - CI-CD Tools
   - CI/CD
   - CI/CD platform
   - CI/CD system
   - CI/CD tool
-  - CI-CD Tools
   - CircleCI
   - DevOps tools
   - Drone CI

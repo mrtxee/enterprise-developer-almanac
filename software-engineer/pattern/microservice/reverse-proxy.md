@@ -5,8 +5,8 @@ aliases:
   - Envoy
   - HAProxy
   - Load Balancer
-  - Nginx
   - Network Proxy
+  - Nginx
   - Reverse Proxy
   - Traefik
   - Балансировщик нагрузки

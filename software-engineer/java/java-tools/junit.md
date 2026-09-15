@@ -1,17 +1,14 @@
 ---
 aliases:
-  - @AfterAll
-  - @AfterEach
-  - @BeforeAll
-  - @BeforeEach
-  - @Disabled
-  - @DisplayName
-  - @Nested
-  - @Order
-  - @Tag
-  - @Test
-  - @TestFactory
-  - @TestMethodOrder
+  - "@AfterAll"
+  - "@AfterEach"
+  - "@BeforeAll"
+  - "@BeforeEach"
+  - "@Disabled"
+  - "@DisplayName"
+  - "@Nested"
+  - "@TestFactory"
+  - "@TestMethodOrder"
   - Assertions
   - Assumptions
   - DynamicTest
@@ -31,7 +28,6 @@ aliases:
   - Предположения
   - Утверждения
 ---
-
 ## JUnit 5 тест со всеми аннотациями
 
 `JUnit` — фреймворк для тестирования.

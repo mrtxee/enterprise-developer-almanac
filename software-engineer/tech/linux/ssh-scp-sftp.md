@@ -1,13 +1,13 @@
 ---
 aliases:
   - SCP
-  - SFTP
-  - SSH
   - Secure Copy Protocol
   - Secure File Transfer Protocol
   - Secure Shell
-  - SSH File Transfer Protocol
+  - SFTP
   - ssh
+  - SSH
+  - SSH File Transfer Protocol
 ---
 
 ## SSH

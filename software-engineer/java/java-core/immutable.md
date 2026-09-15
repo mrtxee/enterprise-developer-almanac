@@ -1,10 +1,10 @@
 ---
 aliases:
+  - effective immutability
   - effectively immutable
+  - immutability
   - immutable
   - immutable object
-  - immutability
-  - effective immutability
   - неизменяемость
   - неизменяемый объект
   - эффективная неизменяемость

@@ -2,9 +2,9 @@
 aliases:
   - Aggregate
   - Bounded Context
+  - DDD
   - Domain-Driven Design
   - Domain-Driven Development
-  - DDD
   - Entity
   - Ubiquitous Language
   - Предметно-ориентированное проектирование

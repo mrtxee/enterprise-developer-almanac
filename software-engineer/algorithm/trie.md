@@ -2,8 +2,8 @@
 aliases:
   - Prefix search
   - Prefix tree
-  - Trie
   - trie
+  - Trie
   - Префиксное дерево
   - Префиксный поиск
 ---

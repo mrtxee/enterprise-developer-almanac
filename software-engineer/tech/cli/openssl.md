@@ -1,11 +1,11 @@
 ---
 aliases:
   - OpenSSL
+  - p12
   - PFX
   - PKCS#12
   - PKCS12
   - X.509
-  - p12
 ---
 
 ## OpenSSL

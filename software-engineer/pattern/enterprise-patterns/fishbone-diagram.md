@@ -3,11 +3,11 @@ aliases:
   - 6M
   - Fishbone
   - Fishbone Diagram
+  - Isikawa
   - Диаграмма Исикавы
   - Исикава
   - Причинно-следственная диаграмма
   - Рыбья кость
-  - Isikawa
 ---
 
 ## Fishbone Diagram (Диаграмма Исикавы)

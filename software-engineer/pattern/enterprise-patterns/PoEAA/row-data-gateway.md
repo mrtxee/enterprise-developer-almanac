@@ -2,8 +2,8 @@
 aliases:
   - Active Record
   - Data Mapper
-  - PoEAA
   - Patterns of Enterprise Application Architecture
+  - PoEAA
   - Row Data Gateway
   - Transaction Script
   - Активная запись

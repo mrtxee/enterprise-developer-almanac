@@ -1,9 +1,9 @@
 ---
 aliases:
-  - Windows where
   - where
   - where command
   - which
+  - Windows where
 ---
 ## Команда where
 

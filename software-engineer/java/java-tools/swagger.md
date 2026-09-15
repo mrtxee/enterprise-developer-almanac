@@ -6,13 +6,13 @@ aliases:
   - REST
   - REST API
   - RESTful API
+  - springdoc
+  - springdoc-openapi
+  - springdoc-openapi-starter-webmvc-ui
   - Swagger
   - Swagger Codegen
   - Swagger UI
   - Swagger-Codegen
-  - springdoc
-  - springdoc-openapi
-  - springdoc-openapi-starter-webmvc-ui
   - Сваггер
   - Спецификация OpenAPI
 ---

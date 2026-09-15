@@ -1,8 +1,8 @@
 ---
 aliases:
-  - NetworkManager
   - linux-network-manager
   - network-manager
+  - NetworkManager
 ---
 
 Ошибка «NetworkManager not running» в Arch Linux и GNOME, как правило, возникает по двум причинам: сервис не запущен или пакет не установлен вовсе. Это связано с тем, что NetworkManager не входит в группу пакетов `gnome` по умолчанию.

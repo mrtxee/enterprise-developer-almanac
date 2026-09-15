@@ -7,12 +7,13 @@ aliases:
   - pacman-contrib
   - paru
   - systemd timer
+  - systemd-таймер
   - topgrade
   - yay
-  - systemd-таймер
   - Автоматическое обновление Arch Linux
   - Обслуживание Arch Linux
 ---
+
 ---
 
 ## Обслуживание Arch Linux

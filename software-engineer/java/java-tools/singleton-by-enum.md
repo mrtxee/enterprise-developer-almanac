@@ -5,6 +5,7 @@ aliases:
   - Effective Java
   - Enum
   - Enum Singleton
+  - Enum-способ
   - Initialization-on-Demand Holder idiom
   - JVM
   - Lazy initialization
@@ -12,14 +13,13 @@ aliases:
   - Serialization
   - Singleton
   - Singleton via Enum
+  - Singleton при помощи Enum
   - Singleton-by-Enum
   - Static inner class
   - Synchronization
   - Thread safety
   - Thread-safe
   - volatile
-  - Enum-способ
-  - Singleton при помощи Enum
   - Джошуа Блох
   - Ленивая инициализация
   - Потокобезопасность

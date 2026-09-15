@@ -1,9 +1,9 @@
 ---
 aliases:
   - Arc iGPU
-  - NPU
-  - intel-npu-top-git
   - intel_gpu_top
+  - intel-npu-top-git
+  - NPU
   - vainfo
   - НПУ
 ---

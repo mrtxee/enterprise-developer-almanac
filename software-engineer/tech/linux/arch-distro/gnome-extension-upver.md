@@ -2,8 +2,8 @@
 aliases:
   - Extension Manager
   - Forge
-  - GNOME Extensions
   - GNOME 50
+  - GNOME Extensions
   - metadata.json
   - shell-version
   - Расширение GNOME

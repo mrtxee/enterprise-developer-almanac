@@ -1,11 +1,11 @@
 ---
 aliases:
   - atd
+  - linux-poweroff
+  - linux-shutdown
   - poweroff
   - shutdown
   - systemctl
-  - linux-poweroff
-  - linux-shutdown
   - Отложенное выключение
 ---
 

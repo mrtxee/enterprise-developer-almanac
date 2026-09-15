@@ -1,12 +1,12 @@
 ---
 aliases:
   - CNI
-  - CSI
   - Container Runtime Interface
+  - containerd
   - CRI
   - CRI-O
+  - CSI
   - Kubelet
-  - containerd
 ---
 ## Kubelet
 

@@ -6,13 +6,13 @@ aliases:
   - Fluent Bit
   - Huawei Cloud CCE
   - ICAgent
+  - kubernetes
   - Kubernetes namespace
+  - namespace
   - NGINX Ingress
   - Node Problem Detector
   - OpenTelemetry
   - OpenTelemetry Collector
-  - kubernetes
-  - namespace
   - otel
 ---
 

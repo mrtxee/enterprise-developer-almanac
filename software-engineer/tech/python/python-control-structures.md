@@ -1,39 +1,39 @@
 ---
 aliases:
-  - Python control structures
   - Constructions
   - Constructions Python
-  - Loop control
-  - Syntactic sugar
-  - Walrus operator
   - List comprehension
-  - pip
-  - pip install
-  - PyPI
-  - Python Package Index
-  - PEP
-  - PEP 8
+  - Loop control
   - matplotlib
   - NumPy
-  - SciPy
   - Panda3D
+  - PEP
+  - PEP 8
+  - pip
+  - pip install
+  - Py-операторы
   - pygame
+  - PyPI
+  - Python control structures
   - Python operators
+  - Python Package Index
+  - SciPy
+  - Syntactic sugar
+  - Walrus operator
+  - Глоссарий Python
   - Конструкции Python
-  - Управляющие конструкции
-  - Условный оператор
-  - Условные операторы
-  - Тернарный оператор
-  - Троичный оператор
+  - Культура программирования Python
   - Оператор assert
   - Оператор проверки утверждения
-  - Глоссарий Python
+  - Тернарный оператор
+  - Троичный оператор
+  - Управляющие конструкции
+  - Условные операторы
+  - Условный оператор
   - Установка модулей pip
-  - Культура программирования Python
-  - Py-операторы
 ---
 
-### Синтаксический сахар
+## Синтаксический сахар
 
 - Групповое переназначение переменных
 
@@ -105,7 +105,7 @@ aliases:
   print(msg)
 ```
 
-### Вывод данных и комментарии
+## Вывод данных и комментарии
 
 **Пример вывода данных**
 
@@ -126,7 +126,7 @@ aliases:
   print('Numbers: {0} {1} {2}'.format(name, nums[1], nums[2]))  # .format(*args, **kwargs) style output
 ```
 
-### Ввод данных
+## Ввод данных
 
 **Пример ввода данных**
 
@@ -135,7 +135,7 @@ aliases:
   print('your input is: ', input('Введите строку: '))
 ```
 
-### Условный оператор
+## Условный оператор
 
 **Синтаксис условного оператора**
 
@@ -148,7 +148,7 @@ aliases:
       ...]
 ```
 
-#### Conditional statements all(), any()
+### Conditional statements all(), any()
 
 **Пример функций all(), any() и enumerate**
 
@@ -162,7 +162,7 @@ aliases:
       print(v)
 ```
 
-#### Оператор match-case
+### Оператор match-case
 
 **Пример оператора match-case**
 
@@ -177,7 +177,7 @@ aliases:
           result['data']['msg'] = f"unknown action: {action} for {action_id}"
 ```
 
-### Оператор проверки высказывания assert
+## Оператор проверки высказывания assert
 
 Оператор `assert` проверки утверждения. Выбрасывает исключение `AssertionError` — _ошибка утверждения_, если утверждение не проходит логическую проверку.
 
@@ -195,7 +195,7 @@ aliases:
   assert (temp >= 0), "Colder than zero!"
 ```
 
-### Циклы
+## Циклы
 
 **Синтаксис цикла for**
 
@@ -219,7 +219,7 @@ aliases:
       ...]
 ```
 
-#### Операторы прерывания цикла
+### Операторы прерывания цикла
 
 - Оператор `continue` позволяет пропустить все инструкции ниже него и перейти к началу следующей итерации.
 - Оператор `break` прерывает выполнение операций, при этом все инструкции ниже `break` в текущей итерации не будут выполнены.
@@ -243,7 +243,7 @@ aliases:
       print("Get ready!")
 ```
 
-#### Функция range(start, stop, step)
+### Функция range(start, stop, step)
 
 `range()` returns a sequence of numbers, in a given range. The most common use of it is to iterate a sequence of numbers using Python loops.
 

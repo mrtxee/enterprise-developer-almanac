@@ -6,7 +6,7 @@ aliases:
   - архитектура GNU/Linux
   - ядро Linux
 ---
-# GNU/Linux OS Architecture
+## GNU/Linux OS Architecture
 
 ```mermaid
 ---
@@ -70,7 +70,7 @@ flowchart TB
 
 ---
 
-## GNU/Linux layers
+### GNU/Linux layers
 
 ```mermaid
 ---

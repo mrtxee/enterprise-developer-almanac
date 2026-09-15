@@ -1,6 +1,7 @@
 ---
 aliases:
   - BDD
+  - BDD-стиль
   - Behavior-Driven Development
   - Groovy
   - JUnit
@@ -13,12 +14,11 @@ aliases:
   - Specification
   - Spock
   - Spock Framework
+  - spock-core
   - Spring
+  - spring-spock
   - Stub
   - Table-driven testing
-  - spock-core
-  - spring-spock
-  - BDD-стиль
   - Мокирование
   - Параметризация
   - Табличное тестирование

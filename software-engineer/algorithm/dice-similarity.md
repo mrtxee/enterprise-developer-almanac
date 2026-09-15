@@ -12,12 +12,12 @@ aliases:
   - Jaccard index
   - Overlap coefficient
   - Sorensen coefficient
-  - Sorensen-Dice coefficient
-  - Sorensen–Dice coefficient
   - Sørensen index
   - Sørensen similarity index
+  - Sorensen-Dice coefficient
   - Sørensen-Dice index
   - Sørensen-Dice similarity
+  - Sorensen–Dice coefficient
   - Tanimoto coefficient
   - Word bigram Dice coefficient
   - Биграмма

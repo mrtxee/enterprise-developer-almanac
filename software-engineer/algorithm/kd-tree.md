@@ -1,15 +1,16 @@
 ---
 aliases:
   - Hyperplane
+  - K-Dimensional Tree
+  - K-мерное дерево
   - KD Tree
   - KD-tree
-  - K-Dimensional Tree
+  - KD-дерево
   - KNN
   - SP-GiST
-  - KD-дерево
-  - K-мерное дерево
   - Поиск ближайших соседей
 ---
+
 ---
 
 ## KD-дерево

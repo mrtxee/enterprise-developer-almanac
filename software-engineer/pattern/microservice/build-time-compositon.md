@@ -17,7 +17,7 @@ aliases:
 
 Есть 3 варианта реализации:
 
-1. [[Module-Federation]] Build
+1. [[module-federation]] Build
    - плагин JavaScript-сборщика пакетов webpack.
 2. Nginx-based build.
 3. **Runtime импорт с проверкой.**

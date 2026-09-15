@@ -1,10 +1,10 @@
 ---
 aliases:
-  - Stream EDitor
   - awk
-  - grep
   - gawk
+  - grep
   - sed
+  - Stream EDitor
 ---
 ## Три утилиты обработки текста
 

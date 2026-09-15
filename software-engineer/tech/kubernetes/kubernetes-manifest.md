@@ -2,8 +2,8 @@
 aliases:
   - ConfigMap
   - Deployment
-  - HPA
   - HorizontalPodAutoscaler
+  - HPA
   - Ingress
   - k8s
   - kubectl
@@ -14,8 +14,8 @@ aliases:
   - PersistentVolume
   - PersistentVolumeClaim
   - Pod
-  - PVC
   - PV
+  - PVC
   - Role
   - RoleBinding
   - Secret

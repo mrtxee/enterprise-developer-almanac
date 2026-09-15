@@ -2,8 +2,8 @@
 aliases:
   - A/B test
   - AWS AppConfig
-  - Canary Release
   - Canary
+  - Canary Release
   - Feature Flag
   - Feature Flagging
   - Feature Toggle

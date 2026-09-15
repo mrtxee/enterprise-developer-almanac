@@ -2,18 +2,20 @@
 aliases:
   - API Gateway
   - API Gateway Kong
+  - API-шлюз
   - Gateway API
   - Kong
   - Kubernetes Gateway API
   - Rate Limiting
   - Reverse Proxy
-  - API-шлюз
-  - Шлюз API
   - АПИ-шлюз
   - Обратный прокси
   - Ограничение скорости запросов
+  - Шлюз API
 ---
+
 ---
+
 ## API Gateway
 
 По сути API-шлюз `API Gateway` — это продвинутая и многофункциональная альтернатива обратному [[reverse-proxy|прокси-серверу]].

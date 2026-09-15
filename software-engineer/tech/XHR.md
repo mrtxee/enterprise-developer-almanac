@@ -11,13 +11,13 @@ aliases:
   - События XHR
 ---
 
-# XMLHttpRequest (XHR)
+## XMLHttpRequest (XHR)
 
 **Краткий ответ**
 
 XMLHttpRequest (XHR) — это встроенный в браузер API для выполнения HTTP-запросов из JavaScript. Он использовался до появления Fetch API (2015), но всё ещё поддерживается.
 
-## Что такое XHR
+### Что такое XHR
 
 | Характеристика | Описание |
 |----------------|----------|
@@ -27,7 +27,7 @@ XMLHttpRequest (XHR) — это встроенный в браузер API дл�
 | Поддержка | ✅ Все браузеры (включая IE) |
 | Современная альтернатива | Fetch API, Axios |
 
-## Как работает XHR
+### Как работает XHR
 
 ```mermaid
 ---
@@ -45,7 +45,7 @@ sequenceDiagram
     XHR-->>JS: callback (onreadystatechange / onload)
 ```
 
-## Базовое использование
+### Базовое использование
 
 **GET-запрос**
 
@@ -142,7 +142,7 @@ xhr.onload = function() {
 xhr.send();
 ```
 
-## Ready States (readyState)
+### Ready States (readyState)
 
 | Значение | Константа | Описание |
 |----------|-----------|----------|
@@ -166,7 +166,7 @@ xhr.onreadystatechange = function() {
 };
 ```
 
-## События XHR
+### События XHR
 
 | Событие | Когда срабатывает |
 |---------|-------------------|
@@ -209,7 +209,7 @@ xhr.timeout = 5000; // 5 секунд
 xhr.send();
 ```
 
-## Продвинутые возможности
+### Продвинутые возможности
 
 **Таймаут**
 
@@ -290,7 +290,7 @@ console.log(xhr.responseText); // Доступно сразу
 
 > ⚠️ Синхронный режим запрещён в Web Workers и может блокировать браузер.
 
-## XHR vs Fetch API
+### XHR vs Fetch API
 
 | Критерий | XHR | Fetch |
 |----------|---------|-----------|
@@ -305,7 +305,7 @@ console.log(xhr.responseText); // Доступно сразу
 | Cookies | ✅ `withCredentials` | ✅ `credentials` |
 | Размер | Встроен в браузер | Встроен (кроме IE) |
 
-## Пример: XHR vs Fetch
+### Пример: XHR vs Fetch
 
 **XHR**
 
@@ -343,7 +343,7 @@ async function fetchDataFetch() {
 }
 ```
 
-## CORS и XHR
+### CORS и XHR
 
 **CORS применяется к XHR**
 
@@ -372,7 +372,7 @@ Access-Control-Allow-Methods: GET, POST, PUT
 Access-Control-Allow-Headers: Content-Type, Authorization
 ```
 
-## Библиотеки на основе XHR
+### Библиотеки на основе XHR
 
 **Axios (самая популярная)**
 
@@ -408,7 +408,7 @@ axios.interceptors.request.use(config => {
 | Timeout | Простая настройка |
 | IE-поддержка | Работает в старых браузерах |
 
-## Когда использовать XHR
+### Когда использовать XHR
 
 | Сценарий | Рекомендация |
 |----------|--------------|
@@ -419,7 +419,7 @@ axios.interceptors.request.use(config => {
 | React/Vue/Angular | ❌ Fetch/Axios |
 | Node.js | ❌ XHR не доступен (используй http/https) |
 
-## Шпаргалка
+### Шпаргалка
 
 ```javascript
 // Минимальный GET
@@ -451,7 +451,7 @@ xhr.onprogress = (e) => console.log(e.loaded / e.total);
 xhr.withCredentials = true;
 ```
 
-## Особенности
+### Особенности
 
 - ✅ Работает во всех браузерах (включая IE)
 - ✅ Нативный прогресс загрузки
@@ -462,7 +462,7 @@ xhr.withCredentials = true;
 - ❌ Устаревает в пользу Fetch
 - 📦 Для современного API поверх XHR используется Axios
 
-## Итог
+### Итог
 
 | Вопрос | Ответ |
 |--------|-------|

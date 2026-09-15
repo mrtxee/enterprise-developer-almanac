@@ -15,13 +15,13 @@ aliases:
   - Product Maturity Level
   - Readiness to Distribution & Sales
   - Readiness to Sales
-  - RTO/RPO
-  - TAM/SAM/SOM
-  - RTO
   - RPO
-  - TAM
+  - RTO
+  - RTO/RPO
   - SAM
   - SOM
+  - TAM
+  - TAM/SAM/SOM
   - Technology Adoption Lifecycle
   - USP
   - Zero Trust

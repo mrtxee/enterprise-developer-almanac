@@ -1,57 +1,57 @@
 ---
 aliases:
-  - Container Registry
-  - Docker Registry
-  - Docker Image
-  - Docker-image
-  - Image Name
-  - Registry ID
-  - Retained Top
-  - Repository
-  - Tag Regexp
-  - Yandex Container Registry
-  - Yandex Cloud
   - Auto-deletion
+  - CLI
+  - Container Registry
+  - Docker
+  - Docker Image
+  - Docker Registry
+  - Docker образ
+  - Docker-image
   - Dry Run
   - Expire Period
+  - IAM
+  - Image Name
   - Image Tag
   - Lifecycle Policy
+  - Registry ID
+  - Repository
+  - Retained Top
   - Retention Policy
+  - Tag Regexp
   - Untagged
-  - YC
-  - Docker
-  - IAM
-  - CLI
+  - Yandex Cloud
   - Yandex Cloud IAM
-  - Docker образ
+  - Yandex Container Registry
+  - YC
+  - автоматическое удаление
+  - имя образа
+  - имя тега
+  - неотмеченные образы
+  - образ Docker
+  - политика жизни
+  - политика удаления
   - реестр контейнеров
   - репозиторий
   - репозиторий контейнеров
-  - образ Docker
-  - имя образа
-  - имя тега
   - тег
-  - автоматическое удаление
-  - политика удаления
-  - политика жизни
   - удержание последних
-  - неотмеченные образы
 ---
 
-# Yandex Container Registry
+## Yandex Container Registry
 
 Если вы работаете с Yandex.Cloud, лучше всего использовать сервис [Yandex Container Registry](https://cloud.yandex.ru/docs/container-registry/)
 
 **Реестр** — хранилище Docker-образов; **Репозиторий** — набор образов с одинаковыми именами (т. е. версий образа).
 
-## Нейминг образов
+### Нейминг образов
 
 Запись для обращения к образу:
 - `cr.yandex/<реестр>/<имя образа>:<тег>`
 - Пример полного имени: `cr.yandex/my-registry/my-app:latest`.
 - можно использовать регулярные выражения `cr.yandex/my-registry/my-app:test.*`
 
-## Автоматическое удаление
+### Автоматическое удаление
 
 Политики автоматического удаления настраиваются для каждого репозитория отдельно.
 

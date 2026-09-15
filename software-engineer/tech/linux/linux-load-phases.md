@@ -5,13 +5,13 @@ aliases:
   - GNOME Session
   - GNOME Shell
   - GRUB2
+  - initramfs
   - Mutter
   - PAM
+  - systemd
   - TTY
   - UEFI
   - Wayland
-  - initramfs
-  - systemd
   - Последовательность загрузки Linux
   - Фазы загрузки Linux
   - Экран входа

@@ -12,8 +12,8 @@ aliases:
   - Java Community Process
   - Java Compiler
   - Java Development Kit
-  - Java Enterprise Edition
   - Java EE
+  - Java Enterprise Edition
   - Java Language Specification
   - Java launcher
   - Java Management Extensions

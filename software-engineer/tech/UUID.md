@@ -4,11 +4,11 @@ aliases:
   - Universally Unique Identifier
   - UUID
 ---
-# UUID и RqUID
+## UUID и RqUID
 
 Разница между **UUID** и **RqUID** — несмотря на возможную схожесть формата, это разные концепции с разными целями.
 
-## UUID (Universally Unique Identifier)
+### UUID (Universally Unique Identifier)
 
 **UUID** — стандарт уникальной идентификации ([[software-engineer/standard/uuid|RFC 4122]]), 128-битное значение с крайне малой вероятностью коллизии.
 
@@ -36,7 +36,7 @@ aliases:
 
 ---
 
-## RqUID (Request Unique Identifier)
+### RqUID (Request Unique Identifier)
 
 **RqUID** — не самостоятельный стандарт, а **практика использования UUID для идентификации HTTP-запросов**.
 
@@ -67,7 +67,7 @@ Content-Type: application/json
 
 ---
 
-## Сравнительная таблица
+### Сравнительная таблица
 
 | Параметр | UUID | RqUID |
 | -------- | ---- | ----- |
@@ -84,7 +84,7 @@ Content-Type: application/json
 
 ---
 
-## Практические сценарии
+### Практические сценарии
 
 **Сценарий 1. Создание заказа**
 
@@ -103,7 +103,7 @@ Content-Type: application/json
 
 ---
 
-## Краткий итог
+### Краткий итог
 
 - **UUID** — **что это?** (идентифицирует объект). Аналогия: номер паспорта человека.
 - **RqUID** — **что было сделано?** (идентифицирует действие). Аналогия: номер квитанции в банке.

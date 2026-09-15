@@ -14,14 +14,14 @@ aliases:
   - transfer
   - Virtual Private Cloud
   - VPC
-  - ycloud
-  - ycloud marketplace
   - Yandex Cloud
   - Yandex Cloud CLI
   - Yandex Data Transfer
   - Yandex Monitoring
   - Yandex Network Load Balancer
   - Yandex Object Storage
+  - ycloud
+  - ycloud marketplace
 ---
 
 ## виртуализация в Yandex Cloud

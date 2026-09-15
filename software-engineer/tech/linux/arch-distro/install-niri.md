@@ -37,7 +37,7 @@ flowchart LR
 mkdir -p ~/.config/niri
 ```
 
-2. Сохранить файл конфигурации `config.toml` в `~/.config/niri/config.toml`.
+1. Сохранить файл конфигурации `config.toml` в `~/.config/niri/config.toml`.
 
 ## Первичный запуск
 

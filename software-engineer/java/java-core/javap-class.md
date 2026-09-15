@@ -4,9 +4,9 @@ aliases:
   - class
   - class file
   - Java class version
-  - Major version
   - java-class-version
   - javap
+  - Major version
   - Версия Java
   - Основная версия класса
 ---

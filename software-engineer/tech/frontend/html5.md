@@ -55,7 +55,7 @@ aliases:
 <meta charset="UTF-8">
 ```
 
-![](attachments/1225bb30b883124d0d770f7a46af329d.jpeg)
+![](attachments/image/1225bb30b883124d0d770f7a46af329d.jpeg)
 
 ## Content Models
 

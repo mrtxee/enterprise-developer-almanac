@@ -5,8 +5,8 @@ aliases:
   - exports
   - exports ... to
   - Java Platform Module System
-  - JLink
   - jlink
+  - JLink
   - JPMS
   - JVM-level encapsulation
   - module descriptor

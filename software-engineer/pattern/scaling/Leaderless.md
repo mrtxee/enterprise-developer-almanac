@@ -14,6 +14,7 @@ aliases:
   - Leader-based
   - Leaderless
   - Leaderless Architecture
+  - Leaderless-архитектура
   - Multi-Master
   - Multi-Master Replication
   - Paxos
@@ -24,7 +25,6 @@ aliases:
   - Sloppy Quorum
   - Vector Clocks
   - Version Vectors
-  - Leaderless-архитектура
   - Безлидерная архитектура
   - Векторные версии
   - Векторные часы
@@ -34,6 +34,7 @@ aliases:
   - Согласованность в конечном счёте
   - Сплетни
 ---
+
 ---
 
 ## Leaderless-архитектура
@@ -131,7 +132,6 @@ DynamoDB — одна из первых систем, реализующих lea
 - Запись: любой узел может её принять
 - Конфликты: через vector clocks
 - Чтение: с 2 узлов; если пришли разные версии — клиент получает обе и должен решить, какую оставить
-
 - ✅ Нет single point of failure
 - ✅ Можно писать даже при частичном отказе сети
 

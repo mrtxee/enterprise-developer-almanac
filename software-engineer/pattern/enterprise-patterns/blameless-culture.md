@@ -1,14 +1,15 @@
 ---
 aliases:
   - Blameless Culture
+  - Just Culture
   - No Blame Culture
   - Psychology Safety
-  - Just Culture
   - культура без обвинений
   - культура без поиска виноватых
   - Психологическая безопасность
   - Справедливая культура
 ---
+
 ---
 
 ## Что такое Blameless Culture

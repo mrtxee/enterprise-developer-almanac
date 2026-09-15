@@ -5,9 +5,9 @@ aliases:
   - Fluent API
   - Fluent Builder
   - Fluent Interface
-  - Method Chaining
   - fluent-Interface
   - jOOQ
+  - Method Chaining
   - Предметно-ориентированный язык
   - Текучий интерфейс
   - Цепочка вызовов

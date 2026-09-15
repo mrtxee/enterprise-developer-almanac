@@ -1,7 +1,7 @@
 ---
 aliases:
-  - Bi-directional Replication
   - BDR
+  - Bi-directional Replication
   - Conflict Resolution
   - Last Write Wins
   - LWW
@@ -10,20 +10,20 @@ aliases:
   - Multi-Master
   - Multi-Master Replication
   - Read Replica
+  - replication
   - WAL
   - Write-Ahead Log
-  - replication
+  - ведомый узел
+  - журнал транзакций
+  - мастер
+  - последняя запись побеждает
   - разрешение конфликтов
   - реплика
   - реплика для чтения
   - репликация
   - репликация master-slave
   - репликация multi-master
-  - журнал транзакций
-  - последняя запись побеждает
-  - мастер
   - слейв
-  - ведомый узел
 ---
 
 ## Репликация баз данных

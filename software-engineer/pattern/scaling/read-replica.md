@@ -1,5 +1,6 @@
 ---
 aliases:
+  - binlog
   - HAProxy
   - Logical Replication
   - Multi-AZ RDS
@@ -8,7 +9,6 @@ aliases:
   - Replication Lag
   - Streaming Replication
   - WAL
-  - binlog
   - Журнал транзакций
   - Лаг репликации
   - Реплика для чтения

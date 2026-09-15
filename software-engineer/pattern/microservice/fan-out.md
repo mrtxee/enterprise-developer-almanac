@@ -3,6 +3,8 @@ aliases:
   - Asynchronous Fan-out
   - Broadcast
   - Broadcast Fan-out
+  - fan-in
+  - fan-out
   - Filtered Fan-out
   - Notification Fan-out
   - P2MP
@@ -11,8 +13,6 @@ aliases:
   - Synchronous Fan-out
   - Transactional Fan-out
   - Write-time Fan-out
-  - fan-in
-  - fan-out
   - разветвление
 ---
 ## Fan-out

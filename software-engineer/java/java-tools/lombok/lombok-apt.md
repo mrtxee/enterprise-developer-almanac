@@ -1,14 +1,14 @@
 ---
 aliases:
   - Abstract Syntax Tree
-  - ANTLR
   - Annotation Processing
+  - ANTLR
   - APT
   - AST
   - Eclipse JDT
+  - Java Compiler Tree API
   - Javac
   - JavacAnnotationProcessor
-  - Java Compiler Tree API
   - Lombok
   - MapStruct
   - Spoon

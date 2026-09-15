@@ -1,9 +1,9 @@
 ---
 aliases:
-  - PRR
   - Postmortem
   - Postmortem Review Report
   - Postmortem анализ
+  - PRR
   - Постмортем
   - разбор инцидентов
 ---

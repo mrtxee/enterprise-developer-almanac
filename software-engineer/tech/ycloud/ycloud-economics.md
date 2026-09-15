@@ -1,26 +1,26 @@
 ---
 aliases:
+  - billing
   - Cloud Function
+  - cost breakdown
+  - cost optimization
   - DataLens
+  - Fractional vCPU
   - Instance Groups
   - Instance.Groups
   - Pay as you go
   - PAYG
   - Preemptible VM
-  - stock keeping unit
   - SKU
+  - stock keeping unit
   - Yandex Cloud
   - ycloud
-  - billing
-  - cost breakdown
-  - cost optimization
-  - Fractional vCPU
   - биллинг
   - виртуальная машина
   - детализация затрат
   - затраты
-  - оптимизация затрат
   - оплата по мере использования
+  - оптимизация затрат
   - прерываемые ВМ
 ---
 
@@ -71,7 +71,7 @@ flowchart LR
 1. Детализация затрат в консоли.
 2. Использование [DataLens](https://datalens.yandex.ru/).
   - DataLens — сервис визуализации данных. Для биллинга он позволяет следить за каждым ресурсом, например за конкретной виртуальной машиной.
-3. Отгрузка детализации в формате CSV.
+1. Отгрузка детализации в формате CSV.
 
 ### Оптимизация затрат
 

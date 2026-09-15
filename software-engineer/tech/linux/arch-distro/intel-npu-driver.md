@@ -1,14 +1,14 @@
 ---
 aliases:
   - AUR
-  - IPEX-LLM
   - Intel NPU
+  - intel_vpu
+  - intel-npu-driver
+  - IPEX-LLM
   - Meteor Lake
   - NPU
   - Ollama
   - OpenVINO
-  - intel-npu-driver
-  - intel_vpu
   - render
 ---
 

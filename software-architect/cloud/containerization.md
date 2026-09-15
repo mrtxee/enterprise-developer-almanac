@@ -9,6 +9,7 @@ aliases:
   - Docker pull
   - Docker push
   - Docker run
+  - Docker-образ
   - Dockerfile
   - ENTRYPOINT
   - FROM
@@ -22,7 +23,6 @@ aliases:
   - Virtualization
   - Yandex Cloud
   - Yandex Container Registry
-  - Docker-образ
   - виртуализация
   - виртуальная машина
   - гостевая ОС

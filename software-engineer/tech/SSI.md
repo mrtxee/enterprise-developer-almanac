@@ -40,25 +40,25 @@ aliases:
 <?php include 'header.php'; ?>
 ```
 
-2. **JavaScript (клиентский):**
+1. **JavaScript (клиентский):**
 
 ```html
 <script>fetch('header.html').then(...)</script>
 ```
 
-3. **Шаблонизаторы:**
+1. **Шаблонизаторы:**
 
     - Jinja2 (Python)
     - Twig (PHP)
     - Handlebars (JavaScript)
 
-4. **Статические генераторы сайтов:**
+2. **Статические генераторы сайтов:**
 
     - Jekyll
     - Hugo
     - Gatsby
 
-5. **Компонентный подход:**
+3. **Компонентный подход:**
 
     - React
     - Vue.js

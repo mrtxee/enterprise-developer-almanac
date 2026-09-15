@@ -3,20 +3,20 @@ aliases:
   - Application ClassLoader
   - Bootstrap ClassLoader
   - ClassLoader
-  - java.lang.ClassLoader
+  - classloader hierarchy
   - ClassNotFoundException
   - CLASSPATH
   - Delegation Hierarchy
   - delegation model
+  - dynamic class loading
   - Extension ClassLoader
+  - java.lang.ClassLoader
   - Platform ClassLoader
   - Primordial ClassLoader
   - System ClassLoader
   - Uniqueness
   - UserDefined ClassLoader
   - Visibility
-  - dynamic class loading
-  - classloader hierarchy
   - Видимость
   - Динамическая загрузка классов
   - загрузчик классов

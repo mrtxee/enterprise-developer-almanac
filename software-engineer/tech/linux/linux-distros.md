@@ -1,8 +1,8 @@
 ---
 aliases:
-  - AUR
   - Arch
   - Arch Linux
+  - AUR
   - Btrfs
   - CachyOS
   - Calamares
@@ -15,8 +15,8 @@ aliases:
   - EPEL
   - Fedora
   - Fedora Workstation
-  - Flatpak
   - Flathub
+  - Flatpak
   - KISS
   - Knoppix
   - Manjaro

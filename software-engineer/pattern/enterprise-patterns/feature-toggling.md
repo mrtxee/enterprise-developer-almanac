@@ -4,10 +4,10 @@ aliases:
   - Feature Flags
   - Feature Toggle
   - Feature Toggling
-  - Флаги функций
   - Переключение функций
   - Управление функциями
   - Фича-флаги
+  - Флаги функций
 ---
 
 ## Feature Toggling

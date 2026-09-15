@@ -10,8 +10,8 @@ aliases:
   - Role-Based Access Control
   - Scope
   - Scope-based authorization
-  - Scopes
   - scope‑based authorization
+  - Scopes
   - авторизация на основе областей
   - скопы
 ---

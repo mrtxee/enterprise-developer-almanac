@@ -1,14 +1,14 @@
 ---
 aliases:
   - Controller
-  - DTO
   - Data Access Layer
   - Data Transfer Object
+  - DTO
   - Entity
   - Layered Architecture
-  - MVC
   - Mapper
   - Model
+  - MVC
   - Repository
   - Service Layer
   - Контроллер
@@ -21,7 +21,7 @@ aliases:
   - Сущность
 ---
 
-# Layered Architecture
+## Layered Architecture
 
 многослойная архитектура
 
@@ -42,29 +42,29 @@ aliases:
 
 Слои приложения от верхнего к нижнему.
 
-## Интерфейсный слой
+### Интерфейсный слой
 
 **Интерфейсный слой —** UI Layer (Web Browser, JavaScript)
 
 - может быть представлен консолью ввода или REST-контроллером, любым иным клиентским интерфейсом
 
-## \[Слой аутентификации\]
+### \[Слой аутентификации\]
 
-## Контроллер
+### Контроллер
 
 **Контроллер** — MVC Controller — **==controller==**
 
 - Spring components annotated with `@Controller`
 - получает команды от интерфейсного слоя и обращается к сервисному слою, бизнес-логике. Получает и передает **DTO**
 
-## Сервис
+### Сервис
 
 **Сервисный слой** — Service Layer — **==service==**
 
 - Spring components annotated with `@Service`
 - слой бизнес логики
 
-## \[Маппер\]
+### \[Маппер\]
 
 Маппер — ==**mapper**==
 
@@ -72,7 +72,7 @@ aliases:
 
 `org.mapstruct` — пакет для маппинга
 
-## Слой данных
+### Слой данных
 
 **Слой данных** — Data Access Layer — ==**repository, mapper, model, dto**==
 

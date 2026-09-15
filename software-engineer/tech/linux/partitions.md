@@ -6,13 +6,13 @@ aliases:
   - GPT
   - Linux Extended Boot Loader Partition
   - Mark as boot
+  - partition
   - UEFI
   - XBOOTLDR
-  - partition
   - Отметить как загрузочный
-  - Разметка разделов
   - раздел
   - разделы диска
+  - Разметка разделов
 ---
 ## Mark as boot (Отметить как загрузочный)
 

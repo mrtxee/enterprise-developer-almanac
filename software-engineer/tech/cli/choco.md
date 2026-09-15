@@ -1,7 +1,7 @@
 ---
 aliases:
-  - Chocolatey
   - choco
+  - Chocolatey
   - Windows package manager
   - Менеджер пакетов Windows
 ---

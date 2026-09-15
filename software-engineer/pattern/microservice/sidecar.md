@@ -3,8 +3,8 @@ aliases:
   - Sidecar
   - Sidecar pattern
   - Sidecar-контейнер
-  - Сайдкар
   - Паттерн Sidecar
+  - Сайдкар
 ---
 
 ## Паттерн Sidecar

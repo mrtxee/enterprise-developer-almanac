@@ -1,11 +1,12 @@
 ---
 aliases:
   - ACID
-  - AWS Elastic Beanstalk
   - Availability
+  - AWS Elastic Beanstalk
   - Bearer
   - Bitbucket
   - CAP theorem
+  - CAP-теорема
   - CI/CD
   - CIDR
   - Classless Inter-Domain Routing
@@ -14,6 +15,7 @@ aliases:
   - Cloud Native Computing Foundation
   - CNCF
   - COM
+  - COM-порт
   - Command Line Interface
   - Consistency
   - Continuous Deployment
@@ -68,11 +70,11 @@ aliases:
   - passwd
   - Platform as a Service
   - Ports and adapters
-  - PostgreSQL
   - Postgres Pro
+  - PostgreSQL
   - PuTTY
-  - Reed-Solomon
   - Redis
+  - Reed-Solomon
   - RFC1918
   - SaaS
   - sed
@@ -83,21 +85,19 @@ aliases:
   - SRE
   - SSH
   - ssh-keygen
+  - SSH-ключи
   - stress
   - Swagger
   - Test pyramid
   - TL;DR
   - TLDR
-  - Too long; didn't read
   - Tomcat
+  - Too long; didn't read
   - TSV
   - UUID
   - VM snapshot
   - Web server
   - Yandex Cloud
-  - CAP-теорема
-  - COM-порт
-  - SSH-ключи
   - Абстрактность имён
   - Авторизация
   - Аутентификация
@@ -637,13 +637,13 @@ H2 — открытая кроссплатформенная СУБД, полн�
 
 - [[git]]
 - [[SQL]]
-- [[Maven]]
+- [[maven]]
 - [[docker]]
 - [[kubernetes]]
 - [[kafka]]
 - [[JWT]]
 - [[SOAP]]
 - [[agile]]
-- [[Groovy]]
+- [[groovy]]
 - [[transaction-isolation]]
 - [[cli]]

@@ -2,8 +2,8 @@
 aliases:
   - /etc/fstab
   - Automount NTFS
-  - Mount NTFS
   - fstab
+  - Mount NTFS
   - ntfs-3g
   - systemd
   - Автозагрузка

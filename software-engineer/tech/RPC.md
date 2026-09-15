@@ -4,21 +4,21 @@ aliases:
   - Avro
   - CORBA
   - DCOM
+  - gRPC
   - HTTP/2
   - ICE
   - Internet Communications Engine
   - JSON-RPC
   - ONC RPC
+  - protobuf
   - Protocol Buffers
-  - RPC
   - Remote Procedure Call
+  - RPC
   - Sun RPC
   - XML-RPC
   - ZeroC ICE
-  - gRPC
-  - protobuf
-  - Удалённый вызов процедур
   - удалённый вызов процедур
+  - Удалённый вызов процедур
 ---
 ## RPC
 

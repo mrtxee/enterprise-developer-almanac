@@ -1,26 +1,37 @@
 ---
 aliases:
   - assert
+  - bitwise operators
   - boxing
   - break
   - casting
   - checked exception
   - continue
+  - control flow statements
+  - data types
   - do-while
   - Enum
+  - exceptions
   - final
   - for
   - for-each
   - instanceof
+  - Java core
+  - Java keywords
   - lambda
+  - lambda function
   - native
   - operators
+  - primitive types
+  - reference types
   - Runnable
   - Scanner
   - sealed
   - switch
   - synchronized
+  - syntactic sugar
   - Thread
+  - threads
   - Threads
   - transient
   - unboxing
@@ -28,18 +39,6 @@ aliases:
   - varargs
   - volatile
   - Write once, run everywhere
-  - Java core
-  - exceptions
-  - Java keywords
-  - lambda function
-  - bitwise operators
-  - threads
-  - primitive types
-  - syntactic sugar
-  - reference types
-  - data types
-  - control flow statements
-  - ядро Java
   - исключения
   - ключевые слова Java
   - лямбда-функция
@@ -52,6 +51,7 @@ aliases:
   - ссылочные типы
   - типы данных
   - управляющие структуры
+  - ядро Java
 ---
 
 ## Основы Java

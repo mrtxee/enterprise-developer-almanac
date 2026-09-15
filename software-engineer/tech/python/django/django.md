@@ -1,58 +1,58 @@
 ---
 aliases:
-  - Django
-  - Django Framework
-  - Framework
-  - Django MVT
-  - MVT
-  - MTV
-  - MVC
-  - Django Model
-  - Django View
-  - Django Template
-  - Template
-  - Field lookup
-  - Field lookups
-  - istartswith
-  - manage.py
-  - django-admin
-  - Django admin
-  - startproject
-  - startapp
-  - runserver
-  - createsuperuser
-  - collectstatic
-  - makemigrations
-  - settings.py
-  - urls.py
-  - urlpatterns
-  - views.py
-  - models.py
-  - forms.py
+  - __init__.py
   - admin.py
   - apps.py
-  - tests.py
-  - wsgi.py
-  - asgi.py
-  - __init__.py
-  - DjangoJSONEncoder
-  - Cross Site Request Forgery
-  - WSGI
   - ASGI
+  - asgi.py
   - Asynchronous Server Gateway Interface
+  - collectstatic
+  - createsuperuser
+  - Cross Site Request Forgery
+  - Django
+  - Django admin
   - Django Forms
-  - forms.Form
-  - Django REST Framework
+  - Django Framework
+  - Django Model
+  - Django MVT
   - Django REST framework
+  - Django REST Framework
+  - Django Template
+  - Django View
+  - django-admin
   - django-rest-framework
+  - DjangoJSONEncoder
+  - Field lookup
+  - Field lookups
+  - forms.Form
+  - forms.py
+  - Framework
+  - istartswith
+  - makemigrations
+  - manage.py
+  - models.py
+  - MTV
+  - MVC
+  - MVT
+  - runserver
+  - settings.py
+  - startapp
+  - startproject
+  - Template
+  - tests.py
+  - urlpatterns
+  - urls.py
+  - views.py
+  - WSGI
+  - wsgi.py
   - Джанго
-  - Лук-апы полей
   - Диспетчер запросов
-  - Субдиспетчеры маршрутов
+  - Лук-апы полей
   - Спецификаторы
+  - Субдиспетчеры маршрутов
 ---
 
-# Архитектура Django MVT
+## Архитектура Django MVT
 
 > [!important] **MVT**
 > — паттерн проектирования приложений:
@@ -60,7 +60,7 @@ aliases:
 > 2. **View** — a **request handler** (**обработчик запросов**) that returns the relevant template and content — based on the request from the user.
 > 3. **Template** — a text file (like an HTML file) containing the **layout of the web app**, with logic on how to display the data.
 
-## Структура приложения Django
+### Структура приложения Django
 
 ```mermaid
 ---
@@ -89,7 +89,7 @@ flowchart LR
   - В MVC этому компоненту соответствует View, то есть представления.
   - Обычно находится в папке `templates`.
 
-## Фреймворк Django
+### Фреймворк Django
 
 > [!important] **Фреймворк**
 > (framework — каркас, структура) — программная платформа, определяющая структуру программной системы; программное обеспечение, облегчающее разработку и объединение разных компонентов большого программного проекта.
@@ -101,18 +101,18 @@ flowchart LR
   - database connection (подключение к базе данных);
   - **CRUD**-операции (Create Read Update Delete).
 
-# Модель (Model)
+## Модель (Model)
 
 Есть асинхронная передача данных в БД — транзакции. Можно, но не нужно, выполнять SQL напрямую.
 
-## Объектно-реляционное отображение (ORM)
+### Объектно-реляционное отображение (ORM)
 
 > [!important] **Объектно-реляционное отображение (ORM)**
 > — система виртуальных объектов, которая позволяет взаимодействовать с БД без использования SQL.
 
 Все структуры базы данных описываются в `models.py`. Изменения в структуре БД инициируются при помощи `migrations`.
 
-## Определение моделей
+### Определение моделей
 
 Пример определения модели:
 
@@ -126,7 +126,7 @@ class Person(models.Model):
 
 Более сложные структуры таблиц и связи между моделями (например, one-to-many) описаны в документации Django.
 
-## QuerySets
+### QuerySets
 
 Примеры запросов через QuerySet API:
 
@@ -146,7 +146,7 @@ mydata = Members.objects.filter(firstname__startswith='L').values()
 mymembers = Members.objects.values_list('firstname', 'lastname')
 ```
 
-### Field lookups
+#### Field lookups
 
 Лук-апы полей применяются прямо к названию поля через `__`. Перечень лукапов:
 
@@ -183,7 +183,7 @@ mymembers = Members.objects.values_list('firstname', 'lastname')
 | year | Matches a year (for dates) |
 | iso_year | Matches an ISO 8601 year (for dates) |
 
-## Миграции
+### Миграции
 
 ```mermaid
 ---
@@ -227,9 +227,9 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-# Представление (View)
+## Представление (View)
 
-## Обработка запроса
+### Обработка запроса
 
 Пример обработчика запроса:
 
@@ -247,7 +247,7 @@ def index(request):
   """)
 ```
 
-### HttpRequest
+#### HttpRequest
 
 Каждый метод обработки запроса получает объект `request` типа `HttpRequest`. Он хранит информацию о запросе, в частности содержит поля:
 
@@ -285,7 +285,7 @@ def index(request):
 - `get_port()` — возвращает номер порта.
 - `request.GET.get('param', default)` — значение по умолчанию для параметра, для которого не задано значение.
 
-### HttpResponse
+#### HttpResponse
 
 Сигнатура конструктора:
 
@@ -318,7 +318,7 @@ def user_info(request, name="Undefined", age=0):
   return HttpResponse(f"<h2>Имя: {name}  Возраст: {age}</h2>")
 ```
 
-### Статусы ответа
+#### Статусы ответа
 
 Доступны объекты следующих классов:
 
@@ -347,7 +347,7 @@ def access(request, age):
     return HttpResponseForbidden("Доступ заблокирован: недостаточно лет")
 ```
 
-### JsonResponse
+#### JsonResponse
 
 Пример ответа в формате JSON:
 
@@ -380,7 +380,7 @@ def index(request):
   return JsonResponse(bob, safe=False, encoder=PersonEncoder)
 ```
 
-### Редирект в представлении
+#### Редирект в представлении
 
 Способы редиректа в представлении:
 
@@ -392,7 +392,7 @@ def details(request):
   return HttpResponsePermanentRedirect("/")
 ```
 
-### Cookie (куки)
+#### Cookie (куки)
 
 **Передать куки**
 - `set_cookie(key, value='', max_age=None, expires=None, path='/', domain=None, secure=False, httponly=False, samesite=None)` — задать куки.
@@ -402,7 +402,7 @@ def details(request):
 - Для чтения простых куки используется `request.COOKIES`.
 - `get_signed_cookie(key, default=RAISE_ERROR, salt='', max_age=None)` — чтение шифрованных куки.
 
-## URL dispatcher (диспетчер запросов)
+### URL dispatcher (диспетчер запросов)
 
 Пример диспетчера:
 
@@ -443,7 +443,7 @@ urlpatterns = [
 ]
 ```
 
-### Парсинг параметров строки запроса
+#### Парсинг параметров строки запроса
 
 Примеры парсинга параметров:
 
@@ -470,7 +470,7 @@ urlpatterns = [
 
 Другой метод парсинга параметров запроса — **парсинг по P-строке**. Общее определение параметра соответствует формату `(?P<имя_параметра>регулярное_выражение)`.
 
-### Субдиспетчеры маршрутов через инклюзию
+#### Субдиспетчеры маршрутов через инклюзию
 
 Два варианта организации субдиспетчеров:
 
@@ -510,7 +510,7 @@ urlpatterns = [
 ]
 ```
 
-### Редирект в диспетчере адресов
+#### Редирект в диспетчере адресов
 
 Пример редиректа в диспетчере:
 
@@ -522,9 +522,9 @@ urlpatterns = [
 ]
 ```
 
-# Шаблоны (Template)
+## Шаблоны (Template)
 
-## Управляющие структуры
+### Управляющие структуры
 
 Шаблоны Django позволяют выполнять код с помощью тегов `{% %}`, выводить переменные `{{ }}` и использовать управляющие конструкции.
 
@@ -565,7 +565,7 @@ def testing(request):
   return HttpResponse(template.render(context, request))
 ```
 
-### Условный оператор
+#### Условный оператор
 
 Примеры условий:
 
@@ -585,7 +585,7 @@ def testing(request):
 {% if (greeting == 1 and day == "Friday") or greeting == 5 %}
 ```
 
-### Оператор for, forloop, cycle
+#### Оператор for, forloop, cycle
 
 Пример цикла `for` с `reversed` и `{% empty %}`:
 
@@ -621,7 +621,7 @@ def testing(request):
 </ul>
 ```
 
-### Комментарии
+#### Комментарии
 
 Комментарии не выводятся в верстке. Бывают однострочные и многострочные:
 
@@ -632,7 +632,7 @@ def testing(request):
 {% endcomment %}
 ```
 
-### Расширение и включение шаблонов (extends, include)
+#### Расширение и включение шаблонов (extends, include)
 
 `extends` обеспечивает вложенность шаблонов. `include` позволяет включать контент из другого шаблона.
 
@@ -662,7 +662,7 @@ def testing(request):
 {% include 'footer.html' %}
 ```
 
-### Инклюзия с контекстом
+#### Инклюзия с контекстом
 
 Шаблон, использующий переменные:
 
@@ -685,7 +685,7 @@ def index(request):
   return render(request, "index.html", context={"site": "METANIT.COM"})
 ```
 
-### Фильтры (filter)
+#### Фильтры (filter)
 
 При помощи `filter` можно преобразовывать содержимое переменной. Набор фильтров перечисляется через `|`.
 
@@ -764,7 +764,7 @@ def index(request):
 | l10n | |
 | tz | |
 
-### Статические файлы (static)
+#### Статические файлы (static)
 
 Изображения, CSS и JS подгружаются через специальный механизм `static`. Для этого:
 1. В папке приложения создаём папку `static` и помещаем туда файлы статического контента.
@@ -777,7 +777,7 @@ def index(request):
 <img src="{% static 'img.png' %}" >
 ```
 
-## Теги шаблонов
+### Теги шаблонов
 
 Примеры тегов и фильтров:
 
@@ -826,11 +826,11 @@ def index(request):
 | widthratio | Calculates a width value based on the ratio between a given value and a max value |
 | with | Specifies a variable to use in the block |
 
-## Ошибка 404
+### Ошибка 404
 
 Для автоматической обработки ошибки 404 отключите `DEBUG` в `settings.py`, задайте `TEMPLATES['DIRS']` и создайте файл `templates/404.html` — он будет обслуживаться автоматически.
 
-# Формы
+## Формы
 
 Формы размещаются в файле `forms.py`.
 
@@ -898,7 +898,7 @@ def index(request):
 
 Поддерживаются валидация полей, сложное форматирование и стилизация формы.
 
-# Создание проекта
+## Создание проекта
 
 Создание виртуального окружения и проекта:
 
@@ -921,7 +921,7 @@ deactivate                                        # выход из виртуа
 
 Команда `python manage.py runserver` запускает виртуальный сервер Django, доступ к которому по умолчанию на `http://127.0.0.1:8000/`.
 
-## Структура проекта
+### Структура проекта
 
 - `manage.py` — выполняет различные команды проекта, например, создаёт и запускает приложение.
 - Папка `myProject` — содержит следующие файлы:
@@ -931,7 +931,7 @@ deactivate                                        # выход из виртуа
   - `wsgi.py` — содержит свойства конфигурации **WSGI** (Web Server Gateway Interface). Используется при развертывании проекта.
   - `asgi.py` — название файла представляет сокращение от **Asynchronous Server Gateway Interface** и расширяет возможности WSGI, добавляя поддержку взаимодействия между асинхронными веб-серверами и приложениями.
 
-## Развертывание приложения
+### Развертывание приложения
 
 1. `python manage.py startapp hello` — создать приложение, где `hello` — название приложения.
 2. Добавить в `settings.py` в `INSTALLED_APPS` — `'hello.apps.HelloConfig'`.
@@ -939,7 +939,7 @@ deactivate                                        # выход из виртуа
 
 ![](082a19fc1e9270d70ed502db4ba242b0.png)
 
-### Структура папки приложения
+#### Структура папки приложения
 
 - Папка `migrations` — предназначена для хранения миграций — скриптов, которые позволяют синхронизировать структуру базы данных с определениями моделей.
 - `__init__.py` — указывает интерпретатору Python, что текущий каталог рассматривается в качестве пакета.
@@ -949,14 +949,14 @@ deactivate                                        # выход из виртуа
 - `tests.py` — хранит тесты приложения.
 - `views.py` — определяет функции, которые получают запросы пользователей, обрабатывают их и возвращают ответ.
 
-### Синхронизация моделей с БД
+#### Синхронизация моделей с БД
 
 - `python manage.py migrate` — синхронизирует состояние базы данных с текущим набором моделей и миграций.
 - `python manage.py makemigrations <app>` — создаёт новые миграции на основе изменений, внесённых в модели.
 
-# FAQ
+## FAQ
 
-## Статические файлы при выключенном DEBUG
+### Статические файлы при выключенном DEBUG
 
 При выключенном `DEBUG` отдача статических и медиа-файлов настраивается вручную.
 
@@ -980,7 +980,7 @@ STATIC_ROOT = 'static'
 python manage.py collectstatic
 ```
 
-## Админ-панель
+### Админ-панель
 
 Создание суперпользователя:
 
@@ -988,7 +988,7 @@ python manage.py collectstatic
 python manage.py createsuperuser
 ```
 
-## Переименовать проект
+### Переименовать проект
 
 - Переименовать папку `oldprojectname` в `newprojectname`.
 - В `manage.py`: изменить `os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'oldprojectname.settings')`.
@@ -996,13 +996,13 @@ python manage.py createsuperuser
 - В `newprojectname/settings.py`: изменить `ROOT_URLCONF = 'oldprojectname.urls'` и `WSGI_APPLICATION = 'oldprojectname.wsgi.application'`.
 - В `newprojectname/urls.py`: заменить `oldprojectname` в добавленной строке.
 
-## Тестирование
+### Тестирование
 
 Для тестирования можно использовать заготовки из [репозитория Django](https://github.com/django/django/tree/main/tests) и официальную документацию — [Обзор тестирования Django](https://docs.djangoproject.com/en/4.1/topics/testing/overview/).
 
-## settings.py
+### settings.py
 
-### Папка общих шаблонов проекта
+#### Папка общих шаблонов проекта
 
 Общие шаблоны проекта подключаются через параметр `DIRS`:
 

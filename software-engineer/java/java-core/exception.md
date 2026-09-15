@@ -6,8 +6,10 @@ aliases:
   - AutoCloseable
   - catch
   - checked exception
+  - checked exceptions
   - Error
   - Exception
+  - exception hierarchy
   - exceptions
   - FileNotFoundException
   - finally
@@ -20,20 +22,18 @@ aliases:
   - OutOfMemoryError
   - RuntimeException
   - SocketException
+  - stack trace
   - StackOverflowError
   - StackTrace
   - Suppressed Exception
+  - suppressed exceptions
   - throw
   - Throwable
   - throws
   - try
   - try-with-resources
   - unchecked exception
-  - exception hierarchy
   - unchecked exceptions
-  - suppressed exceptions
-  - checked exceptions
-  - stack trace
   - иерархия исключений
   - исключения
   - непроверяемые исключения

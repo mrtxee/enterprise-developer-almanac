@@ -2,16 +2,16 @@
 aliases:
   - ClusterRole
   - ClusterRoleBinding
-  - Kubernetes RBAC
-  - RBAC
-  - RoleBinding
   - k8s
   - kubernates
   - kubernetes
+  - Kubernetes RBAC
+  - RBAC
+  - RoleBinding
   - Роли Kubernetes
   - Управление доступом на основе ролей
 ---
-# RBAC в Kubernetes
+## RBAC в Kubernetes
 
 **RBAC (Role-Based Access Control)** в **Kubernetes** — это **система управления доступом**, которая определяет, кто и что может делать в кластере.
 
@@ -27,7 +27,7 @@ aliases:
 - для права на запись (write) — `create`, `update`, `patch`;
 - для права на чтение (read) — `get`, `list`, `watch`.
 
-## Что такое Kubernetes RBAC?
+### Что такое Kubernetes RBAC?
 
 > **RBAC** — это механизм, который отвечает на вопросы:
 > - Кто ты? → **Аутентификация**
@@ -41,7 +41,7 @@ aliases:
 → Не может трогать `kube-system`
 ```
 
-## Основные компоненты RBAC
+### Основные компоненты RBAC
 
 | Компонент | Описание |
 | --------- | -------- |
@@ -50,7 +50,7 @@ aliases:
 | **RoleBinding / ClusterRoleBinding** | Связывает субъект с ролью |
 | **API Server** | Проверяет каждый запрос через RBAC |
 
-## Субъекты (Subjects)
+### Субъекты (Subjects)
 
 Кто хочет получить доступ:
 
@@ -62,9 +62,9 @@ aliases:
 
 Внутри кластера чаще используются **ServiceAccounts**, а не Users.
 
-## Роли: Role и ClusterRole
+### Роли: Role и ClusterRole
 
-### Role — для одного namespace
+#### Role — для одного namespace
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -80,7 +80,7 @@ rules:
 
 → Разрешает читать Pod'ы только в `namespace: dev`.
 
-### ClusterRole — для всего кластера
+#### ClusterRole — для всего кластера
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -95,9 +95,9 @@ rules:
 
 → Управляет узлами кластера.
 
-## Привязки: Binding
+### Привязки: Binding
 
-### RoleBinding — связывает в одном namespace
+#### RoleBinding — связывает в одном namespace
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -117,7 +117,7 @@ roleRef:
 
 → Alice может читать Pod'ы в `dev`.
 
-### ClusterRoleBinding — глобальная привязка
+#### ClusterRoleBinding — глобальная привязка
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -136,7 +136,7 @@ roleRef:
 
 → Все из группы `developers` могут просматривать ресурсы во всех namespaces.
 
-## Глаголы (Verbs) — что можно делать
+### Глаголы (Verbs) — что можно делать
 
 | Глагол | Что означает |
 | ------ | ------------ |
@@ -149,7 +149,7 @@ roleRef:
 | `patch` | Частичное обновление |
 | `*` | Все глаголы |
 
-## API Groups и Resources
+### API Groups и Resources
 
 | Поле | Примеры |
 | ---- | ------- |
@@ -160,7 +160,7 @@ roleRef:
 | `resources: ["secrets"]` | Секреты (опасно!) |
 | `resources: ["deployments"]` | Деплои |
 
-## Role vs ClusterRole
+### Role vs ClusterRole
 
 | | **Role** | **ClusterRole** |
 | - | -------- | --------------- |
@@ -168,7 +168,7 @@ roleRef:
 | **Используется для** | Разработчиков, приложений | Администраторов, операторов |
 | **Пример** | Dev читает свои Pod'ы | SRE управляет Node'ами |
 
-## RoleBinding vs ClusterRoleBinding
+### RoleBinding vs ClusterRoleBinding
 
 | | **RoleBinding** | **ClusterRoleBinding** |
 | - | --------------- | ---------------------- |
@@ -177,7 +177,7 @@ roleRef:
 | **Связь с ClusterRole** | Да (в пределах ns) | Да (глобально) |
 | **Рекомендация** | Для команды | Для админов |
 
-## Пример: Dev команда
+### Пример: Dev команда
 
 ```yaml
 # role.yaml
@@ -214,7 +214,7 @@ roleRef:
 
 → Группа `frontend-developers` может работать в `namespace: frontend`.
 
-## Пример: только просмотр (read-only)
+### Пример: только просмотр (read-only)
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -231,7 +231,7 @@ rules:
 
 **Будьте осторожны с `secrets`!**
 
-## Как проверить права
+### Как проверить права
 
 ```bash
 kubectl auth can-i get pods --as alice@company.com -n dev
@@ -241,7 +241,7 @@ kubectl auth can-i create deployments --as bob@company.com -n prod
 # no
 ```
 
-## Лучшие практики
+### Лучшие практики
 
 | Правило | Объяснение |
 | ------- | ---------- |
@@ -253,7 +253,7 @@ kubectl auth can-i create deployments --as bob@company.com -n prod
 | **Регулярно аудитите** | `kubectl get roles,rolebindings --all-namespaces` |
 | **Включите audit-логи** | Чтобы видеть, кто что делал |
 
-## Распространённые ошибки
+### Распространённые ошибки
 
 | Ошибка | Последствия |
 | ------ | ----------- |
@@ -263,7 +263,7 @@ kubectl auth can-i create deployments --as bob@company.com -n prod
 | Использование `*` в rules | Невозможно контролировать |
 | Нет аудита | Не знаете, кто и что делал |
 
-## Финальный вывод
+### Финальный вывод
 
 | RBAC позволяет вам... | Без него вы... |
 | --------------------- | -------------- |
@@ -278,7 +278,7 @@ kubectl auth can-i create deployments --as bob@company.com -n prod
 
 Если его не использовать — кластер **открыт всем**. Настройте RBAC — и появится контроль над доступом.
 
-## Ресурсы
+### Ресурсы
 
 - Официальная документация: https://kubernetes.io/docs/reference/access-authn-authz/rbac/
 - YouTube: «Kubernetes RBAC Explained» — TechWorld with Nana

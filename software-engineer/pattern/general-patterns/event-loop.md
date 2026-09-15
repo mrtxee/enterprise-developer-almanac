@@ -85,7 +85,7 @@ flowchart LR
 | **Java** | Netty, Vert.x (через `EventLoopGroup`) |
 | **Rust** | `tokio`, `async-std` |
 
-> **Spring [[WebFlux]]** на Netty использует event loop под капотом — поэтому он неблокирующий и масштабируемый.
+> **Spring [[web-flux]]** на Netty использует event loop под капотом — поэтому он неблокирующий и масштабируемый.
 
 ## Event Loop vs Многопоточность
 

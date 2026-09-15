@@ -24,11 +24,11 @@ aliases:
   - Экспоненциальная задержка
 ---
 
-# Retry Policy
+## Retry Policy
 
 **Retry Policy (политика повторных попыток)** — это **ключевой элемент надёжности в распределённых системах**, особенно при работе с сетью, внешними API, базами данных и очередями.
 
-## Что такое Retry Policy
+### Что такое Retry Policy
 
 **Retry Policy** — это **правило**, определяющее:
 
@@ -39,7 +39,7 @@ aliases:
 
 Без retry-логики система **ломается при временных сбоях** (например, сетевая задержка, кратковременная недоступность сервиса).
 
-## Основные типы Retry Policies
+### Основные типы Retry Policies
 
 | Тип | Описание | Когда использовать |
 |-----|----------|--------------------|
@@ -51,9 +51,9 @@ aliases:
 | **6. [[circuit-breaker]] + Retry** | После N неудач — **перестать пытаться** на время | Если сервис упал — не нужно его забивать запросами |
 | **7. Conditional Retry** | Повтор только при **определённых ошибках**: `503 Service Unavailable`, `Timeout`, `Connection refused`; не повторять при `400 Bad Request` | Умная политика — не повторять, если ошибка клиента |
 
-## Наиболее часто используемые типы
+### Наиболее часто используемые типы
 
-### Exponential Backoff + Jitter
+#### Exponential Backoff + Jitter
 
 **Самый популярный и рекомендуемый подход.**
 
@@ -77,14 +77,14 @@ aliases:
 
 > «Exponential backoff is the single most effective thing you can do to make your system resilient.» — Google SRE Handbook #📘
 
-### Exponential Backoff без Jitter
+#### Exponential Backoff без Jitter
 
 - Проще реализовать.
 - Но может вызвать **синхронизированные повторы** (все клиенты ждут 2s → бьют одновременно).
 
 Используйте только если нет возможности добавить jitter — а лучше всегда добавлять.
 
-### Conditional Retry
+#### Conditional Retry
 
 Повтор только при **временных ошибках**, а не при ошибках клиента.
 
@@ -107,7 +107,7 @@ aliases:
 | `Network timeout`, `Connection reset` | Временная сетевая проблема |
 | `500 Internal Server Error` | Иногда — если известно, что это временное состояние |
 
-## Примеры реальных систем
+### Примеры реальных систем
 
 **Google Cloud APIs**
 
@@ -188,7 +188,7 @@ Retry retry = Retry.of("external-api", config);
 
 → Только для **временных ошибок**, не для `INVALID_ARGUMENT`.
 
-## Best Practices
+### Best Practices
 
 | Правило | Объяснение |
 |--------|------------|
@@ -201,7 +201,7 @@ Retry retry = Retry.of("external-api", config);
 | ✅ **Мониторьте retry-rate** | Высокий % retry — признак проблем |
 | ✅ **Учитывайте idempotency** | Повтор должен быть безопасным для бизнеса |
 
-## Idempotency
+### Idempotency
 
 **Idempotent operation** — это операция, которую можно **повторять много раз без побочных эффектов**.
 
@@ -229,7 +229,7 @@ POST /payments?request_id=abc123 → charge $100
 
 **Retry возможен только для идемпотентных операций!**
 
-## Пример реализации на Python
+### Пример реализации на Python
 
 ```python
 import time
@@ -265,7 +265,7 @@ def fetch_data():
     pass
 ```
 
-## Когда retry не использовать
+### Когда retry не использовать
 
 | Сценарий | Почему |
 |----------|--------|
@@ -274,7 +274,7 @@ def fetch_data():
 | **Если операция не идемпотентна** | Может привести к дублям |
 | **Критичные системы реального времени** | Где каждый цикл важен |
 
-## Популярность типов Retry Policy
+### Популярность типов Retry Policy
 
 | Тип | Частота | Рекомендация |
 |------|--------|--------------|
@@ -286,7 +286,7 @@ def fetch_data():
 
 > «The best way to handle transient errors is to retry with exponential backoff and jitter.» — Site Reliability Engineering (SRE) Book #📘
 
-## Финальный вывод
+### Финальный вывод
 
 | Политика | Когда использовать |
 |--------|------------------|

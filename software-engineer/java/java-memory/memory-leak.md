@@ -2,18 +2,18 @@
 aliases:
   - Heap Dump
   - LeakCanary
-  - Memory Leak
   - memory leak
-  - Soft Reference
+  - Memory Leak
   - soft reference
+  - Soft Reference
   - ThreadLocal
   - VisualVM
+  - weak reference
   - Weak Reference
   - WeakReference
-  - weak reference
+  - утечка памяти
   - Утечка памяти
   - Утечки памяти
-  - утечка памяти
 ---
 
 ## Примеры ситуаций утечки памяти в Java

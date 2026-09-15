@@ -5,10 +5,10 @@ aliases:
   - Grails
   - Groovy
   - JVM
-  - Язык ООП для JVM
   - язык ООП для JVM
+  - Язык ООП для JVM
 ---
-# Groovy
+## Groovy
 
 **Groovy** — язык ООП для JVM. Применяется как DSL для написания конфигурационных файлов.
 

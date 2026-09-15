@@ -2,9 +2,9 @@
 aliases:
   - .desktop
   - GNOME
+  - idea
   - IntelliJ IDEA
   - JetBrains
-  - idea
 ---
 
 **Файл:** `idea-2025.3.5.tar.gz`.

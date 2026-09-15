@@ -1,8 +1,8 @@
 ---
 aliases:
   - Client for URLs
-  - cURL
   - curl
+  - cURL
 ---
 
 ## Client for URLs

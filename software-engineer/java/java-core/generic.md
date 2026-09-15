@@ -1,10 +1,14 @@
 ---
 aliases:
+  - contravariance
   - contravariant
+  - covariance
   - covariant
   - generic
+  - generic type
   - Generic Types
   - generics
+  - invariance
   - invariant
   - Java Generics
   - multiple bounds
@@ -15,10 +19,6 @@ aliases:
   - unbounded wildcard
   - wildcard
   - Wildcard Capture
-  - invariance
-  - covariance
-  - contravariance
-  - generic type
   - вайлдкарта
   - дженерик
   - дженерики

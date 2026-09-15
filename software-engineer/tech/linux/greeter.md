@@ -87,13 +87,13 @@ aliases:
 sudo pacman -S lightdm
 ```
 
-2. Установка greeter (например, GTK-версии):
+1. Установка greeter (например, GTK-версии):
 
 ```bash
 sudo pacman -S lightdm-gtk-greeter
 ```
 
-3. Настройка LightDM: в `/etc/lightdm/lightdm.conf` указывается используемый greeter:
+1. Настройка LightDM: в `/etc/lightdm/lightdm.conf` указывается используемый greeter:
 
 ```ini
 [Seat:*]
@@ -101,7 +101,7 @@ greeter-session=lightdm-gtk-greeter
 user-session=gnome
 ```
 
-4. Включение автозапуска DM:
+1. Включение автозапуска DM:
 
 ```bash
 sudo systemctl enable lightdm
@@ -150,7 +150,7 @@ sudo systemctl start lightdm
 greeter-session=lightdm-webkit2-greeter
 ```
 
-3. После перезагрузки используется новый экран входа, но все графические оболочки остаются доступными.
+1. После перезагрузки используется новый экран входа, но все графические оболочки остаются доступными.
 
 ## Исключения (когда greeter встроен)
 

@@ -1,9 +1,9 @@
 ---
 aliases:
-  - GPT
-  - MBR
   - fdisk
   - gdisk
+  - GPT
+  - MBR
   - parted
 ---
 

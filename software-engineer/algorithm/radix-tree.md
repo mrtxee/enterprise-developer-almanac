@@ -4,12 +4,12 @@ aliases:
   - Patricia
   - Patricia Tree
   - Prefix tree
-  - Radix Tree
-  - Radix tree
   - radix tree
+  - Radix tree
+  - Radix Tree
   - Дерево цифрового ключа
-  - Сжатое префиксное дерево
   - Префиксное дерево
+  - Сжатое префиксное дерево
 ---
 
 ## Radix Tree — Дерево цифрового ключа

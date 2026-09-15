@@ -8,17 +8,17 @@ aliases:
   - "@QueryHints"
   - "@Transactional"
   - bulk update
+  - bulk-операция
   - clearAutomatically
   - Entity lifecycle callbacks
   - flushAutomatically
   - JPA
   - JpaRepository
   - L2 cache
-  - second-level cache
   - persistence context
+  - second-level cache
   - Spring Data JPA
   - stale data
-  - bulk-операция
   - Контекст персистентности
   - Кэш второго уровня
   - Устаревшие данные

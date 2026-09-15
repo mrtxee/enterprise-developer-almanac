@@ -7,25 +7,25 @@ aliases:
   - URL Shortener
 ---
 
-# Link Shortener
+## Link Shortener
 
-## Требования
+### Требования
 
-### Уточнённые требования
+#### Уточнённые требования
 
 - DAU: `1000000`
 - Av. write per user: 3
 - Peak write request per user: 5
 - Read to write request ratio per user: 10/1
 
-### ФТ
+#### ФТ
 
 - POST /link, body {"long-link" : string}
   - если long-link — не ссылка → error
   - если long-link — была добавлена ранее → вернуть имеющийся результат
 - GET /${short_link}
 
-### НФТ
+#### НФТ
 
 - **Throughput**
   - RPS
@@ -47,7 +47,7 @@ aliases:
     - links created per year: $lkpd*365 ~= 2E9$
     - storage: $lcpy*oljs=2\ 000\ 000\ 000 * 110\ B=220\ GB\ per\ year$
 
-## Проектирование
+### Проектирование
 
 ```mermaid
 ---
@@ -77,7 +77,7 @@ flowchart LR
     n6@{ shape: rounded}
 ```
 
-## API
+### API
 
 1. **Добавить ссылку**
 ```bash

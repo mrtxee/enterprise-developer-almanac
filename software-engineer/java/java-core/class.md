@@ -5,7 +5,9 @@ aliases:
   - anonymous class
   - casting
   - Class
+  - class declaration
   - Class declaration
+  - classes
   - declaration
   - downcasting
   - encapsulation
@@ -15,6 +17,7 @@ aliases:
   - inner class
   - instanceof
   - interface
+  - interfaces
   - method overloading
   - method overriding
   - method signature
@@ -24,11 +27,8 @@ aliases:
   - package
   - polymorphism
   - upcasting
-  - class declaration
-  - interfaces
-  - classes
-  - Анонимный класс
   - абстрактный класс
+  - Анонимный класс
   - декларация класса
   - инкапсуляция
   - интерфейсы

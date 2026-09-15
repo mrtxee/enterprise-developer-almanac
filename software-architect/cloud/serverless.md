@@ -3,21 +3,22 @@ aliases:
   - Cloud Functions
   - Cloud Logs
   - Container Registry
+  - FaaS
   - FIFO
   - Function as a Service
   - Function-as-a-Service
-  - FaaS
   - Integration
   - IoT Core
   - Message Queue
   - Object Storage
+  - PaaS
   - Platform as a Service
   - Platform-as-a-Service
-  - PaaS
   - Scaling
   - Serverless
   - Serverless Functions
   - Serverless platform
+  - serverless-функции
   - Trigger
   - Yandex Cloud
   - Yandex Cloud Functions
@@ -27,7 +28,6 @@ aliases:
   - интеграции
   - масштабирование
   - очереди сообщений
-  - serverless-функции
   - триггеры
 ---
 

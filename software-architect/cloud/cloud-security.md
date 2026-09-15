@@ -1,113 +1,113 @@
 ---
 aliases:
-  - Distributed Denial of Service
-  - DDoS
-  - DDoS Protection
-  - Identity and Access Management
-  - IAM
-  - IAM token
-  - Key Management Service
-  - KMS
-  - Key Encryption Key
-  - KEK
-  - Data Encryption Key
-  - DEK
-  - envelope encryption
+  - 152-ФЗ
+  - access bindings
+  - admin
   - AES-128
   - AES-192
   - AES-256
-  - Secure Socket Layer
-  - SSL
-  - Transport Layer Security
-  - TLS
-  - TLS certificate
-  - HyperText Transfer Protocol Secure
-  - HTTPS
-  - HTTP
-  - Extended Validation
-  - EV
-  - Organization Validation
-  - OV
+  - API-ключи
+  - asymmetric encryption
+  - audit logs
+  - authentication
+  - authorization
+  - authorized keys
+  - availability
+  - biometric data
+  - BYOL
+  - Certificate Manager
+  - Certification Authority
+  - Cloud Interconnect
+  - confidentiality
+  - credentials
+  - data encryption
+  - Data Encryption Key
+  - data protection
+  - DDoS
+  - DDoS Protection
+  - DDoS-атака
+  - decryption
+  - DEK
+  - digital signature
+  - Distributed Denial of Service
   - Domain Validation
   - DV
-  - Certification Authority
-  - Virtual Private Network
-  - VPN
-  - IPSec
-  - OpenVPN
-  - Network Address Translation
-  - NAT
-  - Cloud Interconnect
-  - security groups
-  - firewall
-  - load balancer
-  - Role Based Access Control
-  - RBAC
-  - access bindings
-  - viewer
   - editor
-  - admin
+  - encryption
+  - encryption keys
+  - envelope encryption
+  - EV
+  - Extended Validation
+  - firewall
+  - GDPR
+  - General Data Protection Regulation
+  - HTTP
+  - HTTPS
+  - HyperText Transfer Protocol Secure
+  - IAM
+  - IAM token
+  - IAM-токен
+  - Identity and Access Management
+  - identity federation
   - Identity Provider
   - IdP
-  - credentials
-  - identity federation
-  - OAuth token
-  - General Data Protection Regulation
-  - GDPR
+  - integrity
+  - IPSec
+  - ISMS
   - ISO IEC 27000
   - ISO IEC 27001
   - ISO IEC 27017
   - ISO IEC 27018
-  - ISMS
+  - KEK
+  - Key Encryption Key
+  - Key Management Service
+  - KMS
+  - load balancer
+  - Lockbox
+  - Marketplace
+  - Message Queue
+  - NAT
+  - Network Address Translation
+  - network security
+  - OAuth token
+  - OAuth-токен
+  - Object Storage
+  - OpenVPN
+  - Organization Validation
+  - OV
+  - Pay as you go
   - Payment Card Industry Data Security Standard
   - PCI DSS
-  - Web Application Firewall
-  - WAF
-  - Pay as you go
-  - BYOL
-  - Marketplace
-  - Yandex Cloud
-  - Yandex.Cloud
-  - Yandex ID
-  - Yandex Monitoring
-  - Certificate Manager
-  - Lockbox
-  - Object Storage
-  - Message Queue
-  - shared responsibility
+  - pentest
+  - personal data
+  - primitive roles
+  - private key
+  - public key
+  - RBAC
+  - Role Based Access Control
+  - secrets
+  - Secure Socket Layer
+  - security groups
   - service account
   - service roles
-  - symmetric encryption
-  - asymmetric encryption
-  - encryption
-  - encryption keys
-  - decryption
-  - data protection
-  - data encryption
-  - personal data
-  - public key
-  - private key
-  - digital signature
-  - authentication
-  - authorization
-  - availability
-  - confidentiality
-  - integrity
-  - vulnerability
-  - pentest
-  - secrets
-  - biometric data
-  - primitive roles
+  - shared responsibility
+  - SSL
   - static access keys
-  - authorized keys
-  - audit logs
-  - network security
-  - DDoS-атака
-  - IAM-токен
+  - symmetric encryption
+  - TLS
+  - TLS certificate
   - TLS-сертификат
-  - OAuth-токен
-  - API-ключи
-  - 152-ФЗ
+  - Transport Layer Security
+  - viewer
+  - Virtual Private Network
+  - VPN
+  - vulnerability
+  - WAF
+  - Web Application Firewall
+  - Yandex Cloud
+  - Yandex ID
+  - Yandex Monitoring
+  - Yandex.Cloud
   - авторизация
   - авторизованные ключи
   - асимметричное шифрование
@@ -408,7 +408,7 @@ sequenceDiagram
   И->>К: 5. Уведомление об успешной аутентификации
 ```
 
-3. **Тип 3. Сервисные аккаунты.** Операции с облаком можно выполнять не только под пользовательскими аккаунтами, но и через сервисные аккаунты — специальный тип аккаунтов, которые используются для доступа к ресурсам Yandex Cloud от имени приложений. Также под сервисными аккаунтами могут выполнять операции облачные функции и сервисы, запущенные в виртуальных машинах. Аутентификацию сервисного аккаунта можно выполнять тремя способами:
+1. **Тип 3. Сервисные аккаунты.** Операции с облаком можно выполнять не только под пользовательскими аккаунтами, но и через сервисные аккаунты — специальный тип аккаунтов, которые используются для доступа к ресурсам Yandex Cloud от имени приложений. Также под сервисными аккаунтами могут выполнять операции облачные функции и сервисы, запущенные в виртуальных машинах. Аутентификацию сервисного аккаунта можно выполнять тремя способами:
    1. **Авторизованные ключи.** Используются для получения IAM-токена с помощью открытого и секретного ключа.
    2. **API-ключи.** Используются в некоторых сервисах для упрощённой аутентификации вместо IAM-токена. Могут пригодиться для работы с сервисами SpeechKit, Vision и Translate.
    3. **Статические ключи доступа.** Необходимы при использовании AWS-совместимых сервисов, например в Object Storage или Message Queue.

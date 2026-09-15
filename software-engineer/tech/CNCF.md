@@ -1,7 +1,7 @@
 ---
 aliases:
-  - CNCF
   - Cloud Native Computing Foundation
+  - CNCF
   - Фонд облачных вычислений
 ---
 

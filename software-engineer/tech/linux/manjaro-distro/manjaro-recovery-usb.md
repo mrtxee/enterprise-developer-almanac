@@ -1,13 +1,13 @@
 ---
 aliases:
-  - GNU dd
+  - balenaEtcher
+  - dd
   - GNOME Disks
+  - GNU dd
   - Manjaro
   - Manjaro ARM
   - USB Live
   - Ventoy
-  - balenaEtcher
-  - dd
   - Загрузочная флешка Manjaro
 ---
 
@@ -95,7 +95,7 @@ sync
 lsblk
 ```
 
-3. Смонтировать корень и остальные разделы:
+1. Смонтировать корень и остальные разделы:
 
 ```bash
 mount /dev/sda2 /mnt
@@ -105,26 +105,26 @@ mount --bind /proc /mnt/proc
 mount --bind /sys /mnt/sys
 ```
 
-4. Войти в окружение восстановления (chroot):
+1. Войти в окружение восстановления (chroot):
 
 ```bash
 chroot /mnt /bin/bash
 ```
 
-5. Переустановить загрузчик:
+1. Переустановить загрузчик:
 
 ```bash
 grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-6. Обновить ядро внутри chroot, если причина сбоя — обновление ядра:
+1. Обновить ядро внутри chroot, если причина сбоя — обновление ядра:
 
 ```bash
 pacman -Syu linux linux-headers
 ```
 
-7. Выйти из chroot и перезагрузиться:
+1. Выйти из chroot и перезагрузиться:
 
 ```bash
 exit

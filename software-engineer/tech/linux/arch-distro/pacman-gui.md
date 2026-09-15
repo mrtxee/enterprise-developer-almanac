@@ -1,12 +1,12 @@
 ---
 aliases:
-  - AUR
   - Arch Linux
+  - AUR
   - Bauh
   - GNOME
+  - graphical package manager
   - GuiMan
   - Octopi
-  - graphical package manager
   - pacman
   - графический менеджер пакетов
 ---

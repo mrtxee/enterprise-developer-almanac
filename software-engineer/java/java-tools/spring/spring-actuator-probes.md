@@ -1,16 +1,16 @@
 ---
 aliases:
   - Actuator
-  - Kubernetes probe
-  - Kubernetes probes
-  - Management endpoints
-  - Spring Boot
-  - Spring Boot Actuator
   - health
   - healthcheck
+  - Kubernetes probe
+  - Kubernetes probes
   - liveness
+  - Management endpoints
   - probes
   - readiness
+  - Spring Boot
+  - Spring Boot Actuator
   - spring-boot-starter-actuator
 ---
 

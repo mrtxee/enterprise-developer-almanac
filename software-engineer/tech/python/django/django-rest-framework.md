@@ -1,36 +1,36 @@
 ---
 aliases:
-  - Application Programming Interface
   - API
-  - interface
-  - Representational State Transfer
-  - REST
-  - RESTful
-  - REST API
-  - Rest API
-  - REST-like
+  - Application Programming Interface
   - Cacheable
-  - Uniform interface
-  - HATEOAS
+  - Django
   - Django Rest Framework
   - Django REST Framework
   - djangorestframework
-  - Django
   - DRF
+  - HATEOAS
+  - interface
+  - Representational State Transfer
+  - REST
+  - Rest API
+  - REST API
+  - REST-like
+  - RESTful
+  - Uniform interface
 ---
-# REST API и Django Rest Framework
+## REST API и Django Rest Framework
 
-## API (Application Programming Interface)
+### API (Application Programming Interface)
 
 `API` — **Application Programming Interface**. Описание способов взаимодействия одной компьютерной программы с другими.
 
-## REST (Representational State Transfer)
+### REST (Representational State Transfer)
 
 **Re**presentational **S**tate **T**ransfer — «передача подготовленного состояния».
 
 REST — это набор правил того, как программисту организовать написание кода серверного приложения, чтобы все системы легко обменивались данными и приложение можно было масштабировать.
 
-### 6 принципов написания RESTful-интерфейсов
+#### 6 принципов написания RESTful-интерфейсов
 
 1. **Client-Server**. Отделяя пользовательский интерфейс от хранилища данных, мы улучшаем переносимость пользовательского интерфейса на другие платформы и улучшаем масштабируемость серверных компонент за счёт их упрощения.
 2. **Stateless (без состояния)**. Каждый запрос от клиента к серверу должен содержать в себе всю необходимую информацию и не может полагаться на какое-либо состояние, хранящееся на стороне сервера. Таким образом, информация о текущей сессии должна целиком храниться у клиента.
@@ -43,13 +43,13 @@ REST — это набор правил того, как программист�
 5. **Layered system (многоуровневая система)**. Многоуровневость достигается за счёт ограничения поведения компонентов таким образом, что компоненты «не видят» другие компоненты, кроме расположенных на ближайших уровнях, с которыми они взаимодействуют.
 6. **Code on demand (код по мере необходимости, необязательно)**. REST позволяет наращивать функциональность клиентского приложения по мере необходимости при помощи скачивания и исполнения кода в виде апплетов или скриптов. Это упрощает клиентские приложения, уменьшая количество заранее написанных возможностей.
 
-### REST и RESTful
+#### REST и RESTful
 
 REST и RESTful — одно и то же понятие. Если в проекте реализованы только URL для выборки данных, приложение называют REST-приложением (REST-like).
 
 Если все серверные функции реализованы через REST, то это законченное RESTful-приложение.
 
-### Методы HTTP запроса
+#### Методы HTTP запроса
 
 HTTP определяет множество методов запроса, которые указывают, какое желаемое действие выполнится для данного ресурса. Несмотря на то, что их названия могут быть существительными, эти методы запроса иногда называются **HTTP глаголами**.
 
@@ -67,7 +67,7 @@ HTTP определяет множество методов запроса, ко
 
 ---
 
-## Установка Django Rest Framework
+### Установка Django Rest Framework
 
 Установка:
 
@@ -75,6 +75,6 @@ HTTP определяет множество методов запроса, ко
 pip install django djangorestframework
 ```
 
-## Quickstart
+### Quickstart
 
 Официальный гайд по быстрому старту (quickstart) описан в документации Django Rest Framework.

@@ -1,12 +1,12 @@
 ---
 aliases:
+  - APISIX
   - APISIX Gateway
   - Consul
   - HashiCorp
   - Istio
   - Service Discovery
   - Service Registry
-  - APISIX
   - Обнаружение сервисов
   - Реестр сервисов
 ---
