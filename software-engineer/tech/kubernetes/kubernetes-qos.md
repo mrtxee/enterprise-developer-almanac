@@ -1,0 +1,60 @@
+---
+aliases:
+  - Eviction
+  - QoS
+  - Quality of Service
+  - k8s
+  - kubernetes
+  - Вытеснение
+---
+
+## Kubernetes QoS (Quality of Service)
+
+**QoS** в Kubernetes определяет, как Pod будут **вытесняться (evict)** при нехватке ресурсов (CPU/памяти). Чем выше класс, тем больше гарантий.
+
+## Классы QoS
+
+| **Класс** | **Условия** | **Приоритет** | **Когда вытесняется** |
+|---|---|---|---|
+| **Guaranteed** | Для **каждого контейнера** в Pod: <br>- `requests` == `limits` (CPU и память) | **Самый высокий** | Только если процессы очень нуждаются |
+| **Burstable** | Хотя бы один контейнер имеет `requests` < `limits` (или только `requests`) | **Средний** | После всех Guaranteed, но до BestEffort |
+| **BestEffort** | Нет **ни `requests`, ни `limits`** ни у одного контейнера | **Самый низкий** | **Вытесняется первым** |
+
+## Примеры
+
+### Guaranteed
+
+```yaml
+resources:
+  requests:
+    cpu: "100m"
+    memory: "256Mi"
+  limits:
+    cpu: "100m"
+    memory: "256Mi"
+```
+
+### Burstable
+
+```yaml
+resources:
+  requests:
+    cpu: "50m"
+    memory: "128Mi"
+  limits:
+    cpu: "100m"
+    memory: "256Mi"
+```
+
+### BestEffort
+
+```yaml
+# resources не указаны
+```
+
+## Зачем это нужно
+
+- При **Node Pressure** (нехватка памяти/CPU) kubelet вытесняет (убивает) **BestEffort → Burstable → Guaranteed**.
+- Помогает **защитить критичные приложения** (базы данных, контроллеры).
+
+> **Итог:** QoS — это механизм гарантий ресурсов и порядка вытеснения в условиях нагрузки.

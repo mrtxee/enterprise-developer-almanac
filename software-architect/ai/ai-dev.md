@@ -1,0 +1,46 @@
+---
+aliases:
+  - Acceptance Criteria
+  - AI eval designer
+  - AI-first
+  - AI-центричная разработка
+  - code confidence
+  - code coverage
+  - code-centric
+  - Context drift
+  - deep-coding
+  - intent-centric
+  - Prompting
+  - Red Teaming
+  - vibe-coding
+  - вайб-кодинг
+  - дип-кодинг
+  - Дрейф контекста
+  - Интент-центричная разработка
+  - Исполняемое намерение
+  - Код-центричная разработка
+  - Критерии приёмки
+  - Покрытие кода
+  - Промптинг
+  - Ред-тиминг
+  - Уверенность в коде
+---
+
+## Идеи разработки с AI
+
+- code-centric, intent-centric, AI-first
+  - intent articulation (компетенция)
+  - self consistency
+- Промптинг
+  - контекстный контейнер: goal, constraints, fwe-shot (examples)
+- vibe-coding vs deep-coding
+- AI-Augmented
+  - Context drift
+- AI eval designer
+- Red Teaming
+- Lost-in-the-middle
+- Acceptance Criteria
+- Исполняемое намерение
+- AI-first в разработке
+- acceptance criteria vs definition criteria
+- code coverage vs code confidence

@@ -1,0 +1,79 @@
+---
+aliases:
+  - .desktop
+  - GNOME
+  - IntelliJ IDEA
+  - JetBrains
+  - idea
+---
+
+**Файл:** `idea-2025.3.5.tar.gz`.
+
+Это не установочный пакет, а просто архив с уже готовой, собранной программой (как portable-версия в Windows). Устанавливать её не нужно — достаточно распаковать и запустить. Для интеграции в GNOME потребуется вручную создать файл `.desktop`, чтобы приложение появилось в меню.
+
+## Распаковка архива
+
+Программы такого типа принято размещать в директории `/opt`, но можно и в домашней папке (например, `~/.local/share`), если на компьютере один пользователь. Пример с `/opt`.
+
+**Создание папки и распаковка:**
+
+```bash
+# Создаём папку для программ JetBrains, если её ещё нет
+sudo mkdir -p /opt/jetbrains
+
+# Распаковываем архив в эту папку
+sudo tar -xzf ~/Downloads/idea-2025.3.5.tar.gz -C /opt/jetbrains
+```
+
+Замените путь `~/Downloads/` на тот, где находится скачанный файл.
+
+## Создание ярлыка для GNOME
+
+Для этого нужно создать файл с расширением `.desktop` в специальной локальной папке:
+
+```bash
+nano ~/.local/share/applications/idea.desktop
+```
+
+Вставьте в него следующий текст. Обратите внимание на строки `Exec=` и `Icon=` — путь в них нужно подставить тот, который образовался после распаковки. Обычно папка называется `idea-IU-...` (IntelliJ IDEA Ultimate) или `idea-IC-...` (Community Edition). Проверьте точное имя командой: `ls /opt/jetbrains`.
+
+```ini
+[Desktop Entry]
+Name=IntelliJ IDEA 2025.3.5
+Comment=Capable and Ergonomic IDE for JVM
+Exec=/opt/jetbrains/idea-IU-xxx/bin/idea.sh
+Icon=/opt/jetbrains/idea-IU-xxx/bin/idea.png
+Terminal=false
+Type=Application
+Categories=Development;IDE;
+StartupWMClass=jetbrains-idea
+```
+
+Замените `/opt/jetbrains/idea-IU-xxx/` на реальный путь в строках `Exec` и `Icon`.
+
+## Автоматическое создание ярлыка
+
+Можно не писать файл вручную, а попросить саму IntelliJ IDEA создать его при первом запуске. Это надёжнее, так как версия и иконка подставятся сами.
+
+Сначала просто запустите программу из терминала, набрав полный путь:
+
+```bash
+#/opt/jetbrains/idea-IU-253.33514.17/bin/idea.sh
+/opt/jetbrains/idea-IU-253.33514.17/bin/idea
+```
+
+Замените `idea-IU-xxx` на вашу папку.
+
+После запуска зайдите в меню **Tools → Create Desktop Entry...**. В открывшемся окне поставьте галочку «Create the entry for all users (requires superuser privileges)» — это создаст ярлык, видимый в GNOME для всех учётных записей. Затем нажмите **OK**. Программа сама создаст правильный `.desktop` файл, и IDEA появится в списке приложений.
+
+## Ассоциации с проектами (опционально)
+
+После установки ярлыка любым из способов GNOME должен подхватить ассоциации для файлов `.java`, `.kt` и т. д. Если этого не произошло, перезайдите в сеанс или выполните в терминале:
+
+```bash
+update-desktop-database ~/.local/share/applications
+```
+
+Или просто перезагрузите компьютер.
+
+Теперь IDEA будет доступна в общем списке приложений, её можно закрепить на панели задач и искать через поиск GNOME.
