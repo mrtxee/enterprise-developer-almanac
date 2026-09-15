@@ -6,55 +6,6 @@
 
 ```plain
 .
-├── attachments
-│   ├── agent
-│   │   └── eg
-│   │       ├── after.md
-│   │       └── before.md
-│   └── image
-│       ├── 082a19fc1e9270d70ed502db4ba242b0.png
-│       ├── 1225bb30b883124d0d770f7a46af329d.jpeg
-│       ├── 6b03a9e6d8174da3a7b228eb9acbe001.png
-│       ├── 7dab152360259f7536af5cd17cc9677f.png
-│       ├── f9fd549a2a104f1eb7acf5098dd0afe8.png
-│       ├── image006.png
-│       ├── markdown & obsidian.md
-│       ├── Pasted image 20250201011334.png
-│       ├── Pasted image 20250201011429.png
-│       ├── Pasted image 20250514235845.png
-│       ├── Pasted image 20260218010231.png
-│       ├── Pasted image 20260218010416.png
-│       ├── Point_quadtree.svg.png
-│       ├── Untitled 10 2.webp
-│       ├── Untitled 12 3.png
-│       ├── Untitled 1 2.gif
-│       ├── Untitled 1 5.png
-│       ├── Untitled 18 2.png
-│       ├── Untitled 19 2.png
-│       ├── Untitled 20 2.png
-│       ├── Untitled 21 2.png
-│       ├── Untitled 22 2.png
-│       ├── Untitled 2 2.gif
-│       ├── Untitled 23 2.png
-│       ├── Untitled 24 2.png
-│       ├── Untitled 27 2.png
-│       ├── Untitled 29.png
-│       ├── Untitled 3 2.gif
-│       ├── Untitled 4 2.gif
-│       ├── Untitled 5.gif
-│       ├── Untitled 6 2.webp
-│       ├── Untitled 6 3.png
-│       ├── Untitled 6 4.png
-│       └── Untitled 9.png
-├── product-manager
-│   ├── ab-testing.md
-│   ├── business-metrics.md
-│   ├── change-management.md
-│   ├── PML.md
-│   ├── prioritisation-technique.md
-│   ├── RDS.md
-│   ├── SPMnP.md
-│   └── SQALE.md
 ├── README.md
 ├── software-architect
 │   ├── ai
@@ -813,7 +764,15 @@
 │       ├── abbreviations.md
 │       ├── boilerplate.md
 │       └── spaghetti.md
-└── tree.txt
+└── product-manager
+    ├── ab-testing.md
+    ├── business-metrics.md
+    ├── change-management.md
+    ├── PML.md
+    ├── prioritisation-technique.md
+    ├── RDS.md
+    ├── SPMnP.md
+    └── SQALE.md
 
 67 directories, 742 files
 
