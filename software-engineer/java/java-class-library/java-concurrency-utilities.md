@@ -121,7 +121,7 @@ public Semaphore(int permits)
 public Semaphore(int permits, boolean fair) // если fair = true, семафор гарантирует FIFO-предоставление
 ```
 
-![[attachments/Untitled 5.gif|Untitled 5.gif]]
+![[Untitled 5.gif|Untitled 5.gif]]
 
 ### class CountDownLatch
 
@@ -129,7 +129,7 @@ public Semaphore(int permits, boolean fair) // если fair = true, семаф�
 
 Объект синхронизации потоков `CountDownLatch`, блокирующий один или несколько потоков до тех пор, пока не будут выполнены определённые условия. Количество условий задаётся счётчиком. При обнулении счётчика, то есть при выполнении всех условий, блокировки снимаются, и потоки продолжают выполнение. Пример: экскурсовод, собирающий группу из заданного количества туристов; как только группа собрана, она отправляется на экскурсию. Счётчик одноразовый и не может быть инициализирован заново.
 
-![[attachments/Untitled 1 2.gif|Untitled 1 2.gif]]
+![[Untitled 1 2.gif|Untitled 1 2.gif]]
 
 ### class CyclicBarrier
 
@@ -139,7 +139,7 @@ public Semaphore(int permits, boolean fair) // если fair = true, семаф�
 
 Барьер для группы потоков означает, что каждый поток должен остановиться в определённом месте и ожидать прихода остальных. Как только все потоки достигли барьера, их выполнение продолжается.
 
-![[attachments/Untitled 2 2.gif|Untitled 2 2.gif]]
+![[Untitled 2 2.gif|Untitled 2 2.gif]]
 
 ### class Phaser
 
@@ -152,7 +152,7 @@ public Semaphore(int permits, boolean fair) // если fair = true, семаф�
 - Количество участников-потоков для каждой фазы жёстко не задано и может меняться. Поток может регистрироваться в качестве участника и отменять своё участие.
 - Исполнительный поток не обязан ожидать, пока все остальные участники соберутся у барьера, — достаточно сообщить о своём прибытии.
 
-![[attachments/Untitled 3 2.gif|Untitled 3 2.gif]]
+![[Untitled 3 2.gif|Untitled 3 2.gif]]
 
 ### class Exchanger
 
@@ -160,7 +160,7 @@ public Semaphore(int permits, boolean fair) // если fair = true, семаф�
 
 Класс `Exchanger` (обменник) предназначен для упрощения процесса обмена данными между двумя потоками. Принцип действия связан с ожиданием того, что два потока вызовут метод `exchange()`. Как только это произойдёт, Exchanger произведёт обмен данными, предоставляемыми обоими потоками.
 
-![[attachments/Untitled 4 2.gif|Untitled 4 2.gif]]
+![[Untitled 4 2.gif|Untitled 4 2.gif]]
 
 ## Атомарные классы (Atomic)
 
