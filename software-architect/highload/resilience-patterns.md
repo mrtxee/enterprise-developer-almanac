@@ -80,7 +80,7 @@ aliases:
    1. [[resilience-patterns|Health Check]] — проверка здоровья
    2. [[resilience-patterns|Graceful Degradation]] — грациозная деградация
    3. Chaos Engineering
-   4. [[DRP|Disaster Recovery Plan]] — DRP
+   4. [[disaster-recovery-plan|Disaster Recovery Plan]] — DRP
 5. **Паттерны обнаружения и восстановления**
    1. [[adaptive-concurrency]]
    2. [[request-collapsing]] — свёртка запросов

@@ -195,9 +195,9 @@ Scheduled-релизы **запрещены** в периоды закрытия
 
 | Событие | Канал | Срок | Ответственный |
 |---------|-------|------|---------------|
-| Плановый релиз | Slack #product-releases + Email | За 3 рабочих дня | Release Manager |
+| Плановый релиз | Slack product-releases + Email | За 3 рабочих дня | Release Manager |
 | Changelog | Confluence / Wiki | В день релиза | Product Owner |
-| Hotfix / Инцидент | Slack #incidents + PagerDuty | Немедленно | On-call Engineer |
+| Hotfix / Инцидент | Slack incidents + PagerDuty | Немедленно | On-call Engineer |
 | Deprecation Notice | Email владельцам систем + Jira ticket | За 3 месяца | Tech Lead |
 | Post-release Report | Confluence | На следующий рабочий день | QA Lead |
 

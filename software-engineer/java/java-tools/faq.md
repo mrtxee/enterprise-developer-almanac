@@ -25,7 +25,6 @@ aliases:
   - CRUD
   - CSV
   - daemon
-  - Docker
   - Dynamic Programming
   - Elastic Beanstalk
   - Elasticsearch

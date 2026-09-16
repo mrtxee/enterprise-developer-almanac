@@ -1,7 +1,6 @@
 ---
 aliases:
   - Auto-deletion
-  - CLI
   - Container Registry
   - Docker
   - Docker Image
@@ -10,7 +9,6 @@ aliases:
   - Docker-image
   - Dry Run
   - Expire Period
-  - IAM
   - Image Name
   - Image Tag
   - Lifecycle Policy
@@ -21,7 +19,6 @@ aliases:
   - Tag Regexp
   - Untagged
   - Yandex Cloud
-  - Yandex Cloud IAM
   - Yandex Container Registry
   - YC
   - автоматическое удаление
@@ -32,7 +29,6 @@ aliases:
   - политика жизни
   - политика удаления
   - реестр контейнеров
-  - репозиторий
   - репозиторий контейнеров
   - тег
   - удержание последних

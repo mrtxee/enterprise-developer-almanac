@@ -94,7 +94,7 @@ aliases:
 
 ## Camunda
 
-> **Camunda** — это **движок BPM (Business Process Management)**, основанный на стандарте **[[BPMN]] 2.0**
+> **Camunda** — это **движок BPM (Business Process Management)**, основанный на стандарте **[[business-process-model-notation]] 2.0**
 > Используется для:
 > - Онбординга сотрудников
 > - Подтверждения заказов

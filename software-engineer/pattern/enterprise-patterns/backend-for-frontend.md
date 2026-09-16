@@ -51,7 +51,7 @@ flowchart TB
   classDef Sky stroke-width:1px, stroke-dasharray:none, stroke:#374D7C, fill:#E2EBFF, color:#374D7C
   classDef Ash stroke-width:1px, stroke-dasharray:none, stroke:#999999, fill:#EEEEEE, color:#000000
 ```
-Мобильное приложение может вызывать методы BFF по протоколу REST API, а веб-приложение — по протоколу [[GraphQL]].
+Мобильное приложение может вызывать методы BFF по протоколу REST API, а веб-приложение — по протоколу [[graph-ql]].
 
 В свою очередь BFF вызовет методы API на нужном сервере или серверах, извлечёт данные и выполнит все необходимые операции перед отправкой этих данных клиенту. Фронтенд получит готовую картинку.
 

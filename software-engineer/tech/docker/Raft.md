@@ -1,6 +1,5 @@
 ---
 aliases:
-  - Docker
   - KRaft
   - Raft
 ---

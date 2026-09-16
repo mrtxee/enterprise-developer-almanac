@@ -89,7 +89,7 @@ aliases:
 - **Требования к интерфейсам:** форматы взаимодействия компонентов, протоколы или способы взаимодействия, например, синхронные или асинхронные.
 - **Физические ограничения:** они накладываются на аппаратные средства и окружение системы, например, температура, влажность, условия эксплуатации оборудования.
 
-### [[FURPSplus]] – Functionality Usability Reliability Performance Supportability Restrictions Plus
+### [[furps-plus]] – Functionality Usability Reliability Performance Supportability Restrictions Plus
 
 > Реализует [[software-life-cycle]]
 
@@ -155,7 +155,7 @@ graph LR
   - **События**, действия, шлюзы, потоки, дорожки.
 - BPMS
 
-### [[EPC]] – Event-Driven Process Chain
+### [[event-driven-process-chain]] – Event-Driven Process Chain
 
 Пример EPC-схемы взаимодействия:
 
@@ -187,7 +187,7 @@ flowchart TB
     M --> O[Транзакция отменена]
 ```
 
-### [[BPMN]] – Business Process Model and Notation
+### [[business-process-model-notation]] – Business Process Model and Notation
 
 Пример BPMN:
 

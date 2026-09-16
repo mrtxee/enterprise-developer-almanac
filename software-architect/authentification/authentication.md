@@ -20,7 +20,7 @@ aliases:
     - [[OIDC|OpenID Connect]] – протокол аутентификации, надстройка над [[oauth|OAuth2]]
     - [[SAML]] – XML-based язык разметки утверждений безопасности, для передачи кредов между узлами IAM
     - [[kerberos]] – протокол аутентификации, основанный на тикетах, центром выдачи тикетов и симметричном шифровании
-  - [[IAM]] – Identity and Access Management
+  - [[identity-access-management]] – Identity and Access Management
     - комплекс технологий по идентификации клиентов и управлению доступом
     - [[keycloak]] – реализация IAM
     - [[federated-identity]] – обмен доверием между смежными ресурсами

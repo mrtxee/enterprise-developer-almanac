@@ -14,7 +14,7 @@ aliases:
 
 ## DDD Context Map vs 4C Context Map
 
-**[[c4|4C]] Context Map** и **[[domain-driven-design|DDD]] Context Map** — это две разные диаграммы, хотя обе используются для визуализации бизнес-контекстов.
+**[[c4-diagram|4C]] Context Map** и **[[domain-driven-design|DDD]] Context Map** — это две разные диаграммы, хотя обе используются для визуализации бизнес-контекстов.
 
 ## Что такое DDD Context Map
 

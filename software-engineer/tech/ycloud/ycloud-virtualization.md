@@ -28,7 +28,7 @@ aliases:
 
 ### управление доступом
 
-- **[[IAM]] — Identity and Access Management**
+- **[[identity-access-management]] — Identity and Access Management**
   - Проверяет все операции в Yandex Cloud и управляет доступом на основе ролей.
   - Отвечает на вопрос «кому можно».
 - **ACL — Access Control List**

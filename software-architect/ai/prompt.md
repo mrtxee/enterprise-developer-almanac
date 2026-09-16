@@ -1,7 +1,5 @@
 ---
 aliases:
-  - agent
-  - ai
   - Chain-of-Thought
   - CoT
   - Few-Shot

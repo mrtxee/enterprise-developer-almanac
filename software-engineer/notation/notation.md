@@ -38,7 +38,7 @@ aliases:
 Архитектурные нотации:
 
 - Стратегические нотации цифровой трансформации
-  - [[BCM]] — карта бизнес возможностей.
+  - [[business-capability-map]] — карта бизнес возможностей.
   - [[stakeholder-map]] — карта стейкхолдеров.
   - [[it-landscape-map]] — IT-ландшафт организации.
 - Управления архитектурой
@@ -46,12 +46,12 @@ aliases:
   - [[ITIL]] — фреймворк для управления IT-услугами.
   - [[COBIT]] — фреймворк для управления ИТ-ресурсами.
 - Нотации требований к системе
-  - [[FURPSplus]]
+  - [[furps-plus]]
   - [[use-case]]
 - Процессы
-  - [[EPC]] — Event-Driven Process Chain.
-  - [[BPMN]] — Business Process Model and Notation.
+  - [[event-driven-process-chain]] — Event-Driven Process Chain.
+  - [[business-process-model-notation]] — Business Process Model and Notation.
 - Нотации системы
-  - [[c4]] — контекст, контейнер, компонент, код.
-  - [[ERD]] — связи между сущностями.
+  - [[c4-diagram]] — контекст, контейнер, компонент, код.
+  - [[entity-relationship-diagram]] — связи между сущностями.
   - [[sequence-diagram]] — диаграмма последовательности действий.

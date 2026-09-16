@@ -5,6 +5,7 @@ aliases:
   - API-шлюз
   - APISIX
   - APISIX Gateway
+  - etcd
   - шлюз API
 ---
 

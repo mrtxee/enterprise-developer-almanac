@@ -11,7 +11,6 @@ aliases:
   - IBM J9
   - Java Virtual Machine
   - JIT
-  - JMM
   - JRockit
   - JVM
   - Native Image

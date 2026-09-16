@@ -7,7 +7,6 @@ aliases:
   - SCA
   - Security Testing
   - Semgrep
-  - SOAR
   - Static Application Security Testing
   - Статический
 ---

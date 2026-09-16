@@ -5,7 +5,6 @@ aliases:
   - Request Collapsing
   - Request collapsing pattern
   - Strict Collapsing
-  - Swear case
   - Time-based collapsing
   - Паттерн Request Collapsing
   - Сворачивание запросов

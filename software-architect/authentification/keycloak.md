@@ -14,7 +14,7 @@ aliases:
 
 ### Что такое Keycloak
 
-> **Keycloak** — это **open-source Identity and Access Management ([[IAM]]) сервер**, созданный Red Hat, который позволяет:
+> **Keycloak** — это **open-source Identity and Access Management ([[identity-access-management]]) сервер**, созданный Red Hat, который позволяет:
 > - Реализовать **SSO**
 > - Поддерживать **OAuth2**, **OpenID Connect**, **SAML**
 > - Управлять **пользователями, ролями, клиентами**

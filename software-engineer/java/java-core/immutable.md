@@ -47,7 +47,7 @@ assert a == b; // true — один и тот же объект в пуле
 
 **Построение надёжных систем**
 Immutable-объекты упрощают:
-- [[domain-driven-design]] ([[Domain-Driven Development]]) — value objects должны быть immutable;
+- [[domain-driven-design]] ([[domain-driven-development]]) — value objects должны быть immutable;
 - [[event-sourcing]] — события immutable по определению;
 - React-style UI — состояние immutable, поэтому легко отслеживать изменения.
 

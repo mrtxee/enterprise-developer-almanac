@@ -3,6 +3,7 @@ aliases:
   - API Gateway
   - Edge Proxy
   - Envoy
+  - etcd
   - HAProxy
   - Load Balancer
   - Network Proxy

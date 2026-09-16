@@ -9,3 +9,5 @@
 /attachments/human
 markdown & obsidian.md
 *.iml
+*.ipr
+*.iws

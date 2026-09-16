@@ -8,7 +8,6 @@ aliases:
   - SPDX
   - Софтверная спецификация
 ---
-
 ## SBOM (Software Bill of Materials)
 
 **SBOM (Software Bill of Materials)** — «спецификация ПО»: список всех компонентов, из которых состоит программный продукт.

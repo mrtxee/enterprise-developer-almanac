@@ -3,7 +3,6 @@ aliases:
   - Active Record
   - Data Mapper
   - DDD
-  - Enterprise Architecture
   - Enterprise patterns
   - Enterprise-паттерны
   - Identity Map
