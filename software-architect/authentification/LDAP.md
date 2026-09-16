@@ -100,7 +100,7 @@ graph LR
 | ✅ **Управление пользователями** | Добавлять/удалять пользователей в одном месте |
 | ✅ **Авторизация** | Кто имеет доступ к чему? |
 | ✅ **Хранение метаданных** | Email, телефон, отдел, должность |
-| ✅ **Интеграция с Active Directory** | LDAP — основа AD |
+| ✅ **Интеграция с [[active-directory|Active Directory]]** | LDAP — основа AD |
 
 ---
 
@@ -109,10 +109,10 @@ graph LR
 | Реализация | Описание |
 |-----------|----------|
 | **OpenLDAP** | Самая популярная open-source реализация |
-| **Microsoft Active Directory** | Корпоративный стандарт (Windows-ориентированный) |
+| **[[active-directory|Microsoft Active Directory]]** | Корпоративный стандарт (Windows-ориентированный) |
 | **Apache Directory Server** | Java-based LDAP-сервер |
 | **389 Directory Server** | От Red Hat (ранее Fedora Directory Server) |
-| **FreeIPA** | Интегрированное решение (LDAP + Kerberos + DNS) |
+| **FreeIPA** | Интегрированное решение (LDAP + [[kerberos|Kerberos]] + DNS) |
 
 ---
 

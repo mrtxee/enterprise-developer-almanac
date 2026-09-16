@@ -71,7 +71,7 @@ aliases:
 - риск превращения в «монолит» с избыточной логикой;
 - требует продуманной архитектуры команд/обработчиков.
 
-**Примеры реализаций:** Laravel, Symfony, Spring MVC, ASP.NET MVC.
+**Примеры реализаций:** Laravel, Symfony, [[spring|Spring MVC]], ASP.NET MVC.
 
 ## Application Controller
 

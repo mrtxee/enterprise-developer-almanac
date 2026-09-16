@@ -4,22 +4,21 @@ aliases:
   - ELK
   - Grafana
   - Kibana
-  - OpenSearch
   - Визуализация логов
   - Панель мониторинга Grafana
   - Поиск по логам
 ---
 
-**Kibana** и **[[grafana]]** — это два популярных инструмента визуализации, но они созданы для разных целей.
+**Kibana** и **[[grafana|Grafana]]** — это два популярных инструмента визуализации, но они созданы для разных целей.
 
 ## Краткий ответ
 
 | Характеристика               | **Kibana**                                       | **Grafana**                                                                 |
 | ---------------------------- | ------------------------------------------------ | --------------------------------------------------------------------------- |
 | **Основное назначение**      | Поиск и анализ логов                             | Визуализация метрик и мониторинг                                            |
-| **Ядро**                     | [[Elasticsearch]] / OpenSearch                   | Любой источник (Prometheus, InfluxDB, MySQL)                                |
+| **Ядро**                     | [[Elasticsearch|Elasticsearch]] / OpenSearch                   | Любой источник (Prometheus, InfluxDB, MySQL)                                |
 | **Лучше всего подходит для** | Текст, логи, full-text search                    | Графики, дашборды, алерты по метрикам                                       |
-| **Источники данных**         | Только Elastic/OpenSearch                        | Prometheus, Graphite, Loki, Influx, MySQL, PostgreSQL, AWS CloudWatch и др. |
+| **Источники данных**         | Только Elastic/OpenSearch                        | [[Prometheus|Prometheus]], Graphite, Loki, Influx, MySQL, PostgreSQL, AWS CloudWatch и др. |
 | **Аналитика логов**          | ✅ Отлично                                        | ❌ Слабее                                                                    |
 | **Метрики (CPU, Memory)**    | Можно                                            | ✅ Идеально                                                                  |
 | **Поиск по тексту**          | ✅ Очень мощный                                   | ⚠️ Только если используется Loki или OpenSearch                             |
@@ -36,7 +35,7 @@ aliases:
 ## Что такое Kibana
 
 > **Kibana** — это **визуализационный интерфейс для Elasticsearch** (или OpenSearch).
-> Создана компанией Elastic, как часть **[[ELK]]-стека**:
+> Создана компанией Elastic, как часть **[[ELK|ELK]]-стека**:
 > `Elasticsearch` → `Logstash/Filebeat` → `Kibana`
 
 ### Основные возможности
@@ -50,9 +49,9 @@ aliases:
 
 ### Где используется
 
-- [[dev-ops]], [[SRE]]
+- [[dev-ops|DevOps]], [[SRE|SRE]]
 - Поиск ошибок в микросервисах
-- Безопасность ([[SIEM]]): поиск атак
+- Безопасность ([[SIEM|SIEM]]): поиск атак
 - Аудит: кто, когда и что делал
 
 ---
@@ -65,15 +64,15 @@ aliases:
 ### Основные возможности
 
 - Потрясающие графики и дашборды
-- Поддержка: [[Prometheus]], Loki, InfluxDB, MySQL, [[PostgreSQL]], CloudWatch, Azure Monitor
+- Поддержка: [[Prometheus|Prometheus]], [[grafana|Loki]], InfluxDB, MySQL, [[PostgreSQL|PostgreSQL]], CloudWatch, Azure Monitor
 - Alerting: настройка тревог
 - Templating: динамические дашборды
 - Multi-source: один дашборд → из 3 источников
 
 ### Где используется
 
-- Мониторинг [[kubernetes]] (CPU, memory, pod restarts)
-- Наблюдаемость ([[observability]])
+- Мониторинг [[kubernetes|Kubernetes]] (CPU, memory, pod restarts)
+- Наблюдаемость ([[observability|Observability]])
 - CI/CD pipeline dashboards
 
 ---

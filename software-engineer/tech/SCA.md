@@ -68,7 +68,7 @@ trivy rootfs /                       # rootfs
 
 ### cdxgen
 
-Возвращает **SBOM в формате CycloneDX** (JSON или XML):
+Возвращает **SBOM в формате CycloneDX** ([[config-formats|JSON]] или [[config-formats|XML]]):
 
 ```json
 {
@@ -95,7 +95,7 @@ trivy rootfs /                       # rootfs
 Что находит:
 
 - **Уязвимости** (CVE) в зависимостях и ОС-пакетах.
-- **Мисконфигурации** (Kubernetes, Terraform, Dockerfile).
+- **Мисконфигурации** ([[kubernetes|Kubernetes]], Terraform, Dockerfile).
 - **Секреты** (ключи, пароли в коде).
 - **Лицензии** (с рисками).
 - **Сгенерированный SBOM**, если нужно.

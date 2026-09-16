@@ -7,11 +7,11 @@ aliases:
   - понимание естественного языка
 ---
 
-**NLU (Natural Language Understanding)** — это **ключевой компонент искусственного интеллекта**, который позволяет машинам **понимать смысл, намерение и контекст человеческого языка**.
+**NLU (Natural Language Understanding)** — это **ключевой компонент [[ai-hierarchy|искусственного интеллекта]]**, который позволяет машинам **понимать смысл, намерение и контекст человеческого языка**.
 
 ## Что такое NLU?
 
-> **NLU (Natural Language Understanding)** — это подраздел [[nl-processing]] (обработки естественного языка), при котором:
+> **NLU (Natural Language Understanding)** — это подраздел [[nl-processing|NLP]] (обработки естественного языка), при котором:
 - компьютер не просто видит слова;
 - он **понимает**, что вы имели в виду.
 
@@ -91,12 +91,12 @@ graph LR
 
 | Модель | Назначение |
 |--------|-----------|
-| **BERT, RoBERTa** | Понимание контекста, intent recognition |
-| **SpaCy, Rasa** | Open-source NLU для ботов |
+| **[[nl-processing|BERT]], RoBERTa** | Понимание контекста, intent recognition |
+| **SpaCy, [[rasa|Rasa]]** | Open-source NLU для ботов |
 | **Dialogflow (Google)** | Готовый движок для голосовых интерфейсов |
 | **Lex (AWS)** | Интеграция с AWS Lambda |
 | **Luis (Microsoft Azure)** | Встраивается в Power Virtual Agents |
-| **Hugging Face Transformers** | Библиотека для своих моделей |
+| **[[hugging-face|Hugging Face]] Transformers** | Библиотека для своих моделей |
 
 ## Ограничения NLU
 

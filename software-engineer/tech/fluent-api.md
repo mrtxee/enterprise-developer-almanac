@@ -28,7 +28,7 @@ Response response = client.get()
     .body(Response.class);
 ```
 
-**Где используется в Spring**
+**Где используется в [[spring|Spring]]**
 
 - **`RestClient`**: `restClient.get().uri(...).retrieve().body(...)`
 - **`WebClient`**: `webClient.post().uri(...).body(...).retrieve().bodyToMono(...)`

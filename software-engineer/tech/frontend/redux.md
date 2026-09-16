@@ -17,7 +17,7 @@ aliases:
 
 ## Redux
 
-Redux — предсказуемый контейнер состояния для приложений на JavaScript. Это небольшая JavaScript-библиотека, которая может использоваться с любым фронтендом. Она использует паттерн **single source of truth**.
+Redux — предсказуемый контейнер состояния для приложений на [[javascript|JavaScript]]. Это небольшая JavaScript-библиотека, которая может использоваться с любым фронтендом. Она использует паттерн **single source of truth**.
 
 ## Основные концепции
 
@@ -121,7 +121,7 @@ const el = <Provider store={store}>
 </Provider>;
 ```
 
-`connect()` — метод, который подключает react-компонент к redux-store.
+`connect()` — метод, который подключает [[react|react-компонент]] к redux-store.
 
 ```javascript
 function connect(mapStateToProps?, mapDispatchToProps?)

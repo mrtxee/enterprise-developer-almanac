@@ -117,7 +117,7 @@ sequenceDiagram
 | Технология | Поддержка |
 |-----------|----------|
 | **Axon Server** | ✅ Да — встроено |
-| **EventStoreDB** | ✅ Да |
+| **[[event-store-db|EventStoreDB]]** | ✅ Да |
 | **Custom Event Sourcing** | ✅ Реализуется вручную |
 
 ---

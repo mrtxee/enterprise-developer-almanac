@@ -17,7 +17,7 @@ aliases:
 
 1. Polling publisher
 2. [[transaction-log-tailing|Transaction log tailing]]
-   - [[change-data-capture]] – Change Data Capture
+   - [[change-data-capture|Change Data Capture]] – Change Data Capture
 
 Polling publisher, как правило, — компонент, который по расписанию запрашивает записи из Outbox-таблицы, на их основании формирует исходящее сообщение и кладёт его в брокер. После отправки записи из таблицы либо удаляются, либо проставляется новый статус, например «Отправлено».
 
@@ -42,14 +42,14 @@ eventPublisher.publish(new OrderCreatedEvent(order));
 1. Записали в БД → но при сбое перед `publish()` → **событие потеряно**
 2. Отправили событие → но запись в БД не прошла → **не согласовано**
 
-> Это нарушает **ACID**: мы хотим, чтобы оба шага были в одной транзакции
+> Это нарушает **[[software-architect/data/data-base/rdbms/ACID|ACID]]**: мы хотим, чтобы оба шага были в одной транзакции
 
 ## Решение: Transactional Outbox Pattern
 
 **Идея**
 
 - Сначала сохраните **само событие как часть транзакции в той же БД**
-- Позже — **отправьте его в очередь (Kafka, RabbitMQ)**
+- Позже — **отправьте его в очередь (Kafka, [[rabbit-mq|RabbitMQ]])**
 - Так что даже если сервис упадёт — событие останется
 
 ## Как работает
@@ -121,8 +121,8 @@ CREATE TABLE outbox_events (
 |------|------|------------|
 | ✅ | **Гарантированная доставка** | Событие в БД → не потеряется |
 | ✅ | **Согласованность** | Событие и данные меняются вместе |
-| ✅ | **Интеграция с [[change-data-capture]]** | Debezium может читать из outbox |
-| ✅ | **Поддержка [[CQRS]] / [[event-sourcing]]** | Основа для шины событий |
+| ✅ | **Интеграция с [[change-data-capture|Change Data Capture]]** | Debezium может читать из outbox |
+| ✅ | **Поддержка [[CQRS|CQRS]] / [[event-sourcing|Event sourcing]]** | Основа для шины событий |
 
 **Ограничения**
 

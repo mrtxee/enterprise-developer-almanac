@@ -10,7 +10,7 @@ aliases:
   - Проверочный ключ
 ---
 
-**PKCE (Proof Key for Code Exchange)** — это **расширение OAuth 2.0**, которое делает **Authorization Code Flow безопасным для SPA (Single‑Page Application) и мобильных приложений**.
+**PKCE (Proof Key for Code Exchange)** — это **расширение [[oauth|OAuth 2.0]]**, которое делает **[[SPA|Authorization Code Flow]] безопасным для SPA (Single‑Page Application) и мобильных приложений**.
 
 ---
 
@@ -20,7 +20,7 @@ aliases:
 
 ### Проблема
 
-- В обычном Authorization Code Flow, если приложение работает **на фронтенде ([[spa]], мобильное)**, то **`client_secret` не может быть скрыт**.
+- В обычном Authorization Code Flow, если приложение работает **на фронтенде ([[SPA|SPA]], мобильное)**, то **`client_secret` не может быть скрыт**.
 - Злоумышленник может перехватить `authorization_code` и использовать его для получения `access_token`.
 
 ### Решение: PKCE
@@ -79,7 +79,7 @@ sequenceDiagram
 | ✅ Безопасность | Защита от перехвата кода |
 | ✅ Поддержка SPA | Используется в React, Vue, Angular |
 | ✅ Поддержка мобильных приложений | Не требует `client_secret` |
-| ✅ Совместимость | Работает с любым OAuth 2.0 сервером, поддерживающим PKCE |
+| ✅ Совместимость | Работает с любым [[oauth|OAuth 2.0]] сервером, поддерживающим PKCE |
 
 ---
 

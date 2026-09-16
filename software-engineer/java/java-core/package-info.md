@@ -65,7 +65,7 @@ package com.example.service;
 - `@NonNullFields` (Spring) — поля классов не могут быть `null`
 - `@Experimental` — пакет считается экспериментальным
 - `@Deprecated` — пакет устарел
-- `@TypeDefs` (Hibernate) — определение пользовательских типов для всего пакета
+- `@TypeDefs` ([[hibernate|Hibernate]]) — определение пользовательских типов для всего пакета
 
 **Пример с @NonNullApi**
 

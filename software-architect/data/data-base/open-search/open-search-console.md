@@ -1,5 +1,6 @@
 ---
 aliases:
+  - Aggregations
   - Aliases
   - Analyzer
   - Character Filters
@@ -11,43 +12,70 @@ aliases:
   - Elastic Search
   - ElasticSearch
   - Field
+  - Field Capabilities
   - Fields
   - Index
+  - Index Management
   - Index Templates
   - Ingest Pipelines
   - Inverted Index
   - Lucene
   - Mapping
   - Node
+  - Nodes
   - OpenSearch
   - Primary Shard
+  - Primary Shards
   - Replica
   - Replicas
   - Segment
   - Segments
+  - Settings
   - Shard
   - Shards
   - Stored Fields
   - Templates
+  - Term
   - Terms
   - Token Filters
   - Tokenizer
+  - Wildcard
+  - агрегации
+  - алиасы
+  - анализатор
+  - возможности полей
   - документ
   - документы
+  - инвертированный индекс
   - индекс
+  - инструменты разработчика
   - кластер
+  - маппинг
+  - настройки
   - нода
+  - пайплайны
+  - первичные шарды
   - поле
+  - поля
+  - псевдонимы
   - реплика
+  - реплики
   - сегмент
+  - сегменты
+  - термины
+  - токенизатор
   - узел
+  - узлы
+  - фильтры символов
+  - фильтры токенов
   - шард
+  - шарды
 ---
-## OpenSearch hierarchy
+## Иерархия сущностей OpenSearch
 
 Вот иерархия сущностей в OpenSearch в виде схемы Mermaid.
 
-Упрощенная схема (для понимания):
+Упрощённая схема (для понимания):
 
 ```mermaid
 ---
@@ -515,7 +543,7 @@ GET /<index_name>
 
 ---
 
-## Primary shards
+## Первичные шарды
 
 **Primary shards (первичные шарды)** — это основные физические разделы индекса, в которых хранятся оригинальные данные.
 

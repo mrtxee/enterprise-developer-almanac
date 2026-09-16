@@ -128,7 +128,7 @@ UoW часто используется совместно с:
 
 Большинство современных ORM включают UoW «из коробки»:
 
-- **Hibernate (Java):** `Session` — это UoW. Методы `save()`, `update()`, `delete()` регистрируют изменения, `flush()` применяет их.
+- **[[hibernate|Hibernate]] (Java):** `Session` — это UoW. Методы `save()`, `update()`, `delete()` регистрируют изменения, `flush()` применяет их.
 - **Entity Framework (C#):** `DbContext` реализует UoW и Identity Map. Метод `SaveChanges()` выполняет `commit()`.
 - **Doctrine (PHP):** `EntityManager` — UoW. `persist()`, `remove()` регистрируют объекты, `flush()` сохраняет их.
 - **SQLAlchemy (Python):** `Session` — UoW. Изменения отслеживаются автоматически, `commit()` применяет их.

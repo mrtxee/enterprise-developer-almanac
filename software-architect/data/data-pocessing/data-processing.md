@@ -22,16 +22,16 @@ aliases:
 
 - Data Processing Architectures
   - [[dwh-model|Data Warehouse]]
-    - [[OLTP]] / [[OLAP]] — процессинг данных
-  - [[data-lake]]
-  - [[data-lakehouse]]
-  - [[delta-lake]]
-    - [[parquet]]
-  - [[data-vault]]
+    - [[OLTP|OLTP]] / [[OLAP|OLAP]] — процессинг данных
+  - [[data-lake|Data lake]]
+  - [[data-lakehouse|Data lakehouse]]
+  - [[delta-lake|Delta Lake]]
+    - [[parquet|parquet]]
+  - [[data-vault|Data Vault]]
 
 ---
 
-- Паттерны архитектуры [[data-warehouse]]
+- Паттерны архитектуры [[data-warehouse|Data warehouse]]
   - звезда
   - снежинка
 - Аналитические базы: ClickHouse, Redshift

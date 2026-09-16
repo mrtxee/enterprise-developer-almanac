@@ -351,7 +351,7 @@ graph BT
 | **Watering Hole**                    | Заражение сайта, который посещают цели | Атака на сотрудников компании |
 | **Spear Phishing**                   | Целевой фишинг                         | Email от HR с вирусом         |
 
-**Защита:** SIEM, EDR, Zero Trust, threat intelligence
+**Защита:** SIEM, EDR, [[zero-trust|Zero Trust]], threat intelligence
 
 ---
 

@@ -28,7 +28,7 @@ Yandex Cloud CLI (yc) — интерфейс командной строки д�
 **Управление кластерами баз данных**
 
 - `yc managed-mysql …` — MySQL;
-- `yc managed-postgresql …` — PostgreSQL;
+- `yc managed-postgresql …` — [[PostgreSQL|PostgreSQL]];
 - `yc managed-clickhouse …` — ClickHouse.
 
 **Служебные команды**

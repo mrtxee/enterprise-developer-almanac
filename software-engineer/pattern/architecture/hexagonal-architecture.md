@@ -54,7 +54,7 @@ aliases:
 
 **Главная идея**
 
-Бизнес-логика не должна зависеть от Spring, Django, PostgreSQL или REST API. Она должна работать вне зависимости от того, как её вызывают: через веб, CLI, тесты или сообщения.
+Бизнес-логика не должна зависеть от Spring, Django, PostgreSQL или [[REST|REST API]]. Она должна работать вне зависимости от того, как её вызывают: через веб, CLI, тесты или сообщения.
 
 ---
 
@@ -217,10 +217,10 @@ public class SmtpPaymentNotifier implements PaymentNotifier {
 | ---------------------------------- | ------------------------------------------------------------------------------ |
 | ✅ **Независимость от фреймворков** | Ядро не знает, что оно в Spring                                                |
 | ✅ **Лёгкое тестирование**          | Можно тестировать ядро без запуска сервера                                     |
-| ✅ **Гибкость**                     | Можно заменить Spring на Quarkus, PostgreSQL на [[mongo-db]] — без изменения ядра |
+| ✅ **Гибкость**                     | Можно заменить Spring на Quarkus, PostgreSQL на [[mongo-db\|MongoDB]] — без изменения ядра |
 | ✅ **Чёткие границы**               | Кто может использовать ядро? Только через порты                                |
-| ✅ **Поддержка микросервисов**      | Легко выделить часть ядра в отдельный сервис                                   |
-| ✅ **Интеграция с DDD**             | Идеально сочетается с Domain Model, [[aggregate-root]], Repository             |
+| ✅ **Поддержка [[microservice\|микросервисов]]**      | Легко выделить часть ядра в отдельный сервис                                   |
+| ✅ **Интеграция с DDD**             | Идеально сочетается с Domain Model, [[aggregate-root|aggregate-root]], Repository             |
 
 ---
 
@@ -229,7 +229,7 @@ public class SmtpPaymentNotifier implements PaymentNotifier {
 | Сценарий                                                          | Рекомендация                                   |
 | ----------------------------------------------------------------- | ---------------------------------------------- |
 | MVP, маленький проект                                             | ❌ Не нужна — слишком много абстракций         |
-| Простой CRUD-сервис                                               | ❌ Достаточно Layered Architecture             |
+| Простой CRUD-сервис                                               | ❌ Достаточно [[layered-architecture|Layered Architecture]]             |
 | Одна команда, один стек                                           | ⚠️ Можно обойтись без неё                     |
 | Сложная система (банки, медицина, SaaS)                           | ✅ Обязательно используйте                     |
 | Планируется смена технологий                                      | ✅ Да — Hexagonal идеален                      |
@@ -285,7 +285,7 @@ public class GrpcOrderService extends OrderServiceGrpc.OrderServiceImplBase {
 | **Hexagonal**                            | Ядро + адаптеры (порт/адаптер)                                      |
 | **Clean Architecture** (Uncle Bob)       | Очень похоже: Entities → Use Cases → Interface Adapters → Frameworks |
 | **Onion Architecture**                   | То же, что Clean — слои, как лук                                    |
-| **[[CQRS]] + [[event-sourcing]]**        | Часто используются вместе с Hexagonal                               |
+| **[[CQRS|CQRS]] + [[event-sourcing|event-sourcing]]**        | Часто используются вместе с Hexagonal                               |
 
 Все эти архитектуры — разные названия одной идеи: **ядро бизнеса должно быть независимым**.
 
@@ -308,7 +308,7 @@ public class GrpcOrderService extends OrderServiceGrpc.OrderServiceImplBase {
 
 1. **Выделите ядро**: где живёт бизнес-логика?
 2. **Определите порты**: какие операции оно должно выполнять?
-3. **Реализуйте адаптеры**: HTTP, DB, Message Queue
+3. **Реализуйте адаптеры**: HTTP, DB, [[message-queueing|Message Queue]]
 4. **Уберите аннотации** из ядра: нет `@Autowired`, `@Entity`, `@Transactional`
 5. **Тестируйте ядро отдельно**
 
@@ -334,7 +334,7 @@ public class GrpcOrderService extends OrderServiceGrpc.OrderServiceImplBase {
 
 **Краткий ответ**
 
-| Аспект           | **Hexagonal Architecture**                                   | **[[domain-driven-design]]**                                          |
+| Аспект           | **Hexagonal Architecture**                                   | **[[domain-driven-design|Domain-Driven Design]]**                                          |
 | ---------------- | ------------------------------------------------------------ | --------------------------------------------------------------------- |
 | **Что это**      | Архитектурный **паттерн** (структура кода)                   | Методология **проектирования** (подход к моделированию)               |
 | **Фокус**        | Разделение слоёв, изоляция домена                            | Язык, границы контекстов, стратегический дизайн                       |

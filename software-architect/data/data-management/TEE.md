@@ -59,7 +59,7 @@ void process_sensitive_data() {
 
 - Финансовые транзакции
 - Обработка медицинских данных
-- Блокчейн (Oasis Labs)
+- [[blockchain|Блокчейн]] (Oasis Labs)
 
 ---
 
@@ -91,7 +91,7 @@ void process_sensitive_data() {
 
 - Мобильные платежи (Google Pay, Samsung Pay)
 - Биометрическая аутентификация
-- DRM (защита контента)
+- [[DRM|DRM]] (защита контента)
 
 ---
 

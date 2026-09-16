@@ -106,11 +106,11 @@ public class UserRouter {
 
 ## Как работает WebFlux под капотом
 
-- Не требует [[servlet-api]] (в отличие от Spring MVC).
+- Не требует [[servlet-api|servlet-api]] (в отличие от Spring MVC).
 - Может работать на:
   - реактивных серверах: Netty (по умолчанию), Undertow, Tomcat (в неблокирующем режиме)
   - Servlet-контейнерах (Tomcat, Jetty) — но тогда теряется часть преимуществ
-- [[event-loop]] архитектура (как в Node.js) → меньше потоков, выше эффективность
+- [[event-loop|event-loop]] архитектура (как в Node.js) → меньше потоков, выше эффективность
 
 Netty + WebFlux — идеальный стек для высоконагруженных реактивных сервисов.
 
@@ -191,7 +191,7 @@ Spring WebFlux — это не замена Spring MVC, а альтернати�
 
 | Тип | Семантика | Аналог в Java |
 |-----|-----------|---------------|
-| `Mono<T>` | 0 или 1 элемент | `Optional<T>`, `CompletableFuture<T>` |
+| `Mono<T>` | 0 или 1 элемент | `Optional<T>`, [[Future|CompletableFuture]]<T> |
 | `Flux<T>` | 0, 1 или много элементов | `Stream<T>`, `List<T>` |
 
 `Mono` чётко говорит: «Ожидаю один результат или ничего». `Flux` говорит: «Ожидаю поток данных — возможно, пустой, один или бесконечный».
@@ -300,7 +300,7 @@ Mono<Void> saveAndNotify = userRepo.save(user)
 
 ### Что такое Reactive Streams
 
-[[Reactive Streams]] — это спецификация (набор интерфейсов), принятая в 2015 году компаниями Netflix, Pivotal (Spring), Lightbend (Akka), Oracle и др.
+[[reactor|Reactive Streams]] — это спецификация (набор интерфейсов), принятая в 2015 году компаниями Netflix, Pivotal (Spring), Lightbend (Akka), Oracle и др.
 
 Цель: обеспечить асинхронную потоковую обработку данных с обратным давлением (backpressure) между различными библиотеками и средами выполнения.
 

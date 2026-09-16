@@ -35,12 +35,12 @@ aliases:
 - стратегии отказоустойчивости: Active-Passive, Active-Active и Geo-Redundancy;
 - Rate Limiting и Bulkhead;
 - проектирование front-to-back и back-to-back интеграций;
-- технологии: REST, GraphQL, WebSockets, gRPC, RabbitMQ, Apache ActiveMQ Artemis и Kafka.
+- технологии: [[REST|REST]], [[graph-ql|GraphQL]], [[web-socket|WebSockets]], [[RPC|gRPC]], [[rabbit-mq|RabbitMQ]], Apache ActiveMQ Artemis и Kafka.
 
 ### Структура
 
 - [[performance-testing|Нагрузочное тестирование]]
-- [[kubernetes-scaling]]
+- [[kubernetes-scaling|Kubernetes scaling]]
     - Vertical Pod Autoscaler — выделяем больше ресурсов поду:
         - существует три режима работы VPA: «Off», «Initial» и «Auto»;
     - Horizontal Pod Autoscaler — наращивает число подов;
@@ -49,30 +49,30 @@ aliases:
     - системы [[observability|мониторинга и алертов]];
     - [[resilience-patterns|Rate Limiting]] — ограничение скорости;
     - [[resilience-patterns|Bulkhead]] — отсек;
-    - [[retry-policy]];
+    - [[retry-policy|Retry policy]];
     - [[rate-limiting|Rate limiter]];
     - устойчивость микросервисов:
-        - [[saga]]:
+        - [[saga|Saga]]:
             - компенсационные транзакции, undo;
             - тайм-ауты и дедлайны;
-        - [[two-phase-commit]] — двухфазные коммиты.
-- [[event-driven-architecture|EDA]] — событийно-ориентированная архитектура
-    - [[event-storming]];
-    - [[CQRS]];
-    - [[event-sourcing]]:
+        - [[two-phase-commit|Two-phase commit]] — двухфазные коммиты.
+- [[event-driven-architecture|EDA]] — Event-driven architecture
+    - [[event-storming|Event storming]];
+    - [[CQRS|CQRS]];
+    - [[event-sourcing|Event sourcing]]:
         - специализированные БД событий:
-            - [[event-store-db]];
+            - [[event-store-db|EventStoreDB]];
             - Axon Server;
-            - Apache [[kafka]];
-        - паттерн [[snapshotting]], чтобы сократить длину лога;
+            - Apache [[kafka|Kafka]];
+        - паттерн [[snapshotting|Snapshotting]], чтобы сократить длину лога;
     - паттерны обеспечения консистентности событий между сервисом и event-базой:
-        - [[transaction-log-tailing]]:
+        - [[transaction-log-tailing|Transaction log tailing]]:
             - внешний tailer напрямую читает WAL и выносит события в брокер;
-        - [[transactional-outbox]]:
+        - [[transactional-outbox|Transactional outbox]]:
             - дополнительная таблица, в которую выносятся события, появляющиеся в одной транзакции;
             - отдельный демон публикует события этой таблицы в брокер;
     - событийно-ориентированная обработка ошибок.
-- [[stream-processing|потоковая обработка]]
+- [[stream-processing|Stream processing]]
     - существует 4 модели потоковой обработки:
         - синхронная микропакетная обработка;
         - асинхронная микропакетная обработка;

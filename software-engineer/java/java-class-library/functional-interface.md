@@ -91,11 +91,11 @@ public void testFunctions() {
 
 ### Runnable — исполняемый
 
-Интерфейс `Runnable` представляет любую лямбда-функцию как объект.
+Интерфейс `Runnable` представляет любую [[java-core|лямбда-функцию]] как объект.
 
 ```java
 final Runnable kzvlfn = () -> System.out.println("kzvlfn");
 kzvlfn.run();
 ```
 
-[[optional]]
+[[Optional|optional]]

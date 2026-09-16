@@ -56,19 +56,19 @@ aliases:
 | GNU coreutils | du | estimate disk space used by files and directories | du(1), info | du alternatives |
 | GNU tar | tar | tar archiver | tar(1), info | archivers |
 | GNU less | less | terminal pager | less(1) | terminal pagers |
-| GNU findutils | find | search files or directories | find(1), info, GregsWiki | find alternatives |
+| GNU findutils | [[find|find]] | search files or directories | find(1), info, GregsWiki | find alternatives |
 | GNU diffutils | diff | compare files line by line | diff(1), info | diff alternatives |
-| GNU grep | grep | print lines matching a pattern | grep(1), info | grep alternatives |
+| GNU grep | [[sed-awk-grep|grep]] | print lines matching a pattern | grep(1), info | grep alternatives |
 | GNU sed | sed | stream editor | sed(1), info, one-liners | sad, sd |
 | GNU AWK (gawk) | AWK | pattern scanning and processing language | gawk(1), info, one-liners | alternative implementations |
 | util-linux | dmesg | print or control the kernel ring buffer | dmesg(1) | systemd journal |
 | util-linux | lsblk | list block devices | lsblk(8) | — |
-| util-linux | mount | mount a filesystem | mount(8) | — |
+| util-linux | [[mount-everything|mount]] | mount a filesystem | mount(8) | — |
 | util-linux | umount | unmount a filesystem | umount(8) | — |
 | util-linux | su | substitute user | su(1) | sudo, doas |
 | procps-ng | kill | terminate a process | kill(1) | pkill(1), killall(1) |
 | procps-ng | pgrep | look up processes by name or attributes | pgrep(1) | pidof(1) |
-| procps-ng | ps | show information about processes | ps(1) | top(1), system monitors |
+| procps-ng | [[processes|ps]] | show information about processes | ps(1) | top(1), system monitors |
 | procps-ng | free | display amount of free and used memory | free(1) | — |
 
 #### Preventing data loss
@@ -241,7 +241,7 @@ GNU-реализация _dd_ из coreutils также соответствуе
 - **dua** — быстрый анализатор использования диска, поддерживает удаление файлов, написан на Rust.
 - **dust** — более интуитивная версия du на Rust.
 - **gdu** — анализатор использования дисков с консольным интерфейсом, написан на Go.
-- **ncdu** — чрезвычайно лёгкий и простой анализатор использования дисков на основе ncurses, написан на Zig.
+- **[[fs-cleanup|ncdu]]** — чрезвычайно лёгкий и простой анализатор использования дисков на основе ncurses, написан на Zig.
 
 См. также List of applications/Utilities — Disk usage display.
 

@@ -238,7 +238,7 @@ classDiagram
 **Характеристики:**
 - Shared collection used to exchange data between two threads.
 - Provide methods that block until a point of time when data can be exchanged (e.g. when the queue is not empty).
-- Useful for producer-consumer patterns. Better than wait/notify.
+- Useful for producer-consumer patterns. Better than [[object|wait/notify]].
 - `take()` — blocks until object is available.
 - `put(E e)` — blocks until space is available in queue.
 - Методы блокировки и снятия блокировки работают быстрее, чем `wait()`, `notify()` класса `Object`.
@@ -265,7 +265,7 @@ classDiagram
 
 **Характеристики:**
 - During modification (add/set/remove/etc), entire contents is copied to a new collection which replaces the original.
-- Being immutable means they are thread-safe.
+- Being [[immutable|immutable]] means they are thread-safe.
 - Modifications to collection are expensive. Reads are inexpensive.
 - Consistent iterator — means iterator always represents what is in the collection (unlike ConcurrentHashMap which uses weakly consistent iterators).
 - Any mutating methods called on the copy-on-write-based iterator (add/set, remove, etc) result in an `UnsupportedOperationException`.

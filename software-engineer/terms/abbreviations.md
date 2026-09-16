@@ -36,13 +36,13 @@ aliases:
 
 | Аббревиатура | Расшифровка                                  | Смысл                                                                                      |
 | ------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| **[[development-life-cycle]]** | Software Development Life Cycle              | Жизненный цикл разработки ПО (анализ, проектирование, разработка, тестирование, внедрение) |
-| **Agile**    | Agile (гибкий)                               | Семейство гибких методологий (Scrum, Kanban, XP)                                           |
-| **Scrum**    | Scrum (схватка)                              | Фреймворк для управления проектами с итерациями (спринтами)                                |
-| **Kanban**   | Kanban (карточка)                            | Метод управления потоком задач с визуализацией                                             |
+| **[[development-life-cycle\|SDLC]]** | Software Development Life Cycle              | Жизненный цикл разработки ПО (анализ, проектирование, разработка, тестирование, внедрение) |
+| **[[agile|Agile]]**    | Agile (гибкий)                               | Семейство гибких методологий (Scrum, Kanban, XP)                                           |
+| **[[scrum|Scrum]]**    | Scrum (схватка)                              | Фреймворк для управления проектами с итерациями (спринтами)                                |
+| **[[agile|Kanban]]**   | Kanban (карточка)                            | Метод управления потоком задач с визуализацией                                             |
 | **XP**       | Extreme Programming                          | Экстремальное программирование (парное программирование, TDD)                              |
-| **TDD**      | Test-Driven Development                      | Разработка через тестирование (сначала пишутся тесты, потом код)                           |
-| **BDD**      | Behavior-Driven Development                  | Разработка через поведение (тесты на естественном языке)                                   |
+| **[[clean-code|TDD]]**      | Test-Driven Development                      | Разработка через тестирование (сначала пишутся тесты, потом код)                           |
+| **[[behavior-driven-development|BDD]]**      | Behavior-Driven Development                  | Разработка через поведение (тесты на естественном языке)                                   |
 | **DDD**      | Domain-Driven Design                         | Предметно-ориентированное проектирование                                                   |
 | **CI/CD**    | Continuous Integration / Continuous Delivery | Непрерывная интеграция и доставка                                                          |
 | **MVP**      | Minimum Viable Product                       | Минимально жизнеспособный продукт                                                          |
@@ -61,9 +61,9 @@ aliases:
 | **QA**       | Quality Assurance     | Инженер по обеспечению качества (тестировщик) |
 | **QC**       | Quality Control       | Контроль качества                             |
 | **SA**       | System Architect      | Системный архитектор                          |
-| **DE**       | DevOps Engineer       | Инженер DevOps (разработка + эксплуатация)    |
+| **DE**       | DevOps Engineer       | Инженер [[dev-ops|DevOps]] (разработка + эксплуатация)    |
 | **DS**       | Data Scientist        | Специалист по данным                          |
-| **ML**       | Machine Learning      | Машинное обучение                             |
+| **ML**       | [[machine-learning|Machine Learning]]      | Машинное обучение                             |
 
 ### Архитектура и проектирование
 
@@ -77,11 +77,11 @@ aliases:
 | **SOA**                   | Service-Oriented Architecture            | Сервис-ориентированная архитектура                                        |
 | **[[microservice\|MSA]]** | Microservices Architecture               | Архитектура микросервисов                                                 |
 | **EDA**                   | Event-Driven Architecture                | Событийно-ориентированная архитектура                                     |
-| **CQRS**                  | Command Query Responsibility Segregation | Разделение операций чтения и записи                                       |
-| **ES**                    | Event Sourcing                           | Хранение событий как источника истины                                     |
+| **[[CQRS|CQRS]]**                  | Command Query Responsibility Segregation | Разделение операций чтения и записи                                       |
+| **ES**                    | [[event-sourcing|Event Sourcing]]                           | Хранение событий как источника истины                                     |
 | **UML**                   | Unified Modeling Language                | Унифицированный язык моделирования                                        |
 | **ERD**                   | Entity-Relationship Diagram              | Диаграмма «сущность-связь»                                                |
-| **DFD**                   | Data Flow Diagram                        | Диаграмма потоков данных                                                  |
+| **[[data-flow-diagram|DFD]]**                   | Data Flow Diagram                        | Диаграмма потоков данных                                                  |
 | **C4**                    | C4 model                                 | Модель для визуализации архитектуры (Context, Container, Component, Code) |
 
 ### Технические инструменты и платформы
@@ -109,7 +109,7 @@ aliases:
 | **JVM**      | Java Virtual Machine               | Виртуальная машина Java                  |
 | **JRE**      | Java Runtime Environment           | Среда выполнения Java                    |
 | **JDK**      | Java Development Kit               | Комплект разработки Java                 |
-| **VCS**      | Version Control System             | Система контроля версий                  |
+| **[[git|VCS]]**      | Version Control System             | Система контроля версий                  |
 | **SCM**      | Source Code Management             | Управление исходным кодом                |
 | **PR**       | Pull Request                       | Запрос на слияние изменений              |
 | **MR**       | Merge Request                      | Запрос на слияние (GitLab)               |
@@ -176,7 +176,7 @@ aliases:
 | Аббревиатура | Расшифровка                                                            | Смысл                                                    |
 | ------------ | ---------------------------------------------------------------------- | -------------------------------------------------------- |
 | **WBS**      | Work Breakdown Structure                                               | Иерархическая структура работ                            |
-| **Gantt**    | Gantt chart                                                            | Диаграмма Ганта (календарный план)                       |
+| **[[gantt-diagram|Gantt]]**    | Gantt chart                                                            | Диаграмма Ганта (календарный план)                       |
 | **RACI**     | Responsible, Accountable, Consulted, Informed                          | Матрица ответственности                                  |
 | **SMART**    | Specific, Measurable, Achievable, Relevant, Time-bound                 | Критерии постановки целей                                |
 | **OKR**      | Objectives and Key Results                                             | Цели и ключевые результаты                               |
@@ -185,11 +185,11 @@ aliases:
 | **CAPEX**    | Capital Expenditure                                                     | Капитальные затраты                                      |
 | **OPEX**     | Operating Expense                                                        | Операционные расходы                                     |
 | **WIP**      | Work In Progress                                                        | Незавершённая работа (в Kanban)                          |
-| **EPIC**     | -                                                                       | Крупная пользовательская история (в Agile)               |
+| **[[sprint-planning|EPIC]]**     | -                                                                       | Крупная пользовательская история (в Agile)               |
 | **Story**    | User Story                                                              | Пользовательская история                                 |
 | **Task**     | -                                                                       | Задача                                                   |
 | **Bug**      | -                                                                       | Ошибка, дефект                                           |
-| **Spike**    | -                                                                       | Исследовательская задача                                 |
+| **[[sprint-planning|Spike]]**    | -                                                                       | Исследовательская задача                                 |
 
 ### Сеть и коммуникации
 
@@ -212,12 +212,12 @@ aliases:
 
 | Аббревиатура | Расшифровка                              | Смысл                                         |
 | ------------ | ---------------------------------------- | --------------------------------------------- |
-| **JWT**      | JSON Web Token                           | Токен для аутентификации                      |
-| **OAuth**    | Open Authorization                       | Открытый протокол авторизации                 |
+| **[[JWT|JWT]]**      | JSON Web Token                           | Токен для аутентификации                      |
+| **[[oauth|OAuth]]**    | Open Authorization                       | Открытый протокол авторизации                 |
 | **OIDC**     | OpenID Connect                           | Аутентификация поверх OAuth 2.0               |
 | **SAML**     | Security Assertion Markup Language       | Язык разметки утверждений безопасности        |
-| **LDAP**     | Lightweight Directory Access Protocol    | Протокол доступа к каталогам                  |
-| **SSO**      | Single Sign-On                           | Единый вход                                   |
+| **[[LDAP|LDAP]]**     | Lightweight Directory Access Protocol    | Протокол доступа к каталогам                  |
+| **[[SSO|SSO]]**      | Single Sign-On                           | Единый вход                                   |
 | **MFA/2FA**  | Multi-Factor / Two-Factor Authentication | Многофакторная / двухфакторная аутентификация |
 | **RBAC**     | Role-Based Access Control                | Управление доступом на основе ролей           |
 | **ABAC**     | Attribute-Based Access Control           | Управление доступом на основе атрибутов       |
@@ -241,10 +241,10 @@ aliases:
 | **RNN**      | Recurrent Neural Network                                | Рекуррентная нейросеть                     |
 | **CNN**      | Convolutional Neural Network                            | Свёрточная нейросеть                       |
 | **GAN**      | Generative Adversarial Network                          | Генеративно-состязательная сеть            |
-| **LLM**      | Large Language Model                                    | Большая языковая модель                    |
+| **[[LLM|LLM]]**      | Large Language Model                                    | Большая языковая модель                    |
 | **GPT**      | Generative Pre-trained Transformer                      | Генеративный предобученный трансформер     |
 | **BERT**     | Bidirectional Encoder Representations from Transformers | Двунаправленный энкодер от трансформера    |
-| **MLOps**    | Machine Learning Operations                             | Операции машинного обучения                |
+| **[[model-ops|MLOps]]**    | Machine Learning Operations                             | Операции машинного обучения                |
 | **DataOps**  | Data Operations                                         | Операции с данными                         |
 | **ETL**      | Extract, Transform, Load                                | Извлечение, преобразование, загрузка       |
 | **ELT**      | Extract, Load, Transform                                | Извлечение, загрузка, преобразование       |
@@ -272,7 +272,7 @@ aliases:
 
 **Backporting (бекпортирование)** — перенос функциональности, исправлений или патчей безопасности из **новой версии** программного обеспечения в **старую (поддерживаемую) версию**.
 
-Зачем это нужно: безопасность, стабильность, поддержка LTS.
+Зачем это нужно: безопасность, стабильность, поддержка [[release-policy|LTS]].
 
 Главное правило: бекпортируют только то, что **невозможно или нецелесообразно** ждать до следующего мажорного релиза. Обычные фичи обычно не бекпортируются.
 
@@ -285,13 +285,13 @@ aliases:
 #### Универсальные классы монолитных информационных систем
 
 - **ERP (Enterprise Resource Planning)** — планирование ресурсов предприятия.
-- **BPMS (Business Process Management System)** — системы управления бизнес-процессами. Например, Camunda BPM. Такие системы позволяют визуализировать бизнес-процессы в какой-то нотации, например BPMN, и обеспечивать их автоматизацию.
+- **BPMS (Business Process Management System)** — системы управления бизнес-процессами. Например, [[camunda|Camunda]] BPM. Такие системы позволяют визуализировать бизнес-процессы в какой-то нотации, например [[business-process-model-notation|BPMN]], и обеспечивать их автоматизацию.
 - **CRM (Customer Relationship Management)** — управление взаимоотношениями с клиентами.
-- **MDM (Master Data Management)** — управление мастер-данными. Чтобы обеспечить общие правила и единый источник истины всех справочников и классификаторов, часто бывает нужна MDM-система. В ней данные всегда находятся в наиболее правильном состоянии для других систем компании.
-- **BI (Business Intelligence)** — системы сбора и обработки аналитической информации о работе компании. BI-системы имеют различные архитектуры, например [[dwh-model]] (DataWarehouse) или DataLake.
+- **MDM (Master Data Management)** — управление мастер-данными. Чтобы обеспечить общие правила и [[ssot|единый источник истины]] всех справочников и классификаторов, часто бывает нужна MDM-система. В ней данные всегда находятся в наиболее правильном состоянии для других систем компании.
+- **BI (Business Intelligence)** — системы сбора и обработки аналитической информации о работе компании. BI-системы имеют различные архитектуры, например [[dwh-model|dwh-model]] (DataWarehouse) или [[data-lake|DataLake]].
 - **MES (Manufacturing Execution System)** — программные комплексы для управления и контроля производственных процессов на предприятии. Они синхронизируют стратегическое планирование (ERP) с фактическими операциями на производстве, координируют работу всех участков производства.
-- **ITSM (IT Service Management)** — специализированные решения для управления ИТ-услугами, которые автоматизируют процессы, связанные с подходом ITSM. ITSM — это системный подход к организации предоставления ИТ-услуг пользователям внутри компаний, ориентированный на потребности бизнеса.
-- **[[SIEM]]** — Security Information and Event Management.
+- **[[ITIL|ITSM]] (IT Service Management)** — специализированные решения для управления ИТ-услугами, которые автоматизируют процессы, связанные с подходом ITSM. ITSM — это системный подход к организации предоставления ИТ-услуг пользователям внутри компаний, ориентированный на потребности бизнеса.
+- **[[SIEM|SIEM]]** — Security Information and Event Management.
 - **SCADA (Supervisory Control And Data Acquisition)** — диспетчерское управление и сбор данных.
 
 #### Специальные классы монолитных информационных систем

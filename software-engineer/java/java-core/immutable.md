@@ -31,7 +31,7 @@ Immutable-объекты:
 
 Это особенно важно в функциональном программировании, где чистые функции не имеют побочных эффектов.
 
-**Использование в качестве ключей в хеш-таблицах**
+**Использование в качестве ключей в [[hash-table|хеш-таблицах]]**
 Immutable-объекты безопасны в качестве ключей в `HashMap`, `HashSet`, так как хеш-код (`hashCode()`) должен быть стабильным. Если объект изменится после добавления в `HashMap`, он может «потеряться», потому что изменится его хеш-код.
 
 **Кэширование и переиспользование**
@@ -47,9 +47,9 @@ assert a == b; // true — один и тот же объект в пуле
 
 **Построение надёжных систем**
 Immutable-объекты упрощают:
-- [[domain-driven-design]] ([[domain-driven-development]]) — value objects должны быть immutable;
-- [[event-sourcing]] — события immutable по определению;
-- React-style UI — состояние immutable, поэтому легко отслеживать изменения.
+- [[domain-driven-design|domain-driven-design]] ([[domain-driven-development|domain-driven-development]]) — value objects должны быть immutable;
+- [[event-sourcing|event-sourcing]] — события immutable по определению;
+- [[react|React]]-style UI — состояние immutable, поэтому легко отслеживать изменения.
 
 ### Когда использовать immutable-объекты
 
@@ -131,6 +131,6 @@ public record Person(String name, int age) {}
 - Возвращай копии или immutable-обёртки из геттеров.
 
 **Источники**
-- Effective Java #📘 (3rd ed.), Joshua Bloch #👨, Item 17: «Minimize mutability».
+- [[effective-java|Effective Java]] #📘 (3rd ed.), Joshua Bloch #👨, Item 17: «Minimize mutability».
 - Java Documentation — Immutable Objects.
 - Oracle Java Tutorials — Concurrency.

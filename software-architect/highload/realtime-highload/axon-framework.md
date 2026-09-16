@@ -27,5 +27,5 @@ aliases:
 
 - Разделение команд и запросов (CQRS)
 - Восстановление состояния через воспроизведение событий
-- Интеграция с Spring Boot, JPA, MongoDB, Kafka
+- Интеграция с Spring Boot, JPA, [[mongo-db|MongoDB]], Kafka
 - Поддержка распределенных приложений (Axon Server)

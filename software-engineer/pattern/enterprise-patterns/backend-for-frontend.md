@@ -51,13 +51,13 @@ flowchart TB
   classDef Sky stroke-width:1px, stroke-dasharray:none, stroke:#374D7C, fill:#E2EBFF, color:#374D7C
   classDef Ash stroke-width:1px, stroke-dasharray:none, stroke:#999999, fill:#EEEEEE, color:#000000
 ```
-Мобильное приложение может вызывать методы BFF по протоколу REST API, а веб-приложение — по протоколу [[graph-ql]].
+Мобильное приложение может вызывать методы BFF по протоколу REST API, а веб-приложение — по протоколу [[graph-ql|GraphQL]].
 
 В свою очередь BFF вызовет методы API на нужном сервере или серверах, извлечёт данные и выполнит все необходимые операции перед отправкой этих данных клиенту. Фронтенд получит готовую картинку.
 
 ## Backend for Frontend (BFF) vs API Gateway
 
-**API Gateway** — это **единая точка входа** для всех клиентов, focusing on **общие** concerns (безопасность, маршрутизация, кэширование).
+**[[api-gateway|API Gateway]]** — это **единая точка входа** для всех клиентов, focusing on **общие** concerns (безопасность, маршрутизация, кэширование).
 
 **Backend for Frontend (BFF)** — это **специализированный бэкенд** для конкретного типа клиента (Web, Mobile, TV), focusing on **специфические** needs (агрегация данных, преобразование формата).
 

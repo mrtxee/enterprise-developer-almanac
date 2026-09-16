@@ -119,7 +119,7 @@ from("ftp:server/incoming")
 | Трансформация данных | Автоматическая конвертация между форматами (XML, JSON, CSV, Avro) |
 | Маршрутизация | Умная маршрутизация на основе содержимого, заголовков, времени |
 | Обработка ошибок | Встроенные механизмы retry, dead letter channel, circuit breaker |
-| Мониторинг | Интеграция с Prometheus, Grafana, JMX |
+| Мониторинг | Интеграция с [[Prometheus|Prometheus]], [[grafana|Grafana]], JMX |
 | Тестирование | Встроенные средства для unit и integration тестирования |
 
 ---
@@ -128,9 +128,9 @@ from("ftp:server/incoming")
 
 | Инструмент | Тип | Отличия от Camel |
 |------------|-----|------------------|
-| **Apache Kafka** | Message Broker | Kafka — транспорт, Camel — логика маршрутизации поверх Kafka |
+| **[[kafka|Apache Kafka]]** | Message Broker | Kafka — транспорт, Camel — логика маршрутизации поверх Kafka |
 | **MuleSoft** | Коммерческий iPaaS | MuleSoft — enterprise решение с GUI, Camel — open source фреймворк |
-| **Spring Integration** | Фреймворк | Spring Integration — часть Spring, Camel — независимый фреймворк |
+| **Spring Integration** | Фреймворк | Spring Integration — часть [[spring|Spring]], Camel — независимый фреймворк |
 | **Talend** | ETL/iPaaS | Talend — визуальный инструмент, Camel — код-ориентированный |
 | **Zapier** | Low-code iPaaS | Zapier — для бизнес-пользователей, Camel — для разработчиков |
 
@@ -247,7 +247,7 @@ spec:
 | Преимущество | Объяснение |
 |--------------|------------|
 | Открытый исходный код | Бесплатно, активное сообщество, прозрачная разработка |
-| Гибкость | Работает standalone, в Spring Boot, в Kubernetes, в облаке |
+| Гибкость | Работает standalone, в [[spring|Spring Boot]], в Kubernetes, в облаке |
 | Богатая экосистема | 300+ компонентов для любых систем |
 | Стандарты | Реализация Enterprise Integration Patterns |
 | Производительность | Легковесный, минимальные накладные расходы |

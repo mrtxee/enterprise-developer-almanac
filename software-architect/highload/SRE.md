@@ -40,7 +40,7 @@ aliases:
 
 1. **Инцидент-менеджмент как инженерная задача**
   - Чёткие процедуры реагирования.
-  - Постмортемы (postmortems) без поиска виноватых — только анализ причин.
+  - Постмортемы ([[Postmortem|Postmortems]]) без поиска виноватых — только анализ причин.
   - Автоматическое восстановление (self-healing).
 
 1. **Проектирование для сбоев**
@@ -63,7 +63,7 @@ aliases:
   - Дашборды для анализа трендов.
 
 1. **Управление изменениями**
-  - Канареечные релизы ([[canary-release]]).
+  - Канареечные релизы ([[canary-release|Canary release]]).
   - Фиче-флаги (feature flags).
   - Откаты (rollbacks) за минуты.
 
@@ -89,7 +89,7 @@ aliases:
 
 ## Отличия от DevOps
 
-- **[[dev-ops]]** — культура сотрудничества dev и ops, фокус на скорость доставки.
+- **[[dev-ops|DevOps]]** — культура сотрудничества dev и ops, фокус на скорость доставки.
 - **SRE** — конкретная инженерная методология с жёсткими метриками и процессами.
 - SRE можно считать *реализацией DevOps* для высоконагруженных систем.
 
@@ -103,11 +103,11 @@ aliases:
 
 ## Инструменты SRE
 
-- **Мониторинг**: Prometheus, Grafana, ELK, Datadog.
+- **Мониторинг**: [[Prometheus|Prometheus]], [[grafana|Grafana]], ELK, Datadog.
 - **Алерты**: Alertmanager, PagerDuty.
 - **CI/CD**: GitLab CI, Jenkins, ArgoCD.
-- **Инфраструктура**: Terraform, Ansible, Kubernetes.
-- **Трассировка**: Jaeger, Zipkin.
+- **Инфраструктура**: [[terraform|Terraform]], [[ansible|Ansible]], Kubernetes.
+- **Трассировка**: [[jaeger|Jaeger]], Zipkin.
 - **Chaos**: Chaos Monkey, Litmus.
 
 ## Когда внедрять SRE

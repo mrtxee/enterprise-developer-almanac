@@ -57,9 +57,9 @@ aliases:
 **Классификация**
 
 1. **Паттерны управления потоком**
-   1. [[bulkhead]] — отсек
-   2. [[rate-limiting]] — ограничение скорости
-   3. [[load-shedding]] — сброс нагрузки
+   1. [[bulkhead|Bulkhead]] — отсек
+   2. [[rate-limiting|Rate limiting]] — ограничение скорости
+   3. [[load-shedding|Load shedding]] — сброс нагрузки
 2. **Паттерны обработки сбоев при вызовах**
    1. Timeout — таймаут
    2. [[retry-policy|Retry]] — повтор
@@ -67,13 +67,13 @@ aliases:
    4. Fallback — отступление
    5. Redundancy — резервирование
    6. [[failover-strategy|Failover]] — переключение на резерв
-   7. [[stand‑in]] — заместитель
+   7. [[stand‑in|Stand‑in]] — заместитель
 3. **Паттерны стабилизации состояния**
    1. [[cache-patterns|Cache-aside]], [[cache-patterns|Read-through]], [[cache-patterns|Write-behind]]
-   2. [[state-machine]]
-   3. [[saga]]
-   4. [[two-phase-commit]]
-   5. [[transactional-outbox]]
+   2. [[state-machine|State machine]]
+   3. [[saga|Saga]]
+   4. [[two-phase-commit|Two-phase commit]]
+   5. [[transactional-outbox|Transactional outbox]]
       1. Transaction log tailing
       2. Polling publisher
 4. **Паттерны архитектурной устойчивости**
@@ -82,8 +82,8 @@ aliases:
    3. Chaos Engineering
    4. [[disaster-recovery-plan|Disaster Recovery Plan]] — DRP
 5. **Паттерны обнаружения и восстановления**
-   1. [[adaptive-concurrency]]
-   2. [[request-collapsing]] — свёртка запросов
+   1. [[adaptive-concurrency|Adaptive concurrency]]
+   2. [[request-collapsing|Request collapsing]] — свёртка запросов
 
 ### Circuit Breaker – предохранитель
 
@@ -174,7 +174,7 @@ aliases:
 - состояние очередей;
 - внешние зависимости.
 
-**Когда применять**: оркестрация контейнеров (Kubernetes), балансировщики нагрузки.
+**Когда применять**: оркестрация контейнеров ([[kubernetes|Kubernetes]]), балансировщики нагрузки.
 
 ### Dead Letter Queue – очередь мёртвых писем
 
@@ -186,7 +186,7 @@ aliases:
 - ручная повторная обработка;
 - архивация.
 
-**Когда применять**: системы с очередями сообщений (Kafka, RabbitMQ).
+**Когда применять**: системы с очередями сообщений (Kafka, [[rabbit-mq|RabbitMQ]]).
 
 ### Self-Healing – самовосстановление
 

@@ -26,7 +26,7 @@ SELECT * FROM A [INNER|LEFT|RIGHT|FULL OUTER] JOIN B ON A.key = B.key [WHERE A.k
 
 ![[Untitled 6 4.png|Untitled 6 4.png]]
 
-### [[DSL]] — Domain-specific language
+### [[software-architect/data/rdbms/DSL|DSL]] — Domain-specific language
 
 #### DDL – Data Definition Language
 
@@ -49,7 +49,7 @@ SELECT * FROM A [INNER|LEFT|RIGHT|FULL OUTER] JOIN B ON A.key = B.key [WHERE A.k
 
 #### TCL – Transaction Control Language
 
-- BEGIN TRANSACTION – служит для определения начала транзакции;
+- BEGIN TRANSACTION – служит для определения начала [[Transaction|транзакции]];
 - COMMIT TRANSACTION – применяет транзакцию;
 - ROLLBACK TRANSACTION – откатывает все изменения, сделанные в контексте текущей транзакции;
 - SAVE TRANSACTION – устанавливает промежуточную точку сохранения внутри транзакции.

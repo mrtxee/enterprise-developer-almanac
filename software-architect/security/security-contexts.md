@@ -26,7 +26,7 @@ aliases:
 > - Устройство доверенное?
 > - Есть MFA?
 
-Это основа **[[zero-trust]]** и **[[adaptive-auth]]**.
+Это основа **[[zero-trust|Zero Trust]]** и **[[adaptive-auth|Adaptive auth]]**.
 
 ### 💡 Пример контекста
 
@@ -45,9 +45,9 @@ aliases:
 ### Где используется
 
 - **Проверка доступа**: если `risk_score > 0.7` → требовать MFA
-- **[[SIEM]] / XDR**: корреляция событий
+- **[[SIEM|SIEM]] / XDR**: корреляция событий
 - **API Gateway**: разрешить/запретить вызов
-- **Cloud Security**: AWS IAM, Azure AD Conditional Access
+- **[[cloud-security|Cloud Security]]**: AWS IAM, Azure AD Conditional Access
 
 ### 🔄 Аналогия
 

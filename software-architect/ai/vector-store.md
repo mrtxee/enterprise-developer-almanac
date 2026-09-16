@@ -43,7 +43,7 @@ RAG-системы (Retrieval-Augmented Generation) используют век�
 - ✅ MVP
 - ✅ Офлайн-анализ
 - ✅ Маленький бюджет → бесплатен
-- ✅ Нужны HNSW / IVF для быстрого поиска
+- ✅ Нужны HNSW / [[vector-index|IVF]] для быстрого поиска
 
 **Особенности**
 
@@ -108,7 +108,7 @@ results = index.query(
 - ✅ Поддержка фильтров, payload'ов
 - ✅ Web UI
 - ✅ gRPC / REST
-- ✅ ANN: HNSW, quantization
+- ✅ [[vector-index|ANN]]: HNSW, quantization
 - ✅ Хорошая документация
 - ❌ Требует больше ресурсов, чем Chroma
 - ❌ Нужно администрировать (если self-hosted)
@@ -136,7 +136,7 @@ results = index.query(
 - ✅ Простое API
 - ✅ Работает локально: `chromadb` в Python
 - ✅ Отлично для Jupyter, Notebooks
-- ✅ Интеграция с LangChain — идеальная
+- ✅ Интеграция с [[lang-chain|LangChain]] — идеальная
 - ❌ Не готов к production
 - ❌ Нет распределённости
 - ❌ Медленнее при >1M векторов

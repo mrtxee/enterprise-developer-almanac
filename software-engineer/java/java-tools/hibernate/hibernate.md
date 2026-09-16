@@ -25,7 +25,7 @@ aliases:
 
 ## Hibernate
 
-Hibernate — реализация API [[java-persistence-api]].
+Hibernate — реализация API [[java-persistence-api|java-persistence-api]].
 
 ## JPA Entity Graph
 

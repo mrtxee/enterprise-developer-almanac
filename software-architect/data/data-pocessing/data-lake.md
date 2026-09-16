@@ -9,8 +9,8 @@ aliases:
 
 **Data Lake** — это **централизованное хранилище**, которое:
 
-- Принимает **любые данные** (структурированные, полуструктурированные, неструктурированные)
-- Хранит их **в оригинальном формате** (JSON, CSV, Parquet, [[avro|Avro]], видео, логи)
+- Принимает **любые данные** (структурированные, [[semistructured-data|полуструктурированные]], неструктурированные)
+- Хранит их **в оригинальном формате** (JSON, CSV, [[parquet|Parquet]], [[avro|Avro]], видео, логи)
 - Позволяет анализировать данные **позднее**, когда станет ясно, что с ними делать
 
 ```mermaid
@@ -54,10 +54,10 @@ flowchart LR
 
 | Компонент            | Роль                                         |
 | -------------------- | -------------------------------------------- |
-| **Источники данных** | [[OLTP]], [[kafka]], файлы, IoT-устройства   |
+| **Источники данных** | [[OLTP|OLTP]], [[kafka|Kafka]], файлы, IoT-устройства   |
 | **Data Lake**        | S3, HDFS, Azure Blob — хранит "сырые" данные |
-| **Data Processing**  | Spark, Flink, Airflow — обрабатывает данные  |
-| **Data Warehouse**   | ClickHouse, Redshift — для аналитики         |
+| **[[data-processing|Data Processing]]**  | Spark, Flink, Airflow — обрабатывает данные  |
+| **[[data-warehouse|Data Warehouse]]**   | ClickHouse, Redshift — для аналитики         |
 | **BI-инструменты**   | Power BI, Tableau — для отчётов              |
 
 ---
@@ -117,8 +117,8 @@ flowchart LR
 | ✅ Нужно хранить все данные (логи, события, фото)     | ➤ **Data Lake**                |
 | ✅ Нужно делать ML/DS                                 | ➤ **Data Lake**                |
 | ✅ Нужно исследовать данные без заранее заданной цели | ➤ **Data Lake**                |
-| ✅ Нужны быстрые отчёты                               | ➤ **[[data-warehouse]]**       |
-| ✅ Нужно обновлять статус заказа                      | ➤ **[[OLTP]]**, а не Data Lake |
+| ✅ Нужны быстрые отчёты                               | ➤ **[[data-warehouse|Data warehouse]]**       |
+| ✅ Нужно обновлять статус заказа                      | ➤ **[[OLTP|OLTP]]**, а не Data Lake |
 
 ---
 
@@ -126,7 +126,7 @@ flowchart LR
 
 > 💬 _"A data lake is where you store everything. A data warehouse is where you use it."_
 
-| Критерий              | **Data Lake**                 | **[[data-warehouse]]**                |
+| Критерий              | **Data Lake**                 | **[[data-warehouse|Data warehouse]]**                |
 | --------------------- | ----------------------------- | ------------------------------------- |
 | **Формат данных**     | Любые (сырые)                 | Структурированные (денормализованные) |
 | **Цель**              | Хранение и исследование       | Аналитика и отчёты                    |
@@ -137,6 +137,6 @@ flowchart LR
 
 → ✅ **Data Lake — это "склад сырья".**
 
-→ ✅ **[[data-warehouse]] — это "завод готовой продукции".**
+→ ✅ **[[data-warehouse|Data warehouse]] — это "завод готовой продукции".**
 
-[[data-lakehouse]]
+[[data-lakehouse|Data lakehouse]]

@@ -90,7 +90,7 @@ query MobileUserProfile {
 
 **Агрегация данных из нескольких источников**
 
-Данные из разных микросервисов в одном запросе:
+Данные из разных [[microservice|микросервисов]] в одном запросе:
 
 ```graphql
 query DashboardData {
@@ -265,7 +265,7 @@ query {
 
 ### Spring GraphQL
 
-Spring Boot имеет официальную поддержку GraphQL через Spring GraphQL.
+[[spring|Spring Boot]] имеет официальную поддержку GraphQL через Spring GraphQL.
 
 **Добавление зависимостей**
 

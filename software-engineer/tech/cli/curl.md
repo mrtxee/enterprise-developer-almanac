@@ -7,7 +7,7 @@ aliases:
 
 ## Client for URLs
 
-curl (cURL) — кроссплатформенная служебная программа командной строки, которая позволяет взаимодействовать с серверами по различным протоколам с синтаксисом URL. Название расшифровывается как Client for URLs.
+curl (cURL) — кроссплатформенная служебная программа командной строки, которая позволяет взаимодействовать с серверами по различным протоколам с синтаксисом [[url-scheme|URL]]. Название расшифровывается как Client for URLs.
 
 ## Основные опции
 
@@ -33,14 +33,14 @@ curl (cURL) — кроссплатформенная служебная прог
 
 ### Cookies
 
-- `-b, --cookie <data>` — отправка cookies
+- `-b, --cookie <data>` — отправка [[cookie|cookies]]
 - `-c, --cookie-jar <filename>` — сохранение cookies в файл
 - `-j, --junk-session-cookies` — игнорирование session cookies
 
 ### Аутентификация
 
 - `-u, --user <user:password>` — базовая аутентификация
-- `--basic` — использовать Basic auth
+- `--basic` — использовать [[authentication-schemes|Basic auth]]
 - `--digest` — использовать Digest auth
 - `--ntlm` — использовать NTLM auth
 - `--negotiate` — использовать Negotiate auth

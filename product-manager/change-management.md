@@ -89,9 +89,9 @@ aliases:
 - **Требования к интерфейсам:** форматы взаимодействия компонентов, протоколы или способы взаимодействия, например, синхронные или асинхронные.
 - **Физические ограничения:** они накладываются на аппаратные средства и окружение системы, например, температура, влажность, условия эксплуатации оборудования.
 
-### [[furps-plus]] – Functionality Usability Reliability Performance Supportability Restrictions Plus
+### [[furps-plus|FURPS+]] – Functionality Usability Reliability Performance Supportability Restrictions Plus
 
-> Реализует [[software-life-cycle]]
+> Реализует [[software-life-cycle|Software life cycle]]
 
 **FURPS+** — набор критериев качества программного обеспечения для систематического анализа и оценки **нефункциональных требований**.
 
@@ -126,7 +126,7 @@ Plus декомпозируется на категории:
 - Interface
 - Requirements
 
-### [[use-case]] – Пользовательские сценарии
+### [[use-case|Use case]] – Пользовательские сценарии
 
 Use Cases, или пользовательские сценарии, описывают, какие действия совершает пользователь и как система на них реагирует. Иначе говоря, это варианты использования.
 
@@ -140,7 +140,7 @@ graph LR
     User --> Logout[ Выход из системы ]
 ```
 
-В Agile-подходах к разработке часто используется инструмент **User Story**. Обычно это небольшая задача с фокусом на действиях пользователя в продукте.
+В [[agile|Agile]]-подходах к разработке часто используется инструмент **User Story**. Обычно это небольшая задача с фокусом на действиях пользователя в продукте.
 
 Последовательность выполнения пользовательского сценария называют потоком варианта использования (**Use Case Flow**). Основную последовательность, которая приводит к целевому результату, называют основным потоком (**Basic Flow**), а различные ветвления — альтернативными потоками (**Alternative Flow**).
 
@@ -155,7 +155,7 @@ graph LR
   - **События**, действия, шлюзы, потоки, дорожки.
 - BPMS
 
-### [[event-driven-process-chain]] – Event-Driven Process Chain
+### [[event-driven-process-chain|EPC]] – Event-Driven Process Chain
 
 Пример EPC-схемы взаимодействия:
 
@@ -187,7 +187,7 @@ flowchart TB
     M --> O[Транзакция отменена]
 ```
 
-### [[business-process-model-notation]] – Business Process Model and Notation
+### [[business-process-model-notation|BPMN]] – Business Process Model and Notation
 
 Пример BPMN:
 

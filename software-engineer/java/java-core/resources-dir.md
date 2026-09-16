@@ -20,9 +20,9 @@ aliases:
 
 **Ключевые особенности**
 
-- **Становится частью classpath.** При сборке (Maven `mvn package`, Gradle `build`) содержимое `src/main/resources` копируется в выходную папку (обычно `target/classes` или `build/classes`) и затем включается в JAR/WAR. В рантайме это «корневая» часть classpath.
+- **Становится частью classpath.** При сборке (Maven `mvn package`, Gradle `build`) содержимое `src/main/resources` копируется в выходную папку (обычно `target/classes` или `build/classes`) и затем включается в [[jdk-jls-jni|JAR]]/WAR. В рантайме это «корневая» часть classpath.
 - **Путь внутри артефакта совпадает с относительным путём в проекте.** Файл `src/main/resources/spdx/references/file1.txt` окажется в JAR как `spdx/references/file1.txt`. Никаких префиксов `resources/` не будет.
-- **Доступ только через ClassLoader, не через `File`.** В собранном JAR это не настоящая файловая система, поэтому `new File("src/main/resources/...")` не работает.
+- **Доступ только через [[classloader|ClassLoader]], не через `File`.** В собранном JAR это не настоящая файловая система, поэтому `new File("src/main/resources/...")` не работает.
 - **Поддержка фильтрации (подстановки переменных).** В Maven можно включить `<filtering>true</filtering>` для ресурсов: `${project.version}`, `${build.timestamp}` и т. п. будут заменены на реальные значения при сборке. Полезно для генерации `version.properties`, манифестов и т. д.
 - **Разделение на main и test.** Есть `src/main/resources` (для продакшн-кода) и `src/test/resources` (только для тестов). Это позволяет иметь разные конфиги и фикстуры для тестов и основного приложения.
 - **Автоматическое поведение в сборщиках.** Maven и Gradle по умолчанию копируют всё из `src/main/resources`. Исключения и кастомные правила задаются явно.

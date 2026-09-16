@@ -35,10 +35,9 @@ aliases:
 
 Концепция Observability включает 3 основных компонента:
 
-1. [[metrics-highload]]
-2. [[logging]]
-3. [[tracing]]
-
+1. [[metrics-highload|Highload metrics]]
+2. [[logging|Logging]]
+3. [[tracing|Tracing]]
 ### Расширения Observability
 
 1. **Профилирование (Profiling)**
@@ -51,7 +50,7 @@ aliases:
    - Сбор данных от реальных пользователей
    - **Метрики**: Core Web Vitals, user journey
 
-### Метрики ([[metrics-highload]])
+### Метрики ([[metrics-highload|Highload metrics]])
 
 - **Цифровые измерения** за определённый период времени
 - **Примеры**: CPU utilization, memory usage, request rate, error rate
@@ -112,7 +111,7 @@ Trace: User Checkout Request
 | Слой | Компоненты |
 |------|------------|
 | **Источники данных** | Приложения, инфраструктура, базы данных, сети |
-| **Сбор и обработка** | Agent, Collector, Message Broker, ETL Pipeline |
+| **Сбор и обработка** | Agent, Collector, Message Broker, [[ETL|ETL Pipeline]] |
 | **Анализ и визуализация** | Grafana, Kibana, Data Explorer, Alert Manager |
 
 ## Ключевые метрики для Observability
@@ -191,7 +190,7 @@ infrastructure:
 - Контроль доступа к observability данным
 - Аудит использования
 
-## Observability vs [[monitoring]]
+## Observability vs [[monitoring|Monitoring]]
 
 | **Мониторинг**     | **Observability**       |
 | ------------------ | ----------------------- |

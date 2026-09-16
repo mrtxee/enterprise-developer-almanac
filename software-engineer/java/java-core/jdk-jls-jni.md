@@ -143,7 +143,7 @@ J2SE — стандартная версия платформы Java 2, пред
 Содержит пакеты:
 
 - java.lang
-  - Object, Enum, Class, ClassLoader, Throwable, Error, Exception, RuntimeException, Thread, String, StringBuffer, StringBuilder, Comparable, Iterable, Process, Runtime, SecurityManager, System, Math, StrictMath
+  - [[object|Object]], Enum, Class, [[classloader|ClassLoader]], Throwable, Error, Exception, RuntimeException, Thread, String, StringBuffer, StringBuilder, Comparable, Iterable, Process, Runtime, SecurityManager, System, Math, StrictMath
 - java.lang.\*
 - java.math
 - java.sql
@@ -188,25 +188,25 @@ flowchart LR
 
 ### JCL, Java Class Library
 
-[[java-collection-framework]]
+[[java-collection-framework|Java Collections Framework]]
 
-[[stream-api]]
+[[stream-api|stream-api]]
 
-[[java-concurrency-utilities]]
+[[java-concurrency-utilities|java-concurrency-utilities]]
 
-[[java-thread]]
+[[java-thread|java-thread]]
 
-[[reflection-api]]
+[[reflection-api|reflection-api]]
 
-[[serializable]]
+[[Serializable|serializable]]
 
-[[math]]
+[[Math|math]]
 
-[[functional-interface]]
+[[functional-interface|functional-interface]]
 
-[[logger]]
+[[Logger|logger]]
 
-[[java-persistence-api]]
+[[java-persistence-api|java-persistence-api]]
 
 **Java Class Library** Features are accessed through classes provided in packages.
 
@@ -224,7 +224,7 @@ flowchart LR
 - Scripting: пакет `javax.script` даёт доступ к совместимым скриптовым языкам.
 - Applets: `java.applet` позволяет загружать приложения по сети и запускать их в защищённой песочнице.
 - Java Beans: `java.beans` предоставляет способы управления переиспользуемыми компонентами.
-- Introspection и reflection: `java.lang.Class` представляет класс, другие классы, такие как Method и Constructor, доступны в `java.lang.reflect`.
+- Introspection и [[reflection-api|reflection]]: `java.lang.Class` представляет класс, другие классы, такие как Method и Constructor, доступны в `java.lang.reflect`.
 
 ### javac, java compiler
 
@@ -244,7 +244,7 @@ Java launcher выполняет определённый набор `Java Nativ
 
 В эту организацию окружения входит и создание главного потока, который обычно называется `main`.
 
-## [[jvm]] — Java Virtual Machine
+## [[jvm|jvm]] — Java Virtual Machine
 
 ### Реализации JVM
 
@@ -332,6 +332,6 @@ graph LR
 
 #### Подробнее о ключевых альтернативах
 
-### [[jmm]] — Java Memory Model
+### [[jmm|jmm]] — Java Memory Model
 
 Модель памяти Java

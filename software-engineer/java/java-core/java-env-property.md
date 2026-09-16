@@ -26,7 +26,7 @@ aliases:
 | Механизм                   | Источник                    | Область видимости  | Пример                |
 | -------------------------- | --------------------------- | ------------------ | --------------------- |
 | **`System.getenv()`**      | Переменные окружения **ОС** | Весь процесс ОС    | `DB_HOST=localhost`   |
-| **`System.getProperty()`** | Системные свойства **JVM**  | Только текущая JVM | `-Ddb.host=localhost` |
+| **`System.getProperty()`** | Системные свойства **[[jvm|JVM]]**  | Только текущая JVM | `-Ddb.host=localhost` |
 
 ---
 
@@ -52,7 +52,7 @@ aliases:
 | ----------------------- | -------------------------------- | ----------------------------- |
 | **Источник**            | ОС (процесс)                     | JVM (при запуске)             |
 | **Установка**           | `export VAR=value`               | `-Dvar=value`                 |
-| **Изменение в runtime** | ❌ Нет (immutable)                | ✅ Да (`System.setProperty()`) |
+| **Изменение в runtime** | ❌ Нет ([[immutable|immutable]])                | ✅ Да (`System.setProperty()`) |
 | **Видимость**           | Все процессы ОС                  | Только текущая JVM            |
 | **Формат имени**        | `UPPER_SNAKE_CASE`               | `lower.dot.case`              |
 | **Наследование**        | ✅ Дочерние процессы              | ❌ Только текущая JVM          |
@@ -120,7 +120,7 @@ System.setProperty("app.mode", "production");
 | Сценарий | Почему |
 |----------|--------|
 | **Настройки JVM** | `-Xmx`, `-Xms`, `-Dfile.encoding` |
-| **Настройки фреймворков** | Spring profiles, Hibernate dialect |
+| **Настройки фреймворков** | Spring profiles, [[hibernate|Hibernate]] dialect |
 | **Динамическое изменение** | Можно менять в runtime через `setProperty()` |
 | **Множественные значения** | `-Dkey1=val1 -Dkey2=val2` |
 | **Флаги приложения** | `-Dapp.debug=true`, `-Dapp.mode=prod` |

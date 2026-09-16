@@ -9,7 +9,7 @@ aliases:
 
 ### Database Change Data Capture (CDC)
 
-Пример реализации [[publish-subscribe]] в [[PostgreSQL]]
+Пример реализации [[publish-subscribe|Publish-subscribe]] в [[PostgreSQL|PostgreSQL]]
 
 ```sql
 -- PostgreSQL LISTEN/NOTIFY

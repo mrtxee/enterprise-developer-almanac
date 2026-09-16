@@ -13,7 +13,7 @@ aliases:
 ---
 ## OLTP vs OLAP транзакции
 
-**OLTP (Online Transaction Processing)** и **OLAP (Online Analytical Processing)** — это **две разные архитектуры баз данных**, каждая для своей задачи.
+**OLTP (Online Transaction Processing)** и **[[OLAP|OLAP]] (Online Analytical Processing)** — это **две разные архитектуры баз данных**, каждая для своей задачи.
 
 > ✅ **OLTP — для «делать»**
 > ✅ **OLAP — для «понимать»**
@@ -135,7 +135,7 @@ graph TB
 
 → **OLAP** — для аналитики
 
-→ **[[ELT]]/Streaming** — для передачи данных из OLTP в OLAP
+→ **[[ELT|ELT]]/Streaming** — для передачи данных из OLTP в OLAP
 
 ---
 
@@ -163,6 +163,6 @@ graph TB
 - Анализ поведения пользователей
 - Прогнозирование спроса
 
-Данные для OLAP процессинга накапливаются в специальных хранилищах [[data-warehouse]] (DW) путём ETL стриминга из OLTP хранилищ, например, MS SQL.
+Данные для OLAP процессинга накапливаются в специальных хранилищах [[data-warehouse|Data warehouse]] (DW) путём [[ETL|ETL]] стриминга из OLTP хранилищ, например, MS SQL.
 
 ---

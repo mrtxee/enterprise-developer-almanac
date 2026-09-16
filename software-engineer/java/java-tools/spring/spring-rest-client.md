@@ -11,7 +11,7 @@ aliases:
 
 ## HTTP-клиенты Spring
 
-Сравнение HTTP-клиентов Spring: `RestTemplate`, `RestClient` и `WebClient`.
+Сравнение HTTP-клиентов Spring: `RestTemplate`, `RestClient` и `[[web-flux|WebClient]]`.
 
 ### Сравнительная таблица
 

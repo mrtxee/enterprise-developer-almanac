@@ -290,7 +290,7 @@ Cache<String, User> cache = Caffeine.newBuilder()
 - ✅ Caffeine = Guava Cache 2.0
 - ✅ 3x быстрее
 - ✅ Умный алгоритм вытеснения (Window-TinyLFU)
-- ✅ Async API (CompletableFuture)
+- ✅ Async API ([[Future|CompletableFuture]])
 - ✅ Меньше зависимостей
 - ✅ Активная разработка
 - ⚠️ Guava Cache устарел, но ещё работает

@@ -140,7 +140,7 @@ SPDX ID (Software Package Data Exchange Identifier) — это стандарт�
 
 В манифестах пакетов.
 
-npm (`package.json`):
+[[artifact-format|npm]] (`package.json`):
 
 ```json
 {
@@ -150,7 +150,7 @@ npm (`package.json`):
 }
 ```
 
-Maven (`pom.xml`):
+[[artifact-format|Maven]] (`pom.xml`):
 
 ```xml
 <licenses>
@@ -162,7 +162,7 @@ Maven (`pom.xml`):
 </licenses>
 ```
 
-Cargo (`Cargo.toml`):
+[[artifact-format|Cargo]] (`Cargo.toml`):
 
 ```toml
 [package]

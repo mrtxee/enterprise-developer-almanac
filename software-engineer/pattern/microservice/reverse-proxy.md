@@ -25,21 +25,21 @@ aliases:
 
 ## Сравнение проксирующих инструментов
 
-Nginx, HAProxy, [[envoy]] и Traefik.
+Nginx, HAProxy, [[envoy|envoy]] и Traefik.
 
-| Характеристика | Nginx | HAProxy | [[envoy]] | Traefik |
+| Характеристика | Nginx | HAProxy | [[envoy|envoy]] | Traefik |
 | ------------------------ | ---------------------------------------------- | ------------------------------------ | --------------------------------------------------------- | ------------------------------------------ |
-| **Основное назначение** | Веб-сервер, обратный прокси | Балансировщик нагрузки | Прокси для микросервисов | Обратный прокси и балансировщик |
+| **Основное назначение** | Веб-сервер, обратный прокси | Балансировщик нагрузки | Прокси для [[microservice|микросервисов]] | Обратный прокси и балансировщик |
 | **Архитектура** | Монолитная (с модулями) | Event-driven | Event-driven, multithread | Event-driven |
 | **Протоколы** | HTTP/1.1, HTTP/2, WebSocket, gRPC (с модулями) | HTTP/1.1, TCP, HTTP/2 (с версии 2.0) | HTTP/1.1, HTTP/2, gRPC, WebSocket | HTTP/1.1, HTTP/2, WebSocket, gRPC |
-| **Service Discovery** | Статический, DNS, Consul, etcd | Статический, DNS, Consul | Динамический: Consul, etcd, Kubernetes API | Автоматический: Docker, Kubernetes, Consul |
+| **[[service-discovery|Service Discovery]]** | Статический, DNS, Consul, etcd | Статический, DNS, Consul | Динамический: Consul, etcd, Kubernetes API | Автоматический: Docker, Kubernetes, Consul |
 | **Конфигурация** | Файлы конфигурации | Файлы конфигурации | Файлы YAML/JSON, API | Файлы YAML, метки Docker, API |
 | **SSL/TLS** | Terminatio, Offloading | Termination | Termination, mTLS, автоматическое обновление сертификатов | Automatic SSL, Let's Encrypt |
 | **Метрики** | Stub_status, коммерческие модули | CSV, Stats page | Prometheus, StatsD, Datadog | Prometheus, InfluxDB, StatsD |
 | **Трафик** | HTTP, TCP, UDP (с модулями) | HTTP, TCP | HTTP, TCP, UDP | HTTP, TCP (с ограничениями) |
 | **Горячая перезагрузка** | `nginx -s reload` | `soft-stop` | Динамическое обновление через API | Динамическое обновление |
 | **Кластеризация** | Требует дополнительных решений | Active/Passive, Active/Active | Built-in | Нет встроенной кластеризации |
-| **Экосистема** | Огромная, множество модулей | Сфокусированная на балансировке | Cloud native, сервисная сетка | Cloud native, контейнеры |
+| **Экосистема** | Огромная, множество модулей | Сфокусированная на балансировке | Cloud native, [[service-mesh|сервисная сетка]] | Cloud native, контейнеры |
 | **Сложность** | Средняя | Низкая/Средняя | Высокая | Низкая |
 
 ## Терминология
@@ -80,4 +80,4 @@ Nginx, HAProxy, [[envoy]] и Traefik.
 | **1.0** | Веб-сервер + простой прокси | Nginx, Apache |
 | **2.0** | Балансировщик нагрузки | HAProxy, Nginx Plus |
 | **3.0** | Cloud-native прокси | Envoy, Traefik |
-| **4.0** | Service Mesh control plane | Istio (на Envoy), Linkerd |
+| **4.0** | [[service-mesh|Service Mesh]] control plane | Istio (на Envoy), Linkerd |

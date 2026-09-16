@@ -43,4 +43,4 @@ management:
 
 **Индекс эндпоинтов:** `http://localhost:8080/actuator`
 
-**См. также** [[Kubernetes-probe]]
+**См. также** [[kubernetes-probes|Kubernetes probes]]

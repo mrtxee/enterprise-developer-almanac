@@ -161,7 +161,7 @@ binds {
 | wlroots | smithay |
 | --- | --- |
 | Написан на C | Написан на Rust |
-| Используется в sway, Hyprland | Используется в niri, cosmic-comp |
+| Используется в sway, [[linux-ui|Hyprland]] | Используется в niri, cosmic-comp |
 | Низкоуровневый API | Более высокоуровневый |
 | Требует ручного управления памятью | Безопасность памяти (Rust) |
 
@@ -211,7 +211,7 @@ binds {
 
 ### Как это работает вместе
 
-1. **Запуск:** systemd запускает niri.
+1. **Запуск:** [[linux-load-phases|systemd]] запускает niri.
 2. **Инициализация:** niri использует smithay для создания Wayland-сервера.
 3. **Рендеринг:** smithay настраивает OpenGL ES через DRM/KMS.
 4. **Desktop shell:** noctalia подключается к niri через Wayland-протоколы.

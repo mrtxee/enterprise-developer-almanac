@@ -11,7 +11,7 @@ aliases:
 ---
 ## Docker
 
-Docker — это платформа для разработки, доставки и запуска приложений в контейнерах. Изолирует приложения от инфраструктуры, позволяя быстро доставлять программное обеспечение.
+Docker — это платформа для разработки, доставки и запуска приложений в [[containerization|контейнерах]]. Изолирует приложения от инфраструктуры, позволяя быстро доставлять программное обеспечение.
 
 ### Докер — что это
 
@@ -90,7 +90,7 @@ docker run -v /host/path:/container/path image-name
 
 ### Dockerfile
 
-**Dockerfile** — конфигурация образа.
+**[[Dockerfile|Dockerfile]]** — конфигурация образа.
 
 - `FROM` — база образа;
 - `RUN` — выполнение команд;
@@ -313,7 +313,7 @@ volumes:
 
 ### OverlayFS: контейнер и файловая система
 
-**OverlayFS** — оверлейная файловая система, на основе которой работают образы и контейнеры Docker.
+**[[filesystem|OverlayFS]]** — оверлейная файловая система, на основе которой работают образы и контейнеры Docker.
 
 **Принцип:** нижние слои (lower), верхний — слой контейнера (upper), при изменении файла Docker делает копию на верхний слой (copy-on-write).
 
@@ -359,7 +359,7 @@ pvh6kl     COPY . .
 
 **Registry** — хранилище образов (GitHub для образов).
 
-- **Docker Hub** — публичный registry по умолчанию (docker.io);
+- **[[containerization|Docker Hub]]** — публичный registry по умолчанию (docker.io);
 - `docker pull` / `docker push` — скачивание и публикация;
 - `docker login` — аутентификация.
 
@@ -373,7 +373,7 @@ docker push myuser/my_image:1.0
 
 ### Docker Compose
 
-**Docker Compose** — инструмент для запуска нескольких контейнеров одним файлом.
+**[[docker-compose|Docker Compose]]** — инструмент для запуска нескольких контейнеров одним файлом.
 
 **Файл docker-compose.yml:**
 
@@ -523,7 +523,7 @@ newgrp docker
 
 - Docker Engine;
 - Compose;
-- Kubernetes (опционально);
+- [[kubernetes|Kubernetes]] (опционально);
 - работу с WSL2.
 
 ```powershell
@@ -602,7 +602,7 @@ docker pull node:20-alpine
 
 ### Docker OCI
 
-**OCI (Open Container Initiative)** — набор стандартов для контейнеров, определяет:
+**OCI ([[docker-podman|Open Container Initiative]])** — набор стандартов для контейнеров, определяет:
 
 - спецификацию **runtime**;
 - формат **image**;

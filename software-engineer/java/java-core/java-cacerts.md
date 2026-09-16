@@ -135,7 +135,7 @@ RUN keytool -import -trustcacerts \
 
 ## Если не хочешь трогать системный `cacerts`
 
-Создай отдельный truststore и подключи его через JVM-аргументы:
+Создай отдельный truststore и подключи его через [[jvm|JVM]]-аргументы:
 
 ```bash
 # Создать новый truststore с сертификатом

@@ -5,113 +5,82 @@ aliases:
   - HorizontalPodAutoscaler
   - HPA
   - Ingress
-  - k8s
   - kubectl
-  - Kubernetes
+  - kubernetes
   - Kubernetes manifest
-  - Kubernetes manifests
-  - manifest
-  - PersistentVolume
+  - Manifest
+  - Metadata
   - PersistentVolumeClaim
   - Pod
-  - PV
   - PVC
   - Role
   - RoleBinding
   - Secret
+  - Security Context
+  - Selector
   - Service
   - ServiceAccount
   - StatefulSet
   - Конфигурационная карта
   - Манифест
   - Манифесты Kubernetes
-  - Под
-  - Развертывание
+  - Метаданные
   - Секрет
+  - Селектор
   - Сервис
-  - Хранилище
 ---
 
-## Синтаксис манифестов Kubernetes — полное руководство
+## Kubernetes Manifest
 
-### Базовая структура манифеста
-
-**Обязательные поля**
+### Базовая структура
 
 ```yaml
-apiVersion: v1          # Версия API Kubernetes
-kind: Pod               # Тип ресурса (Pod, Deployment, Service и т.д.)
-metadata:               # Метаданные ресурса
-  name: my-pod          # Уникальное имя ресурса
-  namespace: default    # Пространство имен (опционально)
-spec:                   # Спецификация ресурса - самая важная часть
-  # Конфигурация конкретного типа ресурса
-```
-
-### Основные виды ресурсов Kubernetes
-
-#### Pod (Под)
-
-```yaml
-apiVersion: v1
-kind: Pod
+apiVersion: v1          # Версия API
+kind: Pod               # Тип ресурса
 metadata:
-  name: nginx-pod
+  name: my-pod          # Уникальное имя
+  namespace: default
   labels:
-    app: nginx
-    environment: production
-spec:
-  containers:
-  - name: nginx-container
-    image: nginx:1.21
-    imagePullPolicy: IfNotPresent
-    ports:
-    - containerPort: 80
-      protocol: TCP
-    env:
-    - name: ENV_VAR
-      value: "production"
-    resources:
-      requests:
-        memory: "64Mi"
-        cpu: "250m"
-      limits:
-        memory: "128Mi"
-        cpu: "500m"
-    volumeMounts:
-    - name: config-volume
-      mountPath: /etc/nginx/conf.d
-  volumes:
-  - name: config-volume
-    configMap:
-      name: nginx-config
-  restartPolicy: Always
-  nodeSelector:
-    disktype: ssd
+    app: myapp
+spec:                   # Спецификация ресурса
+  # Конфигурация
 ```
 
-#### Deployment (Развертывание)
+### Основные ресурсы
+
+| Ресурс | Назначение | Когда использовать |
+|--------|-----------|-------------------|
+| **Pod** | Минимальная единица (контейнеры + ресурсы) | Отладка, одноразовые задачи |
+| **Deployment** | Управление stateless Pod'ами | Веб-приложения, микросервисы |
+| **StatefulSet** | Stateful приложения с хранилищем | Базы данных, очереди |
+| **Service** | Стабильный доступ к Pod'ам | Всегда, когда Pod > 1 |
+| **Ingress** | Роутинг HTTP-трафика | Доменные имена, SSL |
+| **ConfigMap** | Неконфиденциальная конфигурация | Переменные, файлы конфигов |
+| **Secret** | Конфиденциальные данные (base64) | Пароли, токены, сертификаты |
+| **PVC** | Запрос хранилища | Постоянное хранение данных |
+| **HPA** | Автоматическое масштабирование | Динамическая нагрузка |
+| **ServiceAccount** | Учётная запись для Pod'ов | RBAC, доступ к API |
+| **Role / ClusterRole** | Набор разрешений | Доступ к ресурсам |
+| **RoleBinding / ClusterRoleBinding** | Привязка роли к субъекту | Назначение прав |
+
+### Deployment
 
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
-  labels:
-    app: nginx
 spec:
-  replicas: 3  # Количество реплик Pod'ов
-  selector:    # Как Deployment находит Pod'ы для управления
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
     matchLabels:
       app: nginx
-  strategy:
-    type: RollingUpdate  # Стратегия обновления
-    rollingUpdate:
-      maxSurge: 1        # Максимум Pod'ов сверх replicas при обновлении
-      maxUnavailable: 0  # Максимум недоступных Pod'ов при обновлении
-  minReadySeconds: 5     # Минимальное время готовности Pod'а
-  revisionHistoryLimit: 3 # Сколько старых ReplicaSet'ов хранить
-  template:              # Шаблон Pod'а (как в Pod манифесте)
+  template:
     metadata:
       labels:
         app: nginx
@@ -121,21 +90,17 @@ spec:
         image: nginx:1.21
         ports:
         - containerPort: 80
-        livenessProbe:   # Проверка живости контейнера
-          httpGet:
-            path: /
-            port: 80
+        livenessProbe:
+          httpGet: { path: /, port: 80 }
           initialDelaySeconds: 5
           periodSeconds: 10
-        readinessProbe:  # Проверка готовности контейнера
-          httpGet:
-            path: /health
-            port: 80
+        readinessProbe:
+          httpGet: { path: /health, port: 80 }
           initialDelaySeconds: 15
           periodSeconds: 5
 ```
 
-#### Service (Сервис)
+### Service
 
 ```yaml
 apiVersion: v1
@@ -143,142 +108,89 @@ kind: Service
 metadata:
   name: nginx-service
 spec:
-  selector:          # На какие Pod'ы направить трафик
+  selector:
     app: nginx
-  type: ClusterIP   # Тип сервиса
-  # Другие типы: NodePort, LoadBalancer, ExternalName
+  type: ClusterIP
   ports:
   - name: http
-    port: 80        # Порт сервиса внутри кластера
-    targetPort: 80  # Порт контейнера
-    protocol: TCP
-  # Для NodePort:
-  # - nodePort: 30080  # Порт на ноде (30000-32767)
-  # Для LoadBalancer:
-  # externalTrafficPolicy: Local
-  # loadBalancerIP: "192.168.0.100"
+    port: 80
+    targetPort: 80
 ```
 
-#### ConfigMap (Конфигурационная карта)
+### ConfigMap
 
 ```yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: app-config
-data:  # Данные в формате ключ-значение
-  # Простые значения
+data:
   database.host: "mysql.default.svc.cluster.local"
-  database.port: "3306"
-
-  # Файлы конфигурации
   nginx.conf: |
     server {
         listen 80;
         server_name localhost;
-
-        location / {
-            root /usr/share/nginx/html;
-            index index.html;
-        }
     }
-
-  application.properties: |
-    spring.datasource.url=jdbc:mysql://${database.host}:${database.port}/mydb
-    spring.datasource.username=admin
-    spring.datasource.password=secret
-    logging.level.root=INFO
 ```
 
-#### Secret (Секрет)
+### Secret
 
 ```yaml
 apiVersion: v1
 kind: Secret
 metadata:
   name: app-secrets
-type: Opaque  # Тип секрета
-data:         # Данные в base64
-  # echo -n 'admin' | base64
-  username: YWRtaW4=       # admin
-  password: cGFzc3dvcmQ=   # password
-
-  # Для TLS сертификатов
-  # type: kubernetes.io/tls
-  # tls.crt: <base64-encoded-cert>
-  # tls.key: <base64-encoded-key>
-
-stringData:  # Альтернатива data - не требует base64 кодирования
-  api-token: "abc123-def456-ghi789"
+type: Opaque
+stringData:  # Альтернатива data — не требует base64
+  api-token: "abc123"
 ```
 
-### Продвинутые ресурсы
-
-#### StatefulSet (Для stateful приложений)
+### StatefulSet
 
 ```yaml
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: mysql-statefulset
+  name: postgres
 spec:
-  serviceName: mysql  # Обязательное поле для StatefulSet
-  replicas: 3
+  serviceName: postgres
+  replicas: 1
   selector:
     matchLabels:
-      app: mysql
+      app: postgres
   template:
-    metadata:
-      labels:
-        app: mysql
     spec:
       containers:
-      - name: mysql
-        image: mysql:8.0
-        env:
-        - name: MYSQL_ROOT_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysql-secret
-              key: root-password
-        ports:
-        - containerPort: 3306
+      - name: postgres
+        image: postgres:14
         volumeMounts:
-        - name: mysql-data
-          mountPath: /var/lib/mysql
-  volumeClaimTemplates:  # Динамическое создание PVC для каждого Pod'а
+        - name: data
+          mountPath: /var/lib/postgresql/data
+  volumeClaimTemplates:
   - metadata:
-      name: mysql-data
+      name: data
     spec:
-      accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "fast-ssd"
+      accessModes: ["ReadWriteOnce"]
       resources:
         requests:
           storage: 10Gi
 ```
 
-#### PersistentVolumeClaim (PVC)
+### PVC
 
 ```yaml
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mysql-pvc
+  name: postgres-pvc
 spec:
-  accessModes:
-    - ReadWriteOnce  # Может монтироваться только одной нодой
-    # Другие режимы: ReadOnlyMany, ReadWriteMany
-  storageClassName: "fast-ssd"  # Использовать StorageClass
+  accessModes: ["ReadWriteOnce"]
   resources:
     requests:
-      storage: 10Gi  # Объем хранилища
-  selector:  # Опциональные критерии выбора PV
-    matchLabels:
-      type: ssd
-      environment: production
+      storage: 10Gi
 ```
 
-#### HorizontalPodAutoscaler (HPA)
+### HPA
 
 ```yaml
 apiVersion: autoscaling/v2
@@ -286,60 +198,35 @@ kind: HorizontalPodAutoscaler
 metadata:
   name: nginx-hpa
 spec:
-  scaleTargetRef:  # На какой ресурс применяется автоподстройка
+  scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
     name: nginx-deployment
-  minReplicas: 2   # Минимальное количество реплик
-  maxReplicas: 10  # Максимальное количество реплик
-  metrics:         # Метрики для масштабирования
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
   - type: Resource
     resource:
       name: cpu
       target:
         type: Utilization
-        averageUtilization: 50  # Масштабировать при 50% использовании CPU
-  - type: Resource
-    resource:
-      name: memory
-      target:
-        type: Utilization
-        averageUtilization: 70
-  - type: Pods  # Кастомные метрики
-    pods:
-      metric:
-        name: requests_per_second
-      target:
-        type: AverageValue
-        averageValue: 1000
-  behavior:  # Поведение при масштабировании (Kubernetes 1.18+)
-    scaleDown:
-      stabilizationWindowSeconds: 300  # Окно стабилизации для уменьшения
-      policies:
-      - type: Percent
-        value: 50
-        periodSeconds: 60
+        averageUtilization: 50
 ```
 
-#### Ingress
+### Ingress
 
 ```yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: my-ingress
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+  name: app-ingress
 spec:
-  ingressClassName: nginx  # Класс Ingress контроллера
-  tls:  # Настройки TLS
-  - hosts:
-    - myapp.example.com
-    secretName: myapp-tls-secret
-  rules:  # Правила маршрутизации
-  - host: myapp.example.com
+  ingressClassName: nginx
+  tls:
+  - hosts: [app.example.com]
+    secretName: app-tls
+  rules:
+  - host: app.example.com
     http:
       paths:
       - path: /
@@ -347,82 +234,88 @@ spec:
         backend:
           service:
             name: frontend-service
-            port:
-              number: 80
+            port: { number: 80 }
       - path: /api
         pathType: Prefix
         backend:
           service:
             name: backend-service
-            port:
-              number: 8080
-  - host: admin.example.com
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: admin-service
-            port:
-              number: 80
+            port: { number: 8080 }
 ```
 
-#### ServiceAccount
+### ServiceAccount, Role, RoleBinding
 
 ```yaml
+# ServiceAccount
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: my-serviceaccount
-  namespace: default
-automountServiceAccountToken: false  # Не монтировать токен автоматически
-secrets:  # Секреты, связанные с ServiceAccount
-- name: my-serviceaccount-token-xyz
-```
-
-#### Role и RoleBinding
-
-```yaml
-# Role - набор разрешений в namespace
+  name: my-sa
+---
+# Role
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   namespace: default
   name: pod-reader
 rules:
-- apiGroups: [""]  # Core API group
-  resources: ["pods", "pods/log"]
+- apiGroups: [""]
+  resources: ["pods"]
   verbs: ["get", "list", "watch"]
-- apiGroups: ["apps"]
-  resources: ["deployments"]
-  verbs: ["get", "list"]
-
-# RoleBinding - связывает Role с субъектом
+---
+# RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
+  namespace: default
   name: read-pods
-  namespace: default
 subjects:
-- kind: User
-  name: alice@example.com
-  apiGroup: rbac.authorization.k8s.io
 - kind: ServiceAccount
-  name: my-serviceaccount
-  namespace: default
+  name: my-sa
 roleRef:
   kind: Role
   name: pod-reader
   apiGroup: rbac.authorization.k8s.io
 ```
 
-### Декларативное управление ресурсами
+### Метаданные (metadata)
 
-#### Мульти-ресурсные манифесты
+| Поле | Описание |
+|------|----------|
+| `name` | Уникальное имя ресурса |
+| `namespace` | Пространство имён (по умолчанию `default`) |
+| `labels` | Метки для Selector'ов и группировки |
+| `annotations` | Произвольные данные (не для Selector'ов) |
+| `ownerReferences` | Ссылка на владельца (для сборщика мусора) |
+| `generation` | Увеличивается при каждом изменении `spec` |
+
+### Селекторы
 
 ```yaml
-# Можно объединять несколько ресурсов в одном файле через ---
+selector:
+  matchLabels:        # Точное совпадение
+    app: nginx
+  matchExpressions:   # Сложные условия
+  - key: environment
+    operator: In
+    values: [production, staging]
+```
+
+### Security Context
+
+```yaml
+securityContext:  # Уровень Pod
+  runAsUser: 1000
+  runAsNonRoot: true
+containers:
+- securityContext:  # Уровень контейнера
+    privileged: false
+    readOnlyRootFilesystem: true
+```
+
+### Мульти-ресурсные манифесты
+
+```yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -433,16 +326,10 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-deployment
+  name: app
 spec:
   replicas: 2
-  selector:
-    matchLabels:
-      app: myapp
   template:
-    metadata:
-      labels:
-        app: myapp
     spec:
       containers:
       - name: app
@@ -460,522 +347,16 @@ metadata:
   name: app-service
 spec:
   selector:
-    app: myapp
-  ports:
-  - port: 80
-    targetPort: 8080
+    app: app
+  ports: [{ port: 80, targetPort: 8080 }]
 ```
 
-#### Использование переменных и функций
-
-Kubernetes манифесты не поддерживают переменные напрямую, есть обходные пути:
-
-```yaml
-# 1. Использование Helm Charts (рекомендуется)
-# {{ .Values.replicaCount }}
-# {{ .Values.image.tag }}
-
-# 2. Kustomize (встроен в kubectl)
-# kustomization.yml:
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
-- deployment.yml
-- service.yml
-replicas:
-- name: app-deployment
-  count: 3
-images:
-- name: myapp
-  newTag: v1.2.3
-configMapGenerator:
-- name: app-config
-  literals:
-  - ENVIRONMENT=production
-```
-
-### Поля, общие для всех ресурсов
-
-#### metadata
-
-```yaml
-metadata:
-  name: my-resource      # Обязательное поле
-  namespace: production  # Если не указан - default
-  labels:               # Метки для селекции
-    app: myapp
-    version: "1.0"
-    environment: production
-  annotations:          # Аннотации (не используются для селекции)
-    description: "Main application deployment"
-    maintainer: "team@company.com"
-    kubernetes.io/change-cause: "Updated to version 1.2.3"
-  finalizers:          # Контролируют процесс удаления
-  - foregroundDeletion
-  ownerReferences:     # Ссылки на владельцев (для сборщика мусора)
-  - apiVersion: apps/v1
-    kind: Deployment
-    name: parent-deployment
-    uid: 12345-abcde
-  generation: 1        # Увеличивается при каждом изменении spec
-```
-
-#### spec и status
-
-```yaml
-# spec - желаемое состояние (declarative configuration)
-spec:
-  # Конфигурация, которую вы хотите применить
-  replicas: 3
-  containers: [...]
-
-# status - фактическое состояние (read-only, заполняется Kubernetes)
-status:
-  availableReplicas: 3
-  conditions:
-  - type: Available
-    status: "True"
-    lastUpdateTime: "2024-01-15T10:30:00Z"
-  observedGeneration: 1
-```
-
-### Специальные поля и конструкции
-
-#### Селекторы (Selectors)
-
-```yaml
-selector:
-  matchLabels:        # Точное совпадение меток
-    app: nginx
-    tier: frontend
-
-  matchExpressions:   # Более сложные условия
-  - key: environment
-    operator: In
-    values: [production, staging]
-  - key: version
-    operator: NotIn
-    values: [v1.0, v1.1]
-  - key: ready
-    operator: Exists  # Проверка наличия метки
-```
-
-#### Проб (Probes)
-
-```yaml
-livenessProbe:    # Проверка, жив ли контейнер
-  exec:           # Выполнение команды
-    command:
-    - cat
-    - /tmp/healthy
-  httpGet:        # HTTP GET запрос
-    path: /healthz
-    port: 8080
-    httpHeaders:
-    - name: Custom-Header
-      value: Awesome
-  tcpSocket:      # TCP подключение
-    port: 3306
-  initialDelaySeconds: 5    # Задержка перед первой проверкой
-  periodSeconds: 10         # Периодичность проверок
-  timeoutSeconds: 1         # Таймаут проверки
-  successThreshold: 1       # Успешные проверки для перехода в Ready
-  failureThreshold: 3       # Неудачи для перехода в Not Ready
-```
-
-#### Толерантности и привязки (Taints & Tolerations)
-
-```yaml
-# На ноде (через kubectl taint)
-# kubectl taint nodes node1 key=value:NoSchedule
-
-# В Pod spec:
-tolerations:
-- key: "key"
-  operator: "Equal"
-  value: "value"
-  effect: "NoSchedule"
-  tolerationSeconds: 3600  # Сколько терпеть taint
-
-# Привязки к нодам (nodeAffinity)
-affinity:
-  nodeAffinity:
-    requiredDuringSchedulingIgnoredDuringExecution:  # Жесткое требование
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: disktype
-          operator: In
-          values: [ssd, nvme]
-    preferredDuringSchedulingIgnoredDuringExecution:  # Предпочтение
-    - weight: 1
-      preference:
-        matchExpressions:
-        - key: zone
-          operator: In
-          values: [zone-a]
-```
-
-#### Security Context
-
-```yaml
-securityContext:  # На уровне Pod
-  runAsUser: 1000
-  runAsGroup: 3000
-  fsGroup: 2000
-  runAsNonRoot: true
-  seccompProfile:
-    type: RuntimeDefault
-
-containers:
-- name: secure-container
-  securityContext:  # На уровне контейнера
-    privileged: false
-    allowPrivilegeEscalation: false
-    capabilities:
-      drop: ["ALL"]
-      add: ["NET_BIND_SERVICE"]
-    readOnlyRootFilesystem: true
-    seLinuxOptions:
-      level: "s0:c123,c456"
-```
-
-### Пример полного приложения
-
-```yaml
-# full-application.yml
----
-# 1. Конфигурация
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: app-config
-data:
-  database_url: "postgresql://db:5432/mydb"
-  redis_url: "redis://redis:6379"
----
-# 2. Секреты
-apiVersion: v1
-kind: Secret
-metadata:
-  name: app-secrets
-type: Opaque
-data:
-  db_password: c2VjcmV0Cg==
-  api_key: YXBpX2tleQo=
----
-# 3. PersistentVolumeClaim
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: postgres-pvc
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 10Gi
----
-# 4. База данных (StatefulSet)
-apiVersion: apps/v1
-kind: StatefulSet
-metadata:
-  name: postgres
-spec:
-  serviceName: postgres
-  replicas: 1
-  selector:
-    matchLabels:
-      app: postgres
-  template:
-    metadata:
-      labels:
-        app: postgres
-    spec:
-      containers:
-      - name: postgres
-        image: postgres:14
-        env:
-        - name: POSTGRES_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: app-secrets
-              key: db_password
-        volumeMounts:
-        - name: postgres-data
-          mountPath: /var/lib/postgresql/data
-  volumeClaimTemplates:
-  - metadata:
-      name: postgres-data
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      resources:
-        requests:
-          storage: 10Gi
----
-# 5. Backend приложение
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: backend
-spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: backend
-  template:
-    metadata:
-      labels:
-        app: backend
-    spec:
-      containers:
-      - name: backend
-        image: myapp/backend:v1.0
-        env:
-        - name: DATABASE_URL
-          valueFrom:
-            configMapKeyRef:
-              name: app-config
-              key: database_url
-        - name: REDIS_URL
-          valueFrom:
-            configMapKeyRef:
-              name: app-config
-              key: redis_url
-        - name: API_KEY
-          valueFrom:
-            secretKeyRef:
-              name: app-secrets
-              key: api_key
-        ports:
-        - containerPort: 8080
-        readinessProbe:
-          httpGet:
-            path: /ready
-            port: 8080
----
-# 6. Сервис для backend
-apiVersion: v1
-kind: Service
-metadata:
-  name: backend-service
-spec:
-  selector:
-    app: backend
-  ports:
-  - port: 80
-    targetPort: 8080
----
-# 7. Frontend приложение
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: frontend
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: frontend
-  template:
-    metadata:
-      labels:
-        app: frontend
-    spec:
-      containers:
-      - name: frontend
-        image: myapp/frontend:v1.0
-        ports:
-        - containerPort: 3000
-        env:
-        - name: BACKEND_URL
-          value: "http://backend-service"
----
-# 8. Сервис для frontend
-apiVersion: v1
-kind: Service
-metadata:
-  name: frontend-service
-spec:
-  selector:
-    app: frontend
-  ports:
-  - port: 80
-    targetPort: 3000
----
-# 9. Ingress
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: app-ingress
-spec:
-  rules:
-  - host: myapp.example.com
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: frontend-service
-            port:
-              number: 80
-      - path: /api
-        pathType: Prefix
-        backend:
-          service:
-            name: backend-service
-            port:
-              number: 80
-```
-
-### Best Practices
-
-#### Валидация манифестов
+### Валидация манифестов
 
 ```bash
-# Проверка синтаксиса
 kubectl apply --dry-run=client -f manifest.yaml
 kubectl diff -f manifest.yaml
-
-# Валидация схемы
-kubeval manifest.yaml
-kube-score score manifest.yaml
-
-# Линтинг
-kube-linter lint manifest.yaml
 ```
-
-#### Структура проекта
-
-- `k8s/` — корень проекта
-  - `base/` — базовые конфигурации
-    - `deployment.yaml`
-    - `service.yaml`
-    - `kustomization.yaml`
-  - `overlays/` — окружения
-    - `dev/`
-      - `kustomization.yaml`
-      - `patch.yaml`
-    - `staging/`
-    - `production/`
-  - `charts/` — Helm charts
-    - `myapp/`
-      - `Chart.yaml`
-      - `values.yaml`
-      - `templates/`
-  - `crds/` — Custom Resource Definitions
-
-Синтаксис манифестов Kubernetes предоставляет декларативный способ описания желаемого состояния кластера, что является фундаментальным принципом работы Kubernetes.
-
----
-
-## Краткое назначение основных ресурсов Kubernetes
-
-### Рабочая нагрузка (Workloads)
-
-#### Pod (Под)
-
-> **Минимальная единица развертывания** — группа из одного или нескольких контейнеров, которые разделяют сеть и хранилище.
-
-- **Что делает:** запускает контейнер(ы) на ноде.
-- **Аналог:** виртуальная машина для контейнеров.
-- **Когда использовать:** для отладки, одноразовых задач, если не нужны фичи Deployment.
-- **Пример:** `web-server + log-collector` в одном Pod.
-
-#### Deployment (Развертывание)
-
-> **Управление жизненным циклом Pod'ов** с гарантиями доступности, обновлений и откатов.
-
-- **Что делает:** создаёт и управляет ReplicaSet'ами Pod'ов.
-- **Аналог:** «автопилот» для Pod'ов.
-- **Когда использовать:** для stateless приложений (90% случаев).
-- **Пример:** веб-приложение с 3 репликами, обновляемое без downtime.
-
-#### StatefulSet (Набор с состоянием)
-
-> **Deployment для stateful приложений** с гарантированным порядком, стабильными сетевыми идентификаторами и постоянным хранилищем.
-
-- **Что делает:** управляет Pod'ами с state (базы данных, очереди).
-- **Аналог:** Deployment + стабильные имена + персистентное хранилище.
-- **Когда использовать:** базы данных (MySQL, PostgreSQL, MongoDB), Kafka, Elasticsearch.
-- **Пример:** MySQL-кластер с мастер-репликой.
-
-### Сеть и доступ
-
-#### Service (Сервис)
-
-> **Стабильная точка доступа** к группе Pod'ов, абстрагирует их IP-адреса.
-
-- **Что делает:** балансирует трафик между Pod'ами, предоставляет стабильный DNS.
-- **Аналог:** Load Balancer внутри кластера.
-- **Когда использовать:** всегда, когда Pod'ов больше одного.
-- **Пример:** `backend-service → 3 Pod'а backend`.
-- **Типы:**
-  - `ClusterIP` — только внутри кластера.
-  - `NodePort` — наружу через порт ноды.
-  - `LoadBalancer` — облачный LB.
-  - `ExternalName` — CNAME-запись.
-
-#### Ingress (Вход)
-
-> **Маршрутизатор HTTP/HTTPS трафика** в кластере, управляет внешним доступом.
-
-- **Что делает:** роутинг по доменам и путям, SSL termination.
-- **Аналог:** Nginx/Apache на уровне кластера.
-- **Когда использовать:** нужен роутинг по доменам или сложные правила.
-- **Пример:** `app.com → frontend`, `api.app.com → backend`.
-
-### Конфигурация
-
-#### ConfigMap (Конфигурационная карта)
-
-> **Хранилище неконфиденциальных конфигураций** в формате ключ-значение.
-
-- **Что делает:** отделяет конфиг от образа приложения.
-- **Аналог:** файлы `.properties`, `.yaml`, `.json`.
-- **Когда использовать:** переменные окружения, конфигурационные файлы.
-- **Пример:** настройки логгирования, URL API, порты.
-
-#### Secret (Секрет)
-
-> **Безопасное хранилище конфиденциальных данных** (пароли, токены, ключи).
-
-- **Что делает:** хранит чувствительные данные (base64 encoded).
-- **Аналог:** хранилище паролей для Pod'ов.
-- **Когда использовать:** пароли БД, TLS-сертификаты, API-токены.
-- **Типы:** `Opaque`, `docker-registry`, `tls`, `bootstrap-token`.
-
-### Хранилище
-
-#### PersistentVolume (PV)
-
-> **Абстракция физического хранилища** в кластере (диск, NAS, облачное хранилище).
-
-- **Что делает:** представляет кусок хранилища в кластере.
-- **Аналог:** физический диск/том.
-- **Когда использовать:** администратор создаёт для использования Pod'ами.
-- **Пример:** NFS share, AWS EBS volume, локальный SSD.
-
-#### PersistentVolumeClaim (PVC)
-
-> **Запрос на выделение хранилища** из пула PersistentVolume.
-
-- **Что делает:** запрашивает хранилище у кластера для Pod'а.
-- **Аналог:** аренда дискового пространства.
-- **Когда использовать:** приложению нужно постоянное хранилище.
-- **Пример:** база данных запрашивает 100GB диска.
-
-### Сводная таблица
-
-| Ресурс | Для чего? | Аналог | Когда использовать |
-| ------ | --------- | ------ | ------------------ |
-| Pod | Запуск контейнера(ов) | Виртуальная машина | Отладка, задачи без Deployment |
-| Deployment | Управление stateless Pod'ами | Автопилот | Веб-приложения, микросервисы |
-| StatefulSet | Stateful приложения с хранилищем | Deployment + диск | Базы данных, очереди |
-| Service | Доступ к Pod'ам | Load Balancer | Любое приложение с >1 Pod |
-| Ingress | Роутинг HTTP трафика | Nginx/Apache | Несколько доменов, SSL |
-| ConfigMap | Конфигурация приложения | Файлы .conf | Настройки, переменные |
-| Secret | Секретные данные | Vault/Keychain | Пароли, токены, ключи |
-| PV/PVC | Постоянное хранилище | Диск/том | Базы данных, файловые хранилища |
 
 ### Взаимодействие ресурсов
 
@@ -985,29 +366,13 @@ title: Взаимодействие ресурсов Kubernetes
 ---
 flowchart TB
     Пользователь --> Ingress
-    Ingress -->|HTTPS| SecretTLS[Secret (TLS)]
+    Ingress -->|HTTPS| SecretTLS[Secret TLS]
     Ingress --> Service
-    Service -->|конфиг| ConfigMap
     Service --> Deployment
     Service --> StatefulSet
-    Deployment --> Pods1[Pod]
-    StatefulSet --> Pods2[Pod]
-    Pods1 --> Containers1[Контейнеры]
-    Pods2 --> Containers2[Контейнеры]
-    Pods1 -->|пароли| Secret
-    Pods2 -->|пароли| Secret
-    Pods2 -->|запрос на диск| PVC
-    PVC -->|реальный диск| PV
+    Deployment --> Pod1[Pod]
+    StatefulSet --> Pod2[Pod]
+    Pod1 --> Containers[Контейнеры]
+    Pod2 --> PVC
+    PVC --> PV[PersistentVolume]
 ```
-
-### Практическое правило выбора
-
-1. **Нужно запустить контейнер?** → `Pod` (для отладки) или `Deployment` (для прода).
-2. **Приложение stateful?** → `StatefulSet` вместо `Deployment`.
-3. **Нужен доступ к Pod'ам?** → `Service`.
-4. **Нужен роутинг по доменам?** → `Ingress`.
-5. **Есть конфигурационные файлы?** → `ConfigMap`.
-6. **Есть пароли/токены?** → `Secret`.
-7. **Нужно постоянное хранилище?** → `PersistentVolumeClaim`.
-
-Каждый ресурс решает конкретную задачу в архитектуре Kubernetes, позволяя декларативно описывать сложные распределенные системы.

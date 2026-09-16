@@ -11,7 +11,7 @@ aliases:
 
 ## CRISP-DM
 
-**CRISP-DM (Cross-Industry Standard Process for Data Mining)** — это **стандартный фреймворк для реализации проектов по анализу данных и машинному обучению**.
+**CRISP-DM (Cross-Industry Standard Process for Data Mining)** — это **стандартный фреймворк для реализации проектов по анализу данных и [[machine-learning|машинному обучению]]**.
 
 Он используется в 90% промышленных ML-проектов — от банков до стартапов.
 
@@ -126,7 +126,7 @@ Python (Pandas), SQL, Excel, Tableau
 
 **Автоматизация**
 
-- MLOps
+- [[model-ops|MLOps]]
 - CI/CD
 - Monitoring: drift, latency, accuracy
 

@@ -24,7 +24,7 @@ aliases:
 | **Номер** | RFC 9110 (июнь 2022) |
 | **Статус** | Internet Standards Track |
 | **Заменяет** | RFC 7230, RFC 7231, RFC 7232, RFC 7233, RFC 7234, RFC 7235 |
-| **Организация** | IETF (Internet Engineering Task Force) |
+| **Организация** | [[org-ietf|IETF]] (Internet Engineering Task Force) |
 
 ---
 

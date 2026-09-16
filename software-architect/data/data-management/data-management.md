@@ -10,15 +10,15 @@ aliases:
 ---
 ## Управление данными
 
-- Privacy by Design – [[PbD]]
-  - Privacy-enhancing technologies, [[PET]]
-  - [[data-flow-management]]
+- Privacy by Design – [[PbD|PbD]]
+  - Privacy-enhancing technologies, [[PET|PET]]
+  - [[data-flow-management|Data flow management]]
     - **Работа с коллективными знаниями** как часть [[data-flow-management|DFM]]
-    - [[data-layers]]
-    - [[tagging]] данных
+    - [[data-layers|Data layers]]
+    - [[tagging|Tagging]] данных
     - [[data-flow-diagram|Data Flow Diagram]]
-- [[Data-Lineage]] и Data Minimization
+- [[Data-Lineage|Data lineage]] и Data Minimization
 - Методы защиты данных
-  - [[obfuscation]] данных
+  - [[obfuscation|Obfuscation]] данных
 - Управление данными и [[tagging|тегирование]]
-- [[architecture-migration]]
+- [[architecture-migration|Architecture migration]]

@@ -44,7 +44,7 @@ graph TB
 ### Как работает
 
 1. **Подключение источников данных**
-   - Через плагины Grafana подключается к системам хранения ([[Prometheus]], InfluxDB, MySQL и др.).
+   - Через плагины Grafana подключается к системам хранения ([[Prometheus|Prometheus]], InfluxDB, MySQL и др.).
 2. **Создание запросов**
    - В редакторе задаётся запрос к источнику (на языке PromQL, SQL, InfluxQL и т. п.).
 3. **Выбор визуализации**
@@ -52,7 +52,7 @@ graph TB
 4. **Сборка дашборда**
    - Панели группируются на странице, добавляются фильтры, переменные, аннотации.
 5. **Настройка алертинга**
-   - Задаются условия срабатывания (например, «CPU > 90 % в течение 5 мин») и каналы уведомлений.
+   - Задаются условия срабатывания (например, «[[cpu-gpu|CPU]] > 90 % в течение 5 мин») и каналы уведомлений.
 6. **Публикация и доступ**
    - Дашборд публикуется для команды, настраиваются права доступа.
 
@@ -67,12 +67,12 @@ graph TB
 
 ### Поддерживаемые источники данных (примеры)
 
-- **Мониторинг**: [[Prometheus]], Graphite, Loki, Zabbix.
-- **[[TSDB]]**: InfluxDB, TimescaleDB, VictoriaMetrics.
-- **SQL-БД**: MySQL, PostgreSQL, Microsoft SQL Server.
+- **Мониторинг**: [[Prometheus|Prometheus]], Graphite, Loki, Zabbix.
+- **[[TSDB|TSDB]]**: InfluxDB, TimescaleDB, VictoriaMetrics.
+- **SQL-БД**: MySQL, [[PostgreSQL|PostgreSQL]], Microsoft SQL Server.
 - **Облака**: AWS CloudWatch, Google Cloud Monitoring, Azure Monitor.
-- **Логи**: Elasticsearch, [[OpenSearch]].
-- **API**: JSON, REST, GraphQL (через плагин Simple JSON).
+- **Логи**: [[Elasticsearch|Elasticsearch]], [[OpenSearch|OpenSearch]].
+- **API**: [[config-formats|JSON]], REST, GraphQL (через плагин Simple JSON).
 
 ### Типичные сценарии использования
 
@@ -81,7 +81,7 @@ graph TB
    - Алерты на перегрузку.
 2. **Анализ производительности приложений**
    - Latency, RPS, ошибки.
-   - Трассировка запросов (с Jaeger/Zipkin).
+   - Трассировка запросов (с [[jaeger|Jaeger]]/Zipkin).
 3. **Бизнес-аналитика**
    - Конверсия, активные пользователи, транзакции.
    - Отчёты по KPI.
@@ -110,7 +110,7 @@ graph TB
 
 - **Grafana OSS** — открытая версия (бесплатно).
 - **Grafana Enterprise** — платная версия с дополнительными функциями (аудит, расширенный алертинг).
-- **Развёртывание**: Docker, Kubernetes, Linux/Windows-пакеты, облачные сервисы (Grafana Cloud).
+- **Развёртывание**: [[Docker|Docker]], [[kubernetes|Kubernetes]], Linux/Windows-пакеты, облачные сервисы (Grafana Cloud).
 
 ### Пример рабочего процесса
 

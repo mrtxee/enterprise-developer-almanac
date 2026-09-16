@@ -119,7 +119,7 @@ aliases:
 **Решения**
 
 - **Hashing** (например, `sha256(email)`)
-- **Tokenization** (замена email на `user_12345`)
+- **[[tokenization|Tokenization]]** (замена email на `user_12345`)
 - **Дифференциальная приватность** (добавление шума в данные)
 - **k-анонимность** (группировка записей)
 
@@ -134,7 +134,7 @@ aliases:
 - **TLS 1.3** для всех соединений
 - **AES-256** для данных в базе
 - **Client-side encryption** (шифрование до отправки на сервер)
-- **Homomorphic encryption** (вычисления над зашифрованными данными)
+- **[[PET|Homomorphic encryption]]** (вычисления над зашифрованными данными)
 
 > **Пример**: Пароли хранятся как `bcrypt(password)`.
 
@@ -201,14 +201,14 @@ aliases:
 
 > **Пример**: Лог: «Админ X просмотрел данные пользователя Y».
 
-### Data Protection Impact Assessment ([[DPIA]])
+### Data Protection Impact Assessment ([[DPIA|DPIA]])
 
 > Оценивайте риски **до запуска** нового функционала.
 
 **Решения**
 
 - Чек-листы для новых фич
-- Вовлечение DPO (Data Protection Officer)
+- Вовлечение [[DPIA|DPO]] (Data Protection Officer)
 - Тестирование на утечки
 
 > **Пример**: Перед запуском facial recognition — провести DPIA.

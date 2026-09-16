@@ -57,7 +57,7 @@ flowchart RL
 | **Кэш-промах (Miss)** | Данные **не** найдены в кэше → нужно обратиться к источнику |
 | **TTL (Time-To-Live)** | Время жизни записи в кэше (после истечения — удаляется) |
 | **Инвалидация (Invalidation)** | Принудительное удаление/обновление данных в кэше |
-| **[[client-caching\|Клиентское кэширование]]** | Делегирование хранения кэша клиенту |
+| **[[client-caching|Клиентское кэширование]]** | Делегирование хранения кэша клиенту |
 | **Серверное кэширование** | Общий случай кэширования |
 
 ---
@@ -66,9 +66,9 @@ flowchart RL
 
 | Уровень | Примеры |
 | --- | --- |
-| **[[client-caching\|Клиент]]** | Браузер (кэш изображений, JS, CSS), мобильное приложение |
-| **Сеть** | [[CDN]] (Cloudflare, Akamai) — кэширует статику по всему миру |
-| **Приложение** | Внутренний кэш (Caffeine, Guava), Redis, Memcached |
+| **[[client-caching|Клиент]]** | Браузер (кэш изображений, JS, CSS), мобильное приложение |
+| **Сеть** | [[CDN|CDN]] (Cloudflare, Akamai) — кэширует статику по всему миру |
+| **Приложение** | Внутренний кэш ([[caffeine-guava|Caffeine]], [[caffeine-guava|Guava]]), [[redis|Redis]], Memcached |
 | **База данных** | Query cache в MySQL (устарел), кэш буферов в PostgreSQL |
 
 > 💡 Лучшие результаты даёт **многоуровневое кэширование** (клиент + CDN + приложение + БД).
@@ -82,7 +82,7 @@ flowchart RL
 3. Cache eviction policy
 4. Cache invalidation policy
 
-## 🔁 Основные стратегии использования кэша — [[cache-patterns]]
+## 🔁 Основные стратегии использования кэша — [[cache-patterns|Cache patterns]]
 
 1. **Read Patterns**
    - Cache-aside
@@ -92,13 +92,13 @@ flowchart RL
    - Write-through
    - Write-behind / Write-back
    - Refresh-ahead
-3. **[[cache-patterns\|Cache eviction]] policy**
+3. **[[cache-patterns|Cache eviction]] policy**
    - LRU — Least Recently Used
    - LFU — Least Frequently Used
    - FIFO — First In First Out
    - TTL-based
    - RR — Random Replacement
-4. **[[cache-patterns\|Cache invalidation]] policy**
+4. **[[cache-patterns|Cache invalidation]] policy**
    - Explicit delete — удаление ключа по событию в системе (например, после UPDATE в БД)
    - Event-driven — срабатывание по сообщению из очереди (например, Kafka)
    - Write-through — запись в кэш сразу при обновлении источника

@@ -62,10 +62,10 @@ aliases:
 
 **Компоненты**
 
-- Веб-серверы (Nginx, Apache)
-- Базы данных (MySQL, PostgreSQL)
-- Кэши (Redis, Memcached)
-- Очереди сообщений (Kafka, RabbitMQ)
+- Веб-серверы ([[nginx|Nginx]], Apache)
+- Базы данных (MySQL, [[PostgreSQL|PostgreSQL]])
+- Кэши ([[redis|Redis]], Memcached)
+- Очереди сообщений (Kafka, [[rabbit-mq|RabbitMQ]])
 - Микросервисы
 
 **Метрики**
@@ -224,7 +224,7 @@ def optimize_alerts():
 
 Мониторинг является фундаментальной практикой для обеспечения надёжности и производительности современных информационных систем, позволяя проактивно обнаруживать и решать проблемы до их влияния на пользователей.
 
-### Monitoring vs [[observability]]
+### Monitoring vs [[observability|Observability]]
 
 > **Monitoring отвечает на вопрос: «Что сломалось?»**
 > **Observability отвечает на вопрос: «Почему сломалось?»**

@@ -27,7 +27,7 @@ aliases:
 
 ## BASE vs ACID: философии консистентности БД
 
-**BASE vs ACID** — это **две противоположные философии**, определяющие, как работает база данных:
+**BASE vs [[software-architect/data/data-base/rdbms/ACID|ACID]]** — это **две противоположные философии**, определяющие, как работает база данных:
 
 - **ACID** — строгая согласованность (как в банке).
 - **BASE** — доступность и гибкость (как в соцсетях).
@@ -44,7 +44,7 @@ aliases:
 
 ### A: Atomicity (Атомарность)
 
-> Транзакция — единое целое: либо всё выполнится, либо ничто.
+> [[Transaction|Транзакция]] — единое целое: либо всё выполнится, либо ничто.
 
 **Пример транзакции:**
 
@@ -101,7 +101,7 @@ ALTER TABLE accounts ADD CONSTRAINT chk_balance CHECK (balance >= 0);
 
 ## BASE
 
-> **BASE** — это **альтернатива ACID**, подходящая для **масштабируемых, отказоустойчивых систем**.
+> **BASE** — это **альтернатива [[software-architect/data/data-base/rdbms/ACID|ACID]]**, подходящая для **масштабируемых, отказоустойчивых систем**.
 
 Аббревиатура:
 
@@ -131,7 +131,7 @@ Bob в США видит: «ещё нет»
 Через 2 секунды — появляется
 ```
 
-→ Это **eventual consistency**:
+→ Это **[[distributed-information-systems|Distributed information systems]]**:
 
 - Сначала доступно в одном регионе;
 - Потом реплицируется;
@@ -139,7 +139,7 @@ Bob в США видит: «ещё нет»
 
 **Не ACID:**
 
-- Нет гарантии atomicity между регионами;
+- Нет гарантии [[software-architect/data/data-base/rdbms/ACID|atomicity]] между регионами;
 - Состояние не consistent сразу;
 - Но система **доступна** и **масштабируется**.
 
@@ -198,10 +198,10 @@ COMMIT;
 | **Масштабирование** | Горизонтально сложно | Легко (sharding, leaderless) |
 | **Геораспределение** | Проблемы с задержками | Идеально |
 | **Failover** | Может быть медленным | Почти мгновенный |
-| **Примеры БД** | PostgreSQL, Oracle, SQL Server | Cassandra, DynamoDB, Riak |
+| **Примеры БД** | [[PostgreSQL|PostgreSQL]], Oracle, SQL Server | [[Cassandra|Cassandra]], DynamoDB, Riak |
 | **Подходит для** | Финансовых систем | Мобильных приложений, SaaS, IoT |
 | **Конфликты** | Решаются до записи | Решаются после (на клиенте) |
-| **CAP-теорема** | Жертвует **A** (Availability) ради **C** (Consistency) | Жертвует **C** ради **P** и **A** |
+| **[[distributed-information-systems|CAP-теорема]]** | Жертвует **A** (Availability) ради **C** (Consistency) | Жертвует **C** ради **P** и **A** |
 
 > 💡 **CAP-теорема:**
 > - **ACID** → CP (Consistency + Partition Tolerance);

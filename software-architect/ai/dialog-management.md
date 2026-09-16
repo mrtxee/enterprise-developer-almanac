@@ -100,7 +100,7 @@ DM понимает: нужно собрать:
 Data-driven политики бывают двух типов:
 
 - **Retrieval-based** — выбирает лучший ответ из базы (например, «Чем могу помочь?»);
-- **Generating (Generative)** — генерирует ответ с нуля (GPT-3, LLM).
+- **Generating (Generative)** — генерирует ответ с нуля (GPT-3, [[LLM|LLM]]).
 
 ## Rule-based vs Data-driven
 
@@ -111,7 +111,7 @@ Data-driven политики бывают двух типов:
 | **Масштабирование** | Сложно | Легче с ML |
 | **Поддержка** | Ручное обновление | Retrain модель |
 | **Контроль** | Полный | Чёрный ящик |
-| **Пример** | Rasa Core (ранние версии) | Google Meena, ChatGPT |
+| **Пример** | [[rasa|Rasa]] Core (ранние версии) | Google Meena, ChatGPT |
 
 ## 3. NLG — Natural Language Generation
 
@@ -162,8 +162,8 @@ graph LR
 
 | Компонент | Rule-Based | Data-Driven |
 |----------|-----------|------------|
-| **NLU** | Регулярки, словари | BERT, Spacy, Hugging Face |
-| **DM** | State Machine, if-else | Reinforcement Learning, Transformer |
+| **NLU** | Регулярки, словари | BERT, Spacy, [[hugging-face|Hugging Face]] |
+| **DM** | State Machine, if-else | Reinforcement Learning, [[machine-learning-model|Transformer]] |
 | **NLG** | Шаблоны (`"Запись подтверждена на {date}"`) | GPT, T5, BART |
 
 ## Когда использовать?

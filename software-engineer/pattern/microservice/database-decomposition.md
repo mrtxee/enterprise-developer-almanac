@@ -26,7 +26,7 @@ aliases:
 
 **Database Decomposition** (декомпозиция базы данных) — это стратегия разделения единой монолитной базы данных на несколько меньших, специализированных баз данных, каждая из которых принадлежит отдельному микросервису.
 
-Это **самый сложный и критический этап** при переходе от монолита к микросервисам.
+Это **самый сложный и критический этап** при переходе от монолита к [[microservice|микросервисам]].
 
 ## Зачем это нужно?
 
@@ -40,7 +40,7 @@ aliases:
 
 **Решение:**
 
-- каждый микросервис владеет своей собственной БД;
+- каждый [[microservice|микросервис]] владеет своей собственной БД;
 - сервисы общаются только через API;
 - независимое масштабирование;
 - выбор оптимальной БД для каждой задачи.
@@ -74,7 +74,7 @@ aliases:
 
 - API composition pattern;
 - кэширование данных;
-- денормализация (копия нужных полей).
+- [[database-normalization|денормализация]] (копия нужных полей).
 
 Пример API-вызовов вместо SQL JOIN:
 
@@ -91,7 +91,7 @@ public OrderDetails getOrderWithUser(Long orderId) {
 
 **Решение:**
 
-- Saga pattern;
+- [[saga|Saga pattern]];
 - event-driven architecture;
 - compensating transactions.
 
@@ -120,8 +120,8 @@ public class OrderCreationSaga {
 
 **Решение:**
 
-- Event sourcing;
-- change data capture (CDC);
+- [[event-sourcing|Event sourcing]];
+- [[change-data-capture|change data capture]] (CDC);
 - асинхронная репликация.
 
 Пример CDC с помощью Debezium:

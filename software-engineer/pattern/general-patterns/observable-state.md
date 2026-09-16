@@ -26,7 +26,7 @@ aliases:
 
 **Где используется в Frontend-фреймворках**
 
-- **React**: MobX, Recoil, Zustand.
+- **[[react|React]]**: MobX, Recoil, Zustand.
 - **Vue**: Vuex (с плагинами), Composition API.
 - **Angular**: RxJS, NgRx.
 
@@ -39,6 +39,6 @@ aliases:
 
 **Backend системы**
 
-- Реактивные микросервисы.
-- Real-time приложения (WebSockets).
+- Реактивные [[microservice|микросервисы]].
+- Real-time приложения ([[web-socket|WebSockets]]).
 - Обработка потоков данных.

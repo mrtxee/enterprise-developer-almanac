@@ -32,9 +32,9 @@ aliases:
 
 | Сфера | Примеры |
 |------|--------|
-| **Сети** | Ethernet, Wi-Fi, PPP, USB, SATA |
+| **Сети** | [[ethernet-frame|Ethernet]], Wi-Fi, [[ppp|PPP]], USB, SATA |
 | **Хранение** | Жёсткие диски (HDD/SSD), CD/DVD, ZIP-архивы |
-| **Протоколы** | TCP/IP (частично), Modbus, CAN bus |
+| **Протоколы** | [[tcp-udp|TCP/IP]] (частично), Modbus, CAN bus |
 | **Файлы** | PNG, ZIP, RAR (встроенный CRC) |
 
 ---

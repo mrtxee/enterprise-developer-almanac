@@ -26,32 +26,32 @@ aliases:
 
 Машинное обучение (Machine Learning, ML) — это технология, при которой алгоритмы учатся находить закономерности в данных и делать прогнозы с помощью математики, статистики и теории вероятностей, без ручного задания правил.
 
-[[CRISP-DM]] — стандарт разработки и внедрения ML-модели.
+[[CRISP-DM|CRISP-DM]] — стандарт разработки и внедрения ML-модели.
 
-[[machine-learning-model]] — модели машинного обучения.
+[[machine-learning-model|Machine learning models]] — модели машинного обучения.
 
-- Выбор аппаратной платформы для ML: [[cpu-gpu]]
-- [[nl-processing]] — обработка естественного языка
+- Выбор аппаратной платформы для ML: [[cpu-gpu|CPU/GPU]]
+- [[nl-processing|NLP]] — обработка естественного языка
   - [[dialog-management|NLU]] — Natural Language Understanding
   - [[dialog-management|DM]] — Dialog Management
     - Политики: Rule-based, Data-driven (Retrieval-based, Generating)
     - Slot Filling
   - [[dialog-management|NLG]] — Natural Language Generation
-  - [[word-embedding]] — векторное представление слова
-  - [[rag]] — Retrieval Augmented Generation pattern
+  - [[word-embedding|Word embedding]] — векторное представление слова
+  - [[rag|RAG]] — Retrieval Augmented Generation pattern
     - Токены
     - Векторы
     - Чанки
     - Метаданные
     - SentenceTransformer
-  - [[fine-tuning]] — однократное дообучение готовой большой языковой модели
+  - [[fine-tuning|Fine-tuning]] — однократное дообучение готовой большой языковой модели
   - Алгоритмы кодирования текста
     - **Sparse** — разрежённые представления текста
-      - Методы кодирования векторов: bag-of-words, one-hot, TF-IDF
+      - Методы кодирования векторов: [[nl-encoding|Bag-of-words]], one-hot, TF-IDF
       - BM25 — оценка релевантности вектора запросу
     - **Dense** — плотные представления текста
-      - Нейросетевые модели: word2vec, GloVe, sentence-transformers, E5, GTE, text-embedding-3
-      - Индексация векторов: ANN (HNSW, IVF-PQ, DiskANN)
+      - Нейросетевые модели: word2vec, GloVe, [[embedding-models|Sentence Transformers]], E5, GTE, text-embedding-3
+      - Индексация векторов: ANN (HNSW, IVF-PQ, [[vector-index|DiskANN]])
     - **Гибрид** — dense-поиск + sparse-ранжирование
       - Инвертированный индекс (BM25)
       - Векторный индекс (HNSW в Qdrant / Elastic)
@@ -62,23 +62,23 @@ aliases:
       - Скалярное произведение
       - Манхэттенское расстояние (L1)
 - Инструменты
-  - [[airflow]] — для автоматизации обучения
-  - [[ml-flow]] — для экспериментов и версионирования
-  - [[Prometheus]] и [[grafana]] — для метрик, [[ELK]]-стек — для более глубокого анализа логов
-  - [[rasa]] — среда машинного обучения
-  - [[tokenizators]]
+  - [[airflow|Airflow]] — для автоматизации обучения
+  - [[ml-flow|MLflow]] — для экспериментов и версионирования
+  - [[Prometheus|Prometheus]] и [[grafana|Grafana]] — для метрик, [[ELK|ELK]]-стек — для более глубокого анализа логов
+  - [[rasa|Rasa]] — среда машинного обучения
+  - [[tokenizators|Tokenizators]]
     - Byte-Pair Encoding (BPE) — основа GPT-семейства
     - SentencePiece (Google) — универсальный токенизатор, поддерживает unigram-модели и BPE
-    - WordPiece (BERT) — исторически популярный токенизатор, но реже встречается в новых [[LLM]]
+    - WordPiece (BERT) — исторически популярный токенизатор, но реже встречается в новых [[LLM|LLM]]
     - Tiktoken (OpenAI) — оптимизирован под GPT-модели, быстро работает на C
     - HuggingFace/tokenizers — гибкий токенизатор, с помощью которого легко тренировать свой
-  - [[vector-store]] — хранилища эмбеддингов
+  - [[vector-store|Vector store]] — хранилища эмбеддингов
     - **FAISS** — минималистичный и очень быстрый движок для C++ или Python
     - **Pinecone** — полностью управляемый облачный сервис-хранилище векторных данных (SaaS)
     - **Qdrant** — полнофункциональный векторный сервер с масштабируемыми REST- и gRPC-API
     - **ChromaDB** — легко встраиваемое решение с богатой экосистемой в Python
   - Контроль галлюцинаций
-    - [[rag-assessment]]
+    - [[rag-assessment|RAG assessment]]
     - LlamaIndex Eval
     - TruLens
     - LangChain Benchmarks
@@ -202,7 +202,7 @@ aliases:
 
 **Как работает**
 
-- Нейросеть (например, BERT) кодирует запрос и документы в векторы.
+- Нейросеть (например, [[nl-processing|BERT]]) кодирует запрос и документы в векторы.
 - Векторы располагаются в общем семантическом пространстве: близкие по смыслу тексты имеют близкие векторы.
 - Поиск сводится к нахождению ближайших соседей (ANN, Approximate Nearest Neighbors) к вектору запроса.
 
@@ -227,7 +227,7 @@ aliases:
 | ------ | --------------------------------- | --------------------------------------------- |
 | **Представление данных** | Разрежённые векторы (много нулей) | Плотные векторы (мало измерений, все значимы) |
 | **Основа** | Частотность слов | Семантическое значение |
-| **Индексация** | Инвертированный индекс | [[vector-index\|Векторный индекс]] (ANN) |
+| **Индексация** | Инвертированный индекс | [[vector-index|Векторный индекс]] (ANN) |
 | **Скорость** | Очень быстрый | Медленнее (из-за векторных операций) |
 | **Ресурсы** | Низкие | Высокие |
 | **Семантика** | Нет | Да |

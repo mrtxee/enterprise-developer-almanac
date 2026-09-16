@@ -61,7 +61,7 @@ aliases:
 | `.gitignore`, shell скрипты | ✅ **Glob** |
 | Валидация email, телефона | ✅ **Regex** |
 | Парсинг текста, извлечение данных | ✅ **Regex** |
-| Конфиги Spring `@ComponentScan` | ✅ **Glob** |
+| Конфиги [[spring|Spring]] `@ComponentScan` | ✅ **Glob** |
 | Поиск/замена в редакторах | ✅ **Regex** |
 
 ## Памятка

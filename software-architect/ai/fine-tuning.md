@@ -11,7 +11,7 @@ aliases:
 
 ## Fine-tuning и RAG
 
-**Fine-tuning** и **RAG (Retrieval-Augmented Generation)** — два ключевых подхода для адаптации больших языковых моделей (LLM) под бизнес-задачи. Статья «Optimizing LLM Performance: RAG vs Finetune vs Both» сравнивает три подхода к оптимизации LLM: **RAG**, **тонкую настройку (finetuning)** и **их комбинацию**.
+**Fine-tuning** и **RAG (Retrieval-Augmented Generation)** — два ключевых подхода для адаптации больших языковых моделей ([[LLM|LLM]]) под бизнес-задачи. Статья «Optimizing LLM Performance: RAG vs Finetune vs Both» сравнивает три подхода к оптимизации LLM: **RAG**, **тонкую настройку (finetuning)** и **их комбинацию**.
 
 ### Fine-tuning
 
@@ -123,10 +123,10 @@ graph LR
 | **Стоимость** | Высокая (GPU, время) | Низкая (векторная БД + промпты) |
 | **Latency** | Как у исходной модели | Зависит от поиска в базе |
 | **Hallucinations** | Может быть меньше | Сильно снижены — ответы из контекста |
-| **Где хранятся данные** | Веса модели | Внешняя система (Pinecone, Weaviate, Elasticsearch) |
+| **Где хранятся данные** | Веса модели | Внешняя система ([[vector-store|Pinecone]], Weaviate, Elasticsearch) |
 | **Типичные данные** | Диалоги, примеры ответов | FAQ, документы, KB, PDF |
 | **Контроль над источниками** | ❌ Нет — модель «знает» | ✅ Да — можно показать: «ответ из FAQ №5» |
-| **Инструменты** | Hugging Face, LoRA, QLoRA | LangChain, LlamaIndex, Vector DB |
+| **Инструменты** | [[hugging-face|Hugging Face]], LoRA, QLoRA | [[lang-chain|LangChain]], LlamaIndex, Vector DB |
 
 ### Ключевые критерии выбора
 

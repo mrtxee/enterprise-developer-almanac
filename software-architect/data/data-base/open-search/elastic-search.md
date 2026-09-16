@@ -1,49 +1,94 @@
 ---
 aliases:
+  - Aggregations
   - Apache Lucene
   - Apache Solr
+  - Archive Phase
+  - AWS OpenSearch Service
   - ClickHouse
   - Cold Phase
+  - Cold Storage
+  - Data Stream
   - Data Streams
+  - Document
+  - Documents
   - Dynamic Mapping
   - EFK
+  - Elastic Search
   - Elasticsearch
+  - ElasticSearch
   - ELK
   - ES
+  - Eventual consistency
   - Fluentd
-  - Frozen/Archive Phase
+  - Force Merge
+  - Freeze
+  - Frozen Archive Phase
+  - Full-text search
   - Hot Phase
   - ILM
+  - Index
   - Index Lifecycle Management
   - Index Template
   - Inverted Index
+  - Kafka
+  - Kafka Connect
   - Kibana
   - Logstash
   - Lucene
   - Mapping
   - Meilisearch
+  - NLP
+  - Node
+  - Observability
   - OpenSearch
   - Replica
+  - Replicas
+  - REST API
+  - RESTful API
   - Rollover
+  - Search engine
+  - Semistructured data
   - Shard
+  - Shards
+  - Shrink
+  - SIEM
   - SLM
   - Snapshot Lifecycle Management
+  - Stemming
   - Typesense
   - Warm Phase
-  - Управление жизненным циклом индексов
+  - X-Pack
+  - агрегации
+  - динамический маппинг
+  - документ
+  - индекс
+  - маппинг
+  - наблюдаемость
+  - нода
+  - обратный индекс
+  - поисковый движок
+  - полнотекстовый поиск
+  - реплика
+  - реплики
+  - семиструктурированные данные
+  - стемминг
+  - узел
+  - управление жизненным циклом индексов
+  - шаблон индекса
+  - шард
+  - шарды
 ---
 
 ## Elasticsearch: распределённый поисковый движок
 
 **Elasticsearch (ES)** — это распределённая документоориентированная база данных NoSQL с открытым исходным кодом, построенная на поисковой системе [Lucene](https://lucene.apache.org/) и предоставляющая RESTful API. Она позволяет быстро искать и анализировать большие объёмы данных, строить дашборды и хранить логи, метрики, события.
 
-Она является частью **[[ELK]]/EFK стека**:
+Она является частью **[[ELK|ELK]]/EFK стека**:
 
 - **E**lasticsearch — хранение и поиск;
 - **L**ogstash / **F**luentd — сбор и обработка;
 - **K**ibana — визуализация.
-
-### Принцип работы
 
 ### Индексация через обратный индекс (inverted index)
 
@@ -87,7 +132,7 @@ aliases:
 
 ```mermaid
 ---
-title: Архитектура кластера: шарды и реплики в Elasticsearch
+title: Архитектура кластера шарды и реплики в Elasticsearch
 ---
 flowchart LR
     subgraph s1["Elasticsearch Cluster"]
@@ -157,14 +202,14 @@ flowchart LR
 
 ### Какие данные подходят для ES
 
-| ✅ Подходит | ❌ Не подходит |
+| ✅ Подходит                                            | ❌ Не подходит                      |
 | ----------------------------------------------------- | ---------------------------------- |
-| Логи, события | Транзакции (например, бухгалтерия) |
-| Полнотекстовый поиск | ACID-транзакции |
-| Метрики, трейсы | Частые UPDATE одной строки |
-| [[semistructured-data\|Семиструктурированные данные]] | Связанные данные (JOIN'ы) |
-| Большие объёмы | Системы, где важна целостность |
-| Time-series (логи) | |
+| Логи, события                                         | Транзакции (например, бухгалтерия) |
+| Полнотекстовый поиск                                  | ACID-транзакции                    |
+| Метрики, трейсы                                       | Частые UPDATE одной строки         |
+| [[semistructured-data|Семиструктурированные данные]] | Связанные данные (JOIN'ы)          |
+| Большие объёмы                                        | Системы, где важна целостность     |
+| Time-series (логи)                                    |                                    |
 
 ---
 
@@ -184,7 +229,7 @@ flowchart LR
 
 | Система | Когда использовать |
 | ------------------------------ | ------------------------------------------------------------- |
-| **[[OpenSearch\|OpenSearch]]** | Форк Elasticsearch после перехода Elastic в закрытую лицензию |
+| **[[open-search|OpenSearch]]** | Форк Elasticsearch после перехода Elastic в закрытую лицензию |
 | **ClickHouse** | Для аналитики, если нужно быстрее и дешевле |
 | **Meilisearch / Typesense** | Лёгкие альтернативы для поиска |
 | **Apache Solr** | На Lucene, но сложнее масштабировать |
@@ -214,13 +259,11 @@ flowchart LR
 | ✅ **Масштабируется до petabytes** | ❌ Не подходит для частых UPDATE |
 | ✅ **Основа для observability** | ❌ Не делает JOIN между таблицами |
 
-> 💬 _"Elasticsearch — это когда Google Search встраивается в вашу систему."_
-
 ---
 
 ## Управление жизненным циклом индексов (ILM)
 
-> 🔑 **ILM** автоматизирует управление индексами: хранить логи 90 дней, первые 7 дней — на быстрых дисках, далее — на дешёвых. Elasticsearch делает это сам.
+> **ILM** автоматизирует управление индексами: хранить логи 90 дней, первые 7 дней — на быстрых дисках, далее — на дешёвых. Elasticsearch делает это сам.
 
 | Без ILM | С ILM |
 | ----------------------- | ---------------------------- |
@@ -228,9 +271,6 @@ flowchart LR
 | Ручное управление | Полностью автоматическое |
 | Риск переполнения | Предсказуемое поведение |
 | Высокая стоимость | Экономия до 60% |
-
-> 💬 _"You can't scale logging without ILM."_
-> — Elastic Best Practices
 
 ### Индекс в Elasticsearch
 

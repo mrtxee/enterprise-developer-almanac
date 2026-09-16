@@ -38,7 +38,7 @@ aliases:
   - Context drift
 - AI eval designer
 - Red Teaming
-- Lost-in-the-middle
+- [[agentic-coding-context|Lost in the Middle]]
 - Acceptance Criteria
 - Исполняемое намерение
 - AI-first в разработке

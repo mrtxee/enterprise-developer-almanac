@@ -28,7 +28,7 @@ aliases:
 
 ## Главный принцип
 
-**Прокси-шлюз должен быть stateless + находиться за балансировщиком нагрузки с активными health-check'ами.**
+**Прокси-шлюз должен быть stateless + находиться за [[load-balancer-scaling|балансировщиком нагрузки]] с активными health-check'ами.**
 
 ```mermaid
 ---
@@ -53,10 +53,10 @@ flowchart LR
 
 | Подход | Как работает | Время failover | Когда применять |
 | ------ | ------------ | -------------- | --------------- |
-| **1. Cloud / Внешний L4-L7 LB** | Единый VIP → health-check → маршрутизация на здоровые узлы | 1–5 сек | Облака (AWS, GCP, YC, Azure), большинство продакшенов |
-| **2. [[dns-based-failover]]** | Несколько внешних IP, DNS провайдер проверяет доступность и меняет запись | 30–300 сек (зависит от TTL) | Когда нет облачного LB, допустима задержка |
+| **1. Cloud / Внешний L4-L7 LB** | Единый [[load-balancer-scaling|VIP]] → health-check → маршрутизация на здоровые узлы | 1–5 сек | Облака (AWS, GCP, YC, Azure), большинство продакшенов |
+| **2. [[dns-based-failover|dns-based-failover]]** | Несколько внешних IP, DNS провайдер проверяет доступность и меняет запись | 30–300 сек (зависит от TTL) | Когда нет облачного LB, допустима задержка |
 | **3. [[anycast\|Anycast IP]]** | Один IP анонсируется из нескольких точек через BGP. Трафик идёт к ближайшему живому узлу | &lt;1 сек | Крупные SaaS, CDN, телеком |
-| **4. [[VRRP]] / Keepalived / CARP** | Виртуальный IP «плавает» между узлами в L2-сети | &lt;1 сек | On-premise, bare-metal, собственные ЦОД |
+| **4. [[load-balancer-scaling|VRRP]] / Keepalived / CARP** | Виртуальный IP «плавает» между узлами в L2-сети | &lt;1 сек | On-premise, bare-metal, собственные ЦОД |
 
 > ✅ **Рекомендация для 95% сценариев:** Managed Cloud Load Balancer + N stateless прокси-инстансов.
 
@@ -71,7 +71,7 @@ flowchart LR
 **2. Синхронизация конфигурации**
 
 - ❌ Ручное копирование `nginx.conf` / `traefik.yml`
-- ✅ GitOps (ArgoCD/Flux), Consul, etcd, S3 + init-контейнер, или централизованный control-plane (Kong, APISIX, Tyk)
+- ✅ GitOps (ArgoCD/Flux), Consul, etcd, S3 + [[kubernetes|init-контейнер]], или централизованный control-plane (Kong, APISIX, Tyk)
 
 **3. Корректные health-check'и**
 

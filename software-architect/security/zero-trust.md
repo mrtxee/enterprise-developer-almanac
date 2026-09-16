@@ -89,7 +89,7 @@ graph TD
 | ✅ **Поддержка удалённой работы** | Без VPN, но безопасно                            |
 | ✅ **Интеграция с CI/CD**         | Каждый сервис должен доказать свою легитимность  |
 
-## Сравнение: Zero Trust vs [[adaptive-auth]]
+## Сравнение: Zero Trust vs [[adaptive-auth|Adaptive auth]]
 
 | Характеристика | **Zero Trust** | **Adaptive Authentication** |
 |----------------|--------------|----------------------------|
@@ -97,7 +97,7 @@ graph TD
 | **Фокус** | Все действия после входа | Только момент аутентификации |
 | **Когда используется** | При каждом вызове | Только при логине |
 | **Пример** | Микросервис B не может вызвать A без токена | Требует SMS, если вход с нового устройства |
-| **Инструменты** | Istio, ZTNA, mTLS | Okta, Azure AD Conditional Access, Keycloak |
+| **Инструменты** | Istio, ZTNA, mTLS | Okta, Azure AD Conditional Access, [[keycloak|Keycloak]] |
 
 > ✅ **Adaptive Authentication — часть Zero Trust.**
 > Но **Zero Trust — это больше**: он контролирует **все** взаимодействия.
@@ -154,14 +154,14 @@ sequenceDiagram
 ### Okta / Ping Identity
 
 - Adaptive MFA
-- Интеграция с SIEM
+- Интеграция с [[SIEM|SIEM]]
 - Risk-based authentication
 
 ---
 
 ## Финальный вывод
 
-| Zero Trust                       | [[adaptive-auth]]       |
+| Zero Trust                       | [[adaptive-auth|Adaptive auth]]       |
 | -------------------------------- | --------------------------------- |
 | ✅ **Шире**: охватывает всю сеть  | ✅ **Узко**: только аутентификация |
 | ✅ **Каждый вызов — проверяется** | ✅ **Только вход — анализируется** |

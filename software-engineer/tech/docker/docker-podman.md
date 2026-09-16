@@ -477,7 +477,7 @@ $ loginctl enable-linger $USER  # запуск после reboot
 
 ### Docker
 
-- **Docker Hub** — крупнейший registry
+- **[[containerization|Docker Hub]]** — крупнейший registry
 - **Docker Desktop** — macOS/Windows GUI
 - **Docker Swarm** — оркестрация
 - **Docker Compose** — multiple containers
@@ -524,7 +524,7 @@ flowchart TD
 
 - Daemonless-архитектура
 - Rootless по умолчанию
-- Нативная интеграция с Kubernetes
+- Нативная интеграция с [[kubernetes|Kubernetes]]
 - Интеграция с systemd
 - Меньше зрелости для некоторых use cases
 
@@ -559,4 +559,4 @@ $ podman build -t myapp .
 $ podman push myapp:latest
 ```
 
-Гибридный подход: Docker для разработки, Podman для production и CI/CD. Оба инструмента совместимы, поэтому миграция сводится к замене CLI.
+Гибридный подход: Docker для разработки, Podman для production и [[CI-CD|CI/CD]]. Оба инструмента совместимы, поэтому миграция сводится к замене CLI.

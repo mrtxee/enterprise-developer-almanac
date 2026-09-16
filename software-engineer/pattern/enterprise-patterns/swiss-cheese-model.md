@@ -185,5 +185,5 @@ flowchart LR
 ## Связанные темы
 
 - Шаблон [[Postmortem|Postmortem]] на основе Swiss Cheese.
-- Как внедрить [[blameless-culture]] в команду.
-- Примеры слоёв защиты для микросервисов.
+- Как внедрить [[blameless-culture|Blameless Culture]] в команду.
+- Примеры слоёв защиты для [[microservice|микросервисов]].

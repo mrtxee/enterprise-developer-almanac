@@ -46,7 +46,7 @@ aliases:
 
 **Интерфейсный слой —** UI Layer (Web Browser, JavaScript)
 
-- может быть представлен консолью ввода или REST-контроллером, любым иным клиентским интерфейсом
+- может быть представлен консолью ввода или [[REST|REST]]-контроллером, любым иным клиентским интерфейсом
 
 ### \[Слой аутентификации\]
 
@@ -54,7 +54,7 @@ aliases:
 
 **Контроллер** — MVC Controller — **==controller==**
 
-- Spring components annotated with `@Controller`
+- [[spring|Spring]] components annotated with `@Controller`
 - получает команды от интерфейсного слоя и обращается к сервисному слою, бизнес-логике. Получает и передает **DTO**
 
 ### Сервис
@@ -83,9 +83,9 @@ aliases:
 1. Spring components annotated with `@Repository`
 2. По MVC-паттерну относится к **model**
 
-Репозиторий возвращает сущности — `@Entity` — Сущность (по JPA)
+Репозиторий возвращает сущности — `@Entity` — Сущность (по [[java-persistence-api|JPA]])
 
-- паттерн - ActiveRecord
+- паттерн - [[active-record|ActiveRecord]]
 - Spring components annotated with `@Entity`
   - `@Data`, `@Entity`, `@Table(name = "client")`
     - Entity — сущность в JPA — бизнес объект, хранимый в базе данных

@@ -15,7 +15,7 @@ aliases:
 
 ## 🔄 Основные этапы SDLC
 
-Хотя существуют разные модели (Waterfall, Agile, DevOps), базовые фазы остаются неизменными:
+Хотя существуют разные модели ([[software-life-cycle|Waterfall]], Agile, [[dev-ops|DevOps]]), базовые фазы остаются неизменными:
 
 ```mermaid
 ---
@@ -146,8 +146,8 @@ graph TB
 
 - **Планирование**: threat modeling
 - **Проектирование**: secure architecture
-- **Разработка**: SAST, code review
-- **Тестирование**: DAST, penetration testing
+- **Разработка**: [[application-security-testing|SAST]], code review
+- **Тестирование**: [[application-security-testing|DAST]], penetration testing
 - **Эксплуатация**: мониторинг уязвимостей
 
 > 🔐 Принцип: **«Security by design»** и **«Shift left security»**

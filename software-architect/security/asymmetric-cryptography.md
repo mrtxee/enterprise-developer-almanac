@@ -266,9 +266,9 @@ def benchmark():
 
 - ✅ SSL/TLS handshake
 - ✅ Цифровые подписи
-- ✅ PGP/GPG шифрование
+- ✅ [[PGP|PGP]]/GPG шифрование
 - ✅ Криптовалюты
-- ✅ Аутентификация
+- ✅ [[identity-access-management|Аутентификация]]
 
 ---
 

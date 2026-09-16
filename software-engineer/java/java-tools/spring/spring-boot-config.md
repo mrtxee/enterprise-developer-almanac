@@ -14,7 +14,7 @@ aliases:
 
 ### Источники
 
-- Spring Boot Common Application Properties (docs.spring.io)
+- [[spring|Spring Boot]] Common Application Properties (docs.spring.io)
 - Spring Boot 3.4.x Documentation (docs.spring.io)
 
 ---

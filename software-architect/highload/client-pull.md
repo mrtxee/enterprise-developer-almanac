@@ -17,7 +17,7 @@ aliases:
 
 **Противоположность: Server Push**
 
-- **Server Push**: сервер отправляет данные клиенту без запроса ([[web-socket|webSocket]], [[server-push|SSE]], Webhooks).
+- **Server Push**: сервер отправляет данные клиенту без запроса ([[web-socket|WebSocket]], [[server-push|SSE]], Webhooks).
 - **Client Pull**: клиент должен **спросить** — как в обычном HTTP-запросе.
 
 ## 1. Паттерн Polling
@@ -46,7 +46,7 @@ Host: example.com
 - ❌ **Задержка до 2 секунд** (если опрос раз в 2с).
 - ❌ **Потребление трафика и батареи** (на мобильных устройствах).
 
-**Где используется:** старые веб-приложения, простые чаты до появления WebSocket, API без поддержки push.
+**Где используется:** старые веб-приложения, простые чаты до появления [[web-socket|WebSocket]], API без поддержки push.
 
 ### Long Polling (длинный опрос)
 
@@ -85,7 +85,7 @@ GET /api/notifications?timeout=60 HTTP/1.1
 **Как работает:**
 
 1. Клиент делает один запрос: `GET /api/user-profile/123`.
-2. Сервис-агрегатор (API Gateway / Backend-for-Frontend) делает **несколько внутренних запросов**:
+2. Сервис-агрегатор ([[api-gateway|API Gateway]] / [[backend-for-frontend|Backend-for-Frontend]]) делает **несколько внутренних запросов**:
    - `GET /api/user/info/123` → имя, email;
    - `GET /api/user/orders/123` → последние заказы;
    - `GET /api/user/notifications/123` → уведомления.

@@ -53,7 +53,7 @@ aliases:
 
 **Java Collection** — это фреймворк, который обеспечивает унифицированную архитектуру для управления групповыми структурами данных.
 
-- Java Collection Framework включена в JDK.
+- Java Collection Framework включена в [[jdk-jls-jni|JDK]].
 - Java Collection Framework представляет собой иерархию интерфейсов и классов.
 
 ```mermaid
@@ -227,7 +227,7 @@ entry();
 - Производительность зависит от **initial capacity** и **load factor**:
   - конструктор `HashMap(int initialCapacity, float loadFactor)`
   - `loadFactor` — показатель того, сколько должно быть элементов, прежде чем размер (capacity) увеличится. По умолчанию равен `0,75`
-  - когда количество объектов `Entry<K, V>` превышает произведение `loadFactor * capacity`, хэш-таблица повторно хэшируется примерно в два раза больше сегментов
+  - когда количество объектов `Entry<K, V>` превышает произведение `loadFactor * capacity`, [[hash-table|хэш-таблица]] повторно хэшируется примерно в два раза больше сегментов
 - В основе структуры лежит массив, разделённый на ячейки — **buckets**.
 
 **Как происходит добавление `Entry<K, V>`**
@@ -468,7 +468,7 @@ Iterator<E> descendingIterator() // элементы от хвоста к гол
 
 #### class LinkedList (как Queue)
 
-См. также: [[java-collection-framework]].
+См. также: [[java-collection-framework|java-collection-framework]].
 
 ```java
 Queue<String> que = new LinkedList<>();
@@ -556,7 +556,7 @@ Iterator<E> descendingIterator()
 
 `extends AbstractSet<E>` `implements NavigableSet<E>, Cloneable, Serializable`
 
-В основе лежат красно-чёрные деревья (RBTree): логарифмическая сложность для основных операций (add, remove, contains).
+В основе лежат [[algorithm|красно-чёрные деревья]] (RBTree): логарифмическая сложность для основных операций (add, remove, contains).
 
 ```java
 @Test
@@ -698,7 +698,7 @@ while (lit.hasNext()) {
 
 - Параллелизм — поддерживает разбиение (`trySplit()`) для обработки в нескольких потоках.
 - Внутренняя итерация — управление обходом берёт на себя `Spliterator`, а не вызывающий код.
-- Работа с потоками — основное применение в Stream API (`parallelStream()`).
+- Работа с потоками — основное применение в [[stream-api|Stream API]] (`parallelStream()`).
 - Только чтение — не поддерживает модификацию коллекции во время обхода.
 - Гибкая оценка размера — `estimateSize()` может возвращать приблизительное значение.
 - Потокобезопасность — при корректном использовании может работать в многопоточной среде.

@@ -22,7 +22,7 @@ aliases:
 | №   | Принцип                             | Ключевая цель                                       | Примеры реализаций                  |
 | --- | ----------------------------------- | --------------------------------------------------- | ----------------------------------- |
 | 1   | Реляционная модель                  | Чистая, математически обоснованная структура данных | Таблицы, ключи, отношения           |
-| 2   | [[ACID]]                            | Надёжность и целостность                            | Транзакции, WAL, fsync              |
+| 2   | [[software-architect/data/data-base/rdbms/ACID|ACID]]                            | Надёжность и целостность                            | Транзакции, WAL, fsync              |
 | 3   | Нормализация                        | Устранение избыточности                             | 3NF, BCNF                           |
 | 4   | SQL (декларативность)               | Отделение логики от реализации                      | SELECT, JOIN, WHERE                 |
 | 5   | Физическая/логическая независимость | Защита приложений от изменений БД                   | Схема vs хранение                   |
@@ -30,7 +30,7 @@ aliases:
 | 7   | Индексы                             | Быстрый доступ                                      | B-tree, Hash, Bitmap                |
 | 8   | WAL                                 | Durability и восстановление                         | Write-Ahead Logging                 |
 | 9   | Репликация                          | HA и масштабируемость                               | Master-slave, streaming replication |
-| 10  | Блокировки / MVCC                   | Параллелизм                                         | Row-level locks, Snapshot isolation |
+| 10  | Блокировки / [[software-architect/data/data-base/rdbms/MVCC|MVCC]]                   | Параллелизм                                         | Row-level locks, Snapshot isolation |
 | 11  | Явные транзакции                    | Контроль над состоянием                             | BEGIN...COMMIT                      |
 | 12  | Системные каталоги                  | Самоописываемость                                   | pg_class, information_schema        |
 | 13  | SQL-стандарт                        | Портативность                                       | ANSI SQL:2016                       |
@@ -73,7 +73,7 @@ aliases:
 | **I — Isolation**   | Транзакции не мешают друг другу.                                         |
 | **D — Durability**  | После коммита изменения сохраняются даже при сбое.                       |
 
-Более детально — в заметке [[ACID]].
+Более детально — в заметке [[software-architect/data/data-base/rdbms/ACID|ACID]].
 
 > **ACID — это «сердце» надёжности RDBMS. Без них — это просто хранилище данных, а не база данных.**
 
@@ -177,7 +177,7 @@ RDBMS содержит [[PostgreSQL#Query Planner – Планировщик з�
 | **Full-text**              | Поиск по тексту (`MATCH(text) AGAINST('query')`)                 |
 | **GiST / GIN**             | Геоданные, JSON, массивы (PostgreSQL)                            |
 | **Bloom**                  | Фильтры блума для широких таблиц и множественных equal-фильтров  |
-| **[[index#BRIN\|BRIN]]** | Блоко-диапазонный индекс                                         |
+| **[[index#BRIN|BRIN]]** | Блоко-диапазонный индекс                                         |
 
 **Фундаментальный принцип:**
 
@@ -258,7 +258,7 @@ RDBMS содержит [[PostgreSQL#Query Planner – Планировщик з�
 | Repeatable Read  | Non-repeatable reads       |
 | Serializable     | Все аномалии               |
 
-В PostgreSQL `Repeatable Read` — это фактически `Serializable` благодаря MVCC. В MySQL InnoDB `Repeatable Read` — стандарт, но есть фантомные чтения при некоторых условиях.
+В [[PostgreSQL|PostgreSQL]] `Repeatable Read` — это фактически `Serializable` благодаря MVCC. В MySQL InnoDB `Repeatable Read` — стандарт, но есть фантомные чтения при некоторых условиях.
 
 ## 11. Транзакционная логика и явное управление состоянием
 

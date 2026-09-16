@@ -409,7 +409,7 @@ public class MyCommandLineRunner implements CommandLineRunner {
 | **Аргументы** | Нет | `ApplicationArguments` (структурированные) | `String... args` (сырые) |
 | **Порядок** | По событию | `@Order` аннотация | `@Order` аннотация |
 | **Количество вызовов** | Может быть несколько (при refresh) | Один раз | Один раз |
-| **Spring Boot** | Да (но из Spring Framework) | Да (только Boot) | Да (только Boot) |
+| **Spring Boot** | Да (но из [[spring|Spring Framework]]) | Да (только Boot) | Да (только Boot) |
 
 ### Практические примеры использования
 

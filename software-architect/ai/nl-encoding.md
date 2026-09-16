@@ -11,7 +11,7 @@ aliases:
   - Разрежённые представления
 ---
 
-Тема **алгоритмов кодирования текста** — одна из самых важных в NLP и поиске. Алгоритмы делятся на два больших класса.
+Тема **алгоритмов кодирования текста** — одна из самых важных в [[nl-processing|NLP]] и поиске. Алгоритмы делятся на два больших класса.
 
 ---
 
@@ -125,9 +125,9 @@ Score(D,Q) = Σ [IDF(q) * TF(q,D)]
 
 | Модель | Описание |
 |--------|----------|
-| **Word2Vec** | Первые эмбеддинги слов. CBOW, Skip-Gram |
+| **[[word-embedding|Word2Vec]]** | Первые эмбеддинги слов. CBOW, Skip-Gram |
 | **GloVe** | Global Vectors for Word Representation. Статистика + матричное разложение |
-| **Sentence Transformers** | `all-MiniLM-L6-v2`, `paraphrase-multilingual`. Умеет сравнивать целые предложения |
+| **[[embedding-models|Sentence Transformers]]** | `all-MiniLM-L6-v2`, `paraphrase-multilingual`. Умеет сравнивать целые предложения |
 | **E5 (Embeddings from Enhanced Encoder)** | От Microsoft — поддерживает много языков |
 | **GTE (General Text Embeddings)** | Alibaba Cloud — open source |
 | **text-embedding-3-small/large** | От OpenAI — state-of-the-art |
@@ -149,7 +149,7 @@ cosine_similarity(v1, v2) ≈ 0.98 → почти одинаковый смыс�
 
 ## Индексация плотных векторов
 
-> Векторы нельзя хранить в обычной БД → нужен **ANN (Approximate Nearest Neighbors)**
+> Векторы нельзя хранить в обычной БД → нужен **[[vector-index|ANN]] (Approximate Nearest Neighbors)**
 
 | Алгоритм | Описание |
 |---------|----------|
@@ -179,7 +179,7 @@ cosine_similarity(v1, v2) ≈ 0.98 → почти одинаковый смыс�
 | Задача | Рекомендация |
 |--------|---------------|
 | Поиск по точному совпадению | **Sparse (TF-IDF, BM25)** |
-| Поиск по смыслу | **Dense + RAG** |
+| Поиск по смыслу | **Dense + [[rag|RAG]]** |
 | MVP, мало данных | **TF-IDF + BM25** |
 | LLM, чат-боты | **Dense (E5, GTE, text-embedding-3)** |
 | Мультиязычность | **sentence-transformers/multilingual** |
@@ -200,4 +200,4 @@ cosine_similarity(v1, v2) ≈ 0.98 → почти одинаковый смыс�
 
 ---
 
-Сохраните эту шпаргалку — она станет основой вашего поиска, чат-бота или [[rag]]-системы.
+Сохраните эту шпаргалку — она станет основой вашего поиска, чат-бота или [[rag|RAG]]-системы.

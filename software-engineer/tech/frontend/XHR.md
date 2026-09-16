@@ -15,7 +15,7 @@ aliases:
 
 **Краткий ответ**
 
-XMLHttpRequest (XHR) — это встроенный в браузер API для выполнения HTTP-запросов из JavaScript. Он использовался до появления Fetch API (2015), но всё ещё поддерживается.
+XMLHttpRequest (XHR) — это встроенный в браузер API для выполнения HTTP-запросов из [[javascript|JavaScript]]. Он использовался до появления Fetch API (2015), но всё ещё поддерживается.
 
 ### Что такое XHR
 
@@ -416,7 +416,7 @@ axios.interceptors.request.use(config => {
 | Поддержка IE | ✅ XHR или Axios |
 | Прогресс загрузки | ✅ XHR (нативный) |
 | Legacy-код | ⚠️ Рефакторить на Fetch |
-| React/Vue/Angular | ❌ Fetch/Axios |
+| [[react|React]]/Vue/Angular | ❌ Fetch/Axios |
 | Node.js | ❌ XHR не доступен (используй http/https) |
 
 ### Шпаргалка

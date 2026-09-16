@@ -109,7 +109,7 @@ aliases:
   1. Client Session
   2. Server Session
   3. Database Session
-3. [[offline-concurrency]] Patterns
+3. [[offline-concurrency|Offline Concurrency]] Patterns
   1. Optimistic Lock
   2. Pessimistic Lock
   3. Coarse Grained Lock
@@ -120,7 +120,7 @@ aliases:
 5. Web Presentation Patterns
   1. Controller
     1. Model View Controller
-    2. [[page-controller]]
+    2. [[page-controller|Page Controller]]
     3. Front Controller
       1. Application Controller
   2. View
@@ -135,25 +135,25 @@ aliases:
 7. Domain Logic Patterns
   1. Transaction Script
   2. Domain Model
-  3. [[table-module]]
+  3. [[table-module|Table Module]]
   4. Service Layer
 8. Object-Relational Patterns
   1. Object-Relational Structural Patterns
     1. Embedded Value
-    2. Serialized [[LOB]]
+    2. Serialized [[LOB|LOB]]
     3. Identity Field
     4. Mapping
       1. Foreign Key Mapping
       2. Association Table Mapping
       3. Dependent Mapping
-    5. [[Inheritance-mappers]]
+    5. [[Inheritance-mappers|Inheritance Mappers]]
       1. Single Table Inheritance
       2. Class Table Inheritance
       3. Concrete Table Inheritance
   2. Object-Relational Behavioral Patterns
     1. Lazy Load
     2. Identity Map
-    3. [[unit-of-work]]
+    3. [[unit-of-work|Unit of Work]]
   3. Object-Relational Metadata Mapping
     1. Metadata Mapping
     2. Query Object
@@ -239,8 +239,8 @@ aliases:
 
 **Session State:** где хранить состояние сессии (клиент, сервер, БД). Выбор зависит от требований к масштабируемости, безопасности и надёжности. Определяют, где и как хранить состояние пользовательской сессии.
 
-1. **Client Session** — состояние хранится на стороне клиента (в cookies, hidden fields, URL, localStorage).
-  - **Пример:** JWT-токены, куки с идентификатором сессии.
+1. **Client Session** — состояние хранится на стороне клиента (в [[cookie|cookies]], hidden fields, URL, localStorage).
+  - **Пример:** [[JWT|JWT]]-токены, куки с идентификатором сессии.
 1. **Server Session** — состояние хранится в памяти сервера (в RAM, например, в ASP.NET Session, PHP `$_SESSION`).
   - **Пример:** сессии в веб-серверах по умолчанию.
 1. **Database Session** — состояние хранится в базе данных.
@@ -257,7 +257,7 @@ aliases:
 1. **Optimistic Lock** («оптимистическая блокировка») — предполагает, что конфликты редки. Перед сохранением проверяет, не изменились ли данные с момента их чтения.
   - **Как:** добавляет версию (`version`) или timestamp. При обновлении проверяет, что версия не изменилась.
   - **Когда:** частые чтения, редкие обновления, короткие транзакции.
-  - **Пример:** Hibernate Optimistic Locking.
+  - **Пример:** [[hibernate|Hibernate]] Optimistic Locking.
 1. **Pessimistic Lock** («пессимистическая блокировка») — блокирует данные сразу при чтении, чтобы никто другой не мог их изменить.
   - **Как:** использует блокировки на уровне БД (`SELECT ... FOR UPDATE`).
   - **Когда:** частые конфликты, длинные транзакции, критичность целостности данных.
@@ -331,9 +331,9 @@ aliases:
 Data Source паттерны решают, как взаимодействовать с БД (шлюзы, Active Record, Mapper).
 
 1. **Table Data Gateway** — класс-шлюз для всей таблицы БД. Содержит методы для работы с данными таблицы (например, `findAll()`, `findById()`). Подходит для простых CRUD-операций.
-2. **[[row-data-gateway]]** — объект-шлюз для одной строки таблицы. Каждый объект соответствует записи в БД. Удобен для работы с отдельными записями.
-3. **[[active-record]]** — объект, который объединяет данные строки и методы для работы с ней (например, `save()`, `delete()`). Простота, но смешение уровней данных и логики.
-4. **[[data-mapper]]** — слой, отделяющий объекты предметной области от БД. Преобразует объекты в записи и обратно без взаимной зависимости. Гибкость, но повышенная сложность.
+2. **[[row-data-gateway|Row Data Gateway]]** — объект-шлюз для одной строки таблицы. Каждый объект соответствует записи в БД. Удобен для работы с отдельными записями.
+3. **[[active-record|Active Record]]** — объект, который объединяет данные строки и методы для работы с ней (например, `save()`, `delete()`). Простота, но смешение уровней данных и логики.
+4. **[[data-mapper|Data Mapper]]** — слой, отделяющий объекты предметной области от БД. Преобразует объекты в записи и обратно без взаимной зависимости. Гибкость, но повышенная сложность.
 
 ---
 
@@ -373,7 +373,7 @@ Domain Logic паттерны определяют, где и как разме�
   - **Foreign Key Mapping** — прямая связь «один-ко-многим» через внешний ключ. В таблице `Order` есть поле `customer_id`, ссылающееся на `Customer.id`.
   - **Association Table Mapping** — связь «многие-ко-многим» через промежуточную таблицу. Например, `Student_Course` связывает студентов и курсы.
   - **Dependent Mapping** — дочерние объекты (например, позиции заказа) автоматически сохраняются или удаляются вместе с родительским (заказом).
-- **[[Inheritance-mappers]]** — стратегии отображения иерархии классов на таблицы.
+- **[[Inheritance-mappers|Inheritance-mappers]]** — стратегии отображения иерархии классов на таблицы.
   - **Single Table Inheritance** — все классы иерархии в одной таблице. Поле-дискриминатор (например, `type`) определяет тип записи.
   - **Class Table Inheritance** — для каждого класса своя таблица. Поля базового класса дублируются или выделяются в отдельную таблицу.
   - **Concrete Table Inheritance** — отдельная таблица для каждого конкретного класса (без общих таблиц для базовых классов).
@@ -486,6 +486,6 @@ mindmap
 - [Книга: "Patterns of Enterprise Application Architecture"](https://martinfowler.com/books/eaa.html)
 - [Официальные статьи](https://martinfowler.com/eaaCatalog/) — онлайн-версия каталога
 - YouTube: "Martin Fowler — Enterprise Patterns"
-- Книга #📘 "Enterprise Integration Patterns" — Hohpe & Woolf (продолжение темы)
+- Книга #📘 "[[enterprise-integration-patterns|Enterprise Integration Patterns]]" — Hohpe & Woolf (продолжение темы)
 
 ---

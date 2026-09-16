@@ -142,7 +142,7 @@ DynamoDB — одна из первых систем, реализующих lea
 - Все узлы равны
 - Использует **gossip** для обмена состоянием
 - Запись может быть на любом узле — он становится **coordinator**
-- Реплицируется по кольцу (consistent hashing)
+- Реплицируется по кольцу ([[consistent-hashing|consistent hashing]])
 - Поддерживает **eventual consistency**
 
 ```sql
@@ -175,7 +175,7 @@ INSERT INTO users(id, name) VALUES (1, 'Alice');
 | Конфликты | Нужно решать на стороне клиента |
 | Сложнее понять | Особенно для новичков |
 | Требует idempotent операций | Чтобы не было дублей |
-| Ограниченная поддержка ACID | Почти всегда BASE, а не ACID |
+| Ограниченная поддержка ACID | Почти всегда [[BASE|BASE]], а не ACID |
 
 ---
 
@@ -187,7 +187,7 @@ INSERT INTO users(id, name) VALUES (1, 'Alice');
 | Глобальные системы (SaaS) | ✅ Да — например, DynamoDB, Cassandra |
 | Нужен uptime 99.99% | ✅ Да — leaderless хорошо справляется |
 | Финансовые транзакции | ❌ Нет — используйте строгую согласованность |
-| Нужна strong consistency | ❌ Leader-based лучше (например, PostgreSQL) |
+| Нужна strong consistency | ❌ Leader-based лучше (например, [[PostgreSQL|PostgreSQL]]) |
 | Частые сетевые сбои | ✅ Да — leaderless продолжает работать |
 
 ---
@@ -258,7 +258,7 @@ INSERT INTO users(id, name) VALUES (1, 'Alice');
 
 ### Multi-Master Replication
 
-**Определение:** **Multi-Master** — это архитектура, где **несколько узлов могут принимать операции записи**, в отличие от классического Master-Slave.
+**Определение:** **Multi-Master** — это архитектура, где **несколько узлов могут принимать операции записи**, в отличие от классического [[replication|Master-Slave]].
 
 **Пример:**
 

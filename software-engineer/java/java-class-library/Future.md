@@ -137,7 +137,7 @@ ListenableFuture<String> transformed = Futures.transform(
 - ✅ Встроен в JDK — никаких зависимостей.
 - ✅ Мощный, выразительный API для асинхронного программирования.
 - ✅ Неблокирующий по умолчанию (если использовать `*Async` методы).
-- ✅ Хорошо интегрируется с реактивными фреймворками (Project Reactor, RxJava через адаптеры).
+- ✅ Хорошо интегрируется с реактивными фреймворками ([[reactor|Project Reactor]], RxJava через адаптеры).
 - ❌ Сложность для новичков (глубокие цепочки трудно отлаживать).
 - ❌ Нет встроенной поддержки backpressure (в отличие от Reactive Streams).
 - ❌ `CompletableFuture` — не `Publisher`, поэтому не подходит напрямую для реактивных пайплайнов.
@@ -204,4 +204,4 @@ future.completeExceptionally(new RuntimeException("timeout"));
 - `ListenableFuture` — мост между старым и новым, полезен в Guava-экосистеме.
 - `CompletableFuture` — современный стандарт для асинхронных операций в Java.
 
-Для Java 11+ `CompletableFuture` + `ExecutorService` (или virtual threads в Java 21+) — стандарт асинхронного программирования.
+Для Java 11+ `CompletableFuture` + `ExecutorService` (или [[java-thread|virtual threads]] в Java 21+) — стандарт асинхронного программирования.

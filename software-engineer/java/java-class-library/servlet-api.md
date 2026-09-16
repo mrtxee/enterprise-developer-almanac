@@ -122,7 +122,7 @@ public class HelloServlet extends HttpServlet {
 | **Совместимость** | Все Java-веб-серверы | Требует реактивный сервер (Netty) |
 | **Стандарт** | Jakarta EE (ранее Java EE) | Реактивный стек (Reactor) |
 
-> 🔸 Spring WebFlux **не требует Servlet API** — он может работать на Netty напрямую.
+> 🔸 [[web-flux|Spring WebFlux]] **не требует Servlet API** — он может работать на Netty напрямую.
 > 🔸 Spring MVC **обязательно требует Servlet API**.
 
 ---
@@ -130,7 +130,7 @@ public class HelloServlet extends HttpServlet {
 ## 📜 Эволюция: от `javax` к `jakarta`
 
 - До 2017: пакеты — `javax.servlet.*`.
-- После передачи Java EE в Eclipse Foundation → переименовано в **Jakarta Servlet** → пакеты `jakarta.servlet.*`.
+- После передачи Java EE в [[javax-vs-jakarta|Eclipse Foundation]] → переименовано в **Jakarta Servlet** → пакеты `jakarta.servlet.*`.
 - **Tomcat 10+**, **Jetty 11+** используют `jakarta.*`.
 
 > ⚠️ Это **не совместимо на уровне байт-кода** — миграция требует перекомпиляции.

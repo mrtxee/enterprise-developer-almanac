@@ -17,9 +17,9 @@ aliases:
 
 ## Open Table Formats
 
-Распространённые форматы: Delta Lake, Apache Hudi, Apache [[Iceberg]].
+Распространённые форматы: Delta Lake, Apache Hudi, Apache [[Iceberg|Iceberg]].
 
-**Delta Lake**, **Apache Hudi** и **Apache Iceberg** — это три ведущих **open-table format** (формата таблиц), превращающих объектные хранилища (S3, ADLS, GCS) в надёжные **lakehouse**. Все они решают схожие задачи, но с разными подходами.
+**Delta Lake**, **Apache Hudi** и **Apache Iceberg** — это три ведущих **open-table format** (формата таблиц), превращающих объектные хранилища ([[S3|S3]], ADLS, GCS) в надёжные **lakehouse**. Все они решают схожие задачи, но с разными подходами.
 
 ### Сравнительная таблица
 
@@ -38,12 +38,12 @@ aliases:
 | **Каталог метаданных** | Hive Metastore, Unity Catalog | Hive Metastore, AWS Glue | Hive Metastore, **Nessie**, JDBC, Glue |
 | **Branching / Tagging** | ❌ | ❌ | ✅ (**с Nessie**) |
 | **Streaming** | ✅ (Spark Structured Streaming) | ✅ (**лучше всего** для потоков) | ✅ (Flink, Spark) |
-| **Язык запросов** | Spark SQL | Spark SQL, [[HiveQL]] | **SQL (любой движок)** |
+| **Язык запросов** | Spark SQL | Spark SQL, [[HiveQL|HiveQL]] | **SQL (любой движок)** |
 | **Сообщество** | Большое (Databricks) | Растущее | **Самое открытое и нейтральное** |
 
 ### Открытость и экосистема
 
-- **Iceberg:** полностью open-source, поддерживается **Netflix, Apple, AWS, Google, Dremio** — независим от вендора, лучшая совместимость.
+- **Iceberg:** полностью open-source, поддерживается **Netflix, Apple, AWS, Google, [[Dremio|Dremio]]** — независим от вендора, лучшая совместимость.
 - **Hudi:** open-source, изначально от Uber, активно развивается **AWS, Alibaba**.
 - **Delta Lake:** OSS-версия есть, но **лучшие фичи — только в Databricks** (Unity Catalog, serverless).
 

@@ -112,5 +112,5 @@ aliases:
 **Книга**
 
 - **Автор:** Craig Larman #👨
-- **Книга:** Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development #📘
+- **Книга:** Applying [[UML|UML]] and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development #📘
 - **Год:** 1997

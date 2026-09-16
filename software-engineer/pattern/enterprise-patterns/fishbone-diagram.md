@@ -49,7 +49,7 @@ graph LR
 | Категория | Примеры в разработке |
 |-----------|----------------------|
 | **People** (Люди) | Недостаток знаний, усталость, коммуникация |
-| **Process** (Процессы) | Отсутствие code review, плохой CI/CD |
+| **Process** (Процессы) | Отсутствие code review, плохой [[CI-CD|CI/CD]] |
 | **Tools** (Инструменты) | Устаревшие библиотеки, медленные тесты |
 | **Environment** (Окружение) | Различия dev/prod, нестабильный staging |
 | **Code** (Код) | Технический долг, слабое покрытие тестами |
@@ -71,7 +71,7 @@ graph LR
   - Отсутствует staging environment
 - **Tools:**
   - Медленные тесты (45 мин)
-  - Нестабильный Docker registry
+  - Нестабильный [[Docker|Docker]] registry
 - **Environment:**
   - Разные версии Node.js на машинах
   - Нехватка памяти на CI-сервере
@@ -308,7 +308,7 @@ graph TB
   - Монолитный Docker image (8 GB)
   - Нет blue-green deployment
 - **💻 Code:**
-  - Нет feature flags
+  - Нет [[feature-flagging|feature flags]]
   - Миграции БД блокируют таблицу
   - Нет инкрементальной сборки
 - **🌍 Environment:**

@@ -44,8 +44,8 @@ aliases:
 
 ## Apache Airflow
 
-> **[[airflow]]** — это **платформа для программной оркестрации сложных пайплайнов**:
-> - [[ELT]]
+> **[[airflow|airflow]]** — это **платформа для программной оркестрации сложных пайплайнов**:
+> - [[ELT|ELT]]
 > - [[machine-learning|Машинное обучение]]
 > - Аналитика
 > - Скрипты администрирования
@@ -94,7 +94,7 @@ aliases:
 
 ## Camunda
 
-> **Camunda** — это **движок BPM (Business Process Management)**, основанный на стандарте **[[business-process-model-notation]] 2.0**
+> **Camunda** — это **движок BPM (Business Process Management)**, основанный на стандарте **[[business-process-model-notation|BPMN]] 2.0**
 > Используется для:
 > - Онбординга сотрудников
 > - Подтверждения заказов
@@ -130,7 +130,7 @@ graph LR
 | ✅ | **CMMN** | Случайные процессы (Case Management) |
 | ✅ | **Аудит и история** | Кто, когда и что делал? |
 | ✅ | **Zero-code workflow design** | Без написания кода |
-| ❌ | Сложнее масштабировать | Требует Java EE / Spring Boot |
+| ❌ | Сложнее масштабировать | Требует Java EE / [[spring|Spring Boot]] |
 | ❌ | Меньше интеграций out-of-the-box | Нужно писать Java-делегаты |
 | ❌ | Медленнее для простых скриптов | Если просто `bash` → избыточно |
 | ❌ | Лицензия | Community vs Enterprise |

@@ -8,13 +8,13 @@ aliases:
   - Time travel
 ---
 
-**Delta Lake** — это **открытый формат хранилища данных**, который добавляет **ACID-гарантии, схему и управление версиями** к [[data-lake]].
+**Delta Lake** — это **открытый формат хранилища данных**, который добавляет **ACID-гарантии, схему и управление версиями** к [[data-lake|Data lake]].
 
 Простыми словами: это **«Data Lake с гарантиями»** — как будто вы храните данные в S3, но можете делать `UPDATE`, `DELETE`, `MERGE` и не бояться потери данных.
 
 ## Что такое Delta Lake?
 
-> **Delta Lake** — это **формат таблиц на основе [[parquet]]**, который позволяет:
+> **Delta Lake** — это **формат таблиц на основе [[parquet|parquet]]**, который позволяет:
 - хранить данные в сыром виде (как Data Lake);
 - обеспечивать **ACID-транзакции**;
 - поддерживать **смену схемы**;
@@ -160,17 +160,17 @@ WHEN NOT MATCHED THEN INSERT *;
 
 **Финальный вывод:**
 
-> **Delta Lake — это «[[data-lake]] с сердцем».** Он **объединяет гибкость [[data-lake]] и надёжность [[data-warehouse]]**.
+> **Delta Lake — это «[[data-lake|Data lake]] с сердцем».** Он **объединяет гибкость [[data-lake|Data lake]] и надёжность [[data-warehouse|Data warehouse]]**.
 
 ## Delta Lake vs Data Lakehouse
 
-**Delta Lake** и **Data Lakehouse** — это **два разных понятия**, но они тесно связаны.
+**Delta Lake** и **[[data-lakehouse|Data Lakehouse]]** — это **два разных понятия**, но они тесно связаны.
 
 | Критерий           | **Delta Lake**                                 | **Data Lakehouse**                             |
 | ------------------ | ---------------------------------------------- | ---------------------------------------------- |
 | **Тип**            | Формат данных (файловый)                       | Архитектура системы                            |
-| **Цель**           | Добавить [[ACID]] и управление к [[data-lake]] | Объединить [[data-lake]] + [[data-warehouse]]  |
-| **Примеры**        | Delta Lake, Iceberg, ORC                       | Databricks, Snowflake, BigQuery                |
+| **Цель**           | Добавить [[software-architect/data/data-base/rdbms/ACID|ACID]] и управление к [[data-lake|Data lake]] | Объединить [[data-lake|Data lake]] + [[data-warehouse|Data warehouse]]  |
+| **Примеры**        | Delta Lake, [[Iceberg|Iceberg]], ORC                       | Databricks, Snowflake, BigQuery                |
 | **Используется в** | Databricks, Spark, Flink                       | Databricks, Snowflake, Delta Lake              |
 | **Связь**          | Delta Lake — часть Data Lakehouse              | Data Lakehouse — может использовать Delta Lake |
 

@@ -97,7 +97,7 @@ graph TB
 | **conan** | C/C++ | `conan` | conan.io/center | `conanfile.txt/py` | SemVer |
 | **conda** | Python/Data Science | `conda` | anaconda.org/conda-forge | `environment.yml` | Custom |
 | **docker** | Container | `docker` | Docker Hub/Registry | `Dockerfile` | Tags |
-| **helm** | Kubernetes | `helm` | Artifact Hub | `Chart.yaml` | SemVer |
+| **helm** | [[kubernetes|Kubernetes]] | `helm` | Artifact Hub | `Chart.yaml` | SemVer |
 | **p2** | Eclipse/OSGi | `p2` | Eclipse Update Sites | `feature.xml`/`MANIFEST.MF` | OSGi version |
 | **raw** | Any | N/A | File system/URL | N/A | N/A |
 

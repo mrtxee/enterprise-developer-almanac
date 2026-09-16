@@ -125,7 +125,7 @@ dconf dump / > ~/dconf-backup.txt
 dconf dump /org/gnome/ > ~/dconf-gnome-backup.txt
 ```
 
-**Формат:** текстовый формат `key=value`, похож на INI-файлы.
+**Формат:** текстовый формат `key=value`, похож на [[config-formats|INI]]-файлы.
 
 **Восстановление из резервной копии:**
 

@@ -11,7 +11,7 @@ aliases:
 
 ## fish
 
-В Arch Linux установка и настройка оболочки Fish (Friendly Interactive Shell) выполняется через пакетный менеджер `pacman`.
+В Arch Linux установка и настройка оболочки Fish (Friendly Interactive Shell) выполняется через пакетный менеджер `[[pacman]]`.
 
 ### Установка fish
 
@@ -83,7 +83,7 @@ fisher install ИМЯ_ПЛАГИНА
 
 Примеры плагинов:
 
-- `fisher install PatrickF1/fzf.fish` — интеграция с инструментом `fzf` для поиска
+- `fisher install PatrickF1/fzf.fish` — интеграция с инструментом `[[core-utils|fzf]]` для поиска
 - `fisher install jorgebucaran/autopair.fish` — автоматическое закрытие скобок и кавычек
 
 ### Создание пользовательских функций
@@ -153,7 +153,7 @@ Powerlevel10k — высокопроизводительная и гибкая �
 
 1. Клонируйте репозиторий в каталог тем Oh My Zsh:
    ```bash
-   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+   [[git]] clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
    ```
 2. В файле `~/.zshrc` замените строку, задающую тему:
    ```bash

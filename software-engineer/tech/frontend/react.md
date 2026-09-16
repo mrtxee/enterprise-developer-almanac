@@ -73,12 +73,12 @@ aliases:
 ---
 ## React — JavaScript-библиотека для построения пользовательских интерфейсов
 
-React — A JavaScript library for building user interfaces.
+React — A [[javascript|JavaScript]] library for building user interfaces.
 
 - `React CORE` служит для построения логики приложения, а за визуализацию отвечают `React DOM` или `React Native`.
   - `React DOM` использует виртуальную DOM, которую сравнивает с DOM, после чего обновляет лишь требуемую часть DOM.
   - `React Native` позволяет создавать приложения для iOS, Android, Windows.
-- React DOM uses `camelCase` property naming convention instead of HTML attribute names. For example, ~~`class`~~ becomes `className` in JSX.
+- React DOM uses `camelCase` property naming convention instead of [[html5|HTML]] attribute names. For example, ~~`class`~~ becomes `className` in JSX.
 - При разработке рекомендуется использовать принцип `Separation of concerns` (**разделение интересов**). Это упрощает разработку и позволяет разделить задачи.
 - React служит реализации концепции `Single-page-application`.
 
@@ -228,7 +228,7 @@ npm install <missing_package_name>
 }
 ```
 
-**Условный (тернарный) оператор** — оператор в JavaScript, принимающий три операнда: условие, за которым следует знак вопроса `?`, затем выражение, которое выполняется, если условие истинно, сопровождается двоеточием `:`, и выражение, которое выполняется, если условие ложно. Он часто используется в качестве сокращённого варианта условного оператора `if`: `условие ? выражение1 : выражение2`.
+**Условный (тернарный) оператор** — оператор в [[javascript|JavaScript]], принимающий три операнда: условие, за которым следует знак вопроса `?`, затем выражение, которое выполняется, если условие истинно, сопровождается двоеточием `:`, и выражение, которое выполняется, если условие ложно. Он часто используется в качестве сокращённого варианта условного оператора `if`: `условие ? выражение1 : выражение2`.
 
 #### Генерация JSX-объектов из данных
 

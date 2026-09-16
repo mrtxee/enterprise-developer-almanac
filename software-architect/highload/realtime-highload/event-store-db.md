@@ -63,7 +63,7 @@ aliases:
 
 ### Axon Server
 
-> **Axon Server** — это **платформа для CQRS и Event Sourcing**, часть экосистемы [[axon-framework]]
+> **Axon Server** — это **платформа для CQRS и Event Sourcing**, часть экосистемы [[axon-framework|Axon Framework]]
 
 **Особенности**
 
@@ -95,7 +95,7 @@ aliases:
 - ✅ Отказоустойчивость
 - ✅ Широкое сообщество
 - ✅ Поддержка всех языков
-- ✅ Интеграция с Flink, Spark, Debezium
+- ✅ Интеграция с [[realtime-highload|Flink]], Spark, Debezium
 - ❌ По умолчанию — **не event sourcing**
 - ❌ Нет встроенной поддержки `aggregate` или `saga`
 - ❌ Сообщения = сырые данные → нужно обрабатывать
@@ -156,7 +156,7 @@ graph TB
 | **Sagas** | Через клиент | ✅ Встроено | Ручная реализация |
 | **Производительность** | Хорошая | Хорошая | ✅ Отличная |
 | **Простота внедрения** | Средняя | Высокая (в Java) | Высокая |
-| **Лучше всего для** | Event Sourcing | DDD, микросервисы | Streaming, ETL |
+| **Лучше всего для** | Event Sourcing | DDD, микросервисы | Streaming, [[ETL|ETL]] |
 
 > *“Kafka is a pipe. EventStoreDB and Axon are architectures.”*
 

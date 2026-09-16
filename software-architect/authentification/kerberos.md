@@ -61,7 +61,7 @@ sequenceDiagram
 1. **Key Distribution Center (KDC)** — центр распределения ключей:
    - хранит пароли пользователей и сервисов;
    - выдаёт зашифрованные tickets;
-   - в Active Directory KDC объединён с другими сущностями (AS — Authentication Service и TGS — Ticket-Granting Service).
+   - в [[active-directory|Active Directory]] KDC объединён с другими сущностями (AS — Authentication Service и TGS — Ticket-Granting Service).
 2. **Ticket** — зашифрованное сообщение, подтверждающее личность пользователя.
 3. **Принципал** — сущность (пользователь или сервис), которая проходит аутентификацию.
 4. **Шифрование** — Kerberos использует схемы шифрования (чаще всего AES), а также специальные 4-байтовые **key usage numbers** для каждой фазы передачи сообщений.
@@ -82,7 +82,7 @@ nslookup -type=SRV _kerberos._tcp.<имя_домена>  # для TCP
 nslookup -type=SRV _kerberos._udp.<имя_домена>  # для UDP
 ```
 
-> [[nslookup]]
+> [[nslookup|nslookup]]
 
 ## Дополнительные возможности
 
@@ -109,14 +109,14 @@ Kerberos — это надёжный способ аутентификации �
 
 | Критерий | **SAML (Security Assertion Markup Language)** | **Kerberos** |
 |----------|-----------------------------------------------|--------------|
-| **Тип** | XML-протокол для SSO (Single Sign-On) | Протокол с тикетами (ticket-based) |
+| **Тип** | XML-протокол для [[SSO|SSO]] (Single Sign-On) | Протокол с тикетами (ticket-based) |
 | **Формат данных** | XML | Бинарный (в основном) |
 | **Архитектура** | Web-ориентированная | Сеть/Windows-ориентированная |
 | **Основное применение** | Веб-приложения, SaaS, корпоративные порталы | Windows Active Directory, внутренние системы |
 | **Сессии** | Глобальные (по всем сервисам) | Локальные (на уровне домена) |
 | **Шифрование** | HTTPS + цифровые подписи | Симметричное шифрование (пароли, ключи) |
 | **Инициатор** | Может быть SP или IdP | Только KDC (Key Distribution Center) |
-| **Примеры** | Google Workspace, Okta, Azure AD | Microsoft Active Directory, Linux Kerberos |
+| **Примеры** | Google Workspace, Okta, Azure AD | [[active-directory|Microsoft Active Directory]], Linux Kerberos |
 
 > ✅ **SAML — для веб-приложений и SaaS-сервисов**
 

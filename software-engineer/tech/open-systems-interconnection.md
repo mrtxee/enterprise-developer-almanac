@@ -44,11 +44,11 @@ aliases:
 | Уровень | Название | Отвечает за | Примеры |
 |---|---|---|---|
 | **7** | **Application Layer** | Взаимодействие пользователя с сетью | HTTP, FTP, SMTP, DNS, REST API |
-| **6** | **Presentation Layer** | Формат данных: шифрование, компрессия, кодирование | SSL/[[tls]], JPEG, MPEG, JSON/XML |
+| **6** | **Presentation Layer** | Формат данных: шифрование, компрессия, кодирование | SSL/[[tls|tls]], JPEG, MPEG, JSON/XML |
 | **5** | **Session Layer** | Управление сеансом связи (начало/конец) | NetBIOS, PPTP, RPC |
 | **4** | **Transport Layer** | Надёжная доставка, контроль потока, ошибок | [[tcp-udp\|TCP]], UDP, socket поверх TCP/UDP |
 | **3** | **Network Layer** | Маршрутизация (по IP-адресам) | [[tcp-udp\|IP]], ICMP, routers, firewalls |
-| **2** | **Data Link Layer** | Передача по одному «прыжку» (link), MAC-адресация | Ethernet, Wi-Fi (802.11), switches |
+| **2** | **Data Link Layer** | Передача по одному «прыжку» (link), MAC-адресация | [[ethernet-frame|Ethernet]], Wi-Fi (802.11), switches |
 | **1** | **Physical Layer** | Физическая передача битов | Кабели, Wi-Fi сигнал, оптика |
 
 ### Как запомнить порядок уровней?
@@ -72,7 +72,7 @@ aliases:
 **Уровень 7: Прикладной (Application)**
 
 - Работает с пользователем.
-- Протоколы: `HTTP`, `FTP`, `SMTP`, `DNS`, `REST`, `gRPC`.
+- Протоколы: `HTTP`, `FTP`, `SMTP`, `DNS`, [[REST|REST]], [[RPC|gRPC]].
 - Не путайте с «приложением» — это **не программа**, а **интерфейс между программой и сетью**.
 
 **Уровень 6: Представления (Presentation)**

@@ -438,7 +438,7 @@ public class CombinedPatternDemo {
 ```
 
 **Где это используется в реальности:**
-- **Spring Security**: `FilterChain` (CoR) + `AuthenticationProvider` (Command)
+- **[[spring-security|Spring Security]]**: `FilterChain` (CoR) + `AuthenticationProvider` (Command)
 - **Express.js**: Middleware chain (CoR) с каждым middleware как командой
 - **GUI Frameworks**: обработка событий через цепочку с возможностью отмены
 

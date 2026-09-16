@@ -95,7 +95,7 @@ flowchart LR
 > (framework — каркас, структура) — программная платформа, определяющая структуру программной системы; программное обеспечение, облегчающее разработку и объединение разных компонентов большого программного проекта.
 
 **Преимущества**
-- **Reusability** компонентов — также называется **DRY** (Don't Repeat Yourself).
+- **Reusability** компонентов — также называется **[[clean-code|DRY]]** (Don't Repeat Yourself).
 - **Ready-to-use features** — готовые функции, например:
   - login system (система входа);
   - database connection (подключение к базе данных);
@@ -171,7 +171,7 @@ mymembers = Members.objects.values_list('firstname', 'lastname')
 | month | Matches a month (for dates) |
 | quarter | Matches a quarter of the year (1-4) (for dates) |
 | range | Match between |
-| regex | Matches a regular expression |
+| [[python-regex|regex]] | Matches a regular expression |
 | iregex | Same as regex, but case-insensitive |
 | second | Matches a second (for datetimes) |
 | startswith | Starts with |
@@ -259,7 +259,7 @@ def index(request):
 - `content_type` — тип содержимого запроса (значение заголовка `CONTENT_TYPE`).
 - `GET` — объект в виде словаря, который содержит параметры запроса GET.
 - `POST` — объект в виде словаря, который содержит параметры запроса POST.
-- `COOKIES` — отправленные клиентом куки.
+- `COOKIES` — отправленные клиентом [[cookie|куки]].
 - `FILES` — отправленные клиентом файлы.
 - `META` — хранит все доступные заголовки http в виде словаря. Набор заголовков зависит от клиента и сервера, в том числе ключи:
   - `CONTENT_LENGTH` — длина содержимого.
@@ -937,7 +937,7 @@ deactivate                                        # выход из виртуа
 2. Добавить в `settings.py` в `INSTALLED_APPS` — `'hello.apps.HelloConfig'`.
 3. Добавить обработку запроса в главный диспетчер адресов и описать вывод ответа в файле представления приложения.
 
-![](082a19fc1e9270d70ed502db4ba242b0.png)
+![[082a19fc1e9270d70ed502db4ba242b0.png]]
 
 #### Структура папки приложения
 
@@ -1015,4 +1015,4 @@ TEMPLATES = [
 ```
 
 **См. также**
-[[django-rest-framework]]
+[[django-rest-framework|django-rest-framework]]

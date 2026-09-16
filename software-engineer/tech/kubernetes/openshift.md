@@ -42,10 +42,10 @@ aliases:
 
 OpenShift — это платформа как услуга (PaaS) от Red Hat, которая расширяет Kubernetes, добавляя:
 
-- Встроенные инструменты CI/CD.
+- Встроенные инструменты [[CI-CD|CI/CD]].
 - Безопасность и управление доступом.
 - Удобные UI и CLI.
-- Поддержку DevOps и GitOps.
+- Поддержку [[dev-ops|DevOps]] и [[CI-CD|GitOps]].
 - Интеграцию с enterprise-системами.
 
 Это не просто Kubernetes, а Kubernetes + платформа для бизнеса.
@@ -72,7 +72,7 @@ OpenShift — это платформа как услуга (PaaS) от Red Hat,
 | **На базе Kubernetes**                             | Полная совместимость с K8s API, манифестами, `kubectl`                     |
 | **Built-in CI/CD (Tekton, Jenkins)**               | `Pipeline`, `BuildConfig`, `ImageStream` — без внешних систем              |
 | **Web Console (UI)**                               | Графический интерфейс: деплой, логи, мониторинг, безопасность              |
-| **Security & Compliance**                          | Встроенная RBAC, mTLS, Network Policies, сканеры образов                   |
+| **Security & Compliance**                          | Встроенная [[kubernetes|RBAC]], mTLS, Network Policies, сканеры образов                   |
 | **Source-to-Image (S2I)**                          | Автоматическое создание Docker-образа из исходного кода (без Dockerfile)   |
 | **Developer Catalog**                              | Шаблоны приложений: один клик запускает Spring Boot, Node.js, Python       |
 | **Service Mesh (Maistra / Istio)**                 | Интегрировано через OpenShift Service Mesh                                 |
@@ -158,7 +158,7 @@ oc expose svc/hello
 | Банк, госструктура, медицина             | Обязательно — из-за compliance                            |
 | Нет своей DevOps-команды                 | OpenShift упрощает жизнь                                  |
 | Нужны GitOps + CI/CD out-of-the-box      | Да                                                        |
-| Стартап, MVP, маленькая команда          | Используйте Minikube, K3s, k8s в облаке                   |
+| Стартап, MVP, маленькая команда          | Используйте [[kubernetes|Minikube]], K3s, k8s в облаке                   |
 | Нужен полный контроль                    | OpenShift сложнее настраивать, чем vanilla K8s            |
 
 ---
@@ -192,9 +192,9 @@ oc expose svc/hello
 
 | Интеграция                | Поддержка                     |
 | ------------------------- | ----------------------------- |
-| **LDAP / Active Directory** | Да                           |
+| **[[LDAP|LDAP]] / [[active-directory|Active Directory]]** | Да                           |
 | **Jenkins / Tekton**      | Built-in                      |
-| **Helm**                  | Да                            |
+| **[[helm|Helm]]**                  | Да                            |
 | **Argo CD**               | Через Operator                |
 | **Vault, GitLab, Nexus**  | Да                            |
 | **Istio / Service Mesh**  | OpenShift Service Mesh        |
@@ -263,7 +263,7 @@ graph TD
 | **Установка**         | Сложная, требует экспертизы                   | Интегрированная, автоматизированная           |
 | **Безопасность**      | Базовые возможности                           | Enhanced security (SELinux, SCC)              |
 | **CI/CD**             | Требует настройки инструментов                | Встроенный (Jenkins, Tekton)                  |
-| **Registry**          | Внешний (Docker Hub, Harbor)                  | Встроенный container registry                 |
+| **Registry**          | Внешний ([[containerization|Docker Hub]], Harbor)                  | Встроенный container registry                 |
 | **Мониторинг**        | Prometheus + Grafana (настраивается)          | Встроенный мониторинг (Prometheus)            |
 | **Логирование**       | EFK stack (настраивается)                     | Встроенное логирование (EFK)                  |
 | **Стоимость**         | Бесплатный                                    | Платная подписка (с поддержкой)               |

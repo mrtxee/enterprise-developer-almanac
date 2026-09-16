@@ -23,7 +23,7 @@ aliases:
 
 | СУБД | Журнал |
 |------|--------|
-| **PostgreSQL** | WAL (Write-Ahead Log) |
+| **[[PostgreSQL|PostgreSQL]]** | WAL (Write-Ahead Log) |
 | **MySQL** | Binary Log (`binlog`) |
 | **Oracle** | Redo Log |
 | **SQL Server** | Transaction Log |
@@ -78,9 +78,9 @@ graph TB
 | ----------------------------------------------- | -------------------------------------- |
 | **Нет нагрузки на бизнес-логику**               | Не нужно писать `publishEvent()`       |
 | **Реальное время**                              | Изменения → за миллисекунды            |
-| **Гарантия порядка**                            | [[rdbms\|WAL]] — упорядочен            |
+| **Гарантия порядка**                            | [[software-architect/data/data-base/rdbms/rdbms|WAL]] — упорядочен            |
 | **Не пропускает события**                       | Если tailer жив — всё будет доставлено |
-| **Подходит для [[CQRS]], [[event-sourcing]]**   | Автоматически генерирует события       |
+| **Подходит для [[CQRS|CQRS]], [[event-sourcing|Event sourcing]]**   | Автоматически генерирует события       |
 | **Интеграция без изменения кода**               | Идеально для legacy                    |
 
 ## Log Tailing vs ручная публикация событий

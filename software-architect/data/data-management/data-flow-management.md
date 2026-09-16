@@ -13,8 +13,8 @@ aliases:
 
 > Это **управление жизненным циклом данных**, включая:
 - Источники (базы данных, API, файлы)
-- Трансформации ([[ETL]]/ELT, очистка, агрегация)
-- Назначения (Data Warehouse, [[software-engineer/standard/КИС|BI]], ML-модели)
+- Трансформации ([[ETL|ETL]]/ELT, очистка, агрегация)
+- Назначения (Data Warehouse, [[software-engineer/terms/abbreviations|BI]], ML-модели)
 - Мониторинг, безопасность, качество
 
 **Простыми словами**
@@ -29,7 +29,7 @@ aliases:
 |----------|------|
 | **Источники данных** | БД, API, логи, IoT-устройства |
 | **Конвейеры (Pipelines)** | ETL/ELT, Spark, Airflow |
-| **Хранилища** | Data Lake, Data Warehouse, базы данных |
+| **Хранилища** | Data Lake, [[data-warehouse|Data Warehouse]], базы данных |
 | **Потребители** | BI-инструменты, ML-модели, приложения |
 | **Метаданные** | Описание данных: откуда, когда, как изменялись |
 | **Качество данных** | Валидация, профилирование, мониторинг |
@@ -53,7 +53,7 @@ aliases:
 
 ## Пример: Простой поток данных
 
-[[data-flow-diagram]]
+[[data-flow-diagram|Data flow diagram]]
 
 ```mermaid
 ---
@@ -81,7 +81,7 @@ graph LR
 | **Оркестрация** | Apache Airflow, Prefect, Dagster |
 | **ETL/ELT** | dbt, Fivetran, Talend, Informatica |
 | **Data Quality** | Great Expectations, Soda, Monte Carlo |
-| **Lineage & Catalog** | Apache Atlas, DataHub, Amundsen |
+| **Lineage & Catalog** | Apache Atlas, [[DataHub|DataHub]], Amundsen |
 | **Security** | Apache Ranger, AWS IAM, HashiCorp Vault |
 | **Monitoring** | Prometheus, Grafana, Datadog |
 
@@ -105,7 +105,7 @@ graph LR
 |----------|--------------|
 | ✅ Финансовые отчёты | Ошибка в потоке → неверные цифры → штрафы |
 | ✅ ML-модели | Грязные данные → плохая модель |
-| ✅ GDPR/CCPA | Нужно знать, где хранятся персональные данные |
+| ✅ [[GDPR|GDPR]]/CCPA | Нужно знать, где хранятся персональные данные |
 | ✅ Реальное время | Задержка в потоке → потеря клиентов |
 
 ---

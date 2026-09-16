@@ -124,7 +124,7 @@ public class MoneyInCents {
 
 ---
 
-### Готовая библиотека: JSR 354 / [[software-engineer/java/java-tools/java-monetary-type-jsr354|Moneta]]
+### Готовая библиотека: JSR 354 / [[java-monetary-type-jsr354|Moneta]]
 
 pom.xml
 

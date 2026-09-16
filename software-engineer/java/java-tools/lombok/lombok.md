@@ -117,7 +117,7 @@ System.out.println(user); // User(name=Анна, age=25, email=anna@mail.com)
 * DTO (Data Transfer Objects);
 * value‑объекты;
 * конфигурации;
-* везде, где нужна неизменяемость для потокобезопасности.
+* везде, где нужна [[immutable|неизменяемость]] для потокобезопасности.
 ### record vs @Value
 
 **Lombok `@Value`** — аннотация, которая генерирует код на этапе компиляции: создаёт неизменяемый класс с геттерами, `equals()`, `hashCode()` и `toString()`.

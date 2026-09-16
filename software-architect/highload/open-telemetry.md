@@ -19,13 +19,13 @@ aliases:
 
 ## Что такое OpenTelemetry
 
-> **OpenTelemetry** — это **открытый фреймворк**, созданный [[CNCF]] (Cloud Native Computing Foundation), чтобы объединить:
+> **OpenTelemetry** — это **открытый фреймворк**, созданный [[CNCF|CNCF]] (Cloud Native Computing Foundation), чтобы объединить:
 > - Логи
 > - Метрики
 > - Трассировку
-> в единую систему под названием **[[observability]]**
+> в единую систему под названием **[[observability|Observability]]**
 
-> Это **следующее поколение мониторинга** после Prometheus + Jaeger + Fluentd.
+> Это **следующее поколение мониторинга** после Prometheus + [[jaeger|Jaeger]] + [[Fluentd|Fluentd]].
 
 ---
 
@@ -34,7 +34,7 @@ aliases:
 | Компонент | Роль|
 | ----------- | ------------------------------------------------------------- |
 | **Traces**| Путь запроса через микросервисы |
-| **Metrics** | Производительность: CPU, RPS, latency |
+| **Metrics** | Производительность: CPU, [[metrics-qps|RPS]], latency |
 | **Logs**| События и ошибки|
 | **Baggage** | Данные, передаваемые между сервисами (`user_id`, `tenant_id`) |
 
@@ -74,9 +74,9 @@ style C fill:#e9ecef,stroke:#6c757d
    - Отправляет в бэкенд (Jaeger, Prometheus и др.)
 
 3. **Backends**:
-   - Traces → [[jaeger]], Zipkin
-   - Metrics → Prometheus, Datadog
-   - Logs → Loki, Elasticsearch
+   - Traces → [[jaeger|Jaeger]], Zipkin
+   - Metrics → [[Prometheus|Prometheus]], Datadog
+   - Logs → [[grafana|Loki]], [[Elasticsearch|Elasticsearch]]
 
 **Преимущества OpenTelemetry**
 
@@ -176,7 +176,7 @@ style C fill:#e9ecef,stroke:#6c757d
   - совместимых бэкендах (Tempo, Prometheus, Jaeger).
 - В продакшене часто закрывают прямой доступ к порту из интернета — используют:
   - VPN/VPC;
-  - обратные прокси (Envoy, NGINX);
+  - обратные прокси (Envoy, [[nginx|NGINX]]);
   - сетевые политики (Kubernetes NetworkPolicies).
 
 ### Пример конфигурации (OpenTelemetry Collector)

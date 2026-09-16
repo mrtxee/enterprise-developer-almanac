@@ -17,9 +17,9 @@ aliases:
 В современных организациях данные разбросаны по десяткам систем:
 
 - Хранилища: Snowflake, BigQuery, Redshift
-- Озера: S3, ADLS с Iceberg/Delta
-- Потоки: Kafka, Pulsar
-- BI: Tableau, Power BI, Looker
+- Озера: [[S3|S3]], ADLS с [[Iceberg|Iceberg]]/Delta
+- Потоки: [[kafka|Kafka]], Pulsar
+- BI: [[tableau|Tableau]], Power BI, Looker
 - ETL: Airflow, dbt
 
 **Без централизованного каталога** возникают проблемы:
@@ -62,7 +62,7 @@ aliases:
 
 ### Политики и безопасность
 
-- Интеграция с **LDAP/SSO**.
+- Интеграция с **[[LDAP|LDAP]]/[[SSO|SSO]]**.
 - RBAC (ролевой доступ): кто может редактировать, просматривать.
 
 ### Автоматизация
@@ -107,7 +107,7 @@ graph LR
 | Система | Отличие |
 |--------|--------|
 | **Amundsen** (тоже от LinkedIn) | Упрощённый предшественник DataHub |
-| **Apache Atlas** | Акцент на безопасности и governance, сложнее в использовании |
+| **[[Data-Catalog|Apache Atlas]]** | Акцент на безопасности и governance, сложнее в использовании |
 | **AWS Glue Catalog** | Только для AWS, без lineage и collaboration |
 | **Alation** | Коммерческий продукт, дороже, закрытый |
 
@@ -122,14 +122,14 @@ graph LR
    → Инженер видит **lineage**, понимает, какие дашборды сломаются, согласовывает изменения.
 
 3. **Аудит данных**
-   → Compliance-команда проверяет, где используются PII-данные, через теги и lineage.
+   → Compliance-команда проверяет, где используются [[personal-data|PII]]-данные, через теги и lineage.
 
 4. **Мониторинг качества**
    → При падении качества данных — автоматическое уведомление владельцу.
 
 ## Технологический стек
 
-- **Backend**: Java, Kafka, Elasticsearch, MySQL/PostgreSQL
+- **Backend**: Java, [[kafka|Kafka]], Elasticsearch, MySQL/PostgreSQL
 - **Frontend**: React, TypeScript
 - **Развёртывание**: Docker, Kubernetes, Helm
 - **Интеграции**: Python SDK, REST API, GraphQL
@@ -143,4 +143,4 @@ graph LR
 > - Насколько им можно доверять?
 > - Как они используются?
 
-Без подобной платформы **data mesh**, **data fabric** и даже простая **аналитика** становятся крайне неэффективными.
+Без подобной платформы **[[Data-Mesh|Data Mesh]]**, **[[Data-Architecture|Data Architecture]]** и даже простая **аналитика** становятся крайне неэффективными.

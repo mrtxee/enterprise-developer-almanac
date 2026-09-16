@@ -18,9 +18,9 @@ aliases:
   - Флаг функции
 ---
 
-**Feature Flagging** и **[[feature-toggling]]** — это одно и то же, но с разницей в оттенке смысла.
+**Feature Flagging** и **[[feature-toggling|Feature Toggling]]** — это одно и то же, но с разницей в оттенке смысла.
 
-На практике их часто используют как синонимы, но есть тонкое различие — особенно в контексте DevOps, CI/CD и масштабируемых систем.
+На практике их часто используют как синонимы, но есть тонкое различие — особенно в контексте DevOps, [[CI-CD|CI/CD]] и масштабируемых систем.
 
 ## Краткий ответ
 
@@ -179,7 +179,7 @@ if flags.IsOn("new-checkout", user) {
 | --- | --- |
 | LaunchDarkly | Коммерческий, мощный UI, SDK для всех языков |
 | Flagsmith | Open Source, self-hosted, дешевле |
-| Unleash | Open Source, легко интегрируется с Kubernetes |
+| Unleash | Open Source, легко интегрируется с [[kubernetes|Kubernetes]] |
 | Split.io | Аналитика + флаги |
 | AWS AppConfig | Managed-сервис AWS |
 | Azure App Configuration | Microsoft |
@@ -270,4 +270,4 @@ if flags.IsOn("new-checkout", user) {
 
 ---
 
-Для микросервисов, CI/CD и DevOps Feature Flagging — следующий шаг: он превращает релиз из рискованного события в непрерывный процесс.
+Для [[microservice|микросервисов]], CI/CD и DevOps Feature Flagging — следующий шаг: он превращает релиз из рискованного события в непрерывный процесс.

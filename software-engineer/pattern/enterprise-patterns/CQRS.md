@@ -10,7 +10,7 @@ aliases:
 
 ## CQRS — Command Query Responsibility Segregation
 
-**Command Query Responsibility Segregation (CQRS)** — это паттерн проектирования микросервисов, который разделяет операцию чтения и записи данных в системе на два отдельных интерфейса.
+**Command Query Responsibility Segregation (CQRS)** — это паттерн проектирования [[microservice|микросервисов]], который разделяет операцию чтения и записи данных в системе на два отдельных интерфейса.
 
 Принцип разделения ответственности за выполнение командных запросов.
 

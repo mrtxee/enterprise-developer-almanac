@@ -327,7 +327,7 @@ public class AppConfig {
 
 ## Spring Boot
 
-Spring Boot — отдельный модуль, который упрощает настройку фреймворка Spring и ускоряет запуск проектов. Он автоматически конфигурирует приложение и создаёт веб-сервер для его запуска. Spring Boot связывает другие Spring-фреймворки: framework that makes Spring ready to work inside your app, but without much code or configuration required. Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run".
+[[spring-boot-config|Spring Boot]] — отдельный модуль, который упрощает настройку фреймворка Spring и ускоряет запуск проектов. Он автоматически конфигурирует приложение и создаёт веб-сервер для его запуска. Spring Boot связывает другие Spring-фреймворки: framework that makes Spring ready to work inside your app, but without much code or configuration required. Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run".
 
 ```java
 @SpringBootApplication
@@ -953,7 +953,7 @@ Data Access Object (DAO) — паттерн доступа к данным.
 
 ### Подключение Spring Boot в Maven
 
-Spring Boot Maven Plugin добавляет поддержку Spring Boot в Apache Maven.
+Spring Boot [[maven|Maven]] Plugin добавляет поддержку Spring Boot в Apache Maven.
 
 ```xml
 <project>

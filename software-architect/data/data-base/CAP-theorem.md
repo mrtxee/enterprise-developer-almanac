@@ -32,19 +32,19 @@ aliases:
 
 consistency + availability:
 
-- [[PostgreSQL]]
+- [[PostgreSQL|PostgreSQL]]
 - Oracle
 - MS SQL
 
 consistency + partition tolerance:
 
-- [[mongo-db]]
-- [[redis]]
+- [[mongo-db|MongoDB]]
+- [[redis|Redis]]
 - HBase
 
 availability + partition tolerance:
 
-- Cassandra
+- [[Cassandra|Cassandra]]
 - CouchDB
 - DynamoDB
 
@@ -120,7 +120,7 @@ graph LR
 
 ### [[replica-set|Replica Sets]] — основа CP
 
-#### Архитектура [[replica-set]]
+#### Архитектура [[replica-set|Replica set]]
 
 ```mermaid
 ---
@@ -537,7 +537,7 @@ settings: {
 - **Write Concern "majority"** — запись подтверждается большинством узлов.
 - **Read Concern "majority"/"linearizable"** — чтение только согласованных данных.
 - **Replica Sets** — синхронная репликация через oplog.
-- **ACID Transactions** — распределённые транзакции.
+- **[[software-architect/data/data-base/rdbms/ACID|ACID]] Transactions** — распределённые транзакции.
 
 **Partition Tolerance:**
 

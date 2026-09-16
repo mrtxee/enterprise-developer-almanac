@@ -110,7 +110,7 @@ List<Object> fruits2 = new ArrayList<>();
 ## Конвенция об именах
 
 Наиболее часто используемые имена параметров типа:
-- **E** — Element (используется в Java Collections Framework);
+- **E** — Element (используется в [[java-collection-framework|Java Collections Framework]]);
 - **K** — Key;
 - **N** — Number;
 - **T** — Type;

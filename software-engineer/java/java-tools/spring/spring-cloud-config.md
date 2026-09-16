@@ -141,7 +141,7 @@ encrypt:
 
 ### bootstrap.yml
 
-В Spring Boot 2.4+ `bootstrap.yml` отключён по умолчанию. Чтобы включить, добавьте зависимость:
+В [[spring|Spring Boot]] 2.4+ `bootstrap.yml` отключён по умолчанию. Чтобы включить, добавьте зависимость:
 
 ```xml
 <dependency>

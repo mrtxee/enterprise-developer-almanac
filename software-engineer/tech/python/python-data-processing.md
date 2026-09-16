@@ -170,7 +170,7 @@ graph TD
 #### Основные методы
 
 - `DataFrame.loc[source]` — access a group of rows and columns by label(s) or a boolean array.
-- `DataFrame.iloc[source]` — purely integer-location based indexing for selection by position, used for **slicing**.
+- `DataFrame.iloc[source]` — purely integer-location based indexing for selection by position, used for **[[python-data-structures|slicing]]**.
 
 Пример: создание DataFrame и чтение данных
 

@@ -56,8 +56,8 @@ flowchart LR
 | Область | Как реализовано |
 |---------|-----------------|
 | **Reactive Streams** | Контракт `Publisher` / `Subscriber` с требованием `request(n)` |
-| **Kafka** | Партиции, группа потребителей, `max.poll.records` |
-| **RabbitMQ** | `prefetch` (QoS) — сколько сообщений выдавать потребителю |
+| **[[kafka|Kafka]]** | Партиции, группа потребителей, `max.poll.records` |
+| **[[rabbit-mq|RabbitMQ]]** | `prefetch` (QoS) — сколько сообщений выдавать потребителю |
 | **Очереди в коде** | Ограниченные буферы + семантика отказа (drop / retry) |
 | **Стриминг (HTTP/2, TCP)** | Оконное управление потоком, TCP receive window |
 
@@ -66,7 +66,7 @@ flowchart LR
 | Инструмент | Поддержка backpressure |
 |-----------|------------------------|
 | **RxJS** | `Observable` с операторами `bufferCount`, `throttle` |
-| **Reactor (Spring)** | `Flux`/`Mono` с поддержкой `request(n)` |
+| **[[reactor|Reactor]] (Spring)** | `Flux`/`Mono` с поддержкой `request(n)` |
 | **Akka Streams** | Встроенный backpressure по умолчанию |
 | **Kafka Consumer** | Настройка размера выборки и обработки |
 | **Go channels** | Встроенная блокировка при полном буфере |

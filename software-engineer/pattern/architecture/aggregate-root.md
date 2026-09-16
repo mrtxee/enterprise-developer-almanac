@@ -19,7 +19,7 @@ aliases:
 
 ## Aggregate Root (Корень агрегата)
 
-**Aggregate Root (Корень агрегата)** — это **ключевое понятие в DDD ([[domain-driven-design]])**, которое помогает управлять сложностью и обеспечивать целостность бизнес-объектов.
+**Aggregate Root (Корень агрегата)** — это **ключевое понятие в DDD ([[domain-driven-design|Domain-Driven Design]])**, которое помогает управлять сложностью и обеспечивать целостность бизнес-объектов.
 
 ---
 
@@ -86,7 +86,7 @@ public class Order {
 
 - Сущности могут быть изменены из любого места → **нарушение бизнес-правил**
 - Нет контроля над жизненным циклом группы объектов
-- Транзакции становятся непредсказуемыми
+- [[Transaction|Транзакции]] становятся непредсказуемыми
 
 С Aggregate Root:
 
@@ -127,8 +127,8 @@ public class Order {
 | Entity | Сущности внутри агрегата (например, `OrderLine`) |
 | Value Object | Часть агрегата (например, `Address`, `Money`) |
 | Repository | Работает с **целым агрегатом** (`OrderRepository.save(order)`) |
-| [[event-sourcing]] | События создаются от корня (`OrderPlaced`, `OrderCancelled`) |
-| [[CQRS]] | Команды работают с корнем, Query — с проекциями |
+| [[event-sourcing\|Event Sourcing]] | События создаются от корня (`OrderPlaced`, `OrderCancelled`) |
+| [[CQRS\|CQRS]] | Команды работают с корнем, Query — с проекциями |
 | DDD (Domain-Driven Design) | Агрегаты — фундамент моделирования домена |
 
 ---
@@ -170,7 +170,7 @@ public class Order {
 
 ### Aggregate vs Aggregate Root
 
-**Aggregate Root (корень агрегата)** и **Aggregate (агрегат)** — это **тесно связанные, но не одинаковые понятия** в **[[domain-driven-design]] (DDD)**.
+**Aggregate Root (корень агрегата)** и **Aggregate (агрегат)** — это **тесно связанные, но не одинаковые понятия** в **[[domain-driven-design|Domain-Driven Design]] (DDD)**.
 
 #### Краткий ответ
 

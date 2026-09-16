@@ -14,11 +14,11 @@ aliases:
 
 ### Что такое Keycloak
 
-> **Keycloak** — это **open-source Identity and Access Management ([[identity-access-management]]) сервер**, созданный Red Hat, который позволяет:
-> - Реализовать **SSO**
-> - Поддерживать **OAuth2**, **OpenID Connect**, **SAML**
+> **Keycloak** — это **open-source Identity and Access Management ([[identity-access-management|IAM]]) сервер**, созданный Red Hat, который позволяет:
+> - Реализовать **[[SSO|SSO]]**
+> - Поддерживать **[[oauth|OAuth2]]**, **[[OIDC|OpenID Connect]]**, **[[SAML|SAML]]**
 > - Управлять **пользователями, ролями, клиентами**
-> - Интегрироваться с LDAP, Active Directory
+> - Интегрироваться с [[LDAP|LDAP]], [[active-directory|Active Directory]]
 > - Настраивать **MFA**, **flow аутентификации**, **UI-темы**
 
 > 🔥 Keycloak — это **ваш собственный Google Auth / Microsoft Entra ID**, но **вы управляете им сами**.
@@ -77,7 +77,7 @@ graph TD
 1. Пользователь заходит в `app1.company.com`
 2. Приложение перенаправляет на `keycloak.company.com`
 3. Пользователь вводит логин/пароль
-4. Keycloak выдаёт **ID Token (JWT)** и **Access Token**
+4. Keycloak выдаёт **ID Token ([[JWT|JWT]])** и **Access Token**
 5. Пользователь переходит в `app2.company.com`
 6. `app2` проверяет токен → **уже аутентифицирован**
 7. Пользователь **не вводит пароль снова**
@@ -109,7 +109,7 @@ graph TD
 |----------|--------|
 | ✅ Enterprise-системы | Централизованное управление доступом |
 | ✅ Микросервисы | Все сервисы используют один IdP |
-| ✅ Cloud-native приложения | Kubernetes + Istio + Keycloak = Zero Trust |
+| ✅ Cloud-native приложения | Kubernetes + Istio + Keycloak = [[zero-trust|Zero Trust]] |
 | ✅ MVP с быстрой аутентификацией | Запускаете за 5 минут |
 | ✅ Вы не хотите зависеть от Google/Microsoft | Хостите Keycloak сами (on-prem, AWS, Kubernetes) |
 

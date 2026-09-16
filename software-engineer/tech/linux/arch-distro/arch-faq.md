@@ -355,4 +355,4 @@ sudo reboot
 
 **Нужные:**
 
-- IntelliJ IDEA
+- [[install-with-file|IntelliJ IDEA]]

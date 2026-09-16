@@ -53,13 +53,13 @@ aliases:
 | **Basic Auth**<br><br>`login:password` в Base64 в каждом запросе                                                      | Stateless<br><br>Низкая (пароль в каждом запросе; только TLS)                   | Внутренние тулзы, dev, простые админки           |
 | **Digest Auth**<br><br>Challenge–response: хеш пароля + nonce, пароль открыто не идёт                                 | Stateless<br><br>Средняя, устаревшая (MD5)                                      | Legacy-системы                                   |
 | **API Key**<br><br>Статичный ключ в заголовке/query                                                                   | Stateless<br><br>Низкая–средняя (долгий срок жизни, нет контекста пользователя) | Server-to-server, публичные API, rate limiting   |
-| **Bearer Token (JWT)**<br><br>Подписанный токен в `Authorization: Bearer`; проверка без БД                            | Stateless<br><br>Средняя–высокая (утечка токена = доступ; нужны TTL + TLS)      | REST API, микросервисы, SPA, мобильные           |
-| **OAuth 2.0 / OIDC**<br><br>Access token от authorization server (Auth Code + PKCE и др.); OIDC добавляет ID token    | Stateless (проверка по JWKS)<br><br>Высокая                                     | SSO, «войти через Google», доступ третьих сторон |
-| **Session (Cookies)**<br><br>Сервер создаёт сессию, клиент хранит cookie с session ID                                 | Stateful<br><br>Средняя–высокая (HttpOnly/Secure/SameSite + защита от CSRF)     | Веб-приложения с серверным UI                    |
-| **mTLS**<br><br>Клиентский сертификат проверяется при TLS-хендшейке                                                   | Stateless (на уровне приложения)<br><br>Очень высокая                           | Service mesh, B2B, банки, IoT                    |
-| **HMAC-подпись (SigV4)**<br><br>Запрос подписывается секретным ключом; секрет по сети не идёт; целостность запроса    | Stateless<br><br>Высокая                                                        | Облачные API (AWS), webhooks, платёжки           |
-| **[[kerberos\|Kerberos]] / SPNEGO / NTLM**<br><br>Тикет от KDC; сервис проверяет тикет без пароля                     | Зависит от KDC<br><br>Высокая внутри домена                                     | Корпоративный Windows/AD-интранет                |
-| **SAML**<br><br>IdP выдаёт подписанный XML-assertion, браузер передаёт его SP                                         | Stateless на стороне SP<br><br>Средняя–высокая                                  | Enterprise SSO, старые корпоративные IdP         |
+| **Bearer Token ([[JWT|JWT]])**<br><br>Подписанный токен в `Authorization: Bearer`; проверка без БД                            | Stateless<br><br>Средняя–высокая (утечка токена = доступ; нужны TTL + TLS)      | REST API, микросервисы, SPA, мобильные           |
+| **[[oauth|OAuth 2.0]] / OIDC**<br><br>Access token от authorization server (Auth Code + [[PKCE|PKCE]] и др.); OIDC добавляет ID token    | Stateless (проверка по JWKS)<br><br>Высокая                                     | SSO, «войти через Google», доступ третьих сторон |
+| **Session (Cookies)**<br><br>Сервер создаёт сессию, клиент хранит [[cookie|cookie]] с session ID                                 | Stateful<br><br>Средняя–высокая (HttpOnly/Secure/SameSite + защита от CSRF)     | Веб-приложения с серверным UI                    |
+| **[[tls|mTLS]]**<br><br>Клиентский сертификат проверяется при TLS-хендшейке                                                   | Stateless (на уровне приложения)<br><br>Очень высокая                           | Service mesh, B2B, банки, IoT                    |
+| **[[HMAC|HMAC signature]] (SigV4)**<br><br>Запрос подписывается секретным ключом; секрет по сети не идёт; целостность запроса    | Stateless<br><br>Высокая                                                        | Облачные API (AWS), webhooks, платёжки           |
+| **[[kerberos|Kerberos]] / SPNEGO / [[NTLM|NTLM]]**<br><br>Тикет от KDC; сервис проверяет тикет без пароля                     | Зависит от KDC<br><br>Высокая внутри домена                                     | Корпоративный Windows/AD-интранет                |
+| **[[SAML|SAML]]**<br><br>IdP выдаёт подписанный XML-assertion, браузер передаёт его SP                                         | Stateless на стороне SP<br><br>Средняя–высокая                                  | Enterprise SSO, старые корпоративные IdP         |
 | **WebAuthn / FIDO2 / Passkeys**<br><br>Устройство подписывает challenge приватным ключом; ключ не покидает устройство | Stateless<br><br>Очень высокая, phishing-resistant                              | Passwordless-логин, стойкий MFA                  |
 | **SCRAM**<br><br>Challenge–response с солёным хешем пароля (PBKDF2)                                                   | Stateless<br><br>Средняя–высокая                                                | MongoDB, Kafka, XMPP                             |
 | **SSH public key**<br><br>Клиент доказывает владение приватным ключом подписью challenge                              | Stateless<br><br>Высокая                                                        | Доступ к серверам, Git по SSH                    |
@@ -80,7 +80,7 @@ aliases:
 
 *Когда:* REST API, микросервисы, SPA/мобилки. Короткий TTL + refresh token, только HTTPS.
 
-**OAuth 2.0 / OIDC** — клиент получает токены у authorization server; OIDC даёт ID token и профиль пользователя.
+**OAuth 2.0 / [[OIDC|OIDC]]** — клиент получает токены у authorization server; OIDC даёт ID token и профиль пользователя.
 
 *Когда:* SSO, «войти через…», делегированный доступ третьих сторон к данным пользователя.
 
@@ -96,7 +96,7 @@ aliases:
 
 *Когда:* API в стиле AWS, webhooks, платёжные системы — когда важна целостность запроса и нежелательно гонять секрет.
 
-**Kerberos / SPNEGO / NTLM** — пользователь получает тикет у KDC (контроллера домена), сервис принимает тикет без пароля.
+**Kerberos / SPNEGO / [[NTLM|NTLM]]** — пользователь получает тикет у KDC (контроллера домена), сервис принимает тикет без пароля.
 
 *Когда:* корпоративный интранет на Active Directory, прозрачный SSO в Windows-среде.
 
@@ -122,7 +122,7 @@ aliases:
 
 **WS-Security / SOAP-заголовки** — для SOAP-сервисов.
 
-**OTP / TOTP / HOTP** — одноразовые коды (обычно как второй фактор).
+**[[OTP|OTP]] / TOTP / HOTP** — одноразовые коды (обычно как второй фактор).
 
 ---
 
@@ -201,9 +201,9 @@ sequenceDiagram
 > Токены доступа / JWT / OAuth 2.0
 > Bearer – носитель
 
-**Что это:** Клиент передает токен (строку), который доказывает, что он авторизован. Токен выдается после успешного входа (например, через [[oauth]] 2.0).
+**Что это:** Клиент передает токен (строку), который доказывает, что он авторизован. Токен выдается после успешного входа (например, через [[oauth|OAuth]] 2.0).
 
-- **Как работает:** Заголовок `Authorization: Bearer <token>`. Токен может быть "непрозрачным" (opaque — случайная строка, которую сервер проверяет в БД) или **[[JWT]]** (JSON Web Token — зашифрованный JSON с данными пользователя и подписью).
+- **Как работает:** Заголовок `Authorization: Bearer <token>`. Токен может быть "непрозрачным" (opaque — случайная строка, которую сервер проверяет в БД) или **[[JWT|JWT]]** (JSON Web Token — зашифрованный JSON с данными пользователя и подписью).
 - **Для чего нужно:** Современные SPA (React, Vue), мобильные приложения, микросервисная архитектура, предоставление доступа сторонним приложениям (OAuth: "Войти через Google").
 
 **Особенности**

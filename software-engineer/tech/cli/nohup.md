@@ -36,8 +36,8 @@ nohup <команда> [аргументы] &
 
 | Поток | По умолчанию | Как изменить |
 |-------|--------------|--------------|
-| **stdout** | `./nohup.out` | `nohup cmd > my.log 2>&1 &` |
-| **stderr** | `./nohup.out` | `nohup cmd > my.log 2>&1 &` |
+| **[[batch-stdout|stdout]]** | `./nohup.out` | `nohup cmd > my.log 2>&1 &` |
+| **[[batch-stdout|stderr]]** | `./nohup.out` | `nohup cmd > my.log 2>&1 &` |
 | **stdin** | `/dev/null` (игнорируется) | Не используется |
 
 ## Примеры использования

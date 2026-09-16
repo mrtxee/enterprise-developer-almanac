@@ -35,7 +35,7 @@ aliases:
 | ✅ Безопасность | Не нужно хранить пароли в каждом сервисе |
 | ✅ Снижение нагрузки на IT | Меньше запросов «забыл пароль» |
 | ✅ Интеграция с внешними сервисами | Вход через Facebook, Google, GitHub |
-| ✅ Поддержка SSO (Single Sign-On) | Один вход — во всё |
+| ✅ Поддержка [[SSO|SSO]] (Single Sign-On) | Один вход — во всё |
 
 ## Как устроена федеративная идентификация
 
@@ -46,7 +46,7 @@ aliases:
 | **Identity Provider (IdP)** | Сервис, который проверяет личность пользователя (Google, Microsoft, Okta) |
 | **Service Provider (SP)**   | Сервис, который предоставляет ресурсы (ваш сайт, CRM, ERP)                |
 | **User**                    | Пользователь                                                              |
-| **Protocol**                | OAuth 2.0, OpenID Connect, SAML                                           |
+| **Protocol**                | [[oauth|OAuth 2.0]], OpenID Connect, [[SAML|SAML]]                                           |
 
 ## Пример: вход через Google
 
@@ -72,15 +72,15 @@ sequenceDiagram
 
 | Протокол | Используется для |
 |----------|------------------|
-| **SAML** | Корпоративные SSO (Active Directory, Okta) |
-| **OAuth 2.0 + OpenID Connect** | Веб-приложения, SaaS, мобильные приложения |
-| **Kerberos** | Локальные сети, Windows Active Directory |
+| **SAML** | Корпоративные SSO ([[active-directory|Active Directory]], Okta) |
+| **OAuth 2.0 + [[OIDC|OpenID Connect]]** | Веб-приложения, SaaS, мобильные приложения |
+| **[[kerberos|Kerberos]]** | Локальные сети, Windows Active Directory |
 
 ## Форматы токенов
 
 | Токен | Назначение |
 |-------|------------|
-| **JWT (JSON Web Token)** | Для передачи данных о пользователе (OpenID Connect) |
+| **[[JWT|JWT]] (JSON Web Token)** | Для передачи данных о пользователе (OpenID Connect) |
 | **SAML Assertion** | XML-документ с данными о пользователе (SAML) |
 
 ## Где используется федеративная идентификация

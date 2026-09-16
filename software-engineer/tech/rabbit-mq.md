@@ -128,7 +128,7 @@ public class ActiveMQConsumer {
 
 **Характеристики ActiveMQ**
 - ✅ **Полная JMS 1.1 и 2.0 поддержка**
-- ✅ **Множество протоколов**: OpenWire, [[amqp]], MQTT, STOMP, WS
+- ✅ **Множество протоколов**: OpenWire, [[amqp|amqp]], MQTT, STOMP, WS
 - ✅ **Поддержка кластеризации**
 - ✅ **Persistence**: KahaDB, JDBC
 - ✅ **Интеграция с Spring**
@@ -137,7 +137,7 @@ public class ActiveMQConsumer {
 ## RabbitMQ
 
 **Что это**
-RabbitMQ — это message broker на основе [[amqp]] протокола, не связанный с JMS.
+RabbitMQ — это message broker на основе [[amqp|amqp]] протокола, не связанный с JMS.
 
 Пример с Spring AMQP:
 
@@ -391,7 +391,7 @@ msg.setStringProperty("type", "ALERT");
 
 ### Форматы сообщений в ActiveMQ
 
-ActiveMQ поддерживает все JMS форматы плюс JSON, XML и бинарные форматы через текстовые сообщения:
+ActiveMQ поддерживает все JMS форматы плюс [[config-formats|JSON]], [[config-formats|XML]] и бинарные форматы через текстовые сообщения:
 
 ```java
 // Поддерживает все JMS форматы плюс:
@@ -752,7 +752,7 @@ public class RabbitMQConfig {
 
 ### RabbitMQ
 
-- Строите микросервисную архитектуру
+- Строите [[microservice|микросервисную архитектуру]]
 - Нужна мультиязычная поддержка
 - Требуется высокая производительность
 - Нужна гибкая маршрутизация сообщений

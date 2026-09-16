@@ -66,7 +66,7 @@ sudo blkid | grep swap
 /dev/zram0: LABEL="zram0" UUID="858c9205-7189-417c-b83d-1ba82fb9c20d" TYPE="swap"
 ```
 
-[[swap-partition]] есть и виден системе, но не прописан в `/etc/fstab`. Ниже — пошаговая инструкция по настройке гибернации.
+[[swap-partition|swap-partition]] есть и виден системе, но не прописан в `/etc/fstab`. Ниже — пошаговая инструкция по настройке гибернации.
 
 ---
 
@@ -361,7 +361,7 @@ sudo mkinitcpio -P
 
 ### Причина
 
-Вы, скорее всего, **скопировали конфигурацию** `mkinitcpio.conf` из другого дистрибутива (например, **EndeavourOS**, **Garuda**, **Manjaro**) или из примера, где используется **`systemd`-ориентированная сборка initramfs**. Хуки вроде `sd-resume`, `sd-encrypt`, `sd-lvm` — **это псевдонимы для systemd-хуков**, которые **не входят в стандартный пакет `mkinitcpio` в Arch Linux**.
+Вы, скорее всего, **скопировали конфигурацию** `mkinitcpio.conf` из другого дистрибутива (например, **[[linux-distros|EndeavourOS]]**, **Garuda**, **Manjaro**) или из примера, где используется **`systemd`-ориентированная сборка initramfs**. Хуки вроде `sd-resume`, `sd-encrypt`, `sd-lvm` — **это псевдонимы для systemd-хуков**, которые **не входят в стандартный пакет `mkinitcpio` в Arch Linux**.
 
 ### Решение
 

@@ -5,13 +5,13 @@ aliases:
 ---
 ## Cassandra
 
-**Cassandra** (NoSQL, wide-column) vs **PostgreSQL** (реляционная SQL) — принципиально разные архитектуры.
+**Cassandra** (NoSQL, wide-column) vs **[[PostgreSQL|PostgreSQL]]** (реляционная SQL) — принципиально разные архитектуры.
 
 | Критерий | Cassandra | PostgreSQL |
 |----------|-----------|------------|
 | **Модель данных** | Широкие столбцы (колоночная семья) | Таблицы со строгой схемой (реляционная) |
 | **Язык запросов** | CQL (Cassandra Query Language) | SQL (полноценный) |
-| **ACID** | Нет (BASE, eventual consistency) | ✅ Полная ACID |
+| **[[software-architect/data/data-base/rdbms/ACID|ACID]]** | Нет ([[BASE|BASE]], eventual consistency) | ✅ Полная ACID |
 | **Транзакции** | Нет (только lightweight transactions, Paxos) | ✅ Полноценные транзакции, изоляция |
 | **JOIN** | ❌ (не поддерживаются) | ✅ Сложные JOIN, подзапросы, CTE |
 | **Индексы** | Ограниченные (secondary indexes — медленные) | Полноценные (B-tree, GIN, GiST, hash) |
@@ -39,7 +39,7 @@ aliases:
 - Строгая схема и целостность данных
 - Команда знает SQL
 
-**Итог:** **Cassandra — AP** (доступность + устойчивость к разделению), **PostgreSQL — CA** (консистентность + доступность) по CAP-теореме. Выбор — компромисс между гибкостью схемы/масштабированием и строгой консистентностью/сложными запросами.
+**Итог:** **Cassandra — AP** (доступность + устойчивость к разделению), **PostgreSQL — CA** (консистентность + доступность) по [[distributed-information-systems|CAP-теореме]]. Выбор — компромисс между гибкостью схемы/масштабированием и строгой консистентностью/сложными запросами.
 
 ## Wide-column
 

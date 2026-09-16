@@ -38,20 +38,20 @@ aliases:
 Архитектурные нотации:
 
 - Стратегические нотации цифровой трансформации
-  - [[business-capability-map]] — карта бизнес возможностей.
-  - [[stakeholder-map]] — карта стейкхолдеров.
-  - [[it-landscape-map]] — IT-ландшафт организации.
+  - [[business-capability-map|Business Capability Map]] — карта бизнес возможностей.
+  - [[stakeholder-map|Stakeholder Map]] — карта стейкхолдеров.
+  - [[it-landscape-map|IT Landscape Map]] — IT-ландшафт организации.
 - Управления архитектурой
-  - [[TOGAF]] — фреймворк управления архитектурой предприятия.
-  - [[ITIL]] — фреймворк для управления IT-услугами.
-  - [[COBIT]] — фреймворк для управления ИТ-ресурсами.
+  - [[TOGAF|TOGAF]] — фреймворк управления архитектурой предприятия.
+  - [[ITIL|ITIL]] — фреймворк для управления IT-услугами.
+  - [[COBIT|COBIT]] — фреймворк для управления ИТ-ресурсами.
 - Нотации требований к системе
-  - [[furps-plus]]
-  - [[use-case]]
+  - [[furps-plus|FURPS+]]
+  - [[use-case|Use Case]]
 - Процессы
-  - [[event-driven-process-chain]] — Event-Driven Process Chain.
-  - [[business-process-model-notation]] — Business Process Model and Notation.
+  - [[event-driven-process-chain|EPC]] — Event-Driven Process Chain.
+  - [[business-process-model-notation|BPMN]] — Business Process Model and Notation.
 - Нотации системы
-  - [[c4-diagram]] — контекст, контейнер, компонент, код.
-  - [[entity-relationship-diagram]] — связи между сущностями.
-  - [[sequence-diagram]] — диаграмма последовательности действий.
+  - [[c4-diagram|C4]] — контекст, контейнер, компонент, код.
+  - [[entity-relationship-diagram|ERD]] — связи между сущностями.
+  - [[sequence-diagram|Sequence Diagram]] — диаграмма последовательности действий.

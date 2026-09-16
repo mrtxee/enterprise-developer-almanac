@@ -27,7 +27,7 @@ aliases:
 
 ## Offline Concurrency
 
-Offline Concurrency by [[PoEAA]].
+Offline Concurrency by [[PoEAA|PoEAA]].
 
 Паттерны конкурентного доступа к данным из книги **«[[PoEAA|Patterns of Enterprise Application Architecture]]»** Мартина Фаулера #👨 #📘 решают проблему конкурентного доступа к данным в корпоративных приложениях.
 
@@ -131,7 +131,7 @@ sequenceDiagram
     DB-->>UserB: OptimisticLockException
 ```
 
-**Реализация на Java (JPA/Hibernate)**
+**Реализация на Java (JPA/[[hibernate|Hibernate]])**
 
 ```java
 @Entity
@@ -188,7 +188,7 @@ SELECT ROW_COUNT(); -- 0 = конфликт!
 | Высокая производительность | Нет блокировок при чтении                       |
 | Масштабируемость        | Подходит для высоконагруженных систем            |
 | Простота                | Легко реализовать (аннотация `@Version`)          |
-| Отсутствие взаимоблокировок | Нет риска deadlock                              |
+| Отсутствие взаимоблокировок | Нет риска [[multithreading|deadlock]]                              |
 
 **Недостатки**
 
@@ -239,7 +239,7 @@ sequenceDiagram
     UserB->>DB: Получает данные
 ```
 
-**Реализация на Java (JPA)**
+**Реализация на Java ([[java-persistence-api|JPA]])**
 
 ```java
 @Entity
@@ -467,7 +467,7 @@ public class OrderService {
 // 4. Освобождает блокировки
 ```
 
-**Конфигурация на Spring**
+**Конфигурация на [[spring|Spring]]**
 
 ```java
 @Service
@@ -501,7 +501,7 @@ public class OrderService {
 | READ UNCOMMITTED | Может читать незафиксированные данные           | Минимальные                 |
 | READ COMMITTED | Читает только зафиксированные данные              | Строковые при записи        |
 | REPEATABLE READ | Гарантирует повторяемость чтения                  | Строковые + диапазонные     |
-| SERIALIZABLE   | Полная изоляция (как последовательное выполнение) | Максимальные                |
+| [[transaction-isolation|SERIALIZABLE]]   | Полная изоляция (как последовательное выполнение) | Максимальные                |
 
 **Как работает автоматическая блокировка**
 

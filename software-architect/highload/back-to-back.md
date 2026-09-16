@@ -66,7 +66,7 @@ aliases:
 Order Service (после создания заказа)
     → публикует событие "OrderCreated" в Kafka
     → Notification Service подписался → отправляет email
-    → Analytics Service → записывает событие в BigQuery
+    → Analytics Service → записывает событие в [[OLAP|BigQuery]]
     → Inventory Service → уменьшает остаток
 ```
 
@@ -77,7 +77,7 @@ Order Service (после создания заказа)
 - **Цель**: синхронизация, аудит, уведомления, обработка событий
 - **Типичные операции**: обновление кеша, генерация отчётов, рассылка уведомлений
 - **Задержка**: менее критична — можно асинхронно
-- **Типичные инструменты**: Kafka, RabbitMQ, Event Sourcing, CQRS, Debezium
+- **Типичные инструменты**: Kafka, RabbitMQ, [[event-sourcing|Event Sourcing]], [[CQRS|CQRS]], Debezium
 
 **Где используется:** микросервисные архитектуры, событийно-ориентированные системы, ETL-процессы, интеграции между системами.
 
@@ -203,7 +203,7 @@ graph LR
 - ❌ **Риск дублирования** — если не настроить exactly-once delivery.
 - ❌ **Нет гарантии порядка** — если не использовать partitioning и key-based routing.
 
-**Где используется:** событийно-ориентированные системы, микросервисы с разрозненной логикой. Пример: `OrderCreated` → Payment Service (оплачивает) → Inventory Service (снижает остаток) → Analytics (записывает в BigQuery) → Notification (шлёт email) → Search Index (обновляет Elasticsearch).
+**Где используется:** событийно-ориентированные системы, микросервисы с разрозненной логикой. Пример: `OrderCreated` → Payment Service (оплачивает) → Inventory Service (снижает остаток) → Analytics (записывает в BigQuery) → Notification (шлёт email) → Search Index (обновляет [[Elasticsearch|Elasticsearch]]).
 
 > _Pub/Sub — это как выложить объявление в газету: все, кто заинтересован, прочитают._
 

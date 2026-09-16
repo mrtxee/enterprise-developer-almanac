@@ -352,7 +352,7 @@ public class ProgressFileReader {
 | **Забыли `try-with-resources`**         | Утечка файловых дескрипторов | Всегда использовать `try (Reader r = ...)`) |
 | **Не указали кодировку**                | Проблемы на разных ОС        | Всегда `StandardCharsets.UTF_8`             |
 | **Stream без `try-with-resources`**     | Утечка памяти                | `try (Stream<String> s = Files.lines(...))` |
-| **Чтение в основном потоке**            | Блокировка UI/ответа         | Выносить в отдельный поток/Executor         |
+| **Чтение в основном потоке**            | Блокировка UI/ответа         | Выносить в отдельный поток/[[java-concurrency-utilities|Executor]]         |
 
 ---
 

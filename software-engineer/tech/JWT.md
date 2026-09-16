@@ -15,7 +15,7 @@ aliases:
 
 ### JWT standards
 
-Стандарты **JWK, JWA, JWS, JWE** — часть семейства спецификаций **JOSE (Javascript Object Signing and Encryption)**, разработанных [[org-ietf]]. Они тесно связаны с **JWT (JSON Web Token, RFC 7519)** и определяют, **как JWT подписывается, шифруется и проверяется**.
+Стандарты **JWK, JWA, JWS, JWE** — часть семейства спецификаций **JOSE (Javascript Object Signing and Encryption)**, разработанных [[org-ietf|org-ietf]]. Они тесно связаны с **JWT (JSON Web Token, RFC 7519)** и определяют, **как JWT подписывается, шифруется и проверяется**.
 
 JWT сам по себе — это **формат токена** (структура данных), а JWS/JWE/JWK/JWA — это **механизмы его защиты и обработки**.
 
@@ -129,7 +129,7 @@ BASE64URL(JWE Authentication Tag)
     ]
   }
   ```
-- **OpenID Connect:** провайдеры (Google, Auth0) публикуют JWKS для верификации ID-токенов.
+- **[[OIDC|OpenID Connect]]:** провайдеры (Google, Auth0) публикуют JWKS для верификации ID-токенов.
 
 > 🔑 **Связь:**
 > - JWS использует JWK для получения ключа проверки подписи.

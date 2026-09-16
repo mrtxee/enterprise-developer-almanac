@@ -21,18 +21,18 @@ aliases:
 **Типы паттернов**
 
 - Паттерны структурирования кода
-  - [[gof]]
+  - [[gof|gof]]
 - Паттерны распределения ответственности
   - [[grasp|GRASP]]
 - Паттерны качества крупных приложений
   - [[enterprise-patterns|Enterprise patterns]]
 - Паттерны устойчивости
-  - [[resilience-patterns]]
+  - [[resilience-patterns|resilience-patterns]]
   - Паттерны управления кэшем
-    - [[cache-patterns]]
-  - [[software-engineer/java/java-tools/thread-safe-init|Thread safe initialization patterns]]
+    - [[cache-patterns|cache-patterns]]
+  - [[thread-safe-init|Thread safe initialization patterns]]
 - Паттерны распределенных систем
   - [[enterprise-integration-patterns|Enterprise Integration Patterns]]
   - [[microservice|Паттерны микросервисов]]
   - Паттерны горизонтального масштабирования
-    - [[data-scaling]]
+    - [[data-scaling|data-scaling]]

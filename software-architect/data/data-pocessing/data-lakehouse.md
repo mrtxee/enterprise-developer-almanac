@@ -13,7 +13,7 @@ aliases:
 
 ## Data Lakehouse: объединение Data Lake и Data Warehouse
 
-**Data Lakehouse (Даталейкхаус)** — это **современная архитектура**, которая **объединяет лучшее из Data Lake и Data Warehouse**.
+**Data Lakehouse (Даталейкхаус)** — это **современная архитектура**, которая **объединяет лучшее из [[data-lake|Data Lake]] и [[data-warehouse|Data Warehouse]]**.
 
 > **Data Lakehouse** — это **платформа, которая позволяет хранить данные в сыром виде (как Data Lake), но с возможностью быстрой аналитики (как Data Warehouse)**.
 
@@ -28,8 +28,8 @@ aliases:
 | Цель | Объяснение |
 |------|------------|
 | **Гибкость** | Можно хранить любые данные (JSON, CSV, видео) |
-| **Производительность** | Быстрые запросы без [[ELT]] |
-| **Стоимость** | Дешевле, чем традиционный [[data-warehouse\|DW]] |
+| **Производительность** | Быстрые запросы без [[ELT|ELT]] |
+| **Стоимость** | Дешевле, чем традиционный [[data-warehouse|DW]] |
 | **Масштабируемость** | До PB/TB данных |
 | **Упрощение архитектуры** | Нет необходимости в отдельном DW |
 
@@ -56,21 +56,21 @@ flowchart LR
 
 ### Как работает Data Lakehouse
 
-1. **Данные приходят** в сыром виде (JSON, CSV, Parquet).
-2. **Хранятся в формате таблиц** (например, [[delta-lake]]).
+1. **Данные приходят** в сыром виде (JSON, CSV, [[parquet|Parquet]]).
+2. **Хранятся в формате таблиц** (например, [[delta-lake|Delta Lake]]).
 3. **Можно выполнять SQL-запросы** прямо на них.
 4. **Пользователи** могут:
    - строить дашборды (Power BI);
    - делать ML (Python);
    - анализировать в реальном времени (Flink).
-→ **Без необходимости в ETL и отдельном DW**
+→ **Без необходимости в [[ETL|ETL]] и отдельном DW**
 
 ### Основные компоненты
 
 | Компонент | Роль |
 |-----------|------|
-| **Источники данных** | OLTP, Kafka, файлы, IoT-устройства |
-| **Data Lakehouse** | Databricks, Snowflake, Delta Lake, Iceberg |
+| **Источники данных** | [[OLTP|OLTP]], [[kafka|Kafka]], файлы, IoT-устройства |
+| **Data Lakehouse** | Databricks, Snowflake, [[delta-lake|Delta Lake]], Iceberg |
 | **BI-инструменты** | Power BI, Tableau — для дашбордов |
 | **ML/DS** | Python, PySpark, TensorFlow — для анализа |
 | **Реальная аналитика** | Flink, Kafka — для потоков |
@@ -82,7 +82,7 @@ flowchart LR
 | **Databricks** | Использует Delta Lake, поддерживает Spark, ML, BI |
 | **Snowflake** | Cloud-native, поддерживает SQL, BI, ML |
 | **Delta Lake** | Открытое хранилище на основе Parquet + ACID |
-| **Apache Iceberg** | Открытый стандарт для таблиц в [[data-lake]] |
+| **Apache Iceberg** | Открытый стандарт для таблиц в [[data-lake|Data lake]] |
 | **Presto/Trino** | Для быстрых запросов к данным |
 
 ### Преимущества и недостатки Data Lakehouse
