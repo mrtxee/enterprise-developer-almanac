@@ -20,7 +20,7 @@ aliases:
   - [[monitoring|Monitoring]] – что сломалось в системе?
     - **Реактивный подход** к анализу состояния системы
     - [[metrics-highload|Метрики мониторинга]], [[SLI|SLI]]
-    - [[Prometheus|Prometheus]] + [[grafana|Grafana]]
+    - [[prometheus|Prometheus]] + [[grafana|Grafana]]
   - [[observability|Observability]] – почему это сломалось?
     - **Проактивный подход** к анализу состояния системы
     - 1. [[metrics-highload|Highload metrics]] – метрики системы

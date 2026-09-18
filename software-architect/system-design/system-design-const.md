@@ -72,8 +72,8 @@ aliases:
 | Операция                                                 |                                         Время, нс. | Время                                          |
 | :------------------------------------------------------- | -------------------------------------------------: | :--------------------------------------------- |
 | **Send 1KB over 1Gbps network**                          |                                             10 000 | 10 мкс                                         |
-| [[round‑trip-time|Round-trip time]] same datacenter     |                                            500 000 | <div style="white-space: nowrap">500 мкс</div> |
-| [[round‑trip-time|Round-trip time]] global Internet     | <div style="white-space: nowrap">150 000 000</div> | 150 мс                                         |
+| [[round-trip-time|Round-trip time]] same datacenter     |                                            500 000 | <div style="white-space: nowrap">500 мкс</div> |
+| [[round-trip-time|Round-trip time]] global Internet     | <div style="white-space: nowrap">150 000 000</div> | 150 мс                                         |
 
 **Примечания**
 
@@ -88,7 +88,7 @@ aliases:
 - Последовательное чтение с HDD: 30 МБ/с
 - Последовательное чтение через сеть 1 Гбит/с (Ethernet): 100 МБ/с
 - Количество глобальных круговых путей (Round‑Trip Time) в секунду: 6–7
-- Количество круговых путей ([[round‑trip-time|Round-trip time]]) в секунду внутри дата-центра: 2 000
+- Количество круговых путей ([[round-trip-time|Round-trip time]]) в секунду внутри дата-центра: 2 000
 
 ### Производительность БД
 

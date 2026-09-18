@@ -100,7 +100,7 @@ DM понимает: нужно собрать:
 Data-driven политики бывают двух типов:
 
 - **Retrieval-based** — выбирает лучший ответ из базы (например, «Чем могу помочь?»);
-- **Generating (Generative)** — генерирует ответ с нуля (GPT-3, [[LLM|LLM]]).
+- **Generating (Generative)** — генерирует ответ с нуля (GPT-3, [[large-language-model|LLM]]).
 
 ## Rule-based vs Data-driven
 

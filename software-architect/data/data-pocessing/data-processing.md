@@ -22,7 +22,7 @@ aliases:
 
 - Data Processing Architectures
   - [[dwh-model|Data Warehouse]]
-    - [[OLTP|OLTP]] / [[OLAP|OLAP]] — процессинг данных
+    - [[oltp|OLTP]] / [[olap|OLAP]] — процессинг данных
   - [[data-lake|Data lake]]
   - [[data-lakehouse|Data lakehouse]]
   - [[delta-lake|Delta Lake]]

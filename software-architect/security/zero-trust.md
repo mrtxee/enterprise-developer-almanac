@@ -154,7 +154,7 @@ sequenceDiagram
 ### Okta / Ping Identity
 
 - Adaptive MFA
-- Интеграция с [[SIEM|SIEM]]
+- Интеграция с [[siem|SIEM]]
 - Risk-based authentication
 
 ---

@@ -42,7 +42,7 @@ eventPublisher.publish(new OrderCreatedEvent(order));
 1. Записали в БД → но при сбое перед `publish()` → **событие потеряно**
 2. Отправили событие → но запись в БД не прошла → **не согласовано**
 
-> Это нарушает **[[software-architect/data/data-base/rdbms/ACID|ACID]]**: мы хотим, чтобы оба шага были в одной транзакции
+> Это нарушает **[[acid-consistency|acid-consistency]]**: мы хотим, чтобы оба шага были в одной транзакции
 
 ## Решение: Transactional Outbox Pattern
 

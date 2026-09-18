@@ -41,7 +41,7 @@ aliases:
 
 > Config files formats
 
-- **Common config [[software-architect/data/rdbms/DSL|DSL]] форматы**
+- **Common config [[DSL|DSL]] форматы**
   - **YAML (YAML Ain’t Markup Language)** — формат сериализации данных, ориентированный на удобство для человека. Использует отступы вместо скобок и запятых. Поддерживает сложные структуры данных (списки, ассоциативные массивы). Популярен в DevOps (Ansible, [[kubernetes|kubernetes]], [[IaC|IaC]]).
   - **Properties (Java Properties)** — простой формат пар «ключ=значение», преимущественно используется в Java-проектах для настройки приложения.
   - **TOML (Tom’s Obvious, Minimal Language)** — минималистичный формат конфигов с чёткой структурой. Сочетает простоту INI и поддержку сложных структур (таблицы, массивы). Используется в Rust (Cargo.toml), Python (pyproject.toml).

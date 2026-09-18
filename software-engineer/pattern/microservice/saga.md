@@ -18,7 +18,7 @@ aliases:
 
 **Цель**
 
-Обеспечить [[software-architect/data/data-base/rdbms/ACID|ACID]]-свойства для группы [[microservice|микросервисов]]:
+Обеспечить [[acid-consistency|acid-consistency]]-свойства для группы [[microservice|микросервисов]]:
 
 - Atomicity — атомарность,
 - Consistency — целостность,

@@ -328,3 +328,4 @@ class Resource2 implements AutoCloseable {
 Suppressed: Ошибка при закрытии Resource2
 Suppressed: Ошибка при закрытии Resource1
 */
+```

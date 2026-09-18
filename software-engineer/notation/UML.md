@@ -190,6 +190,9 @@ graph LR
 **Семантика:** "Знает о" / "Использует". Один класс знает о существовании другого и может обращаться к нему. Это слабая структурная связь.
 
 ```mermaid
+---
+title: Ассоциация (Association)
+---
 classDiagram
     class Teacher
     class Student
@@ -208,6 +211,9 @@ classDiagram
 **Семантика:** "Использует временно". Один класс использует другой локально (например, как параметр метода или локальную переменную). Связь временная и слабая.
 
 ```mermaid
+---
+title: Зависимость (Dependency)
+---
 classDiagram
     class Order
     class Printer
@@ -226,6 +232,9 @@ classDiagram
 **Семантика:** "Has-a" / "Состоит из". Отношение "часть-целое", где часть **может существовать независимо** от целого.
 
 ```mermaid
+---
+title: Агрегация (Aggregation)
+---
 classDiagram
     class Department
     class Professor
@@ -244,6 +253,9 @@ classDiagram
 **Семантика:** "Owns-a" / "Владеет". Жесткое отношение "часть-целое", где часть **не может существовать без целого**. Уничтожение целого уничтожает части.
 
 ```mermaid
+---
+title: Композиция (Composition)
+---
 classDiagram
     class House
     class Room
@@ -262,6 +274,9 @@ classDiagram
 **Семантика:** "Is-a". Отношение между родительским классом (суперклассом) и дочерним (подклассом). Дочерний класс наследует поведение родителя.
 
 ```mermaid
+---
+title: Наследование (Generalization)
+---
 classDiagram
     class Animal
     class Dog
@@ -280,6 +295,9 @@ classDiagram
 **Семантика:** "Implements". Класс реализует интерфейс или абстрактный контракт.
 
 ```mermaid
+---
+title: Реализация (Implementation)
+---
 classDiagram
     class Serializable
     class User
@@ -307,6 +325,9 @@ classDiagram
 ### Пример комплексной диаграммы
 
 ```mermaid
+---
+title: Комплексная диаграмма классов
+---
 classDiagram
     class Shape {
         <<interface>>

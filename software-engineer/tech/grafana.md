@@ -44,7 +44,7 @@ graph TB
 ### Как работает
 
 1. **Подключение источников данных**
-   - Через плагины Grafana подключается к системам хранения ([[Prometheus|Prometheus]], InfluxDB, MySQL и др.).
+   - Через плагины Grafana подключается к системам хранения ([[prometheus|Prometheus]], InfluxDB, MySQL и др.).
 2. **Создание запросов**
    - В редакторе задаётся запрос к источнику (на языке PromQL, SQL, InfluxQL и т. п.).
 3. **Выбор визуализации**
@@ -67,11 +67,11 @@ graph TB
 
 ### Поддерживаемые источники данных (примеры)
 
-- **Мониторинг**: [[Prometheus|Prometheus]], Graphite, Loki, Zabbix.
-- **[[TSDB|TSDB]]**: InfluxDB, TimescaleDB, VictoriaMetrics.
+- **Мониторинг**: [[prometheus|Prometheus]], Graphite, Loki, Zabbix.
+- **[[time-series-database|TSDB]]**: InfluxDB, TimescaleDB, VictoriaMetrics.
 - **SQL-БД**: MySQL, [[PostgreSQL|PostgreSQL]], Microsoft SQL Server.
 - **Облака**: AWS CloudWatch, Google Cloud Monitoring, Azure Monitor.
-- **Логи**: [[Elasticsearch|Elasticsearch]], [[OpenSearch|OpenSearch]].
+- **Логи**: [[elastic-search|Elasticsearch]], [[open-search|OpenSearch]].
 - **API**: [[config-formats|JSON]], REST, GraphQL (через плагин Simple JSON).
 
 ### Типичные сценарии использования

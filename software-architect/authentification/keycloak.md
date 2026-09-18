@@ -15,10 +15,10 @@ aliases:
 ### Что такое Keycloak
 
 > **Keycloak** — это **open-source Identity and Access Management ([[identity-access-management|IAM]]) сервер**, созданный Red Hat, который позволяет:
-> - Реализовать **[[SSO|SSO]]**
-> - Поддерживать **[[oauth|OAuth2]]**, **[[OIDC|OpenID Connect]]**, **[[SAML|SAML]]**
+> - Реализовать **[[sso|SSO]]**
+> - Поддерживать **[[oauth|OAuth2]]**, **[[oidc|OpenID Connect]]**, **[[saml|SAML]]**
 > - Управлять **пользователями, ролями, клиентами**
-> - Интегрироваться с [[LDAP|LDAP]], [[active-directory|Active Directory]]
+> - Интегрироваться с [[ldap|LDAP]], [[active-directory|Active Directory]]
 > - Настраивать **MFA**, **flow аутентификации**, **UI-темы**
 
 > 🔥 Keycloak — это **ваш собственный Google Auth / Microsoft Entra ID**, но **вы управляете им сами**.

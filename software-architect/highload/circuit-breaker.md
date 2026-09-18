@@ -161,7 +161,7 @@ CircuitBreaker 'paymentService' changed state from CLOSED to OPEN
 
 1. **Не делайте CB глобальным** — на каждый внешний сервис свой предохранитель.
 2. **Мониторинг обязателен**: логируйте переходы состояний, стройте дашборды.
-3. **Тестируйте**: используйте [[SRE|SRE]] (например, Chaos Monkey) для проверки.
+3. **Тестируйте**: используйте [[site-reliability-engineering|SRE]] (например, Chaos Monkey) для проверки.
 4. **Избегайте «thrashing»**: если Half-Open слишком короткий → CB будет дёргаться между Open/Closed.
 
 ---

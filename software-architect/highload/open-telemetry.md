@@ -75,8 +75,8 @@ style C fill:#e9ecef,stroke:#6c757d
 
 3. **Backends**:
    - Traces → [[jaeger|Jaeger]], Zipkin
-   - Metrics → [[Prometheus|Prometheus]], Datadog
-   - Logs → [[grafana|Loki]], [[Elasticsearch|Elasticsearch]]
+   - Metrics → [[prometheus|Prometheus]], Datadog
+   - Logs → [[grafana|Loki]], [[elastic-search|Elasticsearch]]
 
 **Преимущества OpenTelemetry**
 

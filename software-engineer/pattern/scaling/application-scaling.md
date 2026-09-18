@@ -254,7 +254,7 @@ spec:
 
 > **Persistent Volume (PV)** в контексте stateful-масштабирования в Kubernetes — ресурс хранения, который обеспечивает постоянное хранение данных для stateful-приложений. PV принадлежит кластеру и существует независимо от подов.
 
-> «The fastest and cheapest resource is the one that doesn't exist.» — Google [[SRE|Site Reliability Engineering]].
+> «The fastest and cheapest resource is the one that doesn't exist.» — Google [[site-reliability-engineering|Site Reliability Engineering]].
 
 > Stateless-поды: их можно убить, создать — и ничего не изменится.
 
@@ -298,7 +298,7 @@ Stateless-поды делают систему гибкой; там, где ну
 
 **Архитектура без ведущего узла на примере Apache Cassandra**
 
-В треугольнике [[CAP-theorem|CAP]] для Apache Cassandra выбираются свойства Availability + Partition Tolerance вместо строгой Consistency.
+В треугольнике [[cap-theorem|CAP]] для Apache Cassandra выбираются свойства Availability + Partition Tolerance вместо строгой Consistency.
 
 Разные реплики принимают операции независимо, из-за чего возникает риск, что часть узлов успеет обновить данные, а часть — нет. Поэтому консистентность данных становится настраиваемым параметром. Разработчик сам выбирает, сколько узлов должны подтвердить операцию, чтобы она считалась успешной. Именно так достигается баланс между консистентностью и доступностью.
 

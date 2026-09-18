@@ -26,7 +26,7 @@ SELECT * FROM A [INNER|LEFT|RIGHT|FULL OUTER] JOIN B ON A.key = B.key [WHERE A.k
 
 ![[Untitled 6 4.png|Untitled 6 4.png]]
 
-### [[software-architect/data/rdbms/DSL|DSL]] — Domain-specific language
+### [[DSL|DSL]] — Domain-specific language
 
 #### DDL – Data Definition Language
 

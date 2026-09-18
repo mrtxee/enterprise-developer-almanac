@@ -391,7 +391,7 @@ graph LR
 | Обработать ошибки | **Dead Letter Channel** |
 | Избежать дублей | **Idempotent Receiver** |
 | Сохранить порядок | **Resequencer** |
-| Связать старую и новую систему | **[[Anti-Corruption Layer|Anti-Corruption Layer]]** (из DDD) |
+| Связать старую и новую систему | **[[anti-corruption-layer|Anti-Corruption Layer]]** (из DDD) |
 
 | Для чего | Какие паттерны использовать |
 |----------|-----------------------------|

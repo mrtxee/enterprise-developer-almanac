@@ -115,7 +115,7 @@ TraceID: abc123
 | **Измерение задержек** | Видите, какой сервис тормозит — например, 80% времени занимает внешний API |
 | **Анализ зависимостей** | Узнаёте, какие сервисы зависят друг от друга |
 | **Поддержка [[event-driven-architecture\|Event-Driven Architecture]]** | Отслеживает путь события через Kafka → Consumers → Producers |
-| **Интеграция с [[Prometheus\|Prometheus]]/Grafana** | Можно строить графики latency по сервисам |
+| **Интеграция с [[prometheus\|Prometheus]]/Grafana** | Можно строить графики latency по сервисам |
 | **Поддержка контейнеров и Kubernetes** | Работает с [[istio|Istio]], Envoy, Linkerd |
 
 ### Недостатки и сложности

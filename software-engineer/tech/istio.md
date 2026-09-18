@@ -164,7 +164,7 @@ Istio автоматически:
 
 ## Service Mesh без Istio
 
-Service Mesh возможен и без Istio. Все прокси при этом настраиваются ручными конфигами (JSON/YAML), управление ведётся через [[ansible|Ansible]] или Custom Controller, метрики собираются через [[Prometheus|Prometheus]] + [[grafana|Grafana]], mTLS — через Cert-Manager + CA.
+Service Mesh возможен и без Istio. Все прокси при этом настраиваются ручными конфигами (JSON/YAML), управление ведётся через [[ansible|Ansible]] или Custom Controller, метрики собираются через [[prometheus|Prometheus]] + [[grafana|Grafana]], mTLS — через Cert-Manager + CA.
 
 ```mermaid
 ---

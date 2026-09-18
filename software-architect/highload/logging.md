@@ -65,9 +65,9 @@ aliases:
 
 - **Файлы на диске** (`.log`, `.txt`) — простой и распространённый вариант.
 - **Системный журнал** (syslog, journald) — для серверных ОС.
-- **Базы данных** ([[Elasticsearch|Elasticsearch]], [[PostgreSQL|PostgreSQL]]) — для централизованного анализа.
+- **Базы данных** ([[elastic-search|Elasticsearch]], [[PostgreSQL|PostgreSQL]]) — для централизованного анализа.
 - **Облачные сервисы** (AWS CloudWatch, Google Cloud Logging) — для масштабируемых систем.
-- **[[SIEM|SIEM]]-системы** (Splunk, Graylog) — для безопасности и аудита.
+- **[[siem|SIEM]]-системы** (Splunk, Graylog) — для безопасности и аудита.
 
 ## Как организовать логирование
 
@@ -106,9 +106,9 @@ aliases:
 
 ## Инструменты для работы с логами
 
-- **[[ELK|ELK]] Stack** ([[Elasticsearch|Elasticsearch]] + [[logstash|Logstash]] + [[kibana|Kibana]]) — анализ и визуализация.
+- **[[ELK|ELK]] Stack** ([[elastic-search|Elasticsearch]] + [[logstash|Logstash]] + [[kibana|Kibana]]) — анализ и визуализация.
 - **Graylog** — централизованное логирование с оповещениями.
-- **[[Prometheus|Prometheus]] + Loki** — мониторинг и логи для Kubernetes.
+- **[[prometheus|Prometheus]] + Loki** — мониторинг и логи для Kubernetes.
 - **Fluentd/[[logstash|Logstash]]** — сбор и агрегация логов.
 - **[[journalctl|journalctl]]** (Linux) — просмотр системных логов.
 

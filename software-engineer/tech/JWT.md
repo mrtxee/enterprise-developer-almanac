@@ -129,7 +129,7 @@ BASE64URL(JWE Authentication Tag)
     ]
   }
   ```
-- **[[OIDC|OpenID Connect]]:** провайдеры (Google, Auth0) публикуют JWKS для верификации ID-токенов.
+- **[[oidc|OpenID Connect]]:** провайдеры (Google, Auth0) публикуют JWKS для верификации ID-токенов.
 
 > 🔑 **Связь:**
 > - JWS использует JWK для получения ключа проверки подписи.

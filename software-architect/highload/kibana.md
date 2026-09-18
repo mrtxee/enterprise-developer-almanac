@@ -16,7 +16,7 @@ aliases:
 | Характеристика               | **Kibana**                                       | **Grafana**                                                                 |
 | ---------------------------- | ------------------------------------------------ | --------------------------------------------------------------------------- |
 | **Основное назначение**      | Поиск и анализ логов                             | Визуализация метрик и мониторинг                                            |
-| **Ядро**                     | [[Elasticsearch|Elasticsearch]] / OpenSearch                   | Любой источник (Prometheus, InfluxDB, MySQL)                                |
+| **Ядро**                     | [[elastic-search|Elasticsearch]] / OpenSearch                   | Любой источник (Prometheus, InfluxDB, MySQL)                                |
 | **Лучше всего подходит для** | Текст, логи, full-text search                    | Графики, дашборды, алерты по метрикам                                       |
 | **Источники данных**         | Только Elastic/OpenSearch                        | [[Prometheus|Prometheus]], Graphite, Loki, Influx, MySQL, PostgreSQL, AWS CloudWatch и др. |
 | **Аналитика логов**          | ✅ Отлично                                        | ❌ Слабее                                                                    |
@@ -49,9 +49,9 @@ aliases:
 
 ### Где используется
 
-- [[dev-ops|DevOps]], [[SRE|SRE]]
+- [[dev-ops|DevOps]], [[site-reliability-engineering|SRE]]
 - Поиск ошибок в микросервисах
-- Безопасность ([[SIEM|SIEM]]): поиск атак
+- Безопасность ([[siem|SIEM]]): поиск атак
 - Аудит: кто, когда и что делал
 
 ---
@@ -64,7 +64,7 @@ aliases:
 ### Основные возможности
 
 - Потрясающие графики и дашборды
-- Поддержка: [[Prometheus|Prometheus]], [[grafana|Loki]], InfluxDB, MySQL, [[PostgreSQL|PostgreSQL]], CloudWatch, Azure Monitor
+- Поддержка: [[prometheus|Prometheus]], [[grafana|Loki]], InfluxDB, MySQL, [[PostgreSQL|PostgreSQL]], CloudWatch, Azure Monitor
 - Alerting: настройка тревог
 - Templating: динамические дашборды
 - Multi-source: один дашборд → из 3 источников

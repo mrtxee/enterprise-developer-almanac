@@ -67,7 +67,7 @@ aliases:
    4. Fallback — отступление
    5. Redundancy — резервирование
    6. [[failover-strategy|Failover]] — переключение на резерв
-   7. [[stand‑in|Stand‑in]] — заместитель
+   7. [[stand-in|Stand-in]] — заместитель
 3. **Паттерны стабилизации состояния**
    1. [[cache-patterns|Cache-aside]], [[cache-patterns|Read-through]], [[cache-patterns|Write-behind]]
    2. [[state-machine|State machine]]

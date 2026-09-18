@@ -197,7 +197,7 @@ sequenceDiagram
 | Сторона CQRS | Описание |
 | --- | --- |
 | Command Side | Обработка команд → генерация событий → сохранение в Event Store |
-| Query Side | Чтение данных из Read Models (SQL-таблицы, [[Elasticsearch|Elasticsearch]], Redis) — оптимизированных для запросов |
+| Query Side | Чтение данных из Read Models (SQL-таблицы, [[elastic-search|Elasticsearch]], Redis) — оптимизированных для запросов |
 
 ```mermaid
 ---

@@ -27,7 +27,7 @@ DRP — документ, описывающий процедуры восста
 - Сохранить критически важные данные (RPO — Recovery Point Objective).
 - Обеспечить непрерывность бизнеса.
 - Снизить финансовые и репутационные риски.
-- Соблюдать нормативные требования ([[GDPR|GDPR]], ФЗ‑152, [[payment-card-data-security|PCI DSS]] и др.).
+- Соблюдать нормативные требования ([[general-data-protection-regulation|GDPR]], ФЗ‑152, [[payment-card-data-security|PCI DSS]] и др.).
 
 ## Когда нужен DRP
 

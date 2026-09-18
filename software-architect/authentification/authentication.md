@@ -17,14 +17,14 @@ aliases:
 - [[authentication|Authentication]]
   - [[authentication-schemes|Authentication schemes]] – выбрать схему аутентификации для интеграции с хостом
     - [[oauth|OAuth]] – протокол делегирования доступа к ресурсам
-    - [[OIDC|OpenID Connect]] – протокол аутентификации, надстройка над [[oauth|OAuth2]]
-    - [[SAML|SAML]] – XML-based язык разметки утверждений безопасности, для передачи кредов между узлами IAM
+    - [[oidc|OpenID Connect]] – протокол аутентификации, надстройка над [[oauth|OAuth2]]
+    - [[saml|SAML]] – XML-based язык разметки утверждений безопасности, для передачи кредов между узлами IAM
     - [[kerberos|Kerberos]] – протокол аутентификации, основанный на тикетах, центром выдачи тикетов и симметричном шифровании
   - [[identity-access-management|IAM]] – Identity and Access Management
     - комплекс технологий по идентификации клиентов и управлению доступом
     - [[keycloak|Keycloak]] – реализация IAM
     - [[federated-identity|Federated identity]] – обмен доверием между смежными ресурсами
-    - [[LDAP|LDAP]] – Lightweight Directory Access Protocol
+    - [[ldap|LDAP]] – Lightweight Directory Access Protocol
       - [[active-directory|Active Directory]] – частная реализация LDAP протокола от MS или Apache
 
 ---

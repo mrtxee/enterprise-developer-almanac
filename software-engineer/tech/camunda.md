@@ -45,7 +45,7 @@ aliases:
 ## Apache Airflow
 
 > **[[airflow|airflow]]** — это **платформа для программной оркестрации сложных пайплайнов**:
-> - [[ELT|ELT]]
+> - [[extract-load-transform|ELT]]
 > - [[machine-learning|Машинное обучение]]
 > - Аналитика
 > - Скрипты администрирования

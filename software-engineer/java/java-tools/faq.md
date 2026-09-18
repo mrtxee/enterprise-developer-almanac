@@ -401,7 +401,7 @@ HT-тесты (нагрузочное тестирование) — провер
 
 Некоторые операции в API не являются идемпотентными. Например, операции, которые изменяют состояние ресурсов. Для обеспечения их идемпотентности в запросах необходимо передавать заголовок `Idempotency-Key`. В заголовке следует указать `UUID`-строку, которую необходимо сформировать самостоятельно. У каждой операции должен быть свой `UUID`.
 
-## [[CAP-theorem|CAP-theorem]]
+## [[cap-theorem|CAP-theorem]]
 
 В любой распределённой информационной системе возможно обеспечить не более 2 из 3 следующих свойств:
 
@@ -518,7 +518,7 @@ Cloud Native Computing Foundation (CNCF) — проект Linux Foundation, ос
 
 NoSQL — это вид нетабличных баз данных. Они помогают хранить большие массивы данных без определённой структуры. Например, в приложениях, цель которых быстро и без задержек обрабатывать разные по структуре данные. Примеры: CouchDB, Couchbase, MongoDB, Google Cloud Firestore.
 
-### [[graph-db|Neo4j]]
+### Neo4j
 
 Графовая система управления базами данных с открытым исходным кодом, реализованная на Java. По состоянию на 2015 год считается самой распространённой графовой СУБД.
 
@@ -588,7 +588,7 @@ Tomcat позволяет запускать веб-приложения и со
 
 PostgreSQL — свободная объектно-реляционная СУБД.
 
-PostgreSQL поддерживает одновременную модификацию БД несколькими пользователями с помощью механизма **Multiversion Concurrency Control (MVCC)**. Благодаря этому соблюдаются требования **[[software-architect/data/data-base/rdbms/ACID|ACID]]** и практически отпадает нужда в блокировках чтения.
+PostgreSQL поддерживает одновременную модификацию БД несколькими пользователями с помощью механизма **Multiversion Concurrency Control (MVCC)**. Благодаря этому соблюдаются требования **[[acid-consistency|acid-consistency]]** и практически отпадает нужда в блокировках чтения.
 
 **Версия базы данных**
 
@@ -615,7 +615,7 @@ pg_restore -h localhost -p 5432 -U postgres -d old_db -v \
 
 ### [[software-architect/data/data-base/rdbms/rdbms#MVCC – Multi-Version Concurrency Control|MVCC]] — Multiversion Concurrency Control
 
-### [[software-architect/data/data-base/rdbms/ACID|ACID]] — Atomicity, Consistency, Isolation, Durability
+### [[acid-consistency|acid-consistency]] — Atomicity, Consistency, Isolation, Durability
 
 #### [[transaction-isolation|transaction-isolation]]
 

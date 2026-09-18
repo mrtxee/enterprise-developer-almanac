@@ -11,7 +11,7 @@ aliases:
 
 ## Fine-tuning и RAG
 
-**Fine-tuning** и **RAG (Retrieval-Augmented Generation)** — два ключевых подхода для адаптации больших языковых моделей ([[LLM|LLM]]) под бизнес-задачи. Статья «Optimizing LLM Performance: RAG vs Finetune vs Both» сравнивает три подхода к оптимизации LLM: **RAG**, **тонкую настройку (finetuning)** и **их комбинацию**.
+**Fine-tuning** и **RAG (Retrieval-Augmented Generation)** — два ключевых подхода для адаптации больших языковых моделей ([[large-language-model|LLM]]) под бизнес-задачи. Статья «Optimizing LLM Performance: RAG vs Finetune vs Both» сравнивает три подхода к оптимизации LLM: **RAG**, **тонкую настройку (finetuning)** и **их комбинацию**.
 
 ### Fine-tuning
 

@@ -115,7 +115,7 @@ spec:
 
 - Установка: обычно через [[helm|Helm-чарты]] (`argo-workflows`, `argo-cd`, `argo-rollouts`, `argo-events`).
 - UI и CLI: у каждого компонента есть свой UI и CLI для управления и отладки.
-- Интеграции: GitHub, GitLab, Bitbucket, S3, Webhooks, [[Prometheus|Prometheus]] (для rollouts) и т. д.
+- Интеграции: GitHub, GitLab, Bitbucket, S3, Webhooks, [[prometheus|Prometheus]] (для rollouts) и т. д.
 
 ## Синтаксис `steps`: двойное тире
 

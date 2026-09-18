@@ -10,8 +10,8 @@ aliases:
 ---
 ## Управление данными
 
-- Privacy by Design – [[PbD|PbD]]
-  - Privacy-enhancing technologies, [[PET|PET]]
+- Privacy by Design – [[privacy-by-design|PbD]]
+  - Privacy-enhancing technologies, [[privacy-enhancing-technology|PET]]
   - [[data-flow-management|Data flow management]]
     - **Работа с коллективными знаниями** как часть [[data-flow-management|DFM]]
     - [[data-layers|Data layers]]

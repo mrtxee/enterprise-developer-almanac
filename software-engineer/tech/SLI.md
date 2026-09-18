@@ -88,10 +88,10 @@ $$SLI\ =\ (Хорошие\ события\ /\ Все\ события)\ ×\ 100\%
 
 Для мониторинга SLI можно использовать инструменты:
 
-- [[Prometheus|Prometheus]] + [[grafana|Grafana]]
+- [[prometheus|Prometheus]] + [[grafana|Grafana]]
 - Datadog, New Relic, Dynatrace
 - [[jaeger|Jaeger]] для распределённой трассировки
-- [[Elasticsearch|Elasticsearch]], Logstash, Kibana для логирования
+- [[elastic-search|Elasticsearch]], Logstash, Kibana для логирования
 
 Регулярный анализ SLI помогает выявлять проблемы на ранних стадиях, оптимизировать производительность и обеспечивать надёжность микросервисной архитектуры.
 

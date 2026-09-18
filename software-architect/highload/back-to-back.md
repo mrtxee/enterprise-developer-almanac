@@ -203,7 +203,7 @@ graph LR
 - ❌ **Риск дублирования** — если не настроить exactly-once delivery.
 - ❌ **Нет гарантии порядка** — если не использовать partitioning и key-based routing.
 
-**Где используется:** событийно-ориентированные системы, микросервисы с разрозненной логикой. Пример: `OrderCreated` → Payment Service (оплачивает) → Inventory Service (снижает остаток) → Analytics (записывает в BigQuery) → Notification (шлёт email) → Search Index (обновляет [[Elasticsearch|Elasticsearch]]).
+**Где используется:** событийно-ориентированные системы, микросервисы с разрозненной логикой. Пример: `OrderCreated` → Payment Service (оплачивает) → Inventory Service (снижает остаток) → Analytics (записывает в BigQuery) → Notification (шлёт email) → Search Index (обновляет [[elastic-search|Elasticsearch]]).
 
 > _Pub/Sub — это как выложить объявление в газету: все, кто заинтересован, прочитают._
 

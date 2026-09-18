@@ -64,12 +64,12 @@ aliases:
 - Инструменты
   - [[airflow|Airflow]] — для автоматизации обучения
   - [[ml-flow|MLflow]] — для экспериментов и версионирования
-  - [[Prometheus|Prometheus]] и [[grafana|Grafana]] — для метрик, [[ELK|ELK]]-стек — для более глубокого анализа логов
+  - [[prometheus|Prometheus]] и [[grafana|Grafana]] — для метрик, [[ELK|ELK]]-стек — для более глубокого анализа логов
   - [[rasa|Rasa]] — среда машинного обучения
   - [[tokenizators|Tokenizators]]
     - Byte-Pair Encoding (BPE) — основа GPT-семейства
     - SentencePiece (Google) — универсальный токенизатор, поддерживает unigram-модели и BPE
-    - WordPiece (BERT) — исторически популярный токенизатор, но реже встречается в новых [[LLM|LLM]]
+    - WordPiece (BERT) — исторически популярный токенизатор, но реже встречается в новых [[large-language-model|LLM]]
     - Tiktoken (OpenAI) — оптимизирован под GPT-модели, быстро работает на C
     - HuggingFace/tokenizers — гибкий токенизатор, с помощью которого легко тренировать свой
   - [[vector-store|Vector store]] — хранилища эмбеддингов

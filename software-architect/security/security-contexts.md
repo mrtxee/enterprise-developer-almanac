@@ -45,7 +45,7 @@ aliases:
 ### Где используется
 
 - **Проверка доступа**: если `risk_score > 0.7` → требовать MFA
-- **[[SIEM|SIEM]] / XDR**: корреляция событий
+- **[[siem|SIEM]] / XDR**: корреляция событий
 - **API Gateway**: разрешить/запретить вызов
 - **[[cloud-security|Cloud Security]]**: AWS IAM, Azure AD Conditional Access
 

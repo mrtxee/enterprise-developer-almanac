@@ -83,6 +83,9 @@ https://docs.mermaidchart.com/mermaid-oss/syntax/flowchart.html#new-arrow-types
 see https://mermaid.js.org/syntax/examples.html
 
 ```mermaid
+---
+title: Пример графа (Graph)
+---
 graph LR
     A[Square Rect] -- Link text --> B((Circle))
     A --> C(Round Rect)
